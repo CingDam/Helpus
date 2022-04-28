@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	   <!-- HikariCp Config -->
+      <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+      <property name="driverClassName" value="org.mariadb.jdbc.Driver"></property>
+      <property name="jdbcUrl" value="jdbc:mariadb://localhost:3306/helpus"></property>
+      <property name="username" value="root"></property>
+      <property name="password" value="1234"></property>
+      </bean>
+
+   <!-- HikariDataSource -->
+      <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+      <constructor-arg ref="hikariConfig" />
+      </bean>
+	
+
+</beans>
