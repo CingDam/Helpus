@@ -16,6 +16,10 @@ public interface CompanyDao {
 
 	List<Schedule> getSch(int coCode);
 
-	List<Coinqury> getCoinqury(int coCode);
+	List<Coinqury> getCoInqury(int coCode);
+
+	List<Company> getCompany(int coCode);
+
+	void setCompany(Company company);
 
 }

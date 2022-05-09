@@ -26,9 +26,9 @@ public class CompanyServiceImpl implements CompanyService {
 
 	@Override
 	public boolean checkId(String coId) {
-		if(dao.checkId(coId) == 0)
+		if(dao.checkId(coId) == 0) 
 			return true;
-		else
+		else 
 			return false;
 	}
 
@@ -43,8 +43,11 @@ public class CompanyServiceImpl implements CompanyService {
 	}
 
 	@Override
-	public List<Coinqury> getCoinqury(int coCode) {
-		return dao.getCoinqury(coCode);
+	public List<Coinqury> getCoInqury(int coCode) {
+		return dao.getCoInqury(coCode);
 	}
+
+
+
 
 }

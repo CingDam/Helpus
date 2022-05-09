@@ -19,6 +19,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public int checkId(String userId) {
+		System.out.println(userId);
 		return sql.selectOne("user.checkId", userId);
 	}
 
