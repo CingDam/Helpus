@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import kr.ac.kopo.helpus.dao.CompanyDao;
 import kr.ac.kopo.helpus.model.Coinqury;
 import kr.ac.kopo.helpus.model.Company;
+import kr.ac.kopo.helpus.model.Detail;
 import kr.ac.kopo.helpus.model.Schedule;
 
 @Service
@@ -45,6 +46,12 @@ public class CompanyServiceImpl implements CompanyService {
 	@Override
 	public List<Coinqury> getCoinqury(int coCode) {
 		return dao.getCoinqury(coCode);
+	}
+
+	@Override
+	public List<Detail> search(String keyword) {
+		
+		return dao.search(keyword);
 	}
 
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.helpus.model.Coinqury;
 import kr.ac.kopo.helpus.model.Company;
+import kr.ac.kopo.helpus.model.Detail;
 import kr.ac.kopo.helpus.model.Schedule;
 
 @Repository
@@ -39,6 +40,12 @@ public class CompanyDaoImpl implements CompanyDao {
 	@Override
 	public List<Coinqury> getCoinqury(int coCode) {
 		return sql.selectList("company.getCoinqury", coCode);
+	}
+
+	@Override
+	public List<Detail> search(String keyword) {
+		
+		return sql.selectList("detail.search", keyword);
 	}
 
 }
