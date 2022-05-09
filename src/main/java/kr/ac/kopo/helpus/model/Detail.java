@@ -40,6 +40,5 @@ public class Detail {
 		this.detailRegDate = detailRegDate;
 	}
 	
-	
-	
+
 }

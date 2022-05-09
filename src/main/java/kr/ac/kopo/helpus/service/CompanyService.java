@@ -17,7 +17,7 @@ public interface CompanyService {
 
 	List<Schedule> getSch(int coCode);
 
-	List<Coinqury> getCoinqury(int coCode);
+	List<Coinqury> getCoInqury(int coCode);
 
 	List<Detail> search(String keyword);
 

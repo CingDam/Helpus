@@ -19,14 +19,16 @@ import kr.ac.kopo.helpus.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class RootController {
 
 	@Autowired
-	UserService userservice;
+	UserService userService;
+	
 	@Autowired
-	CompanyService companyservice;
+	CompanyService companyService;
 
 	@RequestMapping("/")
 	public String index() {
@@ -36,36 +38,58 @@ public class RootController {
 	@PostMapping("/list")
 	public String index(String keyword,Model model) {
 		
-		List<Detail> list = companyservice.search(keyword);
+		List<Detail> list = companyService.search(keyword);
 		
 		model.addAttribute("list", list);
 		
 		return "list";
 	}
+	//테스트용 나중에 지울 것
+	@GetMapping("checkId")
+	public String checkId() {
+		return "checkId";
+	}
+	
+	//@ResponseBody
+	@PostMapping("/checkId")
+	public String checkId(String id) {
+		System.out.println(id);
+		if(userService.checkId(id) && companyService.checkId(id)) {
+			return "OK";
+		} else
+			return "FAIL";
+	}
 
-	@PostMapping("/login")
-	@ResponseBody
-	public String login(User user, Company company, HttpSession session) {
-		if(user.getLoginCode() == 0) {
-			if (userservice.login(user)) {
+	@GetMapping("/login")
+	public String login() {
+		return "login";
+	}
+	
+	//@ResponseBody	
+	@PostMapping("/login/{code}")
+	public String login(@PathVariable int code, User user, Company company, HttpSession session) {
+		if(code == 0) {
+			if (userService.login(user)) {
 				user.setUserPw(null);
 	
 				session.setAttribute("user", user);
-				return "user";
+				return "OK";
 			}
 			
-			return "false";
+			return "FAIL";
 			
-		} else {
-			if(companyservice.login(company)) {
+		} else if(code == 1) {
+			if(companyService.login(company)) {
+				System.out.println("로그인 성공");
 				company.setCoPw(null);
 				
 				session.setAttribute("company", company);
-				return "company";
+				//return "OK";
+				return "redirect:..";
 			}
-			
-			return "false";
-		}
+			return "FAIL";
+		} else
+			return "ERROR";
 
 	}
 	
@@ -75,26 +99,25 @@ public class RootController {
 		return "redirect:/";
 	}
 	
+	@GetMapping("/signup")
+	public String signup() {
+		return "signup";
+	}
+	
 	@PostMapping("/signup/{code}")
-	@ResponseBody
+	//@ResponseBody
 	public String signup(@PathVariable int code, User user, Company company) {
 		if(code == 0) {
-			if(userservice.checkId(user.getUserId())) {
-				userservice.signup(user);
+				userService.signup(user);
 				
-				return "user";
-			} else {
-				return "false";
-			}
-		}
-		else {
-			if(companyservice.checkId(company.getCoId())) {
-				companyservice.signup(company);
+				return "OK";
+			} 
+		if(code == 1) {
+				companyService.signup(company);
 				
-				return "company";
-			} else {
-				return "false";
-			}
+				return "OK";
+		} else {
+			return "ERROR";
 		}
 	}
 	

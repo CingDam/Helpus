@@ -16,6 +16,6 @@
 	
 	<insert id="signup">
 		INSERT INTO user
-		VALUES (#{userId},PASSWORD(#{userPw}),#{userName},#{userEmail},#{userAddress},#{userPhone},1,NOW(),null,#{userProfile})
+		VALUES (null,#{userId},PASSWORD(#{userPw}),#{userName},#{userEmail},#{userAddress},#{userPhone},1,NOW(),null,#{userProfile})
 	</insert>
 </mapper>

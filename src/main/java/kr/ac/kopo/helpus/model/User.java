@@ -14,11 +14,6 @@ public class User {
 	private Date userSignup;
 	private Date userLogin;
 	private String userProfile;
-	private int loginCode;
-
-	public int getLoginCode() {
-		return loginCode;
-	}
 
 	public int getUserCode() {
 		return userCode;
