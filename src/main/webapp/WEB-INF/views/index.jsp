@@ -6,8 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="/js/jquery.3.6.0.min.js"></script>
 </head>
 <body>
+	<form method="post" action="/list">
+		<input type="text" name="keyword">
+	</form>
 	<c:if test="${sessionScope.user == null && sessionScope.company == null}">
 		<div><a href="login">로그인</a></div>
 		<div><a href="signup">회원가입</a></div>	

@@ -16,18 +16,19 @@
 	
 	<insert id="signup">
 		INSERT INTO company
-		VALUES (#{coId},PASSWORD(#{coPw}),#{coName},#{coEmail},#{coPhone},#{coRegNum},#{coAddress},1,NOW(),null)
+		VALUES (null,#{coId},PASSWORD(#{coPw}),#{coName},#{coEmail},#{coPhone},#{coRegNum},#{coAddress},1,NOW(),null)
 	</insert>
 	
 	<select id="getSch" resultType="Schedule">
 		SELECT contract_code, user_name, date_format(contract_sdate, '%H:%i') AS contract_sdate, date_format(contract_edate, '%H:%i') AS contract_edate
 		FROM contract JOIN user ON contract.user_code = user.user_code
-		WHERE co_code=#{coCode};
+		WHERE co_code=#{coCode}
 	</select>
 	
-	<select id="getCoinqury" resultType="Coinqury">
+	<select id="getCoInqury" resultType="Coinqury">
 		SELECT *
 		FROM co_inqury
-		WHERE co_code=#{coCode};
+		WHERE co_code=#{coCode}
 	</select>
+	
 </mapper>
