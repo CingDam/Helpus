@@ -1,6 +1,7 @@
 package kr.ac.kopo.helpus.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class Detail {
 	private int coCode;
@@ -9,6 +10,37 @@ public class Detail {
 	private String detailContents;
 	private Date detailRegDate;
 	
+	private String coName;
+	private float reviewScore;
+	private String keyName;
+	
+	private List<CoKey> coKey;
+	
+	
+	public List<CoKey> getCoKey() {
+		return coKey;
+	}
+	public void setCoKey(List<CoKey> coKey) {
+		this.coKey = coKey;
+	}
+	public String getCoName() {
+		return coName;
+	}
+	public void setCoName(String coName) {
+		this.coName = coName;
+	}
+	public float getReviewScore() {
+		return reviewScore;
+	}
+	public void setReviewScore(float reviewScore) {
+		this.reviewScore = reviewScore;
+	}
+	public String getKeyName() {
+		return keyName;
+	}
+	public void setKeyName(String keyName) {
+		this.keyName = keyName;
+	}
 	public int getCoCode() {
 		return coCode;
 	}

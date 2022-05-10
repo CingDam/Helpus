@@ -19,6 +19,4 @@ public interface CompanyService {
 
 	List<Coinqury> getCoInqury(int coCode);
 
-	List<Detail> search(String keyword);
-
 }

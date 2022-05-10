@@ -48,9 +48,4 @@ public class CompanyServiceImpl implements CompanyService {
 		return dao.getCoInqury(coCode);
 	}
 
-	@Override
-	public List<Detail> search(String keyword) {
-		
-		return dao.search(keyword);
-	}
 }

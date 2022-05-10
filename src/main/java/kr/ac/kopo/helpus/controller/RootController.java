@@ -14,6 +14,7 @@ import kr.ac.kopo.helpus.model.Company;
 import kr.ac.kopo.helpus.model.Detail;
 import kr.ac.kopo.helpus.model.User;
 import kr.ac.kopo.helpus.service.CompanyService;
+import kr.ac.kopo.helpus.service.DetailService;
 import kr.ac.kopo.helpus.service.UserService;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,6 +30,9 @@ public class RootController {
 	
 	@Autowired
 	CompanyService companyService;
+	
+	@Autowired
+	DetailService detailService;
 
 	@RequestMapping("/")
 	public String index() {
@@ -38,7 +42,7 @@ public class RootController {
 	@PostMapping("/list")
 	public String index(String keyword,Model model) {
 		
-		List<Detail> list = companyService.search(keyword);
+		List<Detail> list = detailService.search(keyword);
 		
 		model.addAttribute("list", list);
 		

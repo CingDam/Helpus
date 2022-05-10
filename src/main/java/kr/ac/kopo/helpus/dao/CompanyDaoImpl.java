@@ -55,10 +55,4 @@ public class CompanyDaoImpl implements CompanyDao {
 		sql.update("company.setCompany", company);
 	}
 
-	@Override
-	public List<Detail> search(String keyword) {
-		
-		return sql.selectList("detail.search", keyword);
-	}
-
 }
