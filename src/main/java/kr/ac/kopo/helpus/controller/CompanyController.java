@@ -50,4 +50,62 @@ public class CompanyController {
 		return coInqury;
 	}
 	
+	@GetMapping("/mypage")
+	public String mypage() {
+		return path + "mypage";
+	}
+	
+	@GetMapping("/coUpdate")
+	public String coUpdate(Model model, HttpSession session) {
+		Company company = (Company) session.getAttribute("company");
+		System.out.println(company.getCoCode());
+		System.out.println(company.getCoId());
+		
+		Company item = service.item(company.getCoCode());
+		
+		model.addAttribute("item", item);
+		
+		return path + "coUpdate";
+	}
+	
+	@PostMapping("/coUpdate")
+	public String coUpdate(Company company, HttpSession session) {
+		Company item = (Company) session.getAttribute("company");
+		
+		company.setCoCode(item.getCoCode());
+		
+		service.coUpdate(company);
+		
+		return "redirect:./mypage";
+	}
+	
+	@GetMapping("/coPwUpdate")
+	public String coPwUpdate() {
+		return path + "pwCheck";
+	}
+	
+	@PostMapping("/pwCheck")
+	public String pwCheck(HttpSession session, Company company) {
+		Company item = (Company) session.getAttribute("company");
+		
+		company.setCoId(item.getCoId());
+		
+		if(service.pwCheck(company))
+			return path + "coPwUpdate";
+		else
+			return path + "FAIL";
+	}
+	
+	@PostMapping("/coPwUpdate")
+	public String coPwUpdate(HttpSession session, Company company) {
+		Company item = (Company) session.getAttribute("company");
+		
+		company.setCoCode(item.getCoCode());
+		
+		service.coPwUpdate(company);
+		
+		session.setAttribute("msg", "비밀번호 변경으로 인해 다시 로그인 해주세요");
+		return "redirect../";
+	}
+	
 }
