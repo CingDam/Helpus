@@ -4,7 +4,6 @@ import java.util.List;
 
 import kr.ac.kopo.helpus.model.Coinqury;
 import kr.ac.kopo.helpus.model.Company;
-import kr.ac.kopo.helpus.model.Detail;
 import kr.ac.kopo.helpus.model.Schedule;
 
 public interface CompanyService {
@@ -18,5 +17,13 @@ public interface CompanyService {
 	List<Schedule> getSch(int coCode);
 
 	List<Coinqury> getCoInqury(int coCode);
+
+	Company item(int coCode);
+
+	void coUpdate(Company company);
+
+	boolean pwCheck(Company company);
+
+	void coPwUpdate(Company company);
 
 }

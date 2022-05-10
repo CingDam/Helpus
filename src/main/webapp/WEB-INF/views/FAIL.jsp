@@ -8,5 +8,6 @@
 </head>
 <body>
 	<h1>실패!</h1>
+	<a href="..">처음으로</a>
 </body>
 </html>

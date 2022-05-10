@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import kr.ac.kopo.helpus.dao.CompanyDao;
 import kr.ac.kopo.helpus.model.Coinqury;
 import kr.ac.kopo.helpus.model.Company;
-import kr.ac.kopo.helpus.model.Detail;
 import kr.ac.kopo.helpus.model.Schedule;
 
 @Service
@@ -19,7 +18,17 @@ public class CompanyServiceImpl implements CompanyService {
 	
 	@Override
 	public boolean login(Company company) {
-		if(dao.login(company) == 1) {
+		Company item = dao.login(company);
+		  if(item != null) {
+			company.setCoCode(item.getCoCode());
+			company.setCoEmail(item.getCoEmail());
+			company.setCoName(item.getCoName());
+			company.setCoAddress(item.getCoAddress());
+			company.setCoAuth(item.getCoAuth());
+			company.setCoPhone(item.getCoPhone());
+			company.setCoRegNum(item.getCoRegNum());
+			company.setCoPw(null);
+			  
 			return true;
 		} else
 			return false;
@@ -47,5 +56,32 @@ public class CompanyServiceImpl implements CompanyService {
 	public List<Coinqury> getCoInqury(int coCode) {
 		return dao.getCoInqury(coCode);
 	}
+
+	@Override
+	public Company item(int coCode) {
+		return dao.item(coCode);
+	}
+
+	@Override
+	public void coUpdate(Company company) {
+		dao.coUpdate(company);
+	}
+
+	@Override
+	public boolean pwCheck(Company company) {
+		if(dao.pwCheck(company) == 1)
+			return true;
+		else
+			return false;
+	}
+
+	@Override
+	public void coPwUpdate(Company company) {
+		dao.coPwUpdate(company);
+		
+	}
+
+
+
 
 }

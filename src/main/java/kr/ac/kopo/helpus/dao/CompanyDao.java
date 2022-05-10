@@ -4,12 +4,11 @@ import java.util.List;
 
 import kr.ac.kopo.helpus.model.Coinqury;
 import kr.ac.kopo.helpus.model.Company;
-import kr.ac.kopo.helpus.model.Detail;
 import kr.ac.kopo.helpus.model.Schedule;
 
 public interface CompanyDao {
 
-	int login(Company company);
+	Company login(Company company);
 
 	int checkId(String coId);
 
@@ -22,5 +21,13 @@ public interface CompanyDao {
 	List<Company> getCompany(int coCode);
 
 	void setCompany(Company company);
+
+	Company item(int coCode);
+
+	void coUpdate(Company company);
+
+	int pwCheck(Company company);
+
+	void coPwUpdate(Company company);
 
 }
