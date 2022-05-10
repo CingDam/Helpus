@@ -23,6 +23,4 @@ public interface CompanyDao {
 
 	void setCompany(Company company);
 
-	List<Detail> search(String keyword);
-
 }

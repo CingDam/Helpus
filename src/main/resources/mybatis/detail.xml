@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="detail">
-	<select id="search" resultType="Detail" >
-		SELECT detail.* FROM detail JOIN keyword ON detail.key_code = keyword.key_code
-		WHERE keyword.key_name LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+	<select id="search" resultMap="DetailMap" >
+			SELECT co_key.co_code,review.review_score,keyword.key_name,company.co_name, detail.*
+			FROM co_key 
+			JOIN detail ON detail.co_code = co_key.co_code
+			JOIN keyword ON co_key.key_code = keyword.key_code
+			LEFT JOIN review ON co_key.co_code = review.co_code
+			JOIN company ON co_key.co_code = company.co_code
+			WHERE keyword.key_name LIKE CONCAT(CONCAT('%',#{keyword}),'%')
 	</select>
+	<resultMap type="Detail" id="DetailMap">
+		<id column="co_code" property="coCode"/>
+		<result column="detail_contents" property="detailContents"/>
+		<result column="detail_reg_date" property="detailRegDate"/>
+		<result column="co_name" property="coName"/>
+		<result column="key_name" property="keyName"/>
+		
+		<collection column="co_code" property="coKey" ofType="CoKey" javaType="ArrayList">
+			<id column="co_key_code" property="coKeyCode"></id>
+			<result column="co_code" property="coCode"/>
+			<result column="cate_code" property="cateCode"/>
+			<result column="key_code" property="keyCode"/>
+		</collection>
+	</resultMap>
 </mapper>
