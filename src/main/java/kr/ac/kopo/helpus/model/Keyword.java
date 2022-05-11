@@ -2,7 +2,7 @@ package kr.ac.kopo.helpus.model;
 
 public class Keyword {
 	private int keyCode;
-	private int keyName;
+	private String keyName;
 	private int cateCode;
 	
 	public int getKeyCode() {
@@ -11,10 +11,10 @@ public class Keyword {
 	public void setKeyCode(int keyCode) {
 		this.keyCode = keyCode;
 	}
-	public int getKeyName() {
+	public String getKeyName() {
 		return keyName;
 	}
-	public void setKeyName(int keyName) {
+	public void setKeyName(String keyName) {
 		this.keyName = keyName;
 	}
 	public int getCateCode() {

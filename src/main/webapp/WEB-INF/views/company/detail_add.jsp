@@ -13,7 +13,7 @@
 	<form method="post" id="detail_content">
 		<div>
 			<label>내용</label>
-			<textarea></textarea>
+			<textarea name="detailContents"></textarea>
 		</div>
 		<div>
 			<label>카테고리</label>
@@ -24,9 +24,10 @@
 				</c:forEach>
 			</select>
 		</div>
-	</form>
 	<div>
-		<button>등록하기</button>
+		<button id="submit">등록하기</button>
 	</div>
+	</form>
+
 </body>
 </html>

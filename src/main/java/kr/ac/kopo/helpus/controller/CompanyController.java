@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kr.ac.kopo.helpus.model.Category;
 import kr.ac.kopo.helpus.model.Coinqury;
 import kr.ac.kopo.helpus.model.Company;
+import kr.ac.kopo.helpus.model.Detail;
 import kr.ac.kopo.helpus.model.Schedule;
 import kr.ac.kopo.helpus.service.CategoryService;
 import kr.ac.kopo.helpus.service.CompanyService;
@@ -125,7 +126,14 @@ public class CompanyController {
 		
 		model.addAttribute("cateList",cateList);
 		
-		return "detail_add";
+		return path + "detail_add";
 	}
-	
+	@PostMapping("/detail_add")
+	public String detailAdd(Detail item,HttpSession session) {
+		Company co = (Company) session.getAttribute("company");
+		item.setCoCode(co.getCoCode());
+		detailService.add(item);
+		
+		return "redirect:..";
+	}
 }

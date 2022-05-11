@@ -8,4 +8,6 @@ public interface DetailService {
 
 	List<Detail> search(String keyword);
 
+	void add(Detail item);
+
 }
