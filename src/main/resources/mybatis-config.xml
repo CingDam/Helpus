@@ -13,5 +13,8 @@
 	<mappers>
 		<mapper resource="mybatis/user.xml"/>
 		<mapper resource="mybatis/company.xml"/>
+		<mapper resource="mybatis/detail.xml"/>
+		<mapper resource="mybatis/category.xml"/>
+		<mapper resource="mybatis/keyword.xml"/>
 	</mappers>
 </configuration>
