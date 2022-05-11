@@ -13,6 +13,5 @@
 	<mappers>
 		<mapper resource="mybatis/user.xml"/>
 		<mapper resource="mybatis/company.xml"/>
-		<mapper resource="mybatis/detail.xml"/>
 	</mappers>
 </configuration>

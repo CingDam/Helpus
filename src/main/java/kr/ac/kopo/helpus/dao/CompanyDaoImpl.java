@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.helpus.model.Coinqury;
 import kr.ac.kopo.helpus.model.Company;
-import kr.ac.kopo.helpus.model.Detail;
 import kr.ac.kopo.helpus.model.Schedule;
 
 @Repository
@@ -18,9 +17,9 @@ public class CompanyDaoImpl implements CompanyDao {
 	SqlSession sql;
 	
 	@Override
-	public int login(Company company) {
-		int result = sql.selectOne("company.login", company);
-		System.out.println(result);
+	public Company login(Company company) {
+		sql.selectOne("company.login", company);
+		
 		return sql.selectOne("company.login", company);
 	}
 
@@ -53,6 +52,27 @@ public class CompanyDaoImpl implements CompanyDao {
 	@Override
 	public void setCompany(Company company) {
 		sql.update("company.setCompany", company);
+	}
+
+	@Override
+	public Company item(int coCode) {
+		return sql.selectOne("company.item", coCode);
+	}
+
+	@Override
+	public void coUpdate(Company company) {
+		sql.update("company.coUpdate", company);
+	}
+
+	@Override
+	public int pwCheck(Company company) {
+		return sql.selectOne("company.pwCheck", company);
+	}
+
+	@Override
+	public void coPwUpdate(Company company) {
+		sql.update("company.coPwUpdate", company);
+		
 	}
 
 }

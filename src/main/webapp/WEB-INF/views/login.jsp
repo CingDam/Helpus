@@ -8,7 +8,24 @@
 </head>
 <body>
 	<div>
-		<h1>로그인</h1>
+		<h1>유저 로그인</h1>
+		<form method="post" action="login/0">
+			
+			<div>
+				<P>ID</P>
+				<input type="text" name="userId" placeholder="ID를 입력해주세요">
+			</div>
+			<div>
+				<P>PASSWORD</P>
+				<input type="password" name="userPw" placeholder="비밀번호를 입력해주세요">
+			</div>
+			<div>
+				<button>Log in</button>
+			</div>
+		</form>
+	</div>
+	<div>
+		<h1>사업자 로그인</h1>
 		<form method="post" action="login/1">
 			
 			<div>

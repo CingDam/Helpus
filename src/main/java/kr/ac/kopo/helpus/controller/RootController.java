@@ -1,7 +1,5 @@
 package kr.ac.kopo.helpus.controller;
 
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.ac.kopo.helpus.model.Company;
-import kr.ac.kopo.helpus.model.Detail;
 import kr.ac.kopo.helpus.model.User;
 import kr.ac.kopo.helpus.service.CompanyService;
-import kr.ac.kopo.helpus.service.DetailService;
 import kr.ac.kopo.helpus.service.UserService;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,13 +27,9 @@ public class RootController {
 	
 	@Autowired
 	CompanyService companyService;
-	
-	@Autowired
-	DetailService detailService;
 
 	@RequestMapping("/")
 	public String index(HttpSession session, Model model) {
-		
 		String msg = (String) session.getAttribute("msg");
 		if(msg != null) {
 			session.removeAttribute("msg");
@@ -46,18 +38,9 @@ public class RootController {
 			
 			session.invalidate();
 		}
-
 		return "index";
 	}
-	@PostMapping("/list")
-	public String index(String keyword,Model model) {
-		
-		List<Detail> list = detailService.search(keyword);
-		
-		model.addAttribute("list", list);
-		
-		return "list";
-	}
+	
 	//테스트용 나중에 지울 것
 	@GetMapping("checkId")
 	public String checkId() {
@@ -87,7 +70,7 @@ public class RootController {
 				user.setUserPw(null);
 	
 				session.setAttribute("user", user);
-				return "OK";
+				return "redirect:..";
 			}
 			
 			return "FAIL";
@@ -95,20 +78,20 @@ public class RootController {
 		} else if(code == 1) {
 			if(companyService.login(company)) {
 				System.out.println("로그인 성공");
-				company.setCoPw(null);
-				
+				System.out.println(company.getCoCode());
 				session.setAttribute("company", company);
 				//return "OK";
 				return "redirect:..";
 			}
 			return "FAIL";
 		} else
-			return "ERROR";
+			return "FAIL";
 
 	}
 	
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
+		
 		session.invalidate();
 		return "redirect:/";
 	}

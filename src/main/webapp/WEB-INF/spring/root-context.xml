@@ -2,31 +2,32 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
-	
-	
-	   <!-- HikariCp Config -->
-	     <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
-		     <property name="driverClassName" value="org.mariadb.jdbc.Driver"></property>
-		     <property name="jdbcUrl" value="jdbc:mariadb://localhost:3306/helpus"></property>
-		     <property name="username" value="root"></property>
-		     <property name="password" value="1234"></property>
-	     </bean>
 
-	   	<!-- HikariDataSource -->
-	     <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
-	      	<constructor-arg ref="hikariConfig" />
-	     </bean>
-      
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+
+	<!-- HikariCp Config -->
+	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+		<property name="driverClassName" value="org.mariadb.jdbc.Driver"></property>
+		<property name="jdbcUrl" value="jdbc:mariadb://localhost:3306/helpus"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="1234"></property>
+	</bean>
+
+	<!-- HikariDataSource -->
+	<bean id="datasource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+		<constructor-arg ref="hikariConfig"></constructor-arg>
+	</bean>
+	
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource"></property>
+		<property name="dataSource" ref="datasource"></property>
 		<property name="configLocation" value="classpath:/mybatis-config.xml"></property>
-			<!-- config 파일을 만들어서 Factory 구성(이름은 같기만하면됨) -->
-			<!-- classpath 클래스위치를 해당경로에서 찾아라 -->
-	</bean>
-	
-	<bean id="sqlSessionTemplate" class = "org.mybatis.spring.SqlSessionTemplate">
-			<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
-	</bean>
-	
+         <!-- config 파일을 만들어서 Factory 구성(이름은 같기만하면됨) -->
+         <!-- classpath 클래스위치를 해당경로에서 찾아라 -->
+    </bean>
+   
+    <bean id="sqlSessionTemplate" class = "org.mybatis.spring.SqlSessionTemplate">
+         <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
+    </bean>
 
 </beans>
