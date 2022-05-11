@@ -24,4 +24,11 @@
 			<result column="key_code" property="keyCode"/>
 		</collection>
 	</resultMap>
+	
+	<insert id="add">
+		INSERT INTO detail VALUES (#{coCode},#{detailContents},NOW())
+		<selectKey keyProperty="coCode" resultType="Integer" order="AFTER">
+  			SELECT co_code FROM co_code=#{coCode}
+  		</selectKey>
+	</insert>
 </mapper>
