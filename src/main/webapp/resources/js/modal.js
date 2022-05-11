@@ -481,5 +481,4 @@ function singUp(){
 	    		modalSignup.classList.remove('modal-active-signup');
 	    		
            });
->>>>>>> refs/heads/master
 }
