@@ -36,7 +36,16 @@ public class RootController {
 	DetailService detailService;
 
 	@RequestMapping("/")
-	public String index() {
+	public String index(HttpSession session, Model model) {
+		
+		String msg = (String) session.getAttribute("msg");
+		if(msg != null) {
+			session.removeAttribute("msg");
+			
+			model.addAttribute("msg", msg);
+			
+			session.invalidate();
+		}
 
 		return "index";
 	}
