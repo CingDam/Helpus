@@ -20,4 +20,9 @@ public class DetailDaoImpl implements DetailDao {
 		return sql.selectList("detail.search", keyword);
 	}
 
+	@Override
+	public void add(Detail item) {
+		sql.insert("detail.add", item);		
+	}
+
 }

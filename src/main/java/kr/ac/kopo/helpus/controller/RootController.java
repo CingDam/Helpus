@@ -1,5 +1,7 @@
 package kr.ac.kopo.helpus.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.ac.kopo.helpus.model.Company;
+import kr.ac.kopo.helpus.model.Detail;
 import kr.ac.kopo.helpus.model.User;
 import kr.ac.kopo.helpus.service.CompanyService;
+import kr.ac.kopo.helpus.service.DetailService;
 import kr.ac.kopo.helpus.service.UserService;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +22,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+//백업
 @Controller
 public class RootController {
 
@@ -26,6 +31,9 @@ public class RootController {
 	
 	@Autowired
 	CompanyService companyService;
+	
+	@Autowired
+	DetailService detailService;
 
 	@RequestMapping("/")
 	public String index(HttpSession session, Model model) {
@@ -38,6 +46,16 @@ public class RootController {
 			session.invalidate();
 		}
 		return "index";
+	}
+	
+	@PostMapping("/list")
+	public String index(String keyword,Model model) {
+		
+		List<Detail> list = detailService.search(keyword);
+		
+		model.addAttribute("list", list);
+		
+		return "list";
 	}
 	
 	//테스트용 나중에 지울 것

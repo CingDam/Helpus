@@ -8,4 +8,6 @@ public interface DetailDao {
 
 	List<Detail> search(String keyword);
 
+	void add(Detail item);
+
 }

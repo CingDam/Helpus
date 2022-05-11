@@ -23,9 +23,7 @@
 				</c:if>
 				<c:forEach var="item" items="${list }">
 					<td>${item.coName }</td>
-					<td>
-						${item.keyName }
-					</td>
+					<td>${item.keyName }</td>
 					<c:if test="${item.reviewScore == 0 }">
 						<td>0</td>
 					</c:if>

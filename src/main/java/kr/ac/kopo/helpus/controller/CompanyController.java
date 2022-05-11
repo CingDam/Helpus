@@ -13,10 +13,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import kr.ac.kopo.helpus.model.Category;
 import kr.ac.kopo.helpus.model.Coinqury;
 import kr.ac.kopo.helpus.model.Company;
+import kr.ac.kopo.helpus.model.Detail;
 import kr.ac.kopo.helpus.model.Schedule;
+import kr.ac.kopo.helpus.service.CategoryService;
 import kr.ac.kopo.helpus.service.CompanyService;
+import kr.ac.kopo.helpus.service.DetailService;
+import kr.ac.kopo.helpus.service.KeywordService;
 
 //@RestController (테스트 끝나면 주석처리 지울 것)
 @Controller
@@ -26,6 +31,12 @@ public class CompanyController {
 	
 	@Autowired
 	CompanyService service;
+	@Autowired
+	DetailService detailService;
+	@Autowired
+	CategoryService categoryService;
+	@Autowired
+	KeywordService keywordService;
 	
 	//스케쥴 관리(사업자코드로 계약테이블에 조인해서 일정 뽑아오기)
 	@GetMapping("/get_sch")
@@ -108,4 +119,21 @@ public class CompanyController {
 		return "redirect../";
 	}
 	
+	@GetMapping("/detail_add")
+	public String detaillAdd(Model model) {
+		
+		List<Category> cateList = categoryService.list();
+		
+		model.addAttribute("cateList",cateList);
+		
+		return path + "detail_add";
+	}
+	@PostMapping("/detail_add")
+	public String detailAdd(Detail item,HttpSession session) {
+		Company co = (Company) session.getAttribute("company");
+		item.setCoCode(co.getCoCode());
+		detailService.add(item);
+		
+		return "redirect:..";
+	}
 }
