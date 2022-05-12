@@ -1,5 +1,6 @@
 package kr.ac.kopo.helpus.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -11,9 +12,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import kr.ac.kopo.helpus.model.Category;
+import kr.ac.kopo.helpus.model.CoKey;
 import kr.ac.kopo.helpus.model.Coinqury;
 import kr.ac.kopo.helpus.model.Company;
 import kr.ac.kopo.helpus.model.Detail;
@@ -22,6 +25,7 @@ import kr.ac.kopo.helpus.service.CategoryService;
 import kr.ac.kopo.helpus.service.CompanyService;
 import kr.ac.kopo.helpus.service.DetailService;
 import kr.ac.kopo.helpus.service.KeywordService;
+import kr.ac.kopo.helpus.util.SetCoKey;
 
 //@RestController (테스트 끝나면 주석처리 지울 것)
 @Controller
@@ -129,11 +133,37 @@ public class CompanyController {
 		return path + "detail_add";
 	}
 	@PostMapping("/detail_add")
-	public String detailAdd(Detail item,HttpSession session) {
-		Company co = (Company) session.getAttribute("company");
-		item.setCoCode(co.getCoCode());
-		detailService.add(item);
+	public String detailAdd(Detail item,HttpSession session,@RequestParam("keyCode") List<Integer> keyCode,int cateCode)  {
+		
+		try {
+			Company co = (Company) session.getAttribute("company");
+			SetCoKey<CoKey> setCoKey = new SetCoKey<>();
+			List<CoKey> coKey = setCoKey.setCode(keyCode,cateCode,CoKey.class);
+			System.out.println(coKey);
+			item.setCoKey(coKey);
+			item.setCoCode(co.getCoCode());
+			detailService.add(item);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
 		
 		return "redirect:..";
+	}
+	@GetMapping("/coDetailUpdate")
+	public String detailUpdate(HttpSession session,Model model) {
+		Company co = (Company) session.getAttribute("company");
+		List<Category> cateList = categoryService.list();
+		int coCode = co.getCoCode();
+		List<Integer> keyCode = detailService.keyList(coCode);
+		for(int keyNum : keyCode) {
+			System.out.println(keyNum);
+		}
+		Detail item = detailService.item(coCode);
+		model.addAttribute("item",item);
+		model.addAttribute("cateList",cateList);
+		
+		return path + "detail_update";
 	}
 }

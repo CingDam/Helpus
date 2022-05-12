@@ -15,6 +15,7 @@
 		<ul>
 			<li><a href="coUpdate">사업자 정보수정</a></li>
 			<li><a href="coPwUpdate">비밀번호 변경</a></li>
+			<li><a href="coDetailUpdate">세부내용 업데이트</a></li>
 		</ul>
 	</div>
 </body>
