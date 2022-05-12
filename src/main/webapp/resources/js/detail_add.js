@@ -3,6 +3,11 @@ let html;
 $(function(){
 	let org_val = $('#category').val();
     $('#category').on('click',function(){}).on('mouseup',function(){selectCate(org_val)})
+    if(window.location.pathname == "/company/coDetailUpdate"){
+		keywordAdd(org_val);
+		console.log(keyNum)
+	};
+    
 })
 
 function selectCate(org_val){
@@ -10,25 +15,27 @@ function selectCate(org_val){
 	
 		if(org_val != cur_val){
 			org_val=cur_val;
-			$.ajax("../detail/keyword",{
+			keywordAdd(org_val);
+		}  
+}
+function keywordAdd(val){
+	$.ajax("../detail/keyword",{
             method:"POST",
             contentType:"application/json",
             dataType:"json",
-            data:JSON.stringify({cateCode:$('#category').val()}),
+            data:JSON.stringify({cateCode:val}),
             success: (result) => {
+                let itemCode = null;
                 
-                console.log(result)
-                const form = $('#detail_content')
-                
-                if(result != null && result.length >0){
+                if(result != null && result.length > 0){
+					itemCode = keyNum;
                     html = '<div class="keyword">'
                     html += '<label>키워드</label>'
                     html += '<select name="keyCode">'
                     for(let i=0; i<result.length; i++){
+						const {keyCode,keyName} = result[i];
 						
-							const {keyCode,keyName} = result[i];
-                        console.log(keyName)
-                        html+=`<option value="${keyCode}">${keyName}</option>`
+                        html+=`<option value="${keyCode}" ${itemCode == keyCode  ? 'selected' : ''}>${keyName}</option>`
                     }
                     html += '</select>'
                     html += '<button type="button" class="keyword_add">+</button>'
@@ -46,10 +53,8 @@ function selectCate(org_val){
                     html += '<label>키워드</label>'
                     html += '<select name="keyCode">'
                     for(let i=0; i<result.length; i++){
-						
-							const {keyCode,keyName} = result[i];
-                        console.log(keyName)
-                        html+=`<option value="${keyCode}">${keyName}</option>`
+						const {keyCode,keyName} = result[i];
+                        html+=`<option value="${keyCode}" ${itemCode == keyCode  ? 'selected' : ''}>${keyName}</option>`
                     }
                     html += '</select>'
                     html += '<button type="button" class="keyword_add">+</button><button type="button" class="keyword_remove">-</button>'
@@ -58,11 +63,9 @@ function selectCate(org_val){
 					$('#submit').before(html);
 				})
 				 $(document).on('click','.keyword_remove',function(){
-					console.log("삭제")
 					$(this).parent().remove();
 				})
 				
             } 
         })
-		}  
 }

@@ -10,4 +10,8 @@ public interface DetailDao {
 
 	void add(Detail item);
 
+	Detail item(int coCode);
+
+	List<Integer> keyList(int coCode);
+
 }

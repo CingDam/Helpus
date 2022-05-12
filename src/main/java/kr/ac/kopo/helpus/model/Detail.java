@@ -7,14 +7,28 @@ public class Detail {
 	private int coCode;
 	private String detailContents;
 	private Date detailRegDate;
+	private int cateCode;
+	private int keyCode;
 	
 	private String coName;
 	private float reviewScore;
 	private String keyName;
+
 	
 	private List<CoKey> coKey;
 	
-	
+	public int getCateCode() {
+		return cateCode;
+	}
+	public void setCateCode(int cateCode) {
+		this.cateCode = cateCode;
+	}
+	public int getKeyCode() {
+		return keyCode;
+	}
+	public void setKeyCode(int keyCode) {
+		this.keyCode = keyCode;
+	}
 	public List<CoKey> getCoKey() {
 		return coKey;
 	}

@@ -10,4 +10,8 @@ public interface DetailService {
 
 	void add(Detail item);
 
+	Detail item(int coCode);
+
+	List<Integer> keyList(int coCode);
+
 }
