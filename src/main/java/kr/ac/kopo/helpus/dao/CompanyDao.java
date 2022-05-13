@@ -30,4 +30,6 @@ public interface CompanyDao {
 
 	void coPwUpdate(Company company);
 
+	void login_day(int coCode);
+
 }

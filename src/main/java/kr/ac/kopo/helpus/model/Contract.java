@@ -11,8 +11,8 @@ public class Contract {
 	private Date contractSdate;
 	private Date contractEdate;
 	private Date contractDay;
-	private char contractState;
 	private int contractPay;
+	private char contractState;
 
 	public int getContractCode() {
 		return contractCode;

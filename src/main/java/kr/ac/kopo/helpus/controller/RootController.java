@@ -85,8 +85,9 @@ public class RootController {
 		if(code == 0) {
 			if (userService.login(user)) {
 				user.setUserPw(null);
-	
+				
 				session.setAttribute("user", user);
+				//return "OK";
 				return "redirect:..";
 			}
 			
@@ -94,8 +95,8 @@ public class RootController {
 			
 		} else if(code == 1) {
 			if(companyService.login(company)) {
-				System.out.println("로그인 성공");
-				System.out.println(company.getCoCode());
+				company.setCoPw(null);
+				
 				session.setAttribute("company", company);
 				//return "OK";
 				return "redirect:..";

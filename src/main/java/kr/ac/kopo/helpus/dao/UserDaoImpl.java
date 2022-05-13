@@ -13,7 +13,7 @@ public class UserDaoImpl implements UserDao {
 	SqlSession sql;
 	
 	@Override
-	public int login(User user) {
+	public User login(User user) {
 		return sql.selectOne("user.login", user);
 	}
 
@@ -26,6 +26,16 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public void signup(User user) {
 		sql.insert("user.signup", user);
+	}
+
+	@Override
+	public void userUpdate(User user) {
+		sql.update("user.userUpdate", user);
+	}
+
+	@Override
+	public int pwCheck(User user) {
+		return sql.selectOne("user.pwCheck", user);
 	}
 
 }

@@ -13,9 +13,8 @@
 	<div>
 		<h1>마이페이지</h1>
 		<ul>
-			<li><a href="coUpdate">사업자 정보수정</a></li>
+			<li><a href="userUpdate">사용자 정보수정</a></li>
 			<li><a href="pwCheck">비밀번호 변경</a></li>
-			<li><a href="coDetailUpdate">세부내용 업데이트</a></li>
 		</ul>
 	</div>
 </body>
