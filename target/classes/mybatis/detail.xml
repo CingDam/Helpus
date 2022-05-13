@@ -39,4 +39,9 @@
   			SELECT co_code FROM detail WHERE co_code=#{coCode}
   		</selectKey>
 	</insert>
+	
+	<update id="update">
+		UPDATE detail SET detail_contents = #{detailContetns}
+		WHERE co_code = #{coCode}
+	</update>
 </mapper>

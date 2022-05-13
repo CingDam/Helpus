@@ -30,4 +30,10 @@ public class DetailDaoImpl implements DetailDao {
 		return sql.selectOne("detail.item", coCode);
 	}
 
+	@Override
+	public void update(Detail item) {
+		sql.update("detail.update",item);
+		
+	}
+
 }

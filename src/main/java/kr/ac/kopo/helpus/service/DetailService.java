@@ -12,5 +12,7 @@ public interface DetailService {
 
 	Detail item(int coCode);
 
+	void update(Detail item);
+
 
 }

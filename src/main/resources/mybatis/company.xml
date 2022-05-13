@@ -51,7 +51,7 @@
 	
 	<update id="coPwUpdate">
 		UPDATE company
-		SET co_pw=#{coPw}
+		SET co_pw=PASSWORD(#{coPw})
 		WHERE co_code=#{coCode}
 	</update>
 </mapper>

@@ -6,4 +6,5 @@ public interface CokeyDao {
 
 	void add(CoKey coKey);
 
+
 }

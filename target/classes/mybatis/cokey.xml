@@ -3,5 +3,8 @@
 <mapper namespace="cokey">
 	<insert id="add">
 		INSERT INTO co_key VALUES (NULL,#{coCode},#{cateCode},#{keyCode})
+		ON DUPLICATE KEY UPDATE
+		cate_code=#{cateCode}
+		key_code=#{keyCode}
 	</insert>
 </mapper>

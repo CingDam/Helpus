@@ -27,8 +27,8 @@
 				</c:forEach>
 			</select>
 		</div>
-	<div>
-		<button id="submit">등록하기</button>
+	<div id="submit">
+		<button >등록하기</button>
 	</div>
 	</form>
 

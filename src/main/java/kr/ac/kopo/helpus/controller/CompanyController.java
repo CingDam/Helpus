@@ -162,4 +162,22 @@ public class CompanyController {
 		
 		return path + "detail_update";
 	}
+	@PostMapping("/coDetailUpdate")
+	public String detailUpdate(Detail item,HttpSession session,@RequestParam("keyCode") List<Integer> keyCode,int cateCode) {
+		
+		try {
+			Company co = (Company) session.getAttribute("company");
+			SetCoKey<CoKey> setCoKey = new SetCoKey<>();
+			List<CoKey> coKey = setCoKey.setCode(keyCode,cateCode,CoKey.class);
+			System.out.println(coKey);
+			item.setCoKey(coKey);
+			item.setCoCode(co.getCoCode());
+			detailService.update(item);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("실패");
+		}
+		
+		return "redirect:..";
+	}
 }

@@ -12,5 +12,7 @@ public interface DetailDao {
 
 	Detail item(int coCode);
 
+	void update(Detail item);
+
 
 }

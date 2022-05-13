@@ -43,6 +43,19 @@ public class DetailServiceImpl implements DetailService {
 		return dao.item(coCode);
 	}
 
+	@Override
+	@Transactional
+	public void update(Detail item) {
+		dao.update(item);
+		if(item.getCoKey() != null) {
+			for(CoKey coKey : item.getCoKey()) {
+				coKey.setCoCode(item.getCoCode());
+				coKeyDao.add(coKey);
+			}
+		}
+		
+	}
+
 
 
 }
