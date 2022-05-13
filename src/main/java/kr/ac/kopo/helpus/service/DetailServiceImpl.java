@@ -43,12 +43,6 @@ public class DetailServiceImpl implements DetailService {
 		return dao.item(coCode);
 	}
 
-	@Override
-	public List<Integer> keyList(int coCode) {
-		
-		return dao.keyList(coCode);
-	}
-
 
 
 }

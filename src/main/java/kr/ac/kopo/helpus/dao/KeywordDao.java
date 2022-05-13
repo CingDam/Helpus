@@ -7,5 +7,7 @@ import kr.ac.kopo.helpus.model.Keyword;
 public interface KeywordDao {
 
 	List<Keyword> list(int cateCode);
+
+	List<Integer> keyList(int coCode);
 	
 }

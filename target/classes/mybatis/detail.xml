@@ -15,6 +15,7 @@
 		JOIN co_key ON co_key.co_code = detail.co_code
 		WHERE co_key.co_code = #{coCode}
 	</select>
+	
 	<resultMap type="Detail" id="DetailMap">
 		<id column="co_code" property="coCode"/>
 		<result column="detail_contents" property="detailContents"/>
@@ -31,9 +32,7 @@
 			<result column="key_code" property="keyCode"/>
 		</collection>
 	</resultMap>
-	<select id="keyList" resultType="Integer">
-		SELECT key_code FROM co_key WHERE co_code = #{coCode}
-	</select>
+	
 	<insert id="add">
 		INSERT INTO detail VALUES (#{coCode},#{detailContents},NOW())
 		<selectKey keyProperty="coCode" resultType="Integer" order="AFTER">

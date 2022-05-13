@@ -20,4 +20,10 @@ public class KeywordServiceImpl implements KeywordService {
 		return dao.list(cateCode);
 	}
 
+	@Override
+	public List<Integer> keyList(int coCode) {
+		
+		return dao.keyList(coCode);
+	}
+
 }

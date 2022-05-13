@@ -17,21 +17,23 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
 				<c:if test="${list.size() < 1}">
-					<td colspan="6">업체가 없습니다</td>
+					<tr>
+						<td colspan="6">업체가 없습니다</td>\
+					</tr>
 				</c:if>
 				<c:forEach var="item" items="${list }">
-					<td>${item.coName }</td>
-					<td>${item.keyName }</td>
-					<c:if test="${item.reviewScore == 0 }">
-						<td>0</td>
-					</c:if>
-					<c:if test="${item.reviewScore > 0 }">
-						<td>${item.reviewScore}</td>
-					</c:if>
+					<tr>
+						<td>${item.coName }</td>
+						<td>${item.keyName }</td>
+						<c:if test="${item.reviewScore == 0 }">
+							<td>0</td>
+						</c:if>
+						<c:if test="${item.reviewScore > 0 }">
+							<td>${item.reviewScore}</td>
+						</c:if>
+					</tr>
 				</c:forEach>
-			</tr>
 		</tbody>
 	</table>
 </body>
