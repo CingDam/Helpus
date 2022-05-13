@@ -8,4 +8,6 @@ public interface KeywordService {
 
 	List<Keyword> list(Keyword keyword);
 
+	List<Integer> keyList(int coCode);
+
 }

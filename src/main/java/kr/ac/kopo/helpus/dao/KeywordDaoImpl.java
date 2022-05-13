@@ -17,6 +17,12 @@ public class KeywordDaoImpl implements KeywordDao {
 	public List<Keyword> list(int cateCode) {
 		return sql.selectList("keyword.list",cateCode);
 	}
+
+	@Override
+	public List<Integer> keyList(int coCode) {
+		// TODO Auto-generated method stub
+		return sql.selectList("keyword.keyList",coCode);
+	}
 	
 	
 }

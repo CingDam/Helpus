@@ -120,7 +120,7 @@ public class CompanyController {
 		service.coPwUpdate(company);
 		
 		session.setAttribute("msg", "비밀번호 변경으로 인해 다시 로그인 해주세요");
-		return "redirect../";
+		return "redirect:../";
 	}
 	
 	@GetMapping("/detail_add")
@@ -156,10 +156,6 @@ public class CompanyController {
 		Company co = (Company) session.getAttribute("company");
 		List<Category> cateList = categoryService.list();
 		int coCode = co.getCoCode();
-		List<Integer> keyCode = detailService.keyList(coCode);
-		for(int keyNum : keyCode) {
-			System.out.println(keyNum);
-		}
 		Detail item = detailService.item(coCode);
 		model.addAttribute("item",item);
 		model.addAttribute("cateList",cateList);

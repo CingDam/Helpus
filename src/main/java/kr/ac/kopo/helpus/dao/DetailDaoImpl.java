@@ -30,10 +30,4 @@ public class DetailDaoImpl implements DetailDao {
 		return sql.selectOne("detail.item", coCode);
 	}
 
-	@Override
-	public List<Integer> keyList(int coCode) {
-		
-		return sql.selectList("detail.keyList",coCode);
-	}
-
 }

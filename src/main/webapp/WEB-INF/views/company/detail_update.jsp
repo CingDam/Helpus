@@ -7,9 +7,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="/js/jquery-3.6.0.min.js"></script>
-<script>
-	let keyNum = ${item.keyCode}
-</script>
 <script src="/js/detail_add.js"></script>
 </head>
 <body>

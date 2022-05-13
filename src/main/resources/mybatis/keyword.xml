@@ -5,4 +5,8 @@
 		SELECT * FROM keyword
 		WHERE cate_code = #{cateCode}
 	</select>
+	
+	<select id="keyList" resultType="Integer">
+		SELECT key_code FROM co_key WHERE co_code = #{coCode}
+	</select>
 </mapper>

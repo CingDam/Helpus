@@ -12,6 +12,5 @@ public interface DetailDao {
 
 	Detail item(int coCode);
 
-	List<Integer> keyList(int coCode);
 
 }
