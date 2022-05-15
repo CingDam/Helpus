@@ -15,11 +15,12 @@ public class CompanyServiceImpl implements CompanyService {
 
 	@Autowired
 	CompanyDao dao;
-	
+
 	@Override
 	public boolean login(Company company) {
 		Company item = dao.login(company);
-		  if(item != null) {
+		if (item != null) {
+			dao.login_day(item.getCoCode());
 			company.setCoCode(item.getCoCode());
 			company.setCoEmail(item.getCoEmail());
 			company.setCoName(item.getCoName());
@@ -28,7 +29,7 @@ public class CompanyServiceImpl implements CompanyService {
 			company.setCoPhone(item.getCoPhone());
 			company.setCoRegNum(item.getCoRegNum());
 			company.setCoPw(null);
-			  
+
 			return true;
 		} else
 			return false;
@@ -36,9 +37,9 @@ public class CompanyServiceImpl implements CompanyService {
 
 	@Override
 	public boolean checkId(String coId) {
-		if(dao.checkId(coId) == 0) 
+		if (dao.checkId(coId) == 0)
 			return true;
-		else 
+		else
 			return false;
 	}
 
@@ -69,7 +70,7 @@ public class CompanyServiceImpl implements CompanyService {
 
 	@Override
 	public boolean pwCheck(Company company) {
-		if(dao.pwCheck(company) == 1)
+		if (dao.pwCheck(company) == 1)
 			return true;
 		else
 			return false;
@@ -78,10 +79,7 @@ public class CompanyServiceImpl implements CompanyService {
 	@Override
 	public void coPwUpdate(Company company) {
 		dao.coPwUpdate(company);
-		
+
 	}
-
-
-
 
 }

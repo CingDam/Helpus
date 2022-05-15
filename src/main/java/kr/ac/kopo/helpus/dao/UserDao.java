@@ -4,10 +4,14 @@ import kr.ac.kopo.helpus.model.User;
 
 public interface UserDao {
 
-	int login(User user);
+	User login(User user);
 
 	int checkId(String userId);
 
 	void signup(User user);
+
+	void userUpdate(User user);
+
+	int pwCheck(User user);
 
 }

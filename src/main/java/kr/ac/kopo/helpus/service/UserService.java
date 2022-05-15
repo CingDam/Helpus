@@ -10,4 +10,8 @@ public interface UserService {
 
 	void signup(User user);
 
+	void userUpdate(User user);
+
+	boolean pwCheck(User user);
+
 }

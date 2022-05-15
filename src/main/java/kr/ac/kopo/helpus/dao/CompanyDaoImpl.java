@@ -75,4 +75,9 @@ public class CompanyDaoImpl implements CompanyDao {
 		
 	}
 
+	@Override
+	public void login_day(int coCode) {
+		sql.update("company.login_day", coCode);
+	}
+
 }

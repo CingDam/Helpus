@@ -11,7 +11,7 @@
 		<h1>비밀번호 확인</h1>
 		<form method="post">
 			<label>비밀번호:</label>
-			<input type="password" name="coPw">
+			<input type="password" name="userPw">
 			<button>확인</button>
 		</form>
 	</div>

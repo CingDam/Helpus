@@ -8,6 +8,12 @@
 		WHERE co_id=#{coId} AND co_pw=PASSWORD(#{coPw})
 	</select>
 	
+	<update id="login_day">
+		UPDATE company
+		SET co_login=NOW()
+		WHERE co_code=#{coCode}
+	</update>
+	
 	<select id="checkId" resultType="Integer">
 		SELECT COUNT(*)
 		FROM company

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +8,10 @@
 </head>
 <body>
 	<div>
-		<h1>비밀번호 확인</h1>
-		<form method="post">
-			<label>비밀번호:</label>
-			<input type="password" name="coPw">
-			<button>확인</button>
+		<h1>비밀번호 변경</h1>
+		<form method="post" action="userPwUpdate">
+			<label>비밀번호:</label> <input type="password" name="userPw">
+			<button>변경</button>
 		</form>
 	</div>
 </body>

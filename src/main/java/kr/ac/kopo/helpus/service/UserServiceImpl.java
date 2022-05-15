@@ -14,9 +14,18 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public boolean login(User user) {
-		if(dao.login(user) == 1) 
+		User item = dao.login(user);
+		
+		if(item != null) { 
+			user.setUserCode(item.getUserCode());
+			user.setUserName(item.getUserName());
+			user.setUserEmail(item.getUserEmail());
+			user.setUserAddress(item.getUserAddress());
+			user.setUserPhone(item.getUserPhone());
+			user.setUserProfile(item.getUserProfile());
+			
 			return true;
-		else
+		} else
 			return false;
 	}
 
@@ -31,6 +40,19 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void signup(User user) {
 		dao.signup(user);
+	}
+
+	@Override
+	public void userUpdate(User user) {
+		dao.userUpdate(user);
+	}
+
+	@Override
+	public boolean pwCheck(User user) {
+		if (dao.pwCheck(user) == 1)
+			return true;
+		else
+			return false;
 	}
 
 }

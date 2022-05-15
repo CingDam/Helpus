@@ -25,6 +25,7 @@ import kr.ac.kopo.helpus.service.CategoryService;
 import kr.ac.kopo.helpus.service.CompanyService;
 import kr.ac.kopo.helpus.service.DetailService;
 import kr.ac.kopo.helpus.service.KeywordService;
+import kr.ac.kopo.helpus.service.UserService;
 import kr.ac.kopo.helpus.util.SetCoKey;
 
 //@RestController (테스트 끝나면 주석처리 지울 것)
@@ -41,6 +42,8 @@ public class CompanyController {
 	CategoryService categoryService;
 	@Autowired
 	KeywordService keywordService;
+	@Autowired
+	UserService userService;
 	
 	//스케쥴 관리(사업자코드로 계약테이블에 조인해서 일정 뽑아오기)
 	@GetMapping("/get_sch")
@@ -72,11 +75,9 @@ public class CompanyController {
 	
 	@GetMapping("/coUpdate")
 	public String coUpdate(Model model, HttpSession session) {
-		Company company = (Company) session.getAttribute("company");
-		System.out.println(company.getCoCode());
-		System.out.println(company.getCoId());
-		
-		Company item = service.item(company.getCoCode());
+		Company item = (Company) session.getAttribute("company");
+		System.out.println(item.getCoCode());
+		System.out.println(item.getCoId());
 		
 		model.addAttribute("item", item);
 		
@@ -94,8 +95,8 @@ public class CompanyController {
 		return "redirect:./mypage";
 	}
 	
-	@GetMapping("/coPwUpdate")
-	public String coPwUpdate() {
+	@GetMapping("/pwCheck")
+	public String pwCheck() {
 		return path + "pwCheck";
 	}
 	
