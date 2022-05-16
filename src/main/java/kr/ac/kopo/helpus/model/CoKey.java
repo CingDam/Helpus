@@ -5,6 +5,8 @@ public class CoKey {
 	private int coCode;
 	private int cateCode;
 	private int keyCode;
+	private String keyName;
+	
 	public int getCoKeyCode() {
 		return coKeyCode;
 	}
@@ -28,6 +30,12 @@ public class CoKey {
 	}
 	public void setKeyCode(int keyCode) {
 		this.keyCode = keyCode;
+	}
+	public String getKeyName() {
+		return keyName;
+	}
+	public void setKeyName(String keyName) {
+		this.keyName = keyName;
 	}
 	
 	
