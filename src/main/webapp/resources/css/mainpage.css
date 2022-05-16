@@ -1,0 +1,159 @@
+.circle{
+	position : relative;
+	width:90px;
+	height:90px;
+	background: #C4C4C4;
+	border-radius: 45px;
+}
+.cate_list_box{
+	width: 750px;
+	height: 131px;
+}
+.cate_list_box > ul {
+	width : 750px;
+	display : inline-flex;
+	list-style: none;
+	margin : 90px 0 0 565px;
+	padding : 0;
+}
+.cate_list_box > li{
+	margin: 0 0 0 20px;
+}
+.cate_name{
+	padding : 15px 0 0 11.5px;
+	width: 67px;
+	height: 26px;
+	
+	font-family: Noto Sans KR;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 26px;
+	letter-spacing: 0em;
+	text-align: center;
+}
+
+.day_key{
+	position : relative;
+	display : inline-flex;
+	width : 1052px;
+	height : 412px;
+	margin : 150px 0 0 433px;
+}
+.day_key> .text_box {
+	width: 714px;
+	height: 591px;
+}
+.day_key> .text_box > .subhead {
+	
+	width: 365px;
+	height: 58px;
+	
+	text-decoration: underline;
+	text-underline-position : under;
+	font-family: Noto Sans KR;
+	font-size: 40px;
+	font-weight: 500;
+	line-height: 58px;
+	letter-spacing: 0em;
+	text-align: left;
+	margin : 62px 0 0 0;
+	
+}
+.day_key> .text_box  > .text {
+	
+	width: 320px;
+	height: 78px;
+	
+	margin : 45px 0 0 0;
+	
+	font-family: Noto Sans KR;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 26px;
+	letter-spacing: 0em;
+	text-align: left;
+	color: #555555;
+}
+
+
+.day_key >  .text_box  > .day_key_submit{
+	outline: none;
+	background: #000000;
+	border-radius: 30px;
+	width: 150px;
+	height: 50px;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 24px;
+	/* identical to box height, or 133% */
+
+
+	color: #FFFFFF;
+	
+	margin : 77px 0 0 0;
+}
+.day_key >  .text_box  > .day_key_submit:hover{
+
+	cursor: pointer;
+}
+.day_key> .img_box {
+	position : absolute;
+	width: 513px;
+	height: 412px;
+	left : 543px;
+}
+.day_key> .img_box > .subhead{
+	
+	width: 260px;
+	height: 46px;
+	
+	margin : 0 0 0 129px;
+	
+	font-family: Noto Sans KR;
+	font-size: 32px;
+	font-weight: 500;
+	line-height: 46px;
+	letter-spacing: 0em;
+	text-align: center;
+	
+}
+.day_key> .img_box > .img {
+	width: 513px;
+	height: 350px;
+	margin : 16px 0 0 0;
+	background: #C4C4C4;
+	border-radius: 30px;
+	
+	
+}
+.local_popul_service{
+	position : relative;
+	width: 1200px;
+	height: 406px;
+	margin: 157px 0 0 360px;
+	
+}
+.local_popul_service > p {
+	
+	width: 300px;
+	height : 46px;
+	margin : 0 0 0 460px;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 32px;
+	line-height: 46px;
+	text-align: center;
+	
+	color: #000000;
+
+}
+
+.local_popul_service > .contents {
+	display : inline-flex;
+	margin: 50px 0 0 0;
+}
