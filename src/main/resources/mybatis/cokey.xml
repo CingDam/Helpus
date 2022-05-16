@@ -2,6 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cokey">
 	<insert id="add">
-		INSERT INTO co_key VALUES (NULL,#{coCode},#{cateCode},#{keyCode})
+		INSERT INTO co_key (co_code,cate_code,key_code)
+		SELECT #{coCode},#{cateCode},#{keyCode} FROM DUAL
+		WHERE NOT EXISTS
+		(SELECT co_code,cate_code,key_code FROM co_key
+		WHERE co_code=#{coCode} AND cate_code=#{cateCode} AND key_code=#{keyCode})
 	</insert>
 </mapper>
