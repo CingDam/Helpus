@@ -20,6 +20,7 @@ import kr.ac.kopo.helpus.model.CoKey;
 import kr.ac.kopo.helpus.model.Coinqury;
 import kr.ac.kopo.helpus.model.Company;
 import kr.ac.kopo.helpus.model.Detail;
+import kr.ac.kopo.helpus.model.Keyword;
 import kr.ac.kopo.helpus.model.Schedule;
 import kr.ac.kopo.helpus.service.CategoryService;
 import kr.ac.kopo.helpus.service.CompanyService;
@@ -180,5 +181,12 @@ public class CompanyController {
 		}
 		
 		return "redirect:..";
+	}
+	
+	@GetMapping("/contract")
+	public String contract(Model Model) {
+		//Keyword keyword = keywordService.list(null);
+		
+		return "contract";
 	}
 }
