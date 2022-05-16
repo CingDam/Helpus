@@ -8,11 +8,15 @@ public class Contract {
 	private int coCode;
 	private int keyCode;
 	private String contractContents;
+	private String contractAddress;
+	private Date contractDay;
 	private Date contractSdate;
 	private Date contractEdate;
-	private Date contractDay;
+	private Date contractPayday;
 	private int contractPay;
 	private char contractState;
+	private String userName;
+	private String keyName;
 
 	public int getContractCode() {
 		return contractCode;
@@ -54,6 +58,14 @@ public class Contract {
 		this.contractContents = contractContents;
 	}
 
+	public String getContractAddress() {
+		return contractAddress;
+	}
+
+	public void setContractAddress(String contractAddress) {
+		this.contractAddress = contractAddress;
+	}
+
 	public Date getContractSdate() {
 		return contractSdate;
 	}
@@ -70,14 +82,6 @@ public class Contract {
 		this.contractEdate = contractEdate;
 	}
 
-	public Date getContractDay() {
-		return contractDay;
-	}
-
-	public void setContractDay(Date contractDay) {
-		this.contractDay = contractDay;
-	}
-
 	public char getContractState() {
 		return contractState;
 	}
@@ -92,6 +96,38 @@ public class Contract {
 
 	public void setContractPay(int contractPay) {
 		this.contractPay = contractPay;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getKeyName() {
+		return keyName;
+	}
+
+	public void setKeyName(String keyName) {
+		this.keyName = keyName;
+	}
+
+	public Date getContractDay() {
+		return contractDay;
+	}
+
+	public void setContractDay(Date contractDay) {
+		this.contractDay = contractDay;
+	}
+
+	public Date getContractPayday() {
+		return contractPayday;
+	}
+
+	public void setContractPayday(Date contractPayday) {
+		this.contractPayday = contractPayday;
 	}
 
 }

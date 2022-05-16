@@ -19,17 +19,19 @@ import kr.ac.kopo.helpus.model.Category;
 import kr.ac.kopo.helpus.model.CoKey;
 import kr.ac.kopo.helpus.model.Coinqury;
 import kr.ac.kopo.helpus.model.Company;
+import kr.ac.kopo.helpus.model.Contract;
 import kr.ac.kopo.helpus.model.Detail;
 import kr.ac.kopo.helpus.model.Keyword;
 import kr.ac.kopo.helpus.model.Schedule;
 import kr.ac.kopo.helpus.service.CategoryService;
+import kr.ac.kopo.helpus.service.CoKeyService;
 import kr.ac.kopo.helpus.service.CompanyService;
+import kr.ac.kopo.helpus.service.ContractService;
 import kr.ac.kopo.helpus.service.DetailService;
 import kr.ac.kopo.helpus.service.KeywordService;
 import kr.ac.kopo.helpus.service.UserService;
 import kr.ac.kopo.helpus.util.SetCoKey;
 
-//@RestController (테스트 끝나면 주석처리 지울 것)
 @Controller
 @RequestMapping("/company")
 public class CompanyController {
@@ -45,6 +47,8 @@ public class CompanyController {
 	KeywordService keywordService;
 	@Autowired
 	UserService userService;
+	@Autowired
+	CoKeyService cokeywordService;
 	
 	//스케쥴 관리(사업자코드로 계약테이블에 조인해서 일정 뽑아오기)
 	@GetMapping("/get_sch")
@@ -183,10 +187,4 @@ public class CompanyController {
 		return "redirect:..";
 	}
 	
-	@GetMapping("/contract")
-	public String contract(Model Model) {
-		//Keyword keyword = keywordService.list(null);
-		
-		return "contract";
-	}
 }
