@@ -59,7 +59,9 @@
 		</ul>
 	</div>
 	<div class="day_key swiper">
+		
 		<div class="swiper-wrapper">
+			
 			<div class="swiper-slide">
 				<div class="text_box">
 					<p class="subhead">오늘은 대청소 하는 날</p>
@@ -77,7 +79,7 @@
 			</div>
 			<div class="swiper-slide">
 				<div class="text_box">
-					<p class="subhead">여름 나기 전 필수</p>
+					<p class="subhead">오늘은 대청소 하는 날</p>
 					<p class="text">
 						침대는 주기적으로 청소청소 대청소 대청소<br>
 						매트리스에는 수많은 세균세균<br>
@@ -92,7 +94,7 @@
 			</div>
 			<div class="swiper-slide">
 				<div class="text_box">
-					<p class="subhead">빨래가 눅눅하다면?</p>
+					<p class="subhead">오늘은 대청소 하는 날</p>
 					<p class="text">
 						침대는 주기적으로 청소청소 대청소 대청소<br>
 						매트리스에는 수많은 세균세균<br>
@@ -110,16 +112,46 @@
 	</div>
 	<div class="local_popul_service">
 		<p>우리 지역 인기 서비스</p>
-		<div class="contents">
 			<ul>
 				<li>
-					<div class="content">
-						<p>클린앤클리어</p>
+					<div class="contents">
+						<div class="content"></div>
+						<div class="text_box">
+							<p class="subhead">클린앤클리어</p>
+							<p class="keyword">침대/메트릭스 청소</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="contents">
+						<div class="content"></div>
+						<div class="text_box">
+							<p class="subhead">클린앤클리어</p>
+							<p class="keyword">침대/메트릭스 청소</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="contents">
+						<div class="content"></div>
+						<div class="text_box">
+							<p class="subhead">클린앤클리어</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="contents">
+						<div class="content"></div>
+						<div class="text_box">
+							<p class="subhead">클린앤클리어</p>
+						</div>
 					</div>
 				</li>
 			</ul>
 		</div>
-	</div>
+		<div>
+			<img class = "banner_2" src="./image/banner_2.png">
+		</div>
 	
 	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/mainPage.js"></script>
