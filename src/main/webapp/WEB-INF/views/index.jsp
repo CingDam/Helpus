@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<jsp:include page="include/header.jsp"></jsp:include>
 <c:if test="${msg != null}">
 	<script>
 		window.onload = function(){
@@ -11,8 +12,8 @@
 		}
 	</script>
 </c:if>
-<jsp:include page="include/header.jsp"></jsp:include>
-<link rel="stylesheet" href="/css/mainpage.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="./css/mainpage.css">
 </head>
 <body>
 <jsp:include page="include/header_body.jsp"></jsp:include>
@@ -57,28 +58,70 @@
 			</li>
 		</ul>
 	</div>
-	<div class="day_key">
-		<div class="text_box">
-			<p class="subhead">오늘은 대청소 하는 날</p>
-			<p class="text">
-				침대는 주기적으로 청소청소 대청소 대청소<br>
-				매트리스에는 수많은 세균세균<br>
-				청소청소 미세먼지 진드기 청소청소
-			</p>
-			<button class="day_key_submit">신청하기</button>
+	<div class="day_key swiper">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<div class="text_box">
+					<p class="subhead">오늘은 대청소 하는 날</p>
+					<p class="text">
+						침대는 주기적으로 청소청소 대청소 대청소<br>
+						매트리스에는 수많은 세균세균<br>
+						청소청소 미세먼지 진드기 청소청소
+					</p>
+					<button class="day_key_submit">신청하기</button>
+				</div>
+				<div class="img_box">
+					<p class="subhead">침대/매트리스 청소</p>
+					<div class="img"></div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="text_box">
+					<p class="subhead">여름 나기 전 필수</p>
+					<p class="text">
+						침대는 주기적으로 청소청소 대청소 대청소<br>
+						매트리스에는 수많은 세균세균<br>
+						청소청소 미세먼지 진드기 청소청소
+					</p>
+					<button class="day_key_submit">신청하기</button>
+				</div>
+				<div class="img_box">
+					<p class="subhead">에어콘 청소</p>
+					<div class="img"></div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="text_box">
+					<p class="subhead">빨래가 눅눅하다면?</p>
+					<p class="text">
+						침대는 주기적으로 청소청소 대청소 대청소<br>
+						매트리스에는 수많은 세균세균<br>
+						청소청소 미세먼지 진드기 청소청소
+					</p>
+					<button class="day_key_submit">신청하기</button>
+				</div>
+				<div class="img_box">
+					<p class="subhead">세탁기 청소</p>
+					<div class="img"></div>
+				</div>
+			</div>
 		</div>
-		<div class="img_box">
-			<p class="subhead">침대/매트리스 청소</p>
-			<div class="img"></div>
-		</div>
+		<div class="swiper-pagination"></div>
 	</div>
 	<div class="local_popul_service">
 		<p>우리 지역 인기 서비스</p>
 		<div class="contents">
 			<ul>
-				<li></li>
+				<li>
+					<div class="content">
+						<p>클린앤클리어</p>
+					</div>
+				</li>
 			</ul>
 		</div>
 	</div>
+	
+	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./js/mainPage.js"></script>
 </body>
 </html>
