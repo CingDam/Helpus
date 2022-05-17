@@ -6,7 +6,7 @@
 <c:if test="${sessionScope.user == null && sessionScope.company == null}">
 		<div class = "header">
 			<div class="header_logo">
-				<p>HELPUS</p>
+				<img src="/image/logo.png">
 			</div>
 			<div class = "header_navi">
 				<a class="login" href="login">로그인</a>
