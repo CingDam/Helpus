@@ -19,5 +19,6 @@
 		<mapper resource="mybatis/cokey.xml"/>
 		<mapper resource="mybatis/cokeyword.xml"/>
 		<mapper resource="mybatis/contract.xml"/>
+		<mapper resource="mybatis/admin.xml"/>
 	</mappers>
 </configuration>
