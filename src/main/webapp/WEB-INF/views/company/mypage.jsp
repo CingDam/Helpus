@@ -18,6 +18,7 @@
 			<li><a href="coDetailUpdate">세부내용 업데이트</a></li>
 			<li><a href="/contract/add">계약서 작성</a></li>
 			<li><a href="/contract/list">계약서 목록</a></li>
+			<li><a href="/co_post">게시글 등록</a></li>
 		</ul>
 	</div>
 </body>

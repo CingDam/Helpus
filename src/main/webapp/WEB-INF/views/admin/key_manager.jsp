@@ -9,26 +9,26 @@
 </head>
 <body>
 	<div>
-		<h1>카테고리 관리</h1>
+		<h1>키워드 관리</h1>
+		<h3>카테고리:${cate.cateName}</h3>
 		<table border="1">
 			<thead>
 				<tr>
-					<th>카테고리 번호</th>
-					<th>카테고리 이름</th>
+					<th>키워드 번호</th>
+					<th>키워드 이름</th>
 					<th>관리</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="item" items="${cate}">
+				<c:forEach var="item" items="${key}">
 					<tr>
-						<td>${item.cateCode}</td>
-						<td><a href="key_manager/${item.cateCode}">${item.cateName}</a></td>
+						<td>${item.keyCode}</td>
+						<td>${item.keyName}</td>
 						<td><a href="#">수정</a><a href="#">삭제</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
-	<div><a href="cate_add">카테고리 추가</a></div>
 </body>
 </html>
