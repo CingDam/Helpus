@@ -187,4 +187,9 @@ public class CompanyController {
 		return "redirect:..";
 	}
 	
+	@GetMapping("/co_post")
+	public String co_post() {
+		return path + "co_post";
+	}
+	
 }

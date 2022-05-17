@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.ac.kopo.helpus.model.Category;
+import kr.ac.kopo.helpus.model.Keyword;
 import kr.ac.kopo.helpus.service.AdminService;
 import kr.ac.kopo.helpus.service.CategoryService;
 import kr.ac.kopo.helpus.service.KeywordService;
@@ -42,10 +43,27 @@ public class AdminController {
 	}
 	
 	@GetMapping("/key_manager/{cateCode}")
-	public String key_manager(@PathVariable int cateCode, Model model) {
+	public String key_manager(@PathVariable int cateCode, Model model, Keyword keyword) {
+		Category cate = cateService.item(cateCode);
+		model.addAttribute("cate", cate);
 		
+		keyword.setCateCode(cateCode);
+		List<Keyword> key = keyService.list(keyword);
+		model.addAttribute("key", key);
 		
 		return path + "key_manager";
+	}
+	
+	@GetMapping("/cate_add")
+	public String cate_add() {
+		return path + "cate_add";
+	}
+	
+	@PostMapping("/cate_add")
+	public String cate_add(Category category) {
+		cateService.add(category);
+		
+		return path + "cate_manager";
 	}
 	
 }

@@ -4,4 +4,13 @@
 	<select id="list" resultType="Category">
 		SELECT * FROM category
 	</select>
+	
+	<select id="item" resultType="Category">
+		SELECT * FROM category WHERE cate_code=#{cateCode}
+	</select>
+	
+	<insert id="add">
+		INSERT INTO category
+		VALUES (null, #{cateName})
+	</insert>
 </mapper>

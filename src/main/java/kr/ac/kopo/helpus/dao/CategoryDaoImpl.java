@@ -20,4 +20,14 @@ public class CategoryDaoImpl implements CategoryDao {
 		return sql.selectList("category.list");
 	}
 
+	@Override
+	public Category item(int cateCode) {
+		return sql.selectOne("category.item", cateCode);
+	}
+
+	@Override
+	public void add(Category category) {
+		sql.insert("category.add", category);
+	}
+
 }
