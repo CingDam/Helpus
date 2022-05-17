@@ -19,4 +19,14 @@ public class CategoryServiceImpl implements CategoryService {
 		return dao.list();
 	}
 
+	@Override
+	public Category item(int cateCode) {
+		return dao.item(cateCode);
+	}
+
+	@Override
+	public void add(Category category) {
+		dao.add(category);
+	}
+
 }

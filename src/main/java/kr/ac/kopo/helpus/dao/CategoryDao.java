@@ -8,4 +8,8 @@ public interface CategoryDao {
 
 	List<Category> list();
 
+	Category item(int cateCode);
+
+	void add(Category category);
+
 }

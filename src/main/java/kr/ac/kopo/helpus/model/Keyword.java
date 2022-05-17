@@ -4,6 +4,7 @@ public class Keyword {
 	private int keyCode;
 	private String keyName;
 	private int cateCode;
+	private String cateName;
 	
 	public int getKeyCode() {
 		return keyCode;
@@ -22,6 +23,12 @@ public class Keyword {
 	}
 	public void setCateCode(int cateCode) {
 		this.cateCode = cateCode;
+	}
+	public String getCateName() {
+		return cateName;
+	}
+	public void setCateName(String cateName) {
+		this.cateName = cateName;
 	}
 	
 	
