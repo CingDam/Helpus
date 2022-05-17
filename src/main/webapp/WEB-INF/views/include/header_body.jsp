@@ -16,10 +16,16 @@
 	</c:if>
 	
 	<c:if test="${sessionScope.user != null && sessionScope.company == null}">
-		<div>
-			<div>${sessionScope.user.userId}님</div>
-			<div><a href="logout">로그아웃</a></div>
-			<div><a href="/user/mypage">유저 마이페이지</a></div>	
+		<div class = "header">
+			<div>
+				<div class="header_logo">
+					<img src="/image/logo.png">
+				</div>
+				<div class = "header_navi">
+					<a href="logout">로그아웃</a>
+					<a href="/user/mypage">마이페이지</a>
+				</div>	
+			</div>
 		</div>
 	</c:if>
 	

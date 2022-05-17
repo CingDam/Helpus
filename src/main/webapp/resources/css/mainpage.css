@@ -73,10 +73,10 @@
 /*일일키워드 시작*/
 .day_key{
 	position : relative;
-	width : 1052px;
+	width : 1200px;
 	height: 412px;
 	top: 371px;
-	left : 0;
+	left : 100px;
 }
 .day_key>.swiper-wrapper >.swiper-slide{
 	display : inline-flex;
@@ -186,7 +186,7 @@
 /*지역인기 시작*/
 .local_popul_service{
 	position : relative;
-	width: 1200px;
+	width: 278px;
 	height: 406px;
 	
 	top : 719px;
@@ -214,17 +214,87 @@
 
 }
 
-.local_popul_service > .contents {
+.local_popul_service > ul {
+	list-style: none;
+	display: flex;
+	width : 1200px;
+}
+.local_popul_service > ul > li{	
+	width: 278px;
+	margin : 0 0 0 30px;
+}
+
+.local_popul_service > ul > li >.contents {
 	position : absolute;
 	display : inline-flex;
-	margin: 50px 0 0 0;
 	
-	list-style: none;
-}
-.contents > .content{
+	
+	top: 100px;
+	
 	width: 278px;
 	height: 350px;
+	
 	border-radius: 40px;
+	
+	box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.25);
+	
+}
+
+.local_popul_service > ul > li > .contents > .content{
+	position : absolute;
+	width: 278px;
+	height: 200px;
+	border-radius: 40px 40px 0 0;
 	background: #555555;
+	
+}
+.local_popul_service > ul > li > .contents > .text_box{
+	
+	position : absolute;
+	
+	width: 278px;
+	height: 150px;
+	border-radius: 0 0 40px 40px;
+	background: #ffffff;
+	
+	top : 200px;
+}
+.local_popul_service > ul > li > .contents >.text_box > .subhead {
+	
+	position : absolute;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+	
+	top : 20px;
+	left : 25px;
+}
+.local_popul_service > ul > li > .contents >.text_box > .keyword{
+	
+	position :absolute;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 23px;
+	text-align: left;
+	
+	top : 90px;
+	left : 25px;
+	
+	color: #000000;
+}
+
+.banner_2{
+	
+	position : absolute;
+	
+	height: 200px;
+	
+	top : 2478px;
 }
 /*지역인기 끝*/
