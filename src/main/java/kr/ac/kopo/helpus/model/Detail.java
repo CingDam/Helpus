@@ -9,6 +9,7 @@ public class Detail {
 	private Date detailRegDate;
 	private int cateCode;
 	private int keyCode;
+	private int datailView;
 	
 	private String coName;
 	private float reviewScore;
@@ -70,5 +71,11 @@ public class Detail {
 	}
 	public void setDetailRegDate(Date detailRegDate) {
 		this.detailRegDate = detailRegDate;
+	}
+	public int getDatailView() {
+		return datailView;
+	}
+	public void setDatailView(int datailView) {
+		this.datailView = datailView;
 	}
 }
