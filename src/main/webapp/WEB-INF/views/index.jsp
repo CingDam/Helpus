@@ -59,9 +59,7 @@
 		</ul>
 	</div>
 	<div class="day_key swiper">
-		
 		<div class="swiper-wrapper">
-			
 			<div class="swiper-slide">
 				<div class="text_box">
 					<p class="subhead">오늘은 대청소 하는 날</p>
@@ -74,7 +72,7 @@
 				</div>
 				<div class="img_box">
 					<p class="subhead">침대/매트리스 청소</p>
-					<div class="img"></div>
+					<div class="img_1"></div>
 				</div>
 			</div>
 			<div class="swiper-slide">
@@ -89,7 +87,7 @@
 				</div>
 				<div class="img_box">
 					<p class="subhead">에어콘 청소</p>
-					<div class="img"></div>
+					<div class="img_2"></div>
 				</div>
 			</div>
 			<div class="swiper-slide">
@@ -104,7 +102,7 @@
 				</div>
 				<div class="img_box">
 					<p class="subhead">세탁기 청소</p>
-					<div class="img"></div>
+					<div class="img_3"></div>
 				</div>
 			</div>
 		</div>
@@ -152,7 +150,48 @@
 		<div>
 			<img class = "banner_2" src="./image/banner_2.png">
 		</div>
-	
+		
+		<div class="useful_func swiper">
+				<div class="swiper-scrollbar"></div>
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="img_box">
+							<div class="img_1"></div>
+						</div>
+						<div class="text_box">
+							<p class="subhead">사업자 예약 관리</p>
+							<p class="text">
+								내가 언제 예약했는지 모르겠다면?<br>
+								여기로 가시면 다 있습니다
+							</p>
+							<button class="useful_func_submit">시작하기</button>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="img_box">
+							<div class="img_2"></div>
+						</div>
+						<div class="text_box">
+							<p class="subhead">리뷰 작성하러 가기</p>
+							<p class="text">
+								아직 리뷰를 작성 안하셨나요?<br>
+								여기로 가시면 다 있습니다
+							</p>
+							<button class="useful_func_submit">시작하기</button>
+						</div>
+					</div>
+				</div>
+		</div>
+		<div class="review_box">
+			<p>리뷰</p>
+			<div class="content_box">
+				<div class="img_box">
+					<img>
+				</div>
+				<div class="text_box">
+				</div>
+			</div>
+		</div>
 	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/mainPage.js"></script>
 </body>
