@@ -1,3 +1,4 @@
+/*카테고리 시작*/
 .circle{
 	position : relative;
 	width:90px;
@@ -32,18 +33,61 @@
 	text-align: center;
 }
 
+/*카테고리 끝*/
+/*스와이퍼 시작*/
+.swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+.swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic
+{
+	left: 4%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+.swiper-pagination{
+	top: 390px;
+    position: absolute;
+    text-align: left;
+    transition: .3s opacity;
+    transform: translate3d(0,0,0);
+    z-index: 10;
+}
+/*스와이퍼 끝*/
+/*일일키워드 시작*/
 .day_key{
 	position : relative;
-	display : inline-flex;
-	width : 1052px;
-	height : 412px;
-	margin : 150px 0 0 433px;
+	width : 1200px;
+	height: 412px;
+	top: 371px;
+	left : 100px;
 }
-.day_key> .text_box {
+.day_key>.swiper-wrapper >.swiper-slide{
+	display : inline-flex;
+}
+.day_key>.swiper-wrapper >.swiper-slide >.text_box {
 	width: 714px;
 	height: 591px;
 }
-.day_key> .text_box > .subhead {
+.day_key>.swiper-wrapper >.swiper-slide > .text_box > .subhead {
+	
+	position : absolute;
 	
 	width: 365px;
 	height: 58px;
@@ -58,8 +102,13 @@
 	text-align: left;
 	margin : 62px 0 0 0;
 	
+	left: 0px;
+	top : 0px;
+	
 }
-.day_key> .text_box  > .text {
+.day_key>.swiper-wrapper >.swiper-slide > .text_box  > .text {
+	
+	position : absolute;
 	
 	width: 320px;
 	height: 78px;
@@ -73,10 +122,15 @@
 	letter-spacing: 0em;
 	text-align: left;
 	color: #555555;
+	
+	left: 0px;
+	top : 165px;
 }
 
 
-.day_key >  .text_box  > .day_key_submit{
+.day_key>.swiper-wrapper >.swiper-slide >  .text_box  > .day_key_submit{
+	
+	position : absolute;
 	outline: none;
 	background: #000000;
 	border-radius: 30px;
@@ -88,24 +142,23 @@
 	font-weight: 500;
 	font-size: 18px;
 	line-height: 24px;
+	left: 0px;
+	top : 320px;
 	/* identical to box height, or 133% */
 
-
 	color: #FFFFFF;
-	
-	margin : 77px 0 0 0;
 }
-.day_key >  .text_box  > .day_key_submit:hover{
+.day_key> .swiper-wrapper >.swiper-slide >  .text_box  > .day_key_submit:hover{
 
 	cursor: pointer;
 }
-.day_key> .img_box {
+.day_key>.swiper-wrapper >.swiper-slide > .img_box {
 	position : absolute;
 	width: 513px;
 	height: 412px;
 	left : 543px;
 }
-.day_key> .img_box > .subhead{
+.day_key>.swiper-wrapper >.swiper-slide > .img_box > .subhead{
 	
 	width: 260px;
 	height: 46px;
@@ -120,7 +173,7 @@
 	text-align: center;
 	
 }
-.day_key> .img_box > .img {
+.day_key>.swiper-wrapper >.swiper-slide > .img_box > .img {
 	width: 513px;
 	height: 350px;
 	margin : 16px 0 0 0;
@@ -129,18 +182,23 @@
 	
 	
 }
+/*일일키워드 끝*/
+/*지역인기 시작*/
 .local_popul_service{
 	position : relative;
-	width: 1200px;
+	width: 278px;
 	height: 406px;
-	margin: 157px 0 0 360px;
+	
+	top : 719px;
+	left : 360px;
 	
 }
 .local_popul_service > p {
 	
+	position : absolute;
+	
 	width: 300px;
 	height : 46px;
-	margin : 0 0 0 460px;
 	
 	font-family: 'Noto Sans KR';
 	font-style: normal;
@@ -150,10 +208,93 @@
 	text-align: center;
 	
 	color: #000000;
+	
+	left :473px;
+
 
 }
 
-.local_popul_service > .contents {
+.local_popul_service > ul {
+	list-style: none;
+	display: flex;
+	width : 1200px;
+}
+.local_popul_service > ul > li{	
+	width: 278px;
+	margin : 0 0 0 30px;
+}
+
+.local_popul_service > ul > li >.contents {
+	position : absolute;
 	display : inline-flex;
-	margin: 50px 0 0 0;
+	
+	
+	top: 100px;
+	
+	width: 278px;
+	height: 350px;
+	
+	border-radius: 40px;
+	
+	box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.25);
+	
 }
+
+.local_popul_service > ul > li > .contents > .content{
+	position : absolute;
+	width: 278px;
+	height: 200px;
+	border-radius: 40px 40px 0 0;
+	background: #555555;
+	
+}
+.local_popul_service > ul > li > .contents > .text_box{
+	
+	position : absolute;
+	
+	width: 278px;
+	height: 150px;
+	border-radius: 0 0 40px 40px;
+	background: #ffffff;
+	
+	top : 200px;
+}
+.local_popul_service > ul > li > .contents >.text_box > .subhead {
+	
+	position : absolute;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+	
+	top : 20px;
+	left : 25px;
+}
+.local_popul_service > ul > li > .contents >.text_box > .keyword{
+	
+	position :absolute;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 23px;
+	text-align: left;
+	
+	top : 90px;
+	left : 25px;
+	
+	color: #000000;
+}
+
+.banner_2{
+	
+	position : absolute;
+	
+	height: 200px;
+	
+	top : 2478px;
+}
+/*지역인기 끝*/
