@@ -541,4 +541,18 @@ body{
 	
 	color: #000000;
 }
+.review_box > .content_box {
+	
+	height: 500px;
+	
+}
+.content {
+	position : absolute;
+	
+	width: 330px; height: 450px;
+	
+	box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.25);
+	
+	
+}
 /*인기 리뷰 끝*/
