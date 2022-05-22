@@ -1,6 +1,11 @@
+body{
+	width : 100vw;
+	margin: 0; padding: 0;
+}
+
 /*배너 시작*/
 .banner{
-	
+	position : absolute;
 	width: 1920px;
 	height: 470px;
 	
@@ -78,8 +83,10 @@
 	border-radius: 45px;
 }
 .cate_list_box{
-	width: 750px;
-	height: 131px;
+	position: absolute;
+    width: 750px;
+    height: 131px;
+    top: 560px;
 }
 .cate_list_box > ul {
 	width : 750px;
@@ -159,11 +166,11 @@
 /*스와이퍼 끝*/
 /*일일키워드 시작*/
 .day_key{
-	position : relative;
-	width : 1200px;
-	height: 412px;
-	top: 371px;
-	left : 100px;
+	position: relative;
+    width: 1200px;
+    height: 412px;
+    top: 841px;
+    left: 100px;
 }
 .day_key>.swiper-wrapper >.swiper-slide{
 	display : inline-flex;
@@ -288,12 +295,12 @@
 /*일일키워드 끝*/
 /*지역인기 시작*/
 .local_popul_service{
-	position : relative;
-	width: 278px;
-	height: 406px;
+	position: relative;
 	
-	top : 719px;
-	left : 360px;
+    width: 278px; height: 406px;
+    
+    top: 940px;
+    left: 360px;
 	
 }
 .local_popul_service > p {
@@ -399,17 +406,17 @@
 	
 	height: 200px;
 	
-	top : 2478px;
+	top : 2150px;
 }
 /*배너2 끝*/
 
 /*바로가기*/
 .useful_func{
-	position : relative;
+	position : absolute;
 	width : 1200px;
 	height: 412px;
-	top: 371px;
-	left : 100px;
+	top: 2500px;
+	left : 360px;
 }
 .useful_func>.swiper-wrapper >.swiper-slide{
 	display : inline-flex;
@@ -514,11 +521,14 @@
 
 /*인기 리뷰*/
 .review_box{
-	position: relative;
+	position: absolute;
 	
-	top : 562px;
+	top : 3000px;
 }
 .review_box > p {
+	
+	width: 59px; height: 46px;
+	
 	position: absolute;
 	
 	left : 920px;

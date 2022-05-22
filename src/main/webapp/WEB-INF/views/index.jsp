@@ -185,10 +185,13 @@
 		<div class="review_box">
 			<p>리뷰</p>
 			<div class="content_box">
-				<div class="img_box">
-					<img>
-				</div>
-				<div class="text_box">
+				<div class="content">
+					<div class="img_box">
+						<img>
+					</div>
+					<div class="text_box">
+						
+					</div>
 				</div>
 			</div>
 		</div>
