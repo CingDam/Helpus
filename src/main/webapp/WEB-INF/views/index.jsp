@@ -1,19 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <jsp:include page="include/header.jsp"></jsp:include>
-<c:if test="${msg != null}">
+<c:if test="${!empty msg}">
 	<script>
-		window.onload = function(){
-			alert("${msg}")
-		}
+		$(function(){
+			var msg = "<c:out value='${msg}'/>";
+			alert(msg);
+		});
 	</script>
 </c:if>
 <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
 <link rel="stylesheet" href="./css/mainpage.css">
+
 </head>
 <body>
 <jsp:include page="include/header_body.jsp"></jsp:include>

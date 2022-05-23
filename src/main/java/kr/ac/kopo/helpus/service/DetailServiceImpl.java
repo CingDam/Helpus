@@ -8,7 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import kr.ac.kopo.helpus.dao.CokeyDao;
 import kr.ac.kopo.helpus.dao.DetailDao;
+import kr.ac.kopo.helpus.dao.DetailImageDao;
 import kr.ac.kopo.helpus.model.CoKey;
+import kr.ac.kopo.helpus.model.DetailImage;
 import kr.ac.kopo.helpus.model.Detail;
 
 @Service
@@ -18,6 +20,8 @@ public class DetailServiceImpl implements DetailService {
 	DetailDao dao;
 	@Autowired
 	CokeyDao coKeyDao;
+	@Autowired
+	DetailImageDao detailImageDao;
 
 	@Override
 	public List<Detail> search(String keyword) {
@@ -34,6 +38,13 @@ public class DetailServiceImpl implements DetailService {
 			for(CoKey coKey : item.getCoKey()) {
 				coKey.setCoCode(item.getCoCode());
 				coKeyDao.add(coKey);
+			}
+		}
+		
+		if(item.getImages() != null) {
+			for(DetailImage image : item.getImages()) {
+				image.setCoCode(item.getCoCode());
+				detailImageDao.add(image);
 			}
 		}
 	}

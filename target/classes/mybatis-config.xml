@@ -14,6 +14,7 @@
 		<mapper resource="mybatis/user.xml"/>
 		<mapper resource="mybatis/company.xml"/>
 		<mapper resource="mybatis/detail.xml"/>
+		<mapper resource="mybatis/detail_image.xml"/>
 		<mapper resource="mybatis/category.xml"/>
 		<mapper resource="mybatis/keyword.xml"/>
 		<mapper resource="mybatis/cokey.xml"/>
