@@ -33,3 +33,11 @@ let swiper_useful = new Swiper('.useful_func',{
   observer: true,
   observeParents: true,
 })
+
+let swiper_review = new Swiper('.content_box',{
+		slidesPerView: 5,
+		zoom: true,
+        observer: true,
+        observeParents: true,
+        spaceBetween : 76,
+})
