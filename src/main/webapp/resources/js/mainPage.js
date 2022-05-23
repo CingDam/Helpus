@@ -10,11 +10,6 @@ let swiper = new Swiper('.day_key',{
 	autoplay: {
     delay: 3000,
   },
-  on: {
-        resize: function () {
-          swiper.changeDirection(getDirection());
-        },
-      },
   observer: true,
   observeParents: true,
 })
