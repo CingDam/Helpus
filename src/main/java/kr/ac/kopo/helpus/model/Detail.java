@@ -15,8 +15,8 @@ public class Detail {
 	private float reviewScore;
 	private String keyName;
 
-	
 	private List<CoKey> coKey;
+	private List<DetailImage> images;
 	
 	public int getCateCode() {
 		return cateCode;
@@ -77,5 +77,11 @@ public class Detail {
 	}
 	public void setDatailView(int datailView) {
 		this.datailView = datailView;
+	}
+	public List<DetailImage> getImages() {
+		return images;
+	}
+	public void setImages(List<DetailImage> images) {
+		this.images = images;
 	}
 }

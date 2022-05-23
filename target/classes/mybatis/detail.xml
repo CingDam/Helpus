@@ -31,10 +31,17 @@
 			<result column="cate_code" property="cateCode"/>
 			<result column="key_code" property="keyCode"/>
 		</collection>
+		
+		<collection column="co_code" property="images" ofType="DetailImage" javaType="ArrayList">
+			<id column="image_code" property="imageCode"></id>
+			<result column="co_code" property="coCode"/>
+			<result column="uuid" property="uuid"/>
+			<result column="filename" property="filename"/>
+		</collection>
 	</resultMap>
 	
 	<insert id="add">
-		INSERT INTO detail VALUES (#{coCode},#{detailContents},NOW())
+		INSERT INTO detail VALUES (#{coCode},#{detailContents},NOW(), default)
 		<selectKey keyProperty="coCode" resultType="Integer" order="AFTER">
   			SELECT co_code FROM detail WHERE co_code=#{coCode}
   		</selectKey>

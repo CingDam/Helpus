@@ -5,11 +5,13 @@
 <html>
 <head>
 <jsp:include page="include/header.jsp"></jsp:include>
-<c:if test="${msg != null}">
+<c:if test="${!empty msg}">
 	<script>
-		window.onload = function() {
-			alert("${msg}")
-		}
+		$(function(){
+			var msg = "<c:out value='${msg}'/>";
+			alert(msg);
+		});
+
 	</script>
 </c:if>
 <link rel="stylesheet"
