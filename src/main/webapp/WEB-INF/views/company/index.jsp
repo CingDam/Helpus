@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -14,21 +13,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <!-- Icons -->
-  <link rel="stylesheet" href="../assets/fonts/boxicons.css" />
+  <link rel="stylesheet" href="fonts/boxicons.css" />
   <script src="https://kit.fontawesome.com/0c375d6c23.js" crossorigin="anonymous"></script>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="../assets/css/core.css" class="template-customizer-core-css" />
-  <link rel="stylesheet" href="../assets/css/theme-default.css" class="template-customizer-theme-css" />
-  <link rel="stylesheet" href="../assets/css/demo.css" />
+  <link rel="stylesheet" href="css/core.css" class="template-customizer-core-css" />
+  <link rel="stylesheet" href="css/theme-default.css" class="template-customizer-theme-css" />
+  <link rel="stylesheet" href="css/demo.css" />
 
   <!-- JS -->
-  <script src="../assets/js/helpers.js"></script>
+  <script src="js/helpers.js"></script>
 
   <!-- Fullcalendar -->
-  <link href='../assets/lib/main.css' rel='stylesheet' />
-  <script src='../assets/lib/main.js'></script>
-  <script src='../assets/lib/ko.js'></script>
+  <link href='lib/calMain.css' rel='stylesheet' />
+  <script src='lib/calMain.js'></script>
+  <script src='lib/calKO.js'></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -63,7 +62,7 @@
       <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo">
           <a href="index.html" class="app-brand-link">
-            <span class="app-brand-text demo menu-text fw-bolder ms-2"><img src="../assets/img/logo.png"></span>
+            <span class="app-brand-text demo menu-text fw-bolder ms-2"><img src="img/logo.png"></span>
           </a>
         </div>        
 
@@ -209,14 +208,14 @@
               <!-- User -->
               <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                  <img src="../assets/img/avatar.png" alt class="w-px-40 h-auto rounded-circle" />
+                  <img src="img/avatar.png" alt class="w-px-40 h-auto rounded-circle" />
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                   <li>
                     <a class="dropdown-item" href="#">
                       <div class="d-flex">
                         <div class="flex-shrink-0 me-3">
-                          <img src="../assets/img/avatar.png" alt class="w-px-40 h-auto rounded-circle" />
+                          <img src="img/avatar.png" alt class="w-px-40 h-auto rounded-circle" />
                         </div>
                         <div class="flex-grow-1">
                           <small class="text-muted">대전 동구</small>
@@ -310,7 +309,7 @@
   <!-- Footer -->
   <div class="footer"> 
     <div>
-      <img src="../assets/img/logo.png">
+      <img src="img/logo.png">
       <div>
         대전광역시 동구 가양동 우암로 352-21 <br>
         BRN. 000-00-00000 <br><br>
@@ -339,10 +338,11 @@
   <!-- /Footer -->
 
   <!-- Core JS -->
-  <script src="../assets/js/bootstrap.js"></script>
-  <script src="../assets/js/menu.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/menu.js"></script>
 
   <!-- Main JS -->
-  <script src="../assets/js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
+    
