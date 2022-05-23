@@ -9,8 +9,8 @@
 				<img src="/img/logo.png">
 			</div>
 			<div class = "header_navi">
-				<a class="login" href="login">로그인</a>
-				<a class="signup" href="signup">회원가입</a>
+				<p class="login" id="login_put">로그인</p>
+				<p class="signup" id="signup_put">회원가입</p>
 			</div>	
 		</div>
 	</c:if>

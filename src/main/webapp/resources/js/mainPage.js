@@ -36,7 +36,14 @@ let swiper_useful = new Swiper('.useful_func',{
 
 let swiper_review = new Swiper('.content_box',{
 		slidesPerView: 5,
-		zoom: true,
+		centeredSlidesBounds: true,
+		centeredSlides: true,
+		grabCursor : true,
+    	loop : true,
+    	speed : 950,
+    	autoplay: {
+    		delay: 2500,
+  		},
         observer: true,
         observeParents: true,
         spaceBetween : 76,
