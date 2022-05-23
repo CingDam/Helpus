@@ -14,11 +14,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import kr.ac.kopo.helpus.model.Category;
 import kr.ac.kopo.helpus.model.CoKey;
 import kr.ac.kopo.helpus.model.Coinqury;
 import kr.ac.kopo.helpus.model.Company;
+import kr.ac.kopo.helpus.model.DetailImage;
 import kr.ac.kopo.helpus.model.Contract;
 import kr.ac.kopo.helpus.model.Detail;
 import kr.ac.kopo.helpus.model.Keyword;
@@ -31,6 +33,7 @@ import kr.ac.kopo.helpus.service.DetailService;
 import kr.ac.kopo.helpus.service.KeywordService;
 import kr.ac.kopo.helpus.service.UserService;
 import kr.ac.kopo.helpus.util.SetCoKey;
+import kr.ac.kopo.helpus.util.Uploader;
 
 @Controller
 @RequestMapping("/company")
@@ -139,24 +142,29 @@ public class CompanyController {
 		return path + "detail_add";
 	}
 	@PostMapping("/detail_add")
-	public String detailAdd(Detail item,HttpSession session,@RequestParam("keyCode") List<Integer> keyCode,int cateCode)  {
+	public String detailAdd(Detail item,HttpSession session,@RequestParam("keyCode") List<Integer> keyCode,int cateCode,@RequestParam("detailImage") List<MultipartFile> detailImage)  {
+		
+		Company co = (Company) session.getAttribute("company");
 		
 		try {
-			Company co = (Company) session.getAttribute("company");
 			SetCoKey<CoKey> setCoKey = new SetCoKey<>();
 			List<CoKey> coKey = setCoKey.setCode(keyCode,cateCode,CoKey.class);
 			System.out.println(coKey);
 			item.setCoKey(coKey);
 			item.setCoCode(co.getCoCode());
+			//사진업로드
+			Uploader<DetailImage> uploader = new Uploader<>();
+			List<DetailImage> images = uploader.makeList(detailImage, DetailImage.class);
+			item.setImages(images);
+			
 			detailService.add(item);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
-		
-		
+		}		
 		
 		return "redirect:..";
 	}
+	
 	@GetMapping("/coDetailUpdate")
 	public String detailUpdate(HttpSession session,Model model) {
 		Company co = (Company) session.getAttribute("company");

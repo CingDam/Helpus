@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="detail_image">
+  	
+  	<insert id="add">
+  		INSERT INTO detail_image VALUES 
+  		(NULL,#{coCode},#{uuid},#{filename})
+  	</insert>
+  	
+  	<delete id="delete">
+  		DELETE FROM detail_image
+  		WHERE image_code=#{imageCode}
+  	</delete>
+  </mapper>
