@@ -121,15 +121,17 @@ public class RootController {
 	
 	@PostMapping("/signup/{code}")
 	//@ResponseBody
-	public String signup(@PathVariable int code, User user, Company company) {
+	public String signup(@PathVariable int code, User user, Company company, HttpSession session) {
 		if(code == 0) {
 				userService.signup(user);
 				
+				session.setAttribute("msg", user.getUserId() + "님 회원가입을 축하드립니다");
 				return "OK";
 			} 
 		if(code == 1) {
 				companyService.signup(company);
 				
+				session.setAttribute("msg", company.getCoId() + "님 회원가입을 축하드립니다");
 				return "OK";
 		} else {
 			return "ERROR";

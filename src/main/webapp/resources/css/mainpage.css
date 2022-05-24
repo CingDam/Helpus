@@ -1,3 +1,4 @@
+
 body{
 	width : 100vw;
 	margin: 0; padding: 0;
@@ -73,6 +74,15 @@ body{
 	
 	color: #CCCCCC;
 }
+.fa-solid, .fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 32px;
+    position: absolute;
+    top: 333px;
+    left: 1210px;
+    cursor: pointer;
+}
 /*배너 끝*/
 /*카테고리 시작*/
 .circle{
@@ -95,7 +105,7 @@ body{
 	margin : 90px 0 0 585px;
 	padding : 0;
 }
-.cate_list_box > li{
+.cate_list_box >ul> li{
 	margin: 0 0 0 20px;
 }
 .cate_name{
@@ -110,7 +120,10 @@ body{
 	letter-spacing: 0em;
 	text-align: center;
 }
-
+.swiper-slide-active > .content{
+	transition : 0.3s;
+	transform: scale(1.2);
+}
 /*카테고리 끝*/
 /*스와이퍼 시작*/
 .swiper-slide {
@@ -162,6 +175,9 @@ body{
     transition: .3s opacity;
     transform: translate3d(0,0,0);
     z-index: 10;
+}
+.swiper-zoom-container {
+	text-align: left
 }
 /*스와이퍼 끝*/
 /*일일키워드 시작*/
@@ -523,6 +539,8 @@ body{
 .review_box{
 	position: absolute;
 	
+	width: 1920px; height: 723px;
+	
 	top : 3000px;
 }
 .review_box > p {
@@ -543,16 +561,60 @@ body{
 }
 .review_box > .content_box {
 	
-	height: 500px;
+	display : inline-flex;
+	width : 1920px;
+	height: 700px;
 	
 }
-.content {
-	position : absolute;
+.review_box > .content_box > .swiper-wrapper{
+	position: absolute;
+	
+	left : 0;
+	top : 150px;
+}
+.review_box > .content_box > .swiper-wrapper > .swiper-slide{
+	width: 330px; height: 450px;
+	text-align: left;
+}
+.review_box > .content_box > .swiper-wrapper > .swiper-slide > .content {
 	
 	width: 330px; height: 450px;
 	
 	box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.25);
+}
+.review_box > .content_box > .swiper-wrapper > .swiper-slide > .content > .img_box > img {
 	
+	position : absolute;
+	
+	width: 300px;
+	height: 255px;
+	
+	top : 12px; left : 12px;
+	
+	background-color: #C4C4C4;
+}
+.review_box > .content_box > .swiper-wrapper > .swiper-slide > .content > .text_box {
+	
+	position : absolute;
+	
+	width: 264px;
+	
+	top : 298px; left : 28px;
+
+}
+.review_box > .content_box > .swiper-wrapper > .swiper-slide > .content > .text_box > .name {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 20px;
+}
+.review_box > .content_box > .swiper-wrapper > .swiper-slide > .content > .text_box > .text {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 26px;
 	
 }
 /*인기 리뷰 끝*/
