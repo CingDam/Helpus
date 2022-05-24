@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.ac.kopo.helpus.model.Company;
@@ -79,32 +80,27 @@ public class RootController {
 		return "login";
 	}
 	
-	//@ResponseBody	
-	@PostMapping("/login/{code}")
-	public String login(@PathVariable int code, User user, Company company, HttpSession session) {
-		if(code == 0) {
-			if (userService.login(user)) {
-				user.setUserPw(null);
-				
-				session.setAttribute("user", user);
-				//return "OK";
-				return "redirect:..";
-			}
-			
-			return "FAIL";
-			
-		} else if(code == 1) {
+	@ResponseBody	
+	@PostMapping("/login/company")
+	public String loginCo(@RequestBody Company company, HttpSession session) {
 			if(companyService.login(company)) {
 				company.setCoPw(null);
-				
 				session.setAttribute("company", company);
-				//return "OK";
-				return "redirect:..";
+				return "OK";
+				}
+				return "FAIL";
+	} 
+	
+	@ResponseBody	
+	@PostMapping("/login/user")
+	public String loginUser(@RequestBody User user, HttpSession session) {
+		
+			if(userService.login(user)) {
+				user.setUserPw(null);
+				session.setAttribute("user", user);
+				return "OK";
 			}
 			return "FAIL";
-		} else
-			return "FAIL";
-
 	}
 	
 	@GetMapping("/logout")

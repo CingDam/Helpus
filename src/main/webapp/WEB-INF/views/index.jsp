@@ -18,7 +18,8 @@
 	href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 <link rel="stylesheet" href="./css/mainpage.css">
 <script src="https://kit.fontawesome.com/fecf148447.js" crossorigin="anonymous"></script>
-<script src="./js/modal.js"></script>
+<script src="./js/modal/login.js"></script>
+<script src="./js/modal/signup.js"></script>
 </head>
 <body>
 	<jsp:include page="include/header_body.jsp"></jsp:include>
@@ -246,6 +247,7 @@
 		</div>
 	</div>
 	<jsp:include page="include/modal/login.jsp"/>
+	<jsp:include page="include/modal/signup.jsp"/>
 	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 	<script src="./js/mainPage.js"></script>
 </body>
