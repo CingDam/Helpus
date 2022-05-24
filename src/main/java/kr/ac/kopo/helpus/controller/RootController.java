@@ -93,7 +93,7 @@ public class RootController {
 	
 	@ResponseBody	
 	@PostMapping("/login/user")
-	public String loginUser(@PathVariable int code, @RequestBody User user, HttpSession session) {
+	public String loginUser(@RequestBody User user, HttpSession session) {
 		
 			if(userService.login(user)) {
 				user.setUserPw(null);
