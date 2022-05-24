@@ -15,4 +15,9 @@
   		DELETE FROM detail_image
   		WHERE image_code=#{imageCode}
   	</delete>
+  	
+  	<select id="list" resultType="DetailImage">
+  		SELECT * FROM detail_image WHERE co_code=#{coCode}
+  	</select>
+  	
   </mapper>

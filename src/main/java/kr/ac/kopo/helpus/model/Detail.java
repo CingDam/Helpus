@@ -10,6 +10,7 @@ public class Detail {
 	private int cateCode;
 	private int keyCode;
 	private int datailView;
+	private String detailShorts;
 	
 	private String coName;
 	private float reviewScore;
@@ -83,5 +84,11 @@ public class Detail {
 	}
 	public void setImages(List<DetailImage> images) {
 		this.images = images;
+	}
+	public String getDetailShorts() {
+		return detailShorts;
+	}
+	public void setDetailShorts(String detailShorts) {
+		this.detailShorts = detailShorts;
 	}
 }
