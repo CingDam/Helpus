@@ -65,6 +65,23 @@ public class DetailServiceImpl implements DetailService {
 			}
 		}
 		
+		if(item.getImages() != null) {
+			for(DetailImage image : item.getImages()) {
+				image.setCoCode(item.getCoCode());
+				detailImageDao.add(image);
+			}
+		}
+		
+	}
+
+	@Override
+	public List<DetailImage> imageList(int coCode) {
+		return detailImageDao.list(coCode);
+	}
+
+	@Override
+	public void detailImage_delete(int image_code) {
+		detailImageDao.delete(image_code);
 	}
 
 
