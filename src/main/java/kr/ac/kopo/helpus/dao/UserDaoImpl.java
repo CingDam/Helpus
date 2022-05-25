@@ -1,5 +1,7 @@
 package kr.ac.kopo.helpus.dao;
 
+import java.util.HashMap;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -36,6 +38,16 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public int pwCheck(User user) {
 		return sql.selectOne("user.pwCheck", user);
+	}
+
+	@Override
+	public void setAuthKey(HashMap<String, String> map) {
+		sql.update("user.setAuthKey", map);
+	}
+
+	@Override
+	public void emailCheck(HashMap<String, String> map) {
+		sql.update("user.emailCheck", map);
 	}
 
 }

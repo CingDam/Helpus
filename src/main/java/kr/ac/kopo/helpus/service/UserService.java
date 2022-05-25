@@ -1,5 +1,7 @@
 package kr.ac.kopo.helpus.service;
 
+import java.util.HashMap;
+
 import kr.ac.kopo.helpus.model.User;
 
 public interface UserService {
@@ -13,5 +15,9 @@ public interface UserService {
 	void userUpdate(User user);
 
 	boolean pwCheck(User user);
+
+	void setAuthKey(HashMap<String, String> map);
+
+	void emailCheck(HashMap<String, String> map);
 
 }
