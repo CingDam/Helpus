@@ -9,20 +9,30 @@ $(function(){
 		console.log('눌림')
 		closeLoginModal();
 	})
-	$('.login_modal > .division > .co_btn').on('click',function(){
-		$('.login_modal >  .division > .user_btn').css({
+	
+	$(document).mouseup(function (e){
+			
+			const target = $('#modal_login')
+		
+            if(target.has(e.target).length==0) {
+                closeLoginModal();
+            } 
+       });
+	
+	$('.login_modal > .login_box > .division > .co_btn').on('click',function(){
+		$('.login_modal >  .login_box > .division > .user_btn').css({
 			"background-color" : "#2E407B",
 			"box-shadow": "inset 1px 1px 15px rgba(0, 0, 0, 0.25)"
 		})
-		$('.login_modal > .division > .user_btn > p').css({
+		$('.login_modal > .login_box >.division > .user_btn > p').css({
 			"color":"#fff"
 		})
 		
-		$('.login_modal >  .division > .co_btn').css({
+		$('.login_modal > .login_box >.division > .co_btn').css({
 			"background-color" : "#fff",
 			"box-shadow": "none"
 		})
-		$('.login_modal >  .division > .co_btn > p').css({
+		$('.login_modal > .login_box >.division > .co_btn > p').css({
 			"color":"black"
 		})
 		
@@ -30,28 +40,28 @@ $(function(){
 		
 	})
 	
-	$('.login_modal >  .division > .user_btn').on('click',function(){
+	$('.login_modal >  .login_box > .division > .user_btn').on('click',function(){
 
-		$('.login_modal >  .division > .user_btn').css({
+		$('.login_modal > .login_box > .division > .user_btn').css({
 			"background-color" : "#fff",
 			"box-shadow": "none"
 		})
-		$('.login_modal >  .division > .user_btn > p').css({
+		$('.login_modal > .login_box > .division > .user_btn > p').css({
 			"color":"black"
 		})
 		
-		$('.login_modal >  .division > .co_btn').css({
+		$('.login_modal > .login_box > .division > .co_btn').css({
 			"background-color" : "#2E407B",
 			"box-shadow": "inset 1px 1px 15px rgba(0, 0, 0, 0.25)"
 		})
-		$('.login_modal >  .division > .co_btn > p').css({
+		$('.login_modal > .login_box > .division > .co_btn > p').css({
 			"color":"#fff"
 		})
 		
 		user_val=0;
 	})
 	
-	$('.login_modal > .button_box > button').click(function(){
+	$('#login_submit').click(function(){
 		if($('.id_input > input').val() != "" && $('.pw_input > input').val() != ""){
 			
 			let item = null;
@@ -69,9 +79,18 @@ $(function(){
 			$('.id_input > input').focus();
 		}
 	})
-	$('.login_modal > .option_box > p:nth-child(5)').click(function(){
+	$('.login_modal > .login_box > .option_box > #signin').click(function(){
 		$('#modal_login').hide()
 		$('#modal_signup').show()
+	})
+	
+	$('.login_modal > .login_box > .option_box > #findid').click(function(){
+		$('.login_box').hide()
+		findidShow()
+	})
+	$('.login_modal > .login_box > .option_box > #findpw').click(function(){
+		$('.login_box').hide()
+		$('.findpw_box').show()
 	})
 })
 
@@ -112,7 +131,7 @@ function login_ajax(item){
 					data : JSON.stringify(item),
 					success : result => {
 						if(result == 'OK'){
-							location.reload();
+							location.href='company/';
 						}
 						if(result == 'FAIL'){
 							$('.pw_input > input').val("");
@@ -130,6 +149,17 @@ function openLoginModal(){
 
 function closeLoginModal(){
 	$('#modal_login').css("display","none")
+	$('.login_box').show()
+	$('.findid_box').hide()
+	$('.findpw_box').hide()
+	user_val=0;
+}
+function findidShow(){
+	$('.login_modal').css({
+		"height" : '515px',
+		"transition" : '1s'
+	})
+	$('.findid_box').delay(500).fadeIn()
 }
 
 

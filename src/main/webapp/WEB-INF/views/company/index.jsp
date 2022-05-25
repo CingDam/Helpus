@@ -13,21 +13,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <!-- Icons -->
-  <link rel="stylesheet" href="fonts/boxicons.css" />
+  <link rel="stylesheet" href="../fonts/boxicons.css" />
   <script src="https://kit.fontawesome.com/0c375d6c23.js" crossorigin="anonymous"></script>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/core.css" class="template-customizer-core-css" />
-  <link rel="stylesheet" href="css/theme-default.css" class="template-customizer-theme-css" />
-  <link rel="stylesheet" href="css/demo.css" />
+  <link rel="stylesheet" href="../css/core.css" class="template-customizer-core-css" />
+  <link rel="stylesheet" href="../css/theme-default.css" class="template-customizer-theme-css" />
+  <link rel="stylesheet" href="../css/demo.css" />
 
   <!-- JS -->
-  <script src="js/helpers.js"></script>
+  <script src="../js/helpers.js"></script>
 
   <!-- Fullcalendar -->
-  <link href='lib/calMain.css' rel='stylesheet' />
-  <script src='lib/calMain.js'></script>
-  <script src='lib/calKO.js'></script>
+  <link href='../lib/calMain.css' rel='stylesheet' />
+  <script src='../lib/calMain.js'></script>
+  <script src='../lib/calKO.js'></script>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -61,8 +61,8 @@
       <!-- Menu -->
       <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo">
-          <a href="index.html" class="app-brand-link">
-            <span class="app-brand-text demo menu-text fw-bolder ms-2"><img src="img/logo.png"></span>
+          <a href="/company/" class="app-brand-link">
+            <span class="app-brand-text demo menu-text fw-bolder ms-2"><img src="../img/logo.png"></span>
           </a>
         </div>        
 
@@ -309,7 +309,7 @@
   <!-- Footer -->
   <div class="footer"> 
     <div>
-      <img src="img/logo.png">
+      <img src="../img/logo.png">
       <div>
         대전광역시 동구 가양동 우암로 352-21 <br>
         BRN. 000-00-00000 <br><br>
@@ -338,11 +338,11 @@
   <!-- /Footer -->
 
   <!-- Core JS -->
-  <script src="js/bootstrap.js"></script>
-  <script src="js/menu.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <script src="../js/menu.js"></script>
 
   <!-- Main JS -->
-  <script src="js/main.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>
     
