@@ -41,14 +41,14 @@
 	</resultMap>
 	
 	<insert id="add">
-		INSERT INTO detail VALUES (#{coCode},#{detailContents},NOW(), default)
+		INSERT INTO detail VALUES (#{coCode},#{detailContents},NOW(), default, #{detailShorts})
 		<selectKey keyProperty="coCode" resultType="Integer" order="AFTER">
   			SELECT co_code FROM detail WHERE co_code=#{coCode}
   		</selectKey>
 	</insert>
 	
 	<update id="update">
-		UPDATE detail SET detail_contents = #{detailContetns}
+		UPDATE detail SET detail_contents = #{detailContents}
 		WHERE co_code = #{coCode}
 	</update>
 </mapper>

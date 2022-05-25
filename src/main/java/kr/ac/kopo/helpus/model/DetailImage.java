@@ -7,6 +7,7 @@ public class DetailImage implements UploadFile {
 	private String filename;
 	private String uuid;
 	private int coCode;
+	private String filePath;
 
 	public String getFilename() {
 		return filename;
@@ -38,6 +39,14 @@ public class DetailImage implements UploadFile {
 
 	public void setImageCode(int imageCode) {
 		this.imageCode = imageCode;
+	}
+
+	public String getFilePath() {
+		return filePath;
+	}
+
+	public void setFilePath(String filePath) {
+		this.filePath = filePath;
 	}
 
 }

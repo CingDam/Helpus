@@ -22,7 +22,7 @@
 	
 	<insert id="signup">
 		INSERT INTO company
-		VALUES (null,#{coId},PASSWORD(#{coPw}),#{coName},#{coEmail},#{coPhone},#{coRegNum},#{coAddress},1,NOW(),null)
+		VALUES (null,#{coId},PASSWORD(#{coPw}),#{coName},#{coEmail},#{coPhone},#{coRegNum},#{coAddress},1,NOW(),null,#{coProfile})
 	</insert>
 	
 	<select id="getSch" resultType="Schedule">
@@ -45,7 +45,7 @@
 	
 	<update id="coUpdate">
 		UPDATE company
-		SET co_name=#{coName}, co_email=#{coEmail}, co_phone=#{coPhone}, co_address=#{coAddress}
+		SET co_name=#{coName}, co_email=#{coEmail}, co_phone=#{coPhone}, co_address=#{coAddress}, co_profile=#{coProfile}
 		WHERE co_code=#{coCode}
 	</update>
 	

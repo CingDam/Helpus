@@ -2152,7 +2152,7 @@ progress {
   padding-top: calc(0.4375rem + 1px);
   padding-bottom: calc(0.4375rem + 1px);
   margin-bottom: 0;
-  font-size: inherit;
+  font-size: 14px !important;
   font-weight: 500;
   line-height: 1.53;
   color: #566a7f;
@@ -3932,7 +3932,8 @@ textarea.form-control-lg {
 .card-img,
 .card-img-top,
 .card-img-bottom {
-  width: 100%;
+  width: 185px;
+  height: 185px;
 }
 
 .card-img,
@@ -4195,7 +4196,7 @@ textarea.form-control-lg {
 
 .badge {
   display: inline-block;
-  padding: 0.52em 0.593em;
+  padding: 0.75em 0.875em;
   font-size: 0.8125em;
   font-weight: 500;
   line-height: 1;
@@ -6223,12 +6224,14 @@ a.invert-bg-dark:hover, a.invert-bg-dark:focus {
   }
 }
 .table th {
+  background-color: #2E407B;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
   letter-spacing: 1px;
 }
 .table:not(.table-dark) th {
-  color: #566a7f;
+  color: #ffffff;
 }
 
 .table-border-bottom-0 tr:last-child td,
@@ -6301,28 +6304,24 @@ label.btn {
 }
 
 .btn-secondary {
-  color: #fff;
-  background-color: #8592a3;
-  border-color: #8592a3;
+  color: #788393;
+  background-color: #f5f5f9;;
   box-shadow: 0 0.125rem 0.25rem 0 rgba(133, 146, 163, 0.4);
 }
 .btn-secondary:hover {
-  color: #fff;
-  background-color: #788393;
-  border-color: #788393;
+  color: #788393;
+  background-color: #f5f5f9;;
   transform: translateY(-1px);
 }
 .btn-check:focus + .btn-secondary, .btn-secondary:focus, .btn-secondary.focus {
-  color: #fff;
-  background-color: #788393;
-  border-color: #788393;
+  color: #788393;
+  background-color: #f5f5f9;;
   transform: translateY(0);
   box-shadow: none;
 }
 .btn-check:checked + .btn-secondary, .btn-check:active + .btn-secondary, .btn-secondary:active, .btn-secondary.active, .show > .btn-secondary.dropdown-toggle {
-  color: #fff;
-  background-color: #717c8b;
-  border-color: #717c8b;
+  color: #788393;
+  background-color: #f5f5f9;;
 }
 .btn-check:checked + .btn-secondary:focus, .btn-check:active + .btn-secondary:focus, .btn-secondary:active:focus, .btn-secondary.active:focus, .show > .btn-secondary.dropdown-toggle:focus {
   box-shadow: none;
@@ -6333,7 +6332,7 @@ label.btn {
 
 .btn-outline-secondary {
   color: #8592a3;
-  border-color: #8592a3;
+  border-color: #ccc;
   background: transparent;
 }
 .btn-outline-secondary:hover {
@@ -16641,6 +16640,10 @@ html:not(.layout-footer-fixed) .content-wrapper {
 }
 
 /* ICON */
+.menu .app-brand.demo {
+  height: 60px;
+  margin-top: 20px;
+}
 .fa-calendar-check {
   font-size: 1.25rem;
   margin-left: 0.125rem;
@@ -16662,6 +16665,16 @@ html:not(.layout-footer-fixed) .content-wrapper {
   font-size: 1.25rem;
   margin-top: 0.313rem;
   margin-right: 0.5rem;  
+}
+.bx-task {
+  padding: 0px 5px;
+}
+.bx-camera {
+  font-size: 30px;
+  color: #fff;
+}
+.fa-star {
+  font-size: 10px;
 }
 
 /* FOOTER */
@@ -16690,4 +16703,61 @@ html:not(.layout-footer-fixed) .content-wrapper {
 }
 .footer > div > div {
   padding: 5px 0;
+}
+
+/* 일정관리 */
+.schedule {
+  margin: 1rem 1.5rem;
+}
+.schedule > div:last-child {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+.bx-dots-vertical-rounded {
+  margin-right: 10px;
+}
+
+/* 고객관리 */
+caption { 
+  caption-side: top;
+  text-align: right;
+  margin-right: 10px;
+}
+.long > td:nth-child(4) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+  padding-right: 50px;
+}
+.long > td:nth-child(5) {
+  width: 140px;
+}
+.long > td:last-child {
+  width: 190px;
+}
+.long > td:last-child > button:first-child {
+  margin-right: 10px;
+}
+.wait {
+  font-size: 20px !important;
+  text-align: center;  
+}
+
+/* 서비스관리 */
+.profile {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px !important;
+}
+#change {
+  width: 45px;
+  height: 40px;
+  border-radius: 20px 0px;
+  background-color: #2E407B;
+  position: absolute;
+  top: 184px;
+  right: 64px;
+}
+#change > .bx-camera {
+  line-height: 40px;
 }

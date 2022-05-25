@@ -1,5 +1,7 @@
 package kr.ac.kopo.helpus.controller;
 
+import java.io.File;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,6 +36,7 @@ import kr.ac.kopo.helpus.service.DetailService;
 import kr.ac.kopo.helpus.service.KeywordService;
 import kr.ac.kopo.helpus.service.UserService;
 import kr.ac.kopo.helpus.util.SetCoKey;
+import kr.ac.kopo.helpus.util.UploadFile;
 import kr.ac.kopo.helpus.util.Uploader;
 
 @Controller
@@ -170,22 +174,27 @@ public class CompanyController {
 		Company co = (Company) session.getAttribute("company");
 		List<Category> cateList = categoryService.list();
 		int coCode = co.getCoCode();
+		List<DetailImage> images = detailService.imageList(coCode);
 		Detail item = detailService.item(coCode);
 		model.addAttribute("item",item);
 		model.addAttribute("cateList",cateList);
+		model.addAttribute("images", images);
 		
 		return path + "detail_update";
 	}
 	@PostMapping("/coDetailUpdate")
-	public String detailUpdate(Detail item,HttpSession session,@RequestParam("keyCode") List<Integer> keyCode,int cateCode) {
+	public String detailUpdate(Detail item,HttpSession session,@RequestParam("keyCode") List<Integer> keyCode,int cateCode,@RequestParam("detailImage") List<MultipartFile> detailImage) {
 		
 		try {
 			Company co = (Company) session.getAttribute("company");
 			SetCoKey<CoKey> setCoKey = new SetCoKey<>();
 			List<CoKey> coKey = setCoKey.setCode(keyCode,cateCode,CoKey.class);
-			System.out.println(coKey);
 			item.setCoKey(coKey);
 			item.setCoCode(co.getCoCode());
+			Uploader<DetailImage> uploader = new Uploader<>();
+			List<DetailImage> images = uploader.makeList(detailImage, DetailImage.class);
+			item.setImages(images);
+			
 			detailService.update(item);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -200,4 +209,18 @@ public class CompanyController {
 		return path + "co_post";
 	}
 	
+	@PostMapping("/detailImage_delete")
+	public String detailImage_delete(@RequestBody DetailImage image) {
+		detailService.detailImage_delete(image.getImageCode());
+		
+		try {
+			File file = new File("D:/upload/" + image.getFilePath());
+			
+			file.delete();
+		} catch (Exception e) {
+			System.out.println("파일 삭제 실패");
+		}
+		
+		return "OK";
+	}
 }
