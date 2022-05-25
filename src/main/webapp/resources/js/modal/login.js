@@ -151,7 +151,7 @@ function openLoginModal(){
 }
 
 function closeLoginModal(){
-	$('#modal_login').css("display","none")
+	$('#modal_login').fadeOut(200)
 	$('.login_box').show()
 	$('.findid_box').hide()
 	$('.findpw_box').hide()

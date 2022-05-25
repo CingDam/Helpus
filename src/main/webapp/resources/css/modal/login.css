@@ -311,9 +311,9 @@
 }
 .login_modal > .findid_box > .logo_box > img {
 	position : absolute;
-	width: 600px;
-    top: -140px;
-    left: -80px;
+	width: 250px;
+    top: 35px;
+    left: 105px;
 }
 .login_modal > .findid_box > .input_box {
 	position: absolute;

@@ -15,7 +15,7 @@ $(function(){
 			const target = $('#modal_signup')
 		
             if(target.has(e.target).length==0) {
-                target.hide();
+                target.fadeOut(200);
             } 
        });
 	
@@ -36,7 +36,7 @@ function openSignupModal(){
 
 function closeSingupModal(){
 	
-	$('#modal_signup').css("display","none")
+	$('#modal_signup').fadeOut(200)
 	$('.signup_modal > .division').show()
 	$('.user_input').hide();
 	$('.co_input').hide();
