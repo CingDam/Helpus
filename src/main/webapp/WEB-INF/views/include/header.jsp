@@ -4,4 +4,6 @@
 <meta charset="UTF-8">
 <title>Helpus</title>
 <link  rel="stylesheet" href="./css/header.css">
+<link  rel="stylesheet" href="./css/modal/login.css">
+<link  rel="stylesheet" href="./css/modal/signup.css">
 <script src="./js/jquery-3.6.0.min.js"></script>

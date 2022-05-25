@@ -1,0 +1,291 @@
+.modal_background_signup {
+		
+		display : none;
+		
+		position : fixed;
+	
+		z-index : 1;
+		
+		left : 0; top : 0;
+		
+		overflow : auto;
+		
+		width: 1920px; height: 100%;
+		
+		background-color: rgba(0,0,0,0.5);
+}
+
+.signup_modal {
+	
+	position : absolute;
+	
+	left : 710px; top : 390px;
+	
+	width: 450px; height: 300px;
+	background-color: #fff;
+	
+	box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.25);
+	
+	animation-name : modalopen;
+	animation-duration : 0.7s;
+}
+
+.signup_modal > .closeBtn {
+	
+	width : 40px; height : 40px;
+	position: absolute;
+	top:-25px;
+	right : -25px;
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 900;
+	font-size: 24px;
+	line-height: 35px;
+	text-align: center;
+	
+	background-color: #fff;
+	
+	border-radius: 40px;
+	
+	cursor : pointer;
+}
+.signup_modal > .division {
+	
+	position : absolute;
+	
+	top : 130px;
+	left : 60px;
+	
+	display: inline-flex;
+}
+
+.signup_modal > .division > .user_btn {
+	
+	
+	width: 125px; height: 125px;
+	
+	background: #2E407B;
+	border: 1px solid #2E407B;
+	border-radius: 20px;
+	
+	cursor : pointer;
+	
+}
+.signup_modal > .division > .co_btn {
+	width: 125px; height: 125px;
+	
+	margin : 0 0 0 80px;
+	
+	background: #2E407B;
+	border: 1px solid #2E407B;
+	border-radius: 20px;
+	
+	cursor : pointer;
+	
+}
+.signup_modal > .division > .user_btn > .fa-solid, .fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 50px;
+    position: absolute;
+    top: 20px;
+    left: 41px;
+    
+    color : #fff;
+}
+
+.signup_modal > .division > .user_btn > p {
+	
+	margin : 0; padding : 0;
+	
+	position: absolute;
+	
+	top:82px; left: 40px;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 23px;
+	text-align: center;
+	
+	color : #fff;
+}
+.signup_modal > .division > .co_btn > .fa-solid, .fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 50px;
+    position: absolute;
+    top: 20px;
+    left: 249px;
+    
+    color : #fff;
+}
+
+.signup_modal > .division > .co_btn > p {
+	
+	margin : 0; padding : 0;
+	
+	position: absolute;
+	
+	top:82px; left: 248px;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 23px;
+	text-align: center;
+	
+	color : #fff;
+}
+.signup_modal > div > .logo {
+	
+	width : 200px; height : 50px;
+	
+	position: absolute;
+	
+	top:30px; left: 125px;
+}
+.user_input {
+	display: none;
+}
+.user_input >.input_box{
+    position: absolute;
+
+    top:100px; left : 50px;
+}
+.user_input >.input_box > div > input {
+  width: 320px; height: 55px;
+  
+  border: none;
+  
+  padding : 0 0 0 30px;
+  
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  
+  font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 23px;
+}
+
+.user_input >.input_box > div > input:focus {
+	outline : none;
+}
+
+.user_input >.input_box > div > input:last-child{
+    margin: 20px 0 0 0 ;
+}
+.email {
+	margin: 20px 0 0 0 ;
+}
+.user_input > .input_box > div > .auth_button{
+	position: absolute;
+	width: 51px;
+	height: 32px;
+	
+	border : none;
+	
+	background: #2E407B;
+	border-radius: 5px;
+	
+	top: 481px;
+    left: 288px;
+    
+    font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 23px;
+	
+	color: #FFFFFF;
+
+}
+
+.user_input > .input_box > div > .auth_button:hover {
+	
+	cursor : pointer;
+	
+	color : black;
+	
+	border : 1px solid #2E407B;
+	
+	background-color: #fff;
+}
+.user_input > .button_box {
+	position : absolute;
+	top:750px; left : 46px;
+}
+
+.user_input > .button_box > button {
+	width: 355px; height: 50px;
+	
+	border:none;
+	
+	background: #2E407B;
+	border-radius: 10px;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 23px;
+	text-align: center;
+	
+	color: #FFFFFF;
+}
+.co_input {
+	display: none;
+}
+.co_input >.input_box{
+    position: absolute;
+
+    top:100px; left : 50px;
+}
+.co_input >.input_box > div > input {
+  width: 320px; height: 55px;
+  
+  border: none;
+  
+  padding : 0 0 0 30px;
+  
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  
+  font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 23px;
+}
+.co_input >.input_box > div > input:focus {
+	outline : none;
+}
+.co_input >.input_box > div > input:last-child{
+    margin: 20px 0 0 0 ;
+}
+.co_input > .button_box {
+	position : absolute;
+	top:750px; left : 46px;
+}
+
+.co_input > .button_box > button {
+	width: 355px; height: 50px;
+	
+	border:none;
+	
+	background: #2E407B;
+	border-radius: 10px;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 23px;
+	text-align: center;
+	
+	color: #FFFFFF;
+}

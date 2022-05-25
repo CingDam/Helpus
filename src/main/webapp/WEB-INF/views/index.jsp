@@ -17,7 +17,9 @@
 <link rel="stylesheet"
 	href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
 <link rel="stylesheet" href="./css/mainpage.css">
-
+<script src="https://kit.fontawesome.com/fecf148447.js" crossorigin="anonymous"></script>
+<script src="./js/modal/login.js"></script>
+<script src="./js/modal/signup.js"></script>
 </head>
 <body>
 	<jsp:include page="include/header_body.jsp"></jsp:include>
@@ -27,8 +29,8 @@
 			<p class="second_line">믿을 수 있는 당신 근처의 전문가</p>
 		</div>
 		<form method="post" action="/list">
-			<input class="search_bar" type="text" name="keyword"
-				placeholder="검색어를 입력하세요">
+			<input class="search_bar" type="text" name="keyword" placeholder="검색어를 입력하세요">
+			<i class="fa-solid fa-magnifying-glass"></i>
 		</form>
 	</div>
 	<div class="cate_list_box">
@@ -150,7 +152,7 @@
 		</ul>
 	</div>
 	<div>
-		<img class="banner_2" src="./image/banner_2.png">
+		<img class="banner_2" src="./img/banner_2.png">
 	</div>
 
 	<div class="useful_func swiper">
@@ -187,18 +189,18 @@
 		<div class="content_box swiper">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
-					<div class="content">
+					<div class="content swiper-zoom-container">
 						<div class="img_box">
 							<img>
 						</div>
-						<div class="text_box">
+						<div class="text_box ">
 							<p class="name">wpdnjs***</p>
 							<p class="text">청소 정말 잘해줘요</p>
 						</div>
 					</div>
 				</div>
 				<div class="swiper-slide">
-					<div class="content">
+					<div class="content swiper-zoom-container">
 						<div class="img_box">
 							<img>
 						</div>
@@ -209,7 +211,7 @@
 					</div>
 				</div>
 				<div class="swiper-slide">
-					<div class="content">
+					<div class="content swiper-zoom-container"  data-swiper-zoom="5">
 						<div class="img_box">
 							<img>
 						</div>
@@ -220,7 +222,7 @@
 					</div>
 				</div>
 				<div class="swiper-slide">
-					<div class="content">
+					<div class="content swiper-zoom-container">
 						<div class="img_box">
 							<img>
 						</div>
@@ -231,7 +233,7 @@
 					</div>
 				</div>
 				<div class="swiper-slide">
-					<div class="content">
+					<div class="content swiper-zoom-container">
 						<div class="img_box">
 							<img>
 						</div>
@@ -244,6 +246,8 @@
 			</div>
 		</div>
 	</div>
+	<jsp:include page="include/modal/login.jsp"/>
+	<jsp:include page="include/modal/signup.jsp"/>
 	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 	<script src="./js/mainPage.js"></script>
 </body>

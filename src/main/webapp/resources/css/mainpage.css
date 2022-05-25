@@ -74,6 +74,15 @@ body{
 	
 	color: #CCCCCC;
 }
+.banner > form > .fa-solid, .fas {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 24px;
+    position: absolute;
+    top: 337px;
+    left: 1210px;
+    cursor: pointer;
+}
 /*배너 끝*/
 /*카테고리 시작*/
 .circle{
@@ -111,7 +120,10 @@ body{
 	letter-spacing: 0em;
 	text-align: center;
 }
-
+.swiper-slide-active > .content{
+	transition : 0.3s;
+	transform: scale(1.2);
+}
 /*카테고리 끝*/
 /*스와이퍼 시작*/
 .swiper-slide {
@@ -163,6 +175,9 @@ body{
     transition: .3s opacity;
     transform: translate3d(0,0,0);
     z-index: 10;
+}
+.swiper-zoom-container {
+	text-align: left
 }
 /*스와이퍼 끝*/
 /*일일키워드 시작*/
@@ -555,7 +570,7 @@ body{
 	position: absolute;
 	
 	left : 0;
-	top : 121px;
+	top : 150px;
 }
 .review_box > .content_box > .swiper-wrapper > .swiper-slide{
 	width: 330px; height: 450px;
