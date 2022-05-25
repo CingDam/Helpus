@@ -8,6 +8,8 @@ public class User {
 	private String userPw;
 	private String userName;
 	private String userEmail;
+	private String authKey;
+	private char emailCheck;
 	private String userAddress;
 	private String userPhone;
 	private char userAuth;
@@ -101,5 +103,21 @@ public class User {
 
 	public void setUserProfile(String userProfile) {
 		this.userProfile = userProfile;
+	}
+
+	public String getAuthKey() {
+		return authKey;
+	}
+
+	public void setAuthKey(String authKey) {
+		this.authKey = authKey;
+	}
+
+	public char getEmailCheck() {
+		return emailCheck;
+	}
+
+	public void setEmailCheck(char emailCheck) {
+		this.emailCheck = emailCheck;
 	}
 }
