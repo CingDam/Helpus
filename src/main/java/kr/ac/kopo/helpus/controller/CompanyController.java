@@ -57,6 +57,11 @@ public class CompanyController {
 	@Autowired
 	CoKeyService cokeywordService;
 	
+	@GetMapping({"/","/list"})
+	public String index() {
+		return path+"index";
+	}
+	
 	//스케쥴 관리(사업자코드로 계약테이블에 조인해서 일정 뽑아오기)
 	@GetMapping("/get_sch")
 	public List<Schedule> schedule(HttpSession session){

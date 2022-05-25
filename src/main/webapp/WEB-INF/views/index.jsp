@@ -121,6 +121,30 @@
 					<div class="text_box">
 						<p class="subhead">클린앤클리어</p>
 						<p class="keyword">침대/메트릭스 청소</p>
+						<div class="star_box">
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+						</div>
+					</div>
+					
+				</div>
+			</li>
+			<li>
+				<div class="contents">
+					<div class="content"></div>
+					<div class="text_box">
+						<p class="subhead">클린앤클리어</p>
+						<p class="keyword">침대/메트릭스 청소</p>
+						<div class="star_box">
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+						</div>
 					</div>
 				</div>
 			</li>
@@ -130,6 +154,13 @@
 					<div class="text_box">
 						<p class="subhead">클린앤클리어</p>
 						<p class="keyword">침대/메트릭스 청소</p>
+						<div class="star_box">
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+						</div>
 					</div>
 				</div>
 			</li>
@@ -138,14 +169,14 @@
 					<div class="content"></div>
 					<div class="text_box">
 						<p class="subhead">클린앤클리어</p>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="contents">
-					<div class="content"></div>
-					<div class="text_box">
-						<p class="subhead">클린앤클리어</p>
+						<p class="keyword">침대/메트릭스 청소</p>
+						<div class="star_box">
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+						</div>
 					</div>
 				</div>
 			</li>
@@ -196,6 +227,13 @@
 						<div class="text_box ">
 							<p class="name">wpdnjs***</p>
 							<p class="text">청소 정말 잘해줘요</p>
+							<div class="star_box">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -207,6 +245,13 @@
 						<div class="text_box">
 							<p class="name">rodi***</p>
 							<p class="text">처음 사용해보는데 청소 정말 깔끔하게 해주고 친절하세요</p>
+							<div class="star_box">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -218,6 +263,13 @@
 						<div class="text_box">
 							<p class="name">dlshr***</p>
 							<p class="text">청소 깔끔하게 해주셔서 추천합니다</p>
+							<div class="star_box">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -228,6 +280,13 @@
 						</div>
 						<div class="text_box">
 							<p class="name">qorthd***</p>
+							<div class="star_box">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+							</div>
 							<p class="text">청소하시는 분들이 열심히 청소하시고 깔끔하게 해주세요</p>
 						</div>
 					</div>
@@ -240,6 +299,13 @@
 						<div class="text_box">
 							<p class="name">dbstkd***</p>
 							<p class="text">내집 처럼 열심히 해줘요</p>
+							<div class="star_box">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -248,6 +314,7 @@
 	</div>
 	<jsp:include page="include/modal/login.jsp"/>
 	<jsp:include page="include/modal/signup.jsp"/>
+	<jsp:include page="include/footer.jsp"/>
 	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 	<script src="./js/mainPage.js"></script>
 </body>

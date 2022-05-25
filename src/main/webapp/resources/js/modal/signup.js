@@ -10,6 +10,15 @@ $(function(){
 		closeSingupModal();
 	})
 	
+	 $(document).mouseup(function (e){
+			
+			const target = $('#modal_signup')
+		
+            if(target.has(e.target).length==0) {
+                target.hide();
+            } 
+       });
+	
 	$('#signup_user').click(function(){
 		userSignup(signup_user_val);
 	})
