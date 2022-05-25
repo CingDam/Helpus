@@ -40,9 +40,41 @@
 	            </div>
 	            <div>
 	                <input class="email" type="text" placeholder="이메일">
+	                <button class="auth_button">인증</button>
 	            </div>
 	            <div>
 	                <input class="auth" type="text" placeholder="인증번호">
+	            </div>
+	        </div>
+	        <div class="button_box">
+	        	<button>회원가입</button>
+	        </div>
+    	</div>
+    	<div class="co_input">
+	        <div class="input_box">
+	            <div>
+	                <input class="id" type="text" placeholder="아이디">
+	            </div>
+	            <div>
+	                <input class="pw" type="password" placeholder="비밀번호">
+	            </div>
+	            <div>
+	                <input class="pw_ck" type="password" placeholder="비밀번호 확인">
+	            </div>
+	            <div>
+	                <input class="name" type="text" placeholder="이름">
+	            </div>
+	            <div>
+	                <input class="address" type="text" placeholder="주소">
+	            </div>
+	            <div>
+	                <input class="phone" type="text" placeholder="전화번호">
+	            </div>
+	            <div>
+	                <input class="email" type="text" placeholder="이메일">
+	            </div>
+	            <div>
+	                <input class="co_auth" type="text" placeholder="사업자등록번호">
 	            </div>
 	        </div>
 	        <div class="button_box">
