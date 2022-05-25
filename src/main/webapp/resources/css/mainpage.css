@@ -18,7 +18,7 @@ body{
 	position: absolute;
 	width: 600px;
 	height: 60px;
-	left: 660px;
+	left: 630px;
 	top: 320px;
 	
 	background: #FFFFFF;
@@ -80,7 +80,7 @@ body{
     font-size: 24px;
     position: absolute;
     top: 337px;
-    left: 1210px;
+    left: 1180px;
     cursor: pointer;
 }
 /*배너 끝*/
@@ -102,7 +102,7 @@ body{
 	width : 750px;
 	display : inline-flex;
 	list-style: none;
-	margin : 90px 0 0 585px;
+	margin : 90px 0 0 565px;
 	padding : 0;
 }
 .cate_list_box >ul> li{
@@ -119,10 +119,6 @@ body{
 	line-height: 26px;
 	letter-spacing: 0em;
 	text-align: center;
-}
-.swiper-slide-active > .content{
-	transition : 0.3s;
-	transform: scale(1.2);
 }
 /*카테고리 끝*/
 /*스와이퍼 시작*/
@@ -178,6 +174,12 @@ body{
 }
 .swiper-zoom-container {
 	text-align: left
+}
+.swiper-slide-active > .content{
+	transition : 0.3s;
+	transform: scale(1.2);
+		
+	cursor : pointer;
 }
 /*스와이퍼 끝*/
 /*일일키워드 시작*/
@@ -316,7 +318,7 @@ body{
     width: 278px; height: 406px;
     
     top: 940px;
-    left: 360px;
+    left: 330px;
 	
 }
 .local_popul_service > p {
@@ -335,7 +337,7 @@ body{
 	
 	color: #000000;
 	
-	left :473px;
+	left :503px;
 
 
 }
@@ -354,8 +356,9 @@ body{
 	position : absolute;
 	display : inline-flex;
 	
+	cursor : pointer;
 	
-	top: 100px;
+	top: 150px;
 	
 	width: 278px;
 	height: 350px;
@@ -369,7 +372,7 @@ body{
 .local_popul_service > ul > li > .contents > .content{
 	position : absolute;
 	width: 278px;
-	height: 200px;
+	height: 230px;
 	border-radius: 40px 40px 0 0;
 	background: #C4C4C4;
 	
@@ -379,11 +382,15 @@ body{
 	position : absolute;
 	
 	width: 278px;
-	height: 150px;
+	height: 120px;
 	border-radius: 0 0 40px 40px;
 	background: #ffffff;
 	
-	top : 200px;
+	top : 230px;
+}
+
+.local_popul_service > ul > li > .contents > .text_box > p {
+	padding : 0; margin : 0;
 }
 .local_popul_service > ul > li > .contents >.text_box > .subhead {
 	
@@ -391,11 +398,11 @@ body{
 	
 	font-family: 'Noto Sans KR';
 	font-style: normal;
-	font-weight: 500;
-	font-size: 24px;
+	font-weight: 700;
+	font-size: 22px;
 	line-height: 29px;
 	
-	top : 20px;
+	top : 55px;
 	left : 25px;
 }
 .local_popul_service > ul > li > .contents >.text_box > .keyword{
@@ -404,15 +411,52 @@ body{
 	
 	font-family: 'Noto Sans KR';
 	font-style: normal;
-	font-weight: 500;
-	font-size: 16px;
+	font-weight: 300;
+	font-size: 14px;
 	line-height: 23px;
 	text-align: left;
 	
-	top : 90px;
+	top : 20px;
 	left : 25px;
 	
 	color: #000000;
+}
+.local_popul_service > ul > li > .contents >.text_box > .star_box{
+	
+	position: absolute;
+	top : 20px; left : 155px;
+	
+}
+.local_popul_service > ul > li > .contents >.text_box > .star_box >.fa-star {
+	font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 14px;
+	color : #C4C4C4;
+	left:-10px;
+}
+
+.local_popul_service > ul > li > .contents >.text_box > .star_box >.fa-star:nth-child(2) {
+	position : absolute;
+	top : 5px;
+	left: 19px;
+}
+
+.local_popul_service > ul > li > .contents >.text_box > .star_box >.fa-star:nth-child(3) {
+	position : absolute;
+	top : 5px;
+	left: 38px;
+}
+
+.local_popul_service > ul > li > .contents >.text_box > .star_box >.fa-star:nth-child(4) {
+	position : absolute;
+	top : 5px;
+	left: 57px;
+}
+
+.local_popul_service > ul > li > .contents >.text_box > .star_box >.fa-star:nth-child(5) {
+	position : absolute;
+	top : 5px;
+	left: 75px;
 }
 /*지역인기 끝*/
 /*배너2*/
@@ -616,5 +660,17 @@ body{
 	font-size: 18px;
 	line-height: 26px;
 	
+}
+.review_box > .content_box > .swiper-wrapper > .swiper-slide > .content > .text_box > .star_box{
+	
+	position: absolute;
+	top : 5px; left : 155px;
+	
+}
+.review_box > .content_box > .swiper-wrapper > .swiper-slide > .content > .text_box > .star_box >  .fa-solid, .fas {
+	font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 14px;
+	color : #C4C4C4;
 }
 /*인기 리뷰 끝*/

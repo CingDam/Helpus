@@ -7,11 +7,19 @@
 	height: 90px;
 	left: 360px;
 }
-.header_logo{
+.header_logo {
+	width : 146px; height : 38px;
+	cursor: pointer;
+}
+.header_logo > img{
+	
+	font-family : 'Noto Sans KR' !important;
 	position: absolute;
-	width: 146px;
-	height: 38px;
-	top : 26px;
+	width: 300px;
+	top : -95px;
+	
+	
+	
 }
 .header_navi{
 	

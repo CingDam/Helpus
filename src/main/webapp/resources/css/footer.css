@@ -1,0 +1,31 @@
+/* FOOTER */
+.footer {
+	position : absolute;
+  display: flex;
+  background: #232C51;
+  width : 100%;
+  height: calc(100%-230px);
+  
+  top : 3770px;
+}
+.footer > div {
+  color: #fff;
+  padding: 2.60%;
+}
+.footer > div:nth-child(1) {
+  margin-left: 210px;
+}
+.footer > div:nth-child(2) {
+  margin-left: 26.04%;
+}
+.footer > div > img {
+  margin-bottom: 20px;
+  filter: brightness(600%)
+}
+.footer > div > div:first-child {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.footer > div > div {
+  padding: 5px 0;
+}

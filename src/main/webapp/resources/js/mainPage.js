@@ -38,7 +38,6 @@ let swiper_review = new Swiper('.content_box',{
 		slidesPerView: 5,
 		centeredSlidesBounds: true,
 		centeredSlides: true,
-		grabCursor : true,
     	loop : true,
     	speed : 950,
     	autoplay: {
