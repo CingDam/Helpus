@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="room">
+	<sql id="search">
+		<where>
+			<if test="userId != null">
+				my_id = #{userId} OR user_id = #{userId}
+			</if>
+		</where>
+	</sql>
+
+	<insert id="add">
+		INSERT INTO room VALUES (NULL,#{userCode},#{coCode})
+	</insert>
+	
+	<select id="item" resultType="Room">
+		SELECT * FROM room WHERE room_code=#{roomCode}
+	</select>
+	<select id="list" resultType="Room">
+		SELECT * FROM room <include refid="search"></include>
+	</select>
+	
+	<select id="getRoom" resultType="Room">
+		SELECT room_code FROM room WHERE (user_id=#{userId} AND my_id=#{myId}) OR (user_id=#{myId} AND my_id=#{userId})
+	</select>
+</mapper>
