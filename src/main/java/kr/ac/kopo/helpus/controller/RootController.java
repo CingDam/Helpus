@@ -115,7 +115,7 @@ public class RootController {
 	public String logout(HttpSession session) {
 		
 		session.invalidate();
-		return "redirect:/";
+		return "index";
 	}
 	
 	@GetMapping("/signup")
@@ -167,6 +167,64 @@ public class RootController {
 		return "email";
 	}
 	
+	@ResponseBody
+	@PostMapping("/find_id_co")
+	public Company findCo(@RequestBody Company company) {
+		
+		Company item = companyService.findCo(company);
+		
+		return item;
+	}
+	@ResponseBody
+	@PostMapping("/find_id_user")
+	public User findUser(@RequestBody User user) {
+		
+		User item = userService.findUser(user);
+		
+		return item;
+	}
+	
+	@ResponseBody
+	@PostMapping("/find_pw_user")
+	public boolean findPwUser(@RequestBody User user) {
+		
+		if(userService.findPwUser(user)) {
+			return true;
+		}
+		
+		return false;
+	}
+	
+	@ResponseBody
+	@PostMapping("/find_pw_co")
+	public User findPwCo(@RequestBody Company company) {
+		
+		if(companyService.findPwCo(company)) {
+			
+			
+			
+			return true;
+		}
+		
+		return false;
+	}
+	
+	@ResponseBody
+	@PostMapping("/change_pw_user")
+	public String updatePwUser(@RequestBody User user) {
+		
+		userService.updatePwUser(user);
+		
+		return "OK";
+	}
+	@ResponseBody
+	@PostMapping("/change_pw_co")
+	public String updatePwCo(@RequestBody Company company) {
+		
+		companyService.updatePwCo(company);
+		
+		return "Ok";
+	}
 	
 	
 	

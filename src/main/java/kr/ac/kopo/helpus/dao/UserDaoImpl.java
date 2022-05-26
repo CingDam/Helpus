@@ -50,4 +50,23 @@ public class UserDaoImpl implements UserDao {
 		sql.update("user.emailCheck", map);
 	}
 
+	@Override
+	public User findUser(User user) {
+		
+		return sql.selectOne("user.findid_user", user);
+	}
+
+	@Override
+	public User findpwUser(User user) {
+
+		return sql.selectOne("user.findpw_user",user);
+
+	}
+
+	@Override
+	public void updatePw(User user) {
+		sql.update("user.update_pw",user);
+		
+	}
+
 }

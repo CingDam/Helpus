@@ -42,4 +42,22 @@
 		SET email_check=1
 		WHERE user_email=#{userEmail} AND auth_key=#{authKey}
 	</update>
+	
+	<select id="findid_user" resultType="User">
+		SELECT user_name,user_id
+		FROM user
+		WHERE user_name=#{userName} AND user_email=#{userEmail}
+	</select>
+	
+	<select id="findpw_user" resultType="User">
+		SELECT *
+		FROM user
+		WHERE user_id=#{userId} AND user_email=#{userEmail}
+	</select>
+	
+	<update id="update_pw">
+		UPDATE user
+		SET user_pw=PASSWORD(#{userPw})
+		WHERE user_email=#{userEmail}
+	</update>
 </mapper>

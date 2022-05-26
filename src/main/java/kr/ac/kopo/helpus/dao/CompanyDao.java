@@ -32,4 +32,8 @@ public interface CompanyDao {
 
 	void login_day(int coCode);
 
+	Company findCo(Company company);
+
+	Company findPwCo(Company company);
+
 }

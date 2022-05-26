@@ -5,6 +5,7 @@ import java.util.List;
 import kr.ac.kopo.helpus.model.Coinqury;
 import kr.ac.kopo.helpus.model.Company;
 import kr.ac.kopo.helpus.model.Schedule;
+import kr.ac.kopo.helpus.model.User;
 
 public interface CompanyService {
 
@@ -25,5 +26,11 @@ public interface CompanyService {
 	boolean pwCheck(Company company);
 
 	void coPwUpdate(Company company);
+
+	Company findCo(Company company);
+
+	boolean findPwCo(Company company);
+
+	void updatePwCo(Company company);
 
 }

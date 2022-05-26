@@ -57,23 +57,23 @@
 	
 	cursor : pointer;
 }
-.login_modal > .login_box > .closeBtn:hover {
+.login_modal > .closeBtn:hover {
 	cursor: pointer;
 }
-.login_modal > .login_box > .division {
+.login_modal > .division {
 	display : inline-flex;
 	width: 450px; height: 65px;
 }
 
-.login_modal > .login_box > .division > .user_btn {
+.login_modal > .division > .user_btn {
 	width: 225px;
 	
 	background-color: #fff;
 }
-.login_modal > .login_box > .division > .user_btn:hover {
+.login_modal > .division > .user_btn:hover {
 	cursor : pointer;
 }
-.login_modal > .login_box > .division > .user_btn > p {
+.login_modal > .division > .user_btn > p {
 	
 	margin : 0;
 	
@@ -88,7 +88,7 @@
 	text-align: center;
 	
 }
-.login_modal > .login_box > .division > .co_btn{
+.login_modal > .division > .co_btn{
 	width: 225px;
 	
 	background-color: #2E407B;
@@ -97,10 +97,10 @@
 	
 	
 }
-.login_modal > .login_box > .division > .co_btn:hover {
+.login_modal > .division > .co_btn:hover {
 	cursor : pointer;
 }
-.login_modal > .login_box > .division > .co_btn > p {
+.login_modal > .division > .co_btn > p {
 	
 	margin : 0;
 	
@@ -125,13 +125,12 @@
 	
 }
 
-.login_modal > .login_box > div > .logo {
+.login_modal > div > .logo {
 	
 	position : absolute;
-	
-	width: 200px; height: 50px;
-	
-	left: 125px; top : 130px;
+	width: 250px;
+    top: 35px;
+    left: 105px;
 	
 }
 .login_modal > .login_box > .input_box > .id_input > input {
@@ -244,77 +243,6 @@
 }
 /*로그인 모달 끝*/
 /*아이디 찾기*/
-.login_modal > .findid_box {
-	display : none;
-}
-.login_modal > .findid_box > .division {
-	display : inline-flex;
-	width: 450px; height: 65px;
-}
-
-.login_modal > .findid_box > .division > .findid_btn {
-	width: 225px;
-	
-	background-color: #fff;
-}
-.login_modal > .findid_box > .division > .findid_btn:hover {
-	cursor : pointer;
-}
-.login_modal > .findid_box > .division > .findid_btn > p {
-	
-	margin : 0;
-	
-	position: absolute;
-	top: 21px;
-    left: 74px;
-	
-	font-family: 'Noto Sans KR';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 23px;
-	text-align: center;
-	
-}
-.login_modal > .findid_box > .division > .findpw_btn{
-	width: 225px;
-	
-	background-color: #2E407B;
-	
-	box-shadow: inset 1px 1px 15px rgba(0, 0, 0, 0.25);
-	
-	
-}
-.login_modal > .findid_box > .division > .findpw_btn:hover {
-	cursor : pointer;
-}
-.login_modal > .findid_box > .division > .findpw_btn > p {
-	
-	margin : 0;
-	
-	position: absolute;
-	top: 21px;
-    right: 66px;
-	
-	font-family: 'Noto Sans KR';
-	font-style: normal;
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 23px;
-	text-align: center;
-	
-	color:#fff;
-}
-.login_modal > .findid_box > .logo_box{
-	width : 200px;
-	height : 50px;
-}
-.login_modal > .findid_box > .logo_box > img {
-	position : absolute;
-	width: 250px;
-    top: 35px;
-    left: 105px;
-}
 .login_modal > .findid_box > .input_box {
 	position: absolute;
 	
@@ -391,3 +319,208 @@
 	cursor: pointer;
 }
 /*아이디 찾기 끝*/
+/*비밀번호 찾기*/
+.login_modal > .findpw_box {
+	display : none;
+}
+
+.login_modal > .findpw_box > .input_box {
+	position: absolute;
+	
+	top : 225px;
+	left: 50px;
+	
+	
+}
+
+.login_modal > .findpw_box > .input_box > .id_input > input {
+	
+	padding : 0 0 0 30px;
+	
+	width : 320px; height : 55px;
+	
+	border : none;
+	
+	outline : none;
+	
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 23px;
+	
+}
+.login_modal > .findpw_box > .input_box > .email_input > input {
+	
+	margin : 30px 0 0 0;
+	
+	padding : 0 0 0 30px;
+	
+	width : 320px; height : 55px;
+	
+	border : none;
+	
+	outline : none;
+	
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 23px;
+}
+.login_modal > .findpw_box > .button_box {
+	position: absolute;
+	
+	top : 415px; left: 50px;
+
+}
+.login_modal > .findpw_box > .button_box > button {
+	width : 350px; height : 55px;
+	
+	background-color: #2E407B;
+	
+	border : none;
+	border-radius: 10px;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 23px;
+	text-align: center;
+	
+	color: #FFFFFF;
+}
+.login_modal > .findpw_box > .button_box > button:hover{
+	cursor: pointer;
+}
+/*비밀번호 찾기 끝*/
+/*아이디 찾음*/
+.login_modal > .find_id > .text_box {
+	position: absolute;
+	
+	width : 350px;
+	
+	top : 225px;
+	left: 50px;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 60px;
+	text-align: center;
+	
+	
+}
+.login_modal > .find_id > .button_box {
+	position: absolute;
+	
+	top : 415px; left: 50px;
+
+}
+.login_modal > .find_id > .button_box > button {
+	width : 350px; height : 55px;
+	
+	background-color: #2E407B;
+	
+	border : none;
+	border-radius: 10px;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 23px;
+	text-align: center;
+	
+	color: #FFFFFF;
+}
+.login_modal > .find_id > .button_box > button:hover{
+	cursor: pointer;
+}
+/*아이디 찾음*/
+/*비밀번호 변경*/
+.login_modal > .change_pw > .input_box {
+	position: absolute;
+	
+	top : 225px;
+	left: 50px;
+	
+	
+}
+
+.login_modal > .change_pw > .input_box > .pw_input > input {
+	
+	padding : 0 0 0 30px;
+	
+	width : 320px; height : 55px;
+	
+	border : none;
+	
+	outline : none;
+	
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 23px;
+	
+}
+.login_modal > .change_pw > .input_box > .pw_ck_input > input {
+	
+	margin : 30px 0 0 0;
+	
+	padding : 0 0 0 30px;
+	
+	width : 320px; height : 55px;
+	
+	border : none;
+	
+	outline : none;
+	
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 23px;
+}
+.login_modal > .change_pw > .button_box {
+	position: absolute;
+	
+	top : 415px; left: 50px;
+
+}
+.login_modal > .change_pw > .button_box > button {
+	width : 350px; height : 55px;
+	
+	background-color: #2E407B;
+	
+	border : none;
+	border-radius: 10px;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 23px;
+	text-align: center;
+	
+	color: #FFFFFF;
+}
+.login_modal > .change_pw > .button_box > button:hover{
+	cursor: pointer;
+}
+/*비밀번호 변경*/

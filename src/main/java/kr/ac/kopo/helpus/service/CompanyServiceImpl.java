@@ -82,4 +82,20 @@ public class CompanyServiceImpl implements CompanyService {
 
 	}
 
+	@Override
+	public Company findCo(Company company) {
+		return dao.findCo(company);
+		
+	}
+
+	@Override
+	public boolean findPwCo(Company company) {
+		Company item = dao.findPwCo(company);
+		
+		if(item != null) {
+			return true;
+		}
+		return false;
+	}
+
 }

@@ -3,18 +3,18 @@
 <div class="modal_background_login" id="modal_login">
 	<div class="login_modal">
 		<div class="closeBtn" id="closeBtn_login">&times;</div>
-			<div class="login_box">
 				<div class="division">
-					<div class="user_btn">
+					<div class="user_btn" id="user_btn">
 						<p>사용자</p>
 					</div>
-					<div class="co_btn">
+					<div class="co_btn" id="co_btn">
 						<p>사업자</p>
 					</div>
 				</div>
-				<div>
-					<img class="logo" src="/img/logo.png">
+				<div class="logo_box">
+					<img class="logo" src="/img/logo.svg">
 				</div>
+				<div class="login_box">
 				<div class="input_box">
 					<div class="id_input">
 						<input type="text" placeholder="아이디">
