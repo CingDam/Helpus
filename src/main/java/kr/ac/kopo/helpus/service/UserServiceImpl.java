@@ -1,7 +1,5 @@
 package kr.ac.kopo.helpus.service;
 
-import java.util.HashMap;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +23,6 @@ public class UserServiceImpl implements UserService {
 			user.setUserAddress(item.getUserAddress());
 			user.setUserPhone(item.getUserPhone());
 			user.setUserProfile(item.getUserProfile());
-			user.setEmailCheck(item.getEmailCheck());
 			
 			return true;
 		} else
@@ -56,17 +53,6 @@ public class UserServiceImpl implements UserService {
 			return true;
 		else
 			return false;
-	}
-
-	@Override
-	public void setAuthKey(HashMap<String, String> map) {
-		dao.setAuthKey(map);
-	}
-
-	@Override
-	public void emailCheck(HashMap<String, String> map) {
-		dao.emailCheck(map);
-		
 	}
 
 }

@@ -1,6 +1,5 @@
 package kr.ac.kopo.helpus.controller;
 
-import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -17,7 +16,6 @@ import kr.ac.kopo.helpus.model.Detail;
 import kr.ac.kopo.helpus.model.User;
 import kr.ac.kopo.helpus.service.CompanyService;
 import kr.ac.kopo.helpus.service.DetailService;
-import kr.ac.kopo.helpus.service.MailService;
 import kr.ac.kopo.helpus.service.UserService;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,9 +35,6 @@ public class RootController {
 	
 	@Autowired
 	DetailService detailService;
-	
-	@Autowired
-	MailService mailService;
 
 	@RequestMapping("/")
 	public String index(HttpSession session, Model model) {
@@ -101,9 +96,6 @@ public class RootController {
 	public String loginUser(@RequestBody User user, HttpSession session) {
 		
 			if(userService.login(user)) {
-				if(user.getEmailCheck() == 0) {
-					return "EMAIL";
-				}
 				user.setUserPw(null);
 				session.setAttribute("user", user);
 				return "OK";
@@ -129,17 +121,8 @@ public class RootController {
 		if(code == 0) {
 				userService.signup(user);
 				
-				String authKey = mailService.sendAuthMail(user.getUserEmail());
-				user.setAuthKey(authKey);
-				
-				HashMap<String,String> map = new HashMap<String, String>();
-				map.put("userEmail", user.getUserEmail());
-				map.put("authKey", authKey);
-				
-				userService.setAuthKey(map);
-				
 				session.setAttribute("msg", user.getUserId() + "님 회원가입을 축하드립니다");
-				return "redirect:../";
+				return "OK";
 			} 
 		if(code == 1) {
 				companyService.signup(company);
@@ -151,21 +134,9 @@ public class RootController {
 		}
 	}
 	
-	@GetMapping("/signUpConfirm")
-	public String signUpConfirm(String email, String authKey) {
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put("userEmail", email);
-		map.put("authKey", authKey);
-		
-		userService.emailCheck(map);
-		
-		return "redirect:/";
-	}
 	
-	@GetMapping("/email")
-	public String email() {
-		return "email";
-	}
+	
+	
 	
 	
 	

@@ -16,7 +16,7 @@
 	
 	<insert id="signup">
 		INSERT INTO user
-		VALUES (null,#{userId},PASSWORD(#{userPw}),#{userName},#{userEmail},#{authKey},default,#{userAddress},#{userPhone},1,NOW(),null,#{userProfile})
+		VALUES (null,#{userId},PASSWORD(#{userPw}),#{userName},#{userEmail},#{userAddress},#{userPhone},1,NOW(),null,#{userProfile})
 	</insert>
 	
 	<update id="userUpdate">
@@ -30,16 +30,4 @@
 		FROM user
 		WHERE user_code=#{userCode} AND user_pw=PASSWORD(#{userPw})
 	</select>
-	
-	<update id="setAuthKey">
-		UPDATE user
-		SET auth_key=#{authKey}
-		WHERE user_email=#{userEmail}
-	</update>
-	
-	<update id="emailCheck">
-		UPDATE user
-		SET email_check=1
-		WHERE user_email=#{userEmail} AND auth_key=#{authKey}
-	</update>
 </mapper>

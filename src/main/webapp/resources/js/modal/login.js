@@ -118,9 +118,6 @@ function login_ajax(item){
 							$('.pw_input > input').val("");
 							alert("아이디와 비밀번호를 확인해주세요")
 						}
-						if(result == 'EMAIL'){
-							location.href="/email";
-						}
 					}
 				
 				})
