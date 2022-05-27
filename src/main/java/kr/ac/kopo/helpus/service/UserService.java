@@ -20,4 +20,11 @@ public interface UserService {
 
 	void emailCheck(HashMap<String, String> map);
 
+	User findUser(User user);
+
+	boolean findPwUser(User user);
+
+	void updatePwUser(User user);
+
+
 }

@@ -80,4 +80,17 @@ public class CompanyDaoImpl implements CompanyDao {
 		sql.update("company.login_day", coCode);
 	}
 
+	@Override
+	public Company findCo(Company company) {
+
+		return sql.selectOne("company.findid_co", company);
+		
+	}
+
+	@Override
+	public Company findPwCo(Company company) {
+		
+		return sql.selectOne("company.findpw_co", company);
+	}
+
 }

@@ -55,6 +55,18 @@
 		WHERE co_id=#{coId} AND co_pw=PASSWORD(#{coPw})
 	</select>
 	
+	<select id="findid_co" resultType="Company">
+		SELECT co_name,co_id
+		FROM company
+		WHERE co_name=#{coName} AND co_email=#{coEmail}
+	</select>
+	
+	<select id="findpw_co" resultType="Company">
+		SELECT *
+		FROM company
+		WHERE co_id=#{coId} AND co_email=#{coEmail}
+	</select>
+	
 	<update id="coPwUpdate">
 		UPDATE company
 		SET co_pw=PASSWORD(#{coPw})

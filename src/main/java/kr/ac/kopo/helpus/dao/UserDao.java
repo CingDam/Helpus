@@ -20,4 +20,10 @@ public interface UserDao {
 
 	void emailCheck(HashMap<String, String> map);
 
+	User findUser(User user);
+
+	User findpwUser(User user);
+
+	void updatePw(User user);
+
 }

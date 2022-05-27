@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.helpus.dao.UserDao;
+import kr.ac.kopo.helpus.model.Company;
 import kr.ac.kopo.helpus.model.User;
 
 @Service
@@ -69,4 +70,26 @@ public class UserServiceImpl implements UserService {
 		
 	}
 
+	@Override
+	public User findUser(User user) {
+		
+		return dao.findUser(user);
+	}
+
+	@Override
+	public boolean findPwUser(User user) {
+		
+		User item = dao.findpwUser(user);
+		
+		if(item != null) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public void updatePwUser(User user) {
+		dao.updatePw(user);
+		
+	}
 }
