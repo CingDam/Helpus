@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="messeage">
+	<insert id="add">
+		INSERT INTO messeage (messeage_code,room_id,user_code,co_code,messeage_contents,messeage_date,messeage_read)
+		VALUES (NULL,#{roomId},#{userCode},#{coCode},#{messeageContents},NOW(),default)
+	</insert>
+	<select id="list" resultType="Msg">
+		SELECT * FROM messeage
+		WHERE room_id = #{roomId};
+	</select>
+	<select id="msgCk" resultType="Integer">
+		SELECT COUNT(messeage_read) AS messeage_read FROM messeage
+		WHERE user_code!=#{userCode} AND messeage_read = 0 
+	</select>
+	<update id="msgCkUpdate">
+		UPDATE messeage SET messeage_read = 1 WHERE room_id = #{roomId} AND user_code!=#{userCode}
+	</update>
+</mapper>
