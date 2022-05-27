@@ -361,6 +361,7 @@ function openLoginModal() {
 	$('#modal_login').css("display", "block")
 }
 
+
 function closeLoginModal() {
 	$('#modal_login').fadeOut(200)
 	$('.login_box').show()
