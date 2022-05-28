@@ -6,7 +6,7 @@
 <c:if test="${sessionScope.user == null && sessionScope.company == null}">
 		<div class = "header">
 			<div class="header_logo">
-				<img src="/img/logo.svg">
+				<img src="./img/logo.svg">
 			</div>
 			<div class = "header_navi">
 				<p class="login" id="login_put">로그인</p>
