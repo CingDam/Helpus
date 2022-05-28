@@ -36,4 +36,6 @@ public interface CompanyDao {
 
 	Company findPwCo(Company company);
 
+	void updatePwCo(Company company);
+
 }

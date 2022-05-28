@@ -197,11 +197,9 @@ public class RootController {
 	
 	@ResponseBody
 	@PostMapping("/find_pw_co")
-	public User findPwCo(@RequestBody Company company) {
+	public boolean findPwCo(@RequestBody Company company) {
 		
 		if(companyService.findPwCo(company)) {
-			
-			
 			
 			return true;
 		}

@@ -93,4 +93,10 @@ public class CompanyDaoImpl implements CompanyDao {
 		return sql.selectOne("company.findpw_co", company);
 	}
 
+	@Override
+	public void updatePwCo(Company company) {
+		sql.update("compnay.updatepw_co",company);
+		
+	}
+
 }

@@ -67,9 +67,9 @@
 		WHERE co_id=#{coId} AND co_email=#{coEmail}
 	</select>
 	
-	<update id="coPwUpdate">
+	<update id="updatepw_co">
 		UPDATE company
 		SET co_pw=PASSWORD(#{coPw})
-		WHERE co_code=#{coCode}
+		WHERE co_id=#{coId}
 	</update>
 </mapper>

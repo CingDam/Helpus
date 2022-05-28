@@ -161,6 +161,7 @@ function findPw(id, email) {
 				let html ='<div class="change_pw">';
 				
 				
+				
 				if(result == false){
 					alert('등록된 계정이 없습니다');
 					$('input').val("");
@@ -192,7 +193,7 @@ function findPw(id, email) {
 					
 					const pw = $('#change_pw').val()
 					
-					changePw(pw)
+					changePw(id,pw)
 				})
 			}
 		})
@@ -211,7 +212,6 @@ function findPw(id, email) {
 			success: (result) => {
 				
 				let html ='<div class="change_pw">';
-				
 				
 				if(result==false){
 					alert('등록된 계정이 없습니다')
@@ -244,7 +244,7 @@ function findPw(id, email) {
 					
 					const pw = $('#change_pw').val()
 					
-					changePw(pw)
+					changePw(id,pw)
 				})
 			}
 		})
@@ -253,13 +253,14 @@ function findPw(id, email) {
 
 }
 
-function chagePw(pw){
+function chagePw(id,pw){
 	
 	if(user_val==1){
 		$.ajax("/change_pw_user",{
 		method: "POST",
 		contentType: "application/json",
 		data: JSON.stringify({
+			coId : id,
 			coPw : pw
 		}),
 		success : result => {
@@ -273,7 +274,8 @@ function chagePw(pw){
 			method: "POST",
 			contentType: "application/json",
 			data: JSON.stringify({
-				coPw : pw
+				userId : id,
+				userPw : pw
 			}),
 			success : result => {
 				alert('변경이 되었습니다.')
