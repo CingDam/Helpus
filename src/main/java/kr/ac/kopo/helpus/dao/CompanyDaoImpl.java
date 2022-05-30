@@ -99,4 +99,10 @@ public class CompanyDaoImpl implements CompanyDao {
 		
 	}
 
+	//테스트용 필요없으면 지우기
+	@Override
+	public List<Company> list() {
+		return sql.selectList("company.list");
+	}
+
 }

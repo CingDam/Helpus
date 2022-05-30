@@ -25,7 +25,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-//백업
 @Controller
 public class RootController {
 
@@ -41,6 +40,7 @@ public class RootController {
 	@Autowired
 	MailService mailService;
 
+	//메인페이지
 	@RequestMapping("/")
 	public String index(HttpSession session, Model model) {
 		String msg = (String) session.getAttribute("msg");
@@ -54,6 +54,7 @@ public class RootController {
 		return "index";
 	}
 	
+	//회사리스트검색
 	@PostMapping("/list")
 	public String index(String keyword,Model model) {
 		
@@ -223,7 +224,6 @@ public class RootController {
 		
 		return "Ok";
 	}
-	
 	
 	
 }

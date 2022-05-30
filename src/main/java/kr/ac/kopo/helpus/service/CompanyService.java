@@ -33,4 +33,6 @@ public interface CompanyService {
 
 	void updatePwCo(Company company);
 
+	List<Company> list();
+
 }

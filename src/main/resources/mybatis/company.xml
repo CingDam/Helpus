@@ -72,4 +72,8 @@
 		SET co_pw=PASSWORD(#{coPw})
 		WHERE co_id=#{coId}
 	</update>
+	
+	<select id="list" resultType="Company">
+		SELECT * FROM company
+	</select>
 </mapper>

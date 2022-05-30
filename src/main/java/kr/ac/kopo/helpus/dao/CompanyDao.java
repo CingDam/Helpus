@@ -38,4 +38,6 @@ public interface CompanyDao {
 
 	void updatePwCo(Company company);
 
+	List<Company> list();
+
 }
