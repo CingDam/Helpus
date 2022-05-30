@@ -1,5 +1,6 @@
 package kr.ac.kopo.helpus.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import kr.ac.kopo.helpus.model.Coinqury;
 import kr.ac.kopo.helpus.model.Company;
 import kr.ac.kopo.helpus.model.Schedule;
+import kr.ac.kopo.helpus.util.Pager;
 
 @Repository
 public class CompanyDaoImpl implements CompanyDao {
@@ -40,8 +42,14 @@ public class CompanyDaoImpl implements CompanyDao {
 	}
 
 	@Override
-	public List<Coinqury> getCoInqury(int coCode) {
-		return sql.selectList("company.getCoInqury", coCode);
+	public List<Coinqury> getCoInqury(int coCode,Pager pager) {
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("coCode", coCode);
+		map.put("pager", pager);
+		
+		return sql.selectList("company.getCoInqury", map);
 	}
 
 	@Override
@@ -95,8 +103,20 @@ public class CompanyDaoImpl implements CompanyDao {
 
 	@Override
 	public void updatePwCo(Company company) {
-		sql.update("compnay.updatepw_co",company);
+		sql.update("company.updatepw_co",company);
 		
+	}
+
+	@Override
+	public List<Coinqury> getCoInqury(int coCode) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int total(Pager pager) {
+		
+		return sql.selectOne("company.inquery_total",pager);
 	}
 
 }

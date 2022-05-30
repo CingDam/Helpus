@@ -6,6 +6,7 @@ import kr.ac.kopo.helpus.model.Coinqury;
 import kr.ac.kopo.helpus.model.Company;
 import kr.ac.kopo.helpus.model.Schedule;
 import kr.ac.kopo.helpus.model.User;
+import kr.ac.kopo.helpus.util.Pager;
 
 public interface CompanyService {
 
@@ -17,7 +18,7 @@ public interface CompanyService {
 
 	List<Schedule> getSch(int coCode);
 
-	List<Coinqury> getCoInqury(int coCode);
+	List<Coinqury> getCoInqury(int coCode, Pager pager);
 
 	Company item(int coCode);
 
