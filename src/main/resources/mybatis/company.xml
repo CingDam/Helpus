@@ -73,9 +73,14 @@
 		WHERE co_id=#{coId}
 	</update>
 	
+
 	<select id="inquery_total" resultType="Integer">
 		SELECT COUNT(*)
 		FROM co_inqury
 	</select>
 	
+
+	<select id="list" resultType="Company">
+		SELECT * FROM company
+	</select>
 </mapper>

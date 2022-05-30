@@ -111,4 +111,10 @@ public class CompanyServiceImpl implements CompanyService {
 		
 	}
 
+	//테스트용 필요없으면 지우기
+	@Override
+	public List<Company> list() {
+		return dao.list();
+	}
+
 }
