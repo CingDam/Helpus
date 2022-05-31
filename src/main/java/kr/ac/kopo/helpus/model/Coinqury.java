@@ -7,6 +7,26 @@ public class Coinqury {
 	private String inquryName;
 	private String inquryContents;
 	private String inquryRegDate;
+	
+	private String userId;
+	private String keyName;
+	
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public String getKeyName() {
+		return keyName;
+	}
+
+	public void setKeyName(String keyName) {
+		this.keyName = keyName;
+	}
 
 	public int getCoInquryCode() {
 		return coInquryCode;
