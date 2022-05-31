@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="room">
+
 	<select id="getRoom" resultType="Room">
 		SELECT * FROM room WHERE user_code=#{userCode} AND co_code=#{coCode}
 	</select>
@@ -15,5 +16,26 @@
 		SELECT message.*, user.user_name userName, company.co_name coName
 		FROM message JOIN user ON message.user_code = user.user_code JOIN company ON message.co_code = company.co_code
 		WHERE room_code=#{roomCode}
+	</select>
+	
+	<select id="getRoomInfo" resultType="Room">
+		SELECT * FROM room WHERE room_code=#{roomCode}
+	</select>
+	
+	<insert id="addMessage">
+		INSERT INTO message
+		VALUES(null, #{roomCode}, null, #{userCode}, #{coCode}, #{messageContents}, NOW(), default, #{sendVal})
+	</insert>
+	
+	<update id="msg_ck">
+		UPDATE message
+		SET message_read = 1
+		WHERE room_code=#{roomCode} AND send_val!=#{sendVal}
+	</update>
+	
+	<select id="roomList" resultType="Room">
+		SELECT room.*, company.co_name coName
+		FROM room JOIN company ON room.co_code = company.co_code
+		WHERE user_code=#{userCode}
 	</select>
 </mapper>

@@ -29,5 +29,26 @@ public class ChatDaoImpl implements ChatDao {
 	public List<Message> messageList(int roomCode) {
 		return sql.selectList("room.messageList", roomCode);
 	}
+
+	@Override
+	public Room getRoomInfo(int roomCode) {
+		return sql.selectOne("room.getRoomInfo", roomCode);
+	}
+
+	@Override
+	public void addMessage(Message msg) {
+		sql.insert("room.addMessage", msg);
+	}
+
+	@Override
+	public void msg_ck(Message item) {
+		sql.update("room.msg_ck", item);
+	}
+
+	@Override
+	public List<Room> roomList(int userCode) {
+		return sql.selectList("room.roomList", userCode);
+	}
+
 	
 }

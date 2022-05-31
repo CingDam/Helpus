@@ -13,4 +13,12 @@ public interface ChatService {
 
 	List<Message> messageList(int roomCode);
 
+	Room getRoomInfo(int roomCode);
+
+	void addMessage(Message msg);
+
+	void msg_ck(Message item);
+
+	List<Room> roomList(int userCode);
+
 }
