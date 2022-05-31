@@ -43,4 +43,7 @@ public interface CompanyDao {
 
 	List<Coinqury> getCoInqury(int coCode, Pager pager);
 
+	List<Company> list();
+
+
 }
