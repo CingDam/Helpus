@@ -32,8 +32,8 @@
 	</select>
 	
 	<select id="getCoInqury" resultType="Coinqury">
-		SELECT *
-		FROM co_inqury
+		SELECT co_inqury.*,keyword.key_name
+		FROM co_inqury JOIN keyword ON co_inqury.key_code = keyword.key_code
 		WHERE co_code=#{coCode}
 	</select>
 	
@@ -72,4 +72,14 @@
 		SET co_pw=PASSWORD(#{coPw})
 		WHERE co_id=#{coId}
 	</update>
+	
+	<select id="inquery_total" resultType="Integer">
+		SELECT COUNT(*)
+		FROM co_inqury
+	</select>
+
+	<select id="list" resultType="Company">
+		SELECT * FROM company
+	</select>
+
 </mapper>

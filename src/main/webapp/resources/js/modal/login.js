@@ -130,7 +130,7 @@ function login_ajax(item) {
 			data: JSON.stringify(item),
 			success: result => {
 				if (result == 'OK') {
-					location.href = 'company/';
+					location.href = `company/${item.coId}`;
 				}
 				if (result == 'FAIL') {
 					$('.pw_input > input').val("");
@@ -191,9 +191,17 @@ function findPw(id, email) {
 				
 				$('#change').click(function(){
 					
+					console.log(user_val)
+					
 					const pw = $('#change_pw').val()
 					
-					changePw(id,pw)
+					if($('#change_pw').val() == $('#change_ck_pw').val()){
+						changePw(id,pw)
+					} else {
+						alert("비밀번호가 일치하지 않습니다")
+						$('#change_pw').val("")
+						$('#change_ck_pw').val("")
+					}
 				})
 			}
 		})
@@ -220,10 +228,10 @@ function findPw(id, email) {
 					$('.findpw_box').hide()
 					html += `<div class="input_box">
 								<div class="pw_input">
-									<input type="text" id="change_pw" placeholder="비밀번호">
+									<input type="password" id="change_pw" placeholder="비밀번호">
 								</div>
 								<div class="pw_ck_input">
-									<input type="text" placeholder="비밀번호 확인">
+									<input type="password" id="change_ck_pw" placeholder="비밀번호 확인">
 								</div>
 							</div>`
 					html += '<div class="button_box"><button id="change">변경</button></div>'
@@ -242,9 +250,17 @@ function findPw(id, email) {
 				
 				$('#change').click(function(){
 					
-					const pw = $('#change_pw').val()
+					console.log(user_val)
 					
-					changePw(id,pw)
+					const pw = $('#change_pw').val()
+					if($('#change_pw').val() == $('#change_ck_pw').val()){
+						changePw(id,pw)
+					} else {
+						alert("비밀번호가 일치하지 않습니다")
+						$('#change_pw').val("")
+						$('#change_ck_pw').val("")
+					}
+					
 				})
 			}
 		})
@@ -253,15 +269,16 @@ function findPw(id, email) {
 
 }
 
-function chagePw(id,pw){
+function changePw(id,pw){
 	
-	if(user_val==1){
+	if(user_val==0){
 		$.ajax("/change_pw_user",{
 		method: "POST",
 		contentType: "application/json",
 		data: JSON.stringify({
-			coId : id,
-			coPw : pw
+				userId : id,
+				userPw : pw
+				
 		}),
 		success : result => {
 				alert('변경이 되었습니다.')
@@ -269,13 +286,13 @@ function chagePw(id,pw){
 		}
 	})
 	}
-	if(user_val=0){
+	if(user_val=1){
 		$.ajax("/change_pw_co",{
 			method: "POST",
 			contentType: "application/json",
 			data: JSON.stringify({
-				userId : id,
-				userPw : pw
+				coId : id,
+				coPw : pw
 			}),
 			success : result => {
 				alert('변경이 되었습니다.')

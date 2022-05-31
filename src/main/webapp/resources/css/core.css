@@ -300,6 +300,7 @@ caption {
   padding-bottom: 0.625rem;
   color: #a1acb8;
   text-align: left;
+  font-size: 16px;
 }
 
 th {
@@ -15008,6 +15009,18 @@ html:not(.layout-menu-fixed) .menu-inner-shadow {
   flex: 0 1 auto;
   margin: 0;
 }
+.menu-link > .index:hover {
+	cursor: pointer;
+}
+.menu-link > .inquery:hover {
+	cursor: pointer;
+}
+.menu-link > .reservation:hover {
+	cursor: pointer;
+}
+.menu-link > .complete:hover {
+	cursor: pointer;
+}
 .menu-item.disabled .menu-link {
   cursor: not-allowed !important;
 }
@@ -16760,4 +16773,23 @@ caption {
 }
 #change > .bx-camera {
   line-height: 40px;
+}
+
+/* 매출조회 */
+caption > .form-control {
+  width: 150px;
+  float: left;
+  margin: 0px 10px;
+}
+caption > label {
+  float: left;
+  margin-top: 5px;
+  font-size: 20px;
+}
+caption > span {
+  margin-right: 95px;
+}
+
+#total{
+	margin : 0;
 }

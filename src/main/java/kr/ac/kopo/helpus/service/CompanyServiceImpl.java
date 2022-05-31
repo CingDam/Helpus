@@ -9,6 +9,7 @@ import kr.ac.kopo.helpus.dao.CompanyDao;
 import kr.ac.kopo.helpus.model.Coinqury;
 import kr.ac.kopo.helpus.model.Company;
 import kr.ac.kopo.helpus.model.Schedule;
+import kr.ac.kopo.helpus.util.Pager;
 
 @Service
 public class CompanyServiceImpl implements CompanyService {
@@ -54,8 +55,13 @@ public class CompanyServiceImpl implements CompanyService {
 	}
 
 	@Override
-	public List<Coinqury> getCoInqury(int coCode) {
-		return dao.getCoInqury(coCode);
+	public List<Coinqury> getCoInqury(int coCode,Pager pager) {
+		
+		int total = dao.total(pager);
+		
+		pager.setTotal(total);
+		
+		return dao.getCoInqury(coCode,pager);
 	}
 
 	@Override
@@ -103,6 +109,12 @@ public class CompanyServiceImpl implements CompanyService {
 		
 		dao.updatePwCo(company);
 		
+	}
+
+	//테스트용 필요없으면 지우기
+	@Override
+	public List<Company> list() {
+		return dao.list();
 	}
 
 }
