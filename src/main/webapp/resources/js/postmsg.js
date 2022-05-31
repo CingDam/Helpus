@@ -9,18 +9,23 @@
 		const room = parent.getElementById("roomCode");
 		const roomCode = room.value;
 		const cur_user = $('#nickname').val();
+		const sendVal = $('#sendVal').val();
+		
+		console.log(roomCode, cur_user, sendVal);
 		
 		connect = true;
 		alert("서버에 연결 되었습니다.")
-		console.log("test")
-		$.ajax("/msg/msg_ck",{
+		$.ajax("/chat/msg_ck",{
 						method : "POST",
 						contentType : "application/json",
 						dataType : "json",
 						data : JSON.stringify(
 							{	roomCode : roomCode,
-								userId : cur_user
-						})
+								sendVal : sendVal
+						}),
+						success : () => {
+							
+						}
 					})
 	}
 	
@@ -56,7 +61,7 @@
 		
 		console.dir(msg)
 		
-		const msg_contents = document.getElementById("msg");
+		const messageContents = document.getElementById("msg");
 		
 		chat.innerHTML += "<li>" + msg.data + "</li>"
 		
@@ -68,26 +73,26 @@
 	}
 	function send(){
 		
-		const msg_contents = document.getElementById("msg")
+		const messageContents = document.getElementById("msg")
 		
 		if(connect) {
 			socket.send($('#nickname').val() + ": " + $('#msg').val());
-			post_msg($('#nickname').val(),msg_contents.value)
-			msg_contents.value = "";
+			post_msg($('#sendVal').val(), messageContents.value)
+			messageContents.value = "";
 			
 		}
 	}
-	function post_msg(nickname,msg_contents){
+	function post_msg(sendVal, messageContents){
 		
 		const room = parent.getElementById("roomCode");
 		const roomCode = room.value;
 		
 		const item = {
-			userId : nickname,
+			sendVal : sendVal,
 			roomCode : roomCode,
-			msgContents : msg_contents
+			messageContents : messageContents
 		}
-		$.ajax("/msg/post_msg",{
+		$.ajax("/chat/post_msg",{
 			method : "POST",
 			contentType : "application/json",
 			data : JSON.stringify(item),

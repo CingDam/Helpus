@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -33,9 +34,13 @@ public class ChatController {
 	
 	//테스트용jsp
 	@GetMapping({"/",""})
-	public String test(Model model) {
+	public String test(HttpSession session, Model model) {
 		List<Company> company = companyService.list();
 		model.addAttribute("company", company);
+		
+		User user = (User) session.getAttribute("user");
+		List<Room> roomList = service.roomList(user.getUserCode());
+		model.addAttribute("roomList", roomList);
 		
 		return path + "chat";
 	}
@@ -74,9 +79,31 @@ public class ChatController {
 	
 	@ResponseBody
 	@GetMapping("/get_msg/{roomCode}")
-	public String get_msg() {
-		return "다시 고칠부분";
+	public List<Message> get_msg(@PathVariable int roomCode) {
+		List<Message> messages = service.messageList(roomCode);
+		
+		return messages;
 	}
 	
+	@ResponseBody
+	@PostMapping("/post_msg")
+	public String post_msg(@RequestBody Message msg) {
+		Room item = service.getRoomInfo(msg.getRoomCode());
+		
+		msg.setAdminCode(item.getAdminCode());
+		msg.setCoCode(item.getCoCode());
+		msg.setUserCode(item.getUserCode());
+		
+		service.addMessage(msg);
+		
+		return "OK";
+	}
 	
+	@ResponseBody
+	@PostMapping("/msg_ck")
+	public String msg_ck(@RequestBody Message item) {
+		service.msg_ck(item);
+		
+		return "OK";
+	}
 }

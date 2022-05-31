@@ -38,6 +38,27 @@ public class ChatServiceImpl implements ChatService {
 	public List<Message> messageList(int roomCode) {
 		return dao.messageList(roomCode);
 	}
+
+	@Override
+	public Room getRoomInfo(int roomCode) {
+		return dao.getRoomInfo(roomCode);
+	}
+
+	@Override
+	public void addMessage(Message msg) {
+		dao.addMessage(msg);
+	}
+
+	@Override
+	public void msg_ck(Message item) {
+		dao.msg_ck(item);
+	}
+
+	@Override
+	public List<Room> roomList(int userCode) {
+		return dao.roomList(userCode);
+	}
+
 	
 	
 }
