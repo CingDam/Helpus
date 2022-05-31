@@ -5,6 +5,7 @@ import java.util.List;
 import kr.ac.kopo.helpus.model.Coinqury;
 import kr.ac.kopo.helpus.model.Company;
 import kr.ac.kopo.helpus.model.Schedule;
+import kr.ac.kopo.helpus.util.Pager;
 
 public interface CompanyDao {
 
@@ -37,5 +38,9 @@ public interface CompanyDao {
 	Company findPwCo(Company company);
 
 	void updatePwCo(Company company);
+
+	int total(Pager pager);
+
+	List<Coinqury> getCoInqury(int coCode, Pager pager);
 
 }

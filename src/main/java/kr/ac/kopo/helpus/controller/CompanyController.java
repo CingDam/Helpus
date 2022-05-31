@@ -3,7 +3,9 @@ package kr.ac.kopo.helpus.controller;
 import java.io.File;
 import java.net.URLDecoder;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -35,6 +38,7 @@ import kr.ac.kopo.helpus.service.ContractService;
 import kr.ac.kopo.helpus.service.DetailService;
 import kr.ac.kopo.helpus.service.KeywordService;
 import kr.ac.kopo.helpus.service.UserService;
+import kr.ac.kopo.helpus.util.Pager;
 import kr.ac.kopo.helpus.util.SetCoKey;
 import kr.ac.kopo.helpus.util.UploadFile;
 import kr.ac.kopo.helpus.util.Uploader;
@@ -57,7 +61,7 @@ public class CompanyController {
 	@Autowired
 	CoKeyService cokeywordService;
 	
-	@GetMapping({"/","/list"})
+	@GetMapping({"/{coName}","/{coName}/list"})
 	public String index() {
 		return path+"index";
 	}
@@ -73,16 +77,20 @@ public class CompanyController {
 		
 		return schedule;
 	}
-	//사업자 문의글
-	@GetMapping("/get_coinqury")
-	public List<Coinqury> coInqury(HttpSession session){
+	
+	@ResponseBody
+	@PostMapping("/get_coinqury")
+	public Map<String, Object> coInqury(Pager pager,HttpSession session){
 		Company company = (Company) session.getAttribute("company");
 		
 		int coCode = company.getCoCode();
 		
-		List<Coinqury> coInqury = service.getCoInqury(coCode);
+		HashMap<String, Object> map = new HashMap<String, Object>();
 		
-		return coInqury;
+		 map.put("list", service.getCoInqury(coCode,pager));
+		 map.put("pager",pager);
+		
+		return map;
 	}
 	
 	@GetMapping("/mypage")
