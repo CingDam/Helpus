@@ -79,11 +79,13 @@ public class CompanyController {
 	}
 	
 	@ResponseBody
-	@PostMapping("/get_coinqury")
+	@GetMapping("/get_coinqury")
 	public Map<String, Object> coInqury(Pager pager,HttpSession session){
 		Company company = (Company) session.getAttribute("company");
 		
 		int coCode = company.getCoCode();
+		
+		System.out.println(pager.getPage());
 		
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
@@ -235,5 +237,15 @@ public class CompanyController {
 		}
 		
 		return "OK";
+	}
+	
+	@GetMapping("/load_contents")
+	public Map<String,Object> loadContents(@RequestParam("userId") String userId,HttpSession session){
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put()
+		
+		return map;
 	}
 }

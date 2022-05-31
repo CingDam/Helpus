@@ -20,10 +20,12 @@
   <link rel="stylesheet" href="../css/core.css" class="template-customizer-core-css" />
   <link rel="stylesheet" href="../css/theme-default.css" class="template-customizer-theme-css" />
   <link rel="stylesheet" href="../css/demo.css" />
+  <link rel="stylesheet" href="../css/modal/contract.css" />
 
   <!-- JS -->
   <script src="../js/helpers.js"></script>
   <script src="../js/jquery-3.6.0.min.js"></script>
+  
 
   <!-- Fullcalendar -->
   <link href='../lib/calMain.css' rel='stylesheet' />
@@ -35,8 +37,7 @@
       var calendarEl = document.getElementById('calendar');
   
       var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialDate: '2020-06-12',
-        locale: "en",
+        locale: "ko",
         editable: false,
         selectable: true,
         businessHours: true,
@@ -55,7 +56,9 @@
 </head>
 
 <body>
-	
+	<!-- Contract -->
+       <jsp:include page="../include/modal/contract.jsp"></jsp:include>
+  	<!-- Contract -->
   <!-- Layout wrapper -->
   <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
@@ -63,7 +66,7 @@
       <!-- Menu -->
       <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo">
-          <a href="/company/" class="app-brand-link">
+          <a href="/" class="app-brand-link">
             <span class="app-brand-text demo menu-text fw-bolder ms-2"><img src="../img/logo.png"></span>
           </a>
         </div>        
@@ -352,6 +355,8 @@
   <!-- / Layout wrapper -->
   
   
+    
+  
   
 
   <!-- Footer -->
@@ -393,6 +398,7 @@
   <script src="../js/main.js"></script>
   <!-- function JS -->
   <script src="../js/company_func.js"></script>
+  <script src="../js/modal/contract.js"></script>
 </body>
 </html>
     

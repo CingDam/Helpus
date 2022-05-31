@@ -47,7 +47,8 @@ public class CompanyDaoImpl implements CompanyDao {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
 		map.put("coCode", coCode);
-		map.put("pager", pager);
+		map.put("perpage", pager.getPerpage());
+		map.put("offset", pager.getOffset());
 		
 		return sql.selectList("company.getCoInqury", map);
 	}
@@ -117,7 +118,7 @@ public class CompanyDaoImpl implements CompanyDao {
 	public int total(Pager pager) {
 		
 		return sql.selectOne("company.inquery_total",pager);
-
+	}
 	//테스트용 필요없으면 지우기
 	@Override
 	public List<Company> list() {
