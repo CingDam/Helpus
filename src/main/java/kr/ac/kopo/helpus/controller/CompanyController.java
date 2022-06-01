@@ -31,6 +31,7 @@ import kr.ac.kopo.helpus.model.Contract;
 import kr.ac.kopo.helpus.model.Detail;
 import kr.ac.kopo.helpus.model.Keyword;
 import kr.ac.kopo.helpus.model.Schedule;
+import kr.ac.kopo.helpus.model.User;
 import kr.ac.kopo.helpus.service.CategoryService;
 import kr.ac.kopo.helpus.service.CoKeyService;
 import kr.ac.kopo.helpus.service.CompanyService;
@@ -239,12 +240,17 @@ public class CompanyController {
 		return "OK";
 	}
 	
+	@ResponseBody
 	@GetMapping("/load_contents")
-	public Map<String,Object> loadContents(@RequestParam("userId") String userId,HttpSession session){
+	public Map<String,Object> loadContents(@RequestParam(value="userId", required = false) String userId,HttpSession session){
 		
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
-		map.put("userId", userId);
+		Company company = (Company) session.getAttribute("company");
+		
+		map.put("user",userService.item(userId));
+		map.put("company",service.item(company.getCoCode()));
+		map.put("cokey", cokeywordService.list(company.getCoCode()));
 		
 		return map;
 	}

@@ -26,5 +26,7 @@ public interface UserService {
 
 	void updatePwUser(User user);
 
+	User item(String userId);
+
 
 }
