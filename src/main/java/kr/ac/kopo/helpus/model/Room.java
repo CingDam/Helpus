@@ -6,6 +6,25 @@ public class Room {
 	private int coCode;
 	private int adminCode;
 
+	private String userName;
+	private String coName;
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getCoName() {
+		return coName;
+	}
+
+	public void setCoName(String coName) {
+		this.coName = coName;
+	}
+
 	public int getRoomCode() {
 		return roomCode;
 	}

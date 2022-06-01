@@ -47,7 +47,8 @@ public class CompanyDaoImpl implements CompanyDao {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
 		map.put("coCode", coCode);
-		map.put("pager", pager);
+		map.put("perpage", pager.getPerpage());
+		map.put("offset", pager.getOffset());
 		
 		return sql.selectList("company.getCoInqury", map);
 	}
@@ -106,8 +107,6 @@ public class CompanyDaoImpl implements CompanyDao {
 		sql.update("company.updatepw_co",company);
 		
 	}
-
-
 	@Override
 	public List<Coinqury> getCoInqury(int coCode) {
 		// TODO Auto-generated method stub
