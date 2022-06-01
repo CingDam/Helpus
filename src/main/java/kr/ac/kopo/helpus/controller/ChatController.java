@@ -1,5 +1,6 @@
 package kr.ac.kopo.helpus.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -35,14 +36,33 @@ public class ChatController {
 	//테스트용jsp
 	@GetMapping({"/",""})
 	public String test(HttpSession session, Model model) {
-		List<Company> company = companyService.list();
-		model.addAttribute("company", company);
-		
 		User user = (User) session.getAttribute("user");
-		List<Room> roomList = service.roomList(user.getUserCode());
-		model.addAttribute("roomList", roomList);
+		Company company = (Company) session.getAttribute("company");
+		HashMap<String, Object> map = new HashMap<String, Object>();
 		
-		return path + "chat";
+		if(user != null && company == null) {
+			List<Company> companyList = companyService.list();
+			model.addAttribute("company", companyList);
+			
+			map.put("member", "user");
+			map.put("userCode", user.getUserCode());
+			
+			List<Room> roomList = service.roomList(map);
+			model.addAttribute("roomList", roomList);
+			
+			return path + "chat";
+		}
+		if(user == null && company != null) {			
+			map.put("member", "company");
+			map.put("coCode", company.getCoCode());
+			
+			List<Room> roomList = service.roomList(map);
+			model.addAttribute("roomList", roomList);
+			
+			return path + "chat";
+		}
+		
+		return "redirect:/";
 	}
 	
 	@ResponseBody

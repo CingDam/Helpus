@@ -244,7 +244,7 @@ public class CompanyController {
 		
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
-		map.put()
+		map.put("userId", userId);
 		
 		return map;
 	}

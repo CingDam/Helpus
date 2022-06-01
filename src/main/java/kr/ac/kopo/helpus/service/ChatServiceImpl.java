@@ -1,5 +1,6 @@
 package kr.ac.kopo.helpus.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,8 +56,8 @@ public class ChatServiceImpl implements ChatService {
 	}
 
 	@Override
-	public List<Room> roomList(int userCode) {
-		return dao.roomList(userCode);
+	public List<Room> roomList(HashMap<String, Object> map) {
+		return dao.roomList(map);
 	}
 
 	

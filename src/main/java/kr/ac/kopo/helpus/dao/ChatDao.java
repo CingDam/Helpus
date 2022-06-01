@@ -1,5 +1,6 @@
 package kr.ac.kopo.helpus.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import kr.ac.kopo.helpus.model.Message;
@@ -19,6 +20,6 @@ public interface ChatDao {
 
 	void msg_ck(Message item);
 
-	List<Room> roomList(int userCode);
+	List<Room> roomList(HashMap<String, Object> map);
 
 }

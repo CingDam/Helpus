@@ -5,7 +5,7 @@
 	
 	let connect = false;
 	
-	socket.onopen = () =>{
+	socket.onopen = () => {
 		const room = parent.getElementById("roomCode");
 		const roomCode = room.value;
 		const cur_user = $('#nickname').val();
@@ -33,6 +33,7 @@
 		
 		const room = parent.getElementById("roomCode");
 		const roomCode = room.value;
+		const sendVal = $('#sendVal').val();
 		
 		let data = msg.data;
 		let message = null;
@@ -64,6 +65,19 @@
 		const messageContents = document.getElementById("msg");
 		
 		chat.innerHTML += "<li>" + msg.data + "</li>"
+		
+		$.ajax("/chat/msg_ck",{
+						method : "POST",
+						contentType : "application/json",
+						dataType : "json",
+						data : JSON.stringify(
+							{	roomCode : roomCode,
+								sendVal : sendVal
+						}),
+						success : () => {
+							
+						}
+					})
 		
 	}
 	
