@@ -85,5 +85,4 @@
 	<select id="list" resultType="Company">
 		SELECT * FROM company
 	</select>
-
 </mapper>

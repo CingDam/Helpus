@@ -117,7 +117,7 @@ public class CompanyDaoImpl implements CompanyDao {
 	public int total(Pager pager) {
 		
 		return sql.selectOne("company.inquery_total",pager);
-		
+	}
 	//테스트용 필요없으면 지우기
 	@Override
 	public List<Company> list() {

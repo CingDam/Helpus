@@ -21,10 +21,13 @@
   <link rel="stylesheet" href="../css/theme-default.css" class="template-customizer-theme-css" />
   <link rel="stylesheet" href="../css/demo.css" />
   <link rel="stylesheet" href="../css/modal/contract.css" />
+  <link href="../lib/datepicker/datepicker.min.css" rel="stylesheet" type="text/css" media="all">
 
   <!-- JS -->
   <script src="../js/helpers.js"></script>
   <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../lib/datepicker/datepicker.js"></script>
+  <script src="../lib/datepicker/datepicker.ko.js"></script>
   
 
   <!-- Fullcalendar -->
@@ -399,6 +402,11 @@
   <!-- function JS -->
   <script src="../js/company_func.js"></script>
   <script src="../js/modal/contract.js"></script>
+  
+  <!-- datepicker -->
+   <script src="../lib/datepicker/datepicker.js"></script>
+  	<script src="../lib/datepicker/datepicker.ko.js"></script>
+  
 </body>
 </html>
     
