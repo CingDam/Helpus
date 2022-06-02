@@ -50,8 +50,8 @@ function loadContents(userId){
 			for(let i=0; i<cokey.length;i++){
 				
 				let content2 = '<div class="form-check append">'
-					content2 += `<input class="form-check-input" type="checkbox" id="${i+1}">`
-					content2 += `<label class="form-check-label" for="${i+1}">${cokey[i].keyName}</label>`
+					content2 += `<input class="form-check-input" type="radio" id="${i+1}" name="keyCode">`
+					content2 += `<label class="form-check-label stop-dragging" for="${i+1}">${cokey[i].keyName}</label>`
 					content2 += '</div>'
 					
 				$('#checkbox').append(content2)

@@ -40,7 +40,7 @@
       var calendarEl = document.getElementById('calendar');
   
       var calendar = new FullCalendar.Calendar(calendarEl, {
-        locale: "ko",
+        locale: "en",
         editable: false,
         selectable: true,
         businessHours: true,

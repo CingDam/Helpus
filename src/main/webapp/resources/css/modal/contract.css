@@ -4,6 +4,16 @@ body {
     color: #000;
     background-color: #fff;
 }
+* {
+  -ms-user-select: none; 
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.pointer{
+	cursor: pointer;
+}
 .modal_background_contract {
 		
 		display : none;
@@ -86,6 +96,13 @@ body {
 }
 .form-check {
     margin: 0 15px 10px 0;
+    cursor:pointer;
+}
+.form-check input {
+	cursor:pointer;
+}
+.form-check label {
+	cursor:pointer;
 }
 #content3 {
     display: grid;

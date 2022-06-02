@@ -13,15 +13,23 @@ $(document).ready(function(){
 
 
 	$('.index').click(function(){
-       	page.fadeOut();
-        $('#index').fadeIn();
+       	page.fadeOut(300);
+        $('#index').delay(300).fadeIn();
+        
+        $('.menu-item.active').removeClass('active')
+        
+        $(this).closest(".menu-item").addClass('active');
+        $(this).closest('.menu-item.open').addClass('active');
+        
+        $('.inquery').parent().parent().parent().parent().removeClass('open');
+        
         page=$('#index')
         page_name = index
     })
 	
     $('.inquery').click(function(){
-       	page.fadeOut();
-        $('#inquery').fadeIn();
+       	page.fadeOut(300);
+        $('#inquery').delay(300).fadeIn();
         
         $('.menu-item.active').removeClass('active')
         
@@ -46,8 +54,8 @@ $(document).ready(function(){
     
     $('.reservation').click(function(){
 	
-       	page.fadeOut();
-        $('#reservation').fadeIn(1000);
+       	page.fadeOut(300);
+        $('#reservation').delay(300).fadeIn();
         
         $('.menu-item.active').removeClass('active')
         $(this).closest(".menu-item").addClass('active');
@@ -59,9 +67,8 @@ $(document).ready(function(){
     })
     
     $('.complete').click(function(){
-       	page.fadeOut();
-        
-        $('#complete').fadeIn(1000);
+       	page.fadeOut(300);
+        $('#complete').delay(300).fadeIn();
         
          $('.menu-item.active').removeClass('active')
         $(this).closest(".menu-item").addClass('active');
