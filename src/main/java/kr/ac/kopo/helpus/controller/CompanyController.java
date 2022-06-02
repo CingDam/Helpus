@@ -84,13 +84,13 @@ public class CompanyController {
 	public Map<String, Object> coInqury(Pager pager,HttpSession session){
 		Company company = (Company) session.getAttribute("company");
 		
-		int coCode = company.getCoCode();
+		int code = company.getCoCode();
 		
 		System.out.println(pager.getPage());
 		
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
-		 map.put("list", service.getCoInqury(coCode,pager));
+		 map.put("list", service.getCoInqury(code,pager));
 		 map.put("pager",pager);
 		
 		return map;

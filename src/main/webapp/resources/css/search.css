@@ -1,0 +1,184 @@
+* {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+body {
+    background-color: #fff !important;
+}
+hr {
+    margin: 20px 0;
+}
+
+/* Header */
+#header {    
+    width: 1200px;
+    height: 90px;
+    margin: auto;
+}
+#header > img {
+    width: 150px;
+    height: 40px;    
+    margin: 25px 0px;
+}
+#header > ul {
+    float: right;
+}
+#header > ul > li {
+    font-size: 16px;
+    font-weight: 500;
+    display: inline-block;
+    margin: 35px 0 10px 0;
+}
+#header > ul > li:first-child {
+    margin-right: 40px;
+}
+#header > ul > li > a {
+    color: #000;
+}
+#line {
+    width: 1920px;
+    height: 1px;
+    background-color: #2E407B;
+}
+
+/* Content */
+#wrap {
+    width: 1200px;
+    min-height: 648px;
+    margin: auto;
+}
+.col-lg-3 > hr {
+    margin-top: 69px;
+}
+.col-lg-3 > button {
+    color: #fff;
+    width: 280px;
+    background-color: #2E407B;
+}
+.col-lg-3 > button:hover {
+    color: #fff;
+    background-color: #696cff;
+}
+#cap {
+    margin-top: 30px;
+}
+.fa-arrow-right-arrow-left {
+    font-size: 14px;
+    margin-right: 10px;
+}
+#cap > div:nth-child(2) {
+    float: right;
+}
+.list {
+    display: flex;
+}
+.list > img {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    margin: 0px 30px 4px 0;
+}
+.text > div:nth-child(1)  {
+    font-size: 14px;
+    font-weight: 400;
+}
+.text > div:nth-child(2) {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+    margin: 4px 0 10px;
+}
+.text > div:nth-child(3) {
+    font-size: 14px;
+    font-weight: 500;
+}
+.list > div:nth-child(3) {
+    position: absolute;
+    right: 360px;
+}
+.list > div:nth-child(3) > img {
+    margin-right: 5px;
+    margin-bottom: 0.24rem;
+}
+.fa-star {
+    font-size: 16px !important;
+    color: #FFD233;
+    margin-right: 2px;
+}
+nav {
+    margin: 30px 0px 100px 300px;
+}
+
+/* Footer */
+#footer {
+    height: 230px;
+    background: #232C51;  
+  }
+#fnav {
+    display: flex;
+    color: #fff;
+    width: 1200px;
+    margin: auto;
+    padding: 50px 0 20px 0;
+}
+#fnav img {
+    margin-bottom: 20px;
+    filter: brightness(600%)
+}
+#fnav > div:nth-child(2) {
+    margin-left: 310px !important;
+}
+#fnav > div > div {
+    padding: 5px 0;
+}
+#fnav > div > div:first-child {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+#fnav > div:not(:first-child) {
+    padding: 0 0 0 80px;
+}
+.card {
+    box-shadow: 0 2px 6px 0 rgb(67 89 113 / 30%) !important;
+}
+
+/* 상세 */
+.mb-5 > div {
+    font-size: 18px;
+    margin-top: 5px;
+}
+#img img {
+    width: 170px;
+    height: 170px;
+}
+.rank > div {
+    font-size: 15px !important;
+    display: inline;
+}
+.review .fa-star {
+    font-size: 14px !important;
+    margin: 0px;
+}
+.review .fa-star:nth-child(2) {
+    margin-left: 20px;
+}
+.review span:nth-child(7) {
+    font-size: 13px;
+    color: #a1acb8;
+}
+.rlist img {
+    width: 110px;
+    height: 110px;
+    border-radius: 15px;
+    margin: 16px 3px 0 0;
+}
+.rlist img:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+.card-img:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+.rtext {
+    margin-top: 20px;
+}

@@ -2,6 +2,8 @@ package kr.ac.kopo.helpus.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -55,13 +57,13 @@ public class CompanyServiceImpl implements CompanyService {
 	}
 
 	@Override
-	public List<Coinqury> getCoInqury(int coCode,Pager pager) {
+	public List<Coinqury> getCoInqury(int code,Pager pager) {
 		
 		int total = dao.total(pager);
 		
 		pager.setTotal(total);
 		
-		return dao.getCoInqury(coCode,pager);
+		return dao.getCoInqury(code,pager);
 	}
 
 	@Override
@@ -115,6 +117,13 @@ public class CompanyServiceImpl implements CompanyService {
 	@Override
 	public List<Company> list() {
 		return dao.list();
+	}
+
+	@Override
+	public List<Coinqury> getCoInqury(int code) {
+		
+		return dao.getCoInqury(code);
+		
 	}
 
 }

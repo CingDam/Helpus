@@ -1,5 +1,7 @@
 package kr.ac.kopo.helpus.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.ac.kopo.helpus.model.Coinqury;
 import kr.ac.kopo.helpus.model.User;
 import kr.ac.kopo.helpus.service.CategoryService;
 import kr.ac.kopo.helpus.service.CompanyService;
@@ -78,4 +83,5 @@ public class UserController {
 	public String userPwUpdate() {
 		return "ERROR";
 	}
+	
 }

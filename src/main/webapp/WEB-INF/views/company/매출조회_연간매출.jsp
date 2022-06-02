@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-  <title>Helpus</title>
+  <title>매출조회_연간매출</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,55 +13,48 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 
   <!-- Icons -->
-  <link rel="stylesheet" href="../fonts/boxicons.css" />
+  <link rel="stylesheet" href="fonts/boxicons.css" />
   <script src="https://kit.fontawesome.com/0c375d6c23.js" crossorigin="anonymous"></script>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="../css/core.css" class="template-customizer-core-css" />
-  <link rel="stylesheet" href="../css/theme-default.css" class="template-customizer-theme-css" />
-  <link rel="stylesheet" href="../css/demo.css" />
-  <link rel="stylesheet" href="../css/modal/contract.css" />
-  <link href="../lib/datepicker/datepicker.min.css" rel="stylesheet" type="text/css" media="all">
+  <link rel="stylesheet" href="css/core.css" class="template-customizer-core-css" />
+  <link rel="stylesheet" href="css/theme-default.css" class="template-customizer-theme-css" />
 
   <!-- JS -->
-  <script src="../js/helpers.js"></script>
-  <script src="../js/jquery-3.6.0.min.js"></script>
-  <script src="../lib/datepicker/datepicker.js"></script>
-  <script src="../lib/datepicker/datepicker.ko.js"></script>
-  
+  <script src="js/helpers.js"></script>
 
-  <!-- Fullcalendar -->
-  <link href='../lib/calMain.css' rel='stylesheet' />
-  <script src='../lib/calMain.js'></script>
-  <script src='../lib/calKO.js'></script>
+  <!-- Chart -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var calendarEl = document.getElementById('calendar');
+    const labels = ['2013년','2014년','2015년','2016년','2017년','2018년','2019년','2020년','2021년','2022년'];
   
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        locale: "en",
-        editable: false,
-        selectable: true,
-        businessHours: true,
-        dayMaxEvents: true, // allow "more" link when too many events
-        events: [
-          {
-            title: 'All Day Event',
-            start: '2020-06-01'
-          }
-        ]
-      });
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: '연간 매출',
+        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgb(255, 99, 132)',
+        data: [0, 0, 0, 0, 1800000, 2500000, 3800000, 5200000, 10000000, 7200000],
+      }]
+    };
   
-      calendar.render();
-    });
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {
+        plugins: {
+          legend: {
+            display: false
+          },
+        }
+      }
+    };
   </script>
-</head>
 
+  
+</head>
 <body>
-	<!-- Contract -->
-       <jsp:include page="../include/modal/contract.jsp"></jsp:include>
-  	<!-- Contract -->
   <!-- Layout wrapper -->
   <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
@@ -69,8 +62,8 @@
       <!-- Menu -->
       <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo">
-          <a href="/" class="app-brand-link">
-            <span class="app-brand-text demo menu-text fw-bolder ms-2"><img src="../img/logo.png"></span>
+          <a href="index.html" class="app-brand-link">
+            <span class="app-brand-text demo menu-text fw-bolder ms-2"><img src="img/logo.png"></span>
           </a>
         </div>        
 
@@ -79,11 +72,11 @@
             <span class="menu-header-text">Navigation</span>
           </li>
 
-          <li class="menu-item active">
-            <div class="menu-link">
+          <li class="menu-item">
+            <a href="#" class="menu-link">
               <i class="menu-icon fa-solid fa-calendar-check"></i>
-              <div class="index">일정관리</div>
-            </div>
+              <div>일정관리</div>
+            </a>
           </li>
 
           <li class="menu-item">
@@ -93,19 +86,19 @@
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <div class="menu-link">
-                  <div class="inquery">문의내역</div>
-                </div>
+                <a href="#" class="menu-link">
+                  <div>문의내역</div>
+                </a>
               </li>
               <li class="menu-item">
-                <div class="menu-link">
-                  <div class="reservation">예약내역</div>
-                </div>
+                <a href="#" class="menu-link">
+                  <div>예약내역</div>
+                </a>
               </li>
-              <li class="menu-item">
-                <div class="menu-link">
-                  <div class="complete">완료내역</div>
-                </div>
+              <li class="menu-item active">
+                <a href="#" class="menu-link">
+                  <div>완료내역</div>
+                </a>
               </li>
             </ul>
           </li>
@@ -118,7 +111,7 @@
             <ul class="menu-sub">
               <li class="menu-item">
                 <a href="#" class="menu-link">
-                  <div>상품수정</div>
+                  <div>회사소개</div>
                 </a>
               </li>
               <li class="menu-item">
@@ -129,7 +122,7 @@
             </ul>
           </li>
 
-          <li class="menu-item">
+          <li class="menu-item active open">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
               <i class="menu-icon fa-solid fa-chart-simple"></i>
               <div>매출조회</div>
@@ -145,7 +138,7 @@
                   <div>월간매출</div>
                 </a>
               </li>
-              <li class="menu-item">
+              <li class="menu-item active">
                 <a href="#" class="menu-link">
                   <div>연간매출</div>
                 </a>
@@ -160,7 +153,7 @@
         </ul>
       </aside>
       <!-- / Menu -->
-		
+
       <!-- Layout container -->
       <div class="layout-page">
 
@@ -188,11 +181,13 @@
               <!-- Notice -->
               <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                  <i class="fa-solid fa-bell"></i>
+                  <button class="btn rounded-pill btn-icon btn-secondary">
+                    <span class="bx bx-bell"></span>
+                  </button>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                   <li>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item text-center" href="#">
                       <span class="align-middle">알림 N 개</span>
                     </a>
                   </li>
@@ -216,14 +211,14 @@
               <!-- User -->
               <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                  <img src="../img/avatar.png" alt class="w-px-40 h-auto rounded-circle" />
+                  <img src="img/avatar.png" alt class="w-px-40 h-auto rounded-circle" />
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
                   <li>
                     <a class="dropdown-item" href="#">
                       <div class="d-flex">
                         <div class="flex-shrink-0 me-3">
-                          <img src="../img/avatar.png" alt class="w-px-40 h-auto rounded-circle" />
+                          <img src="img/avatar.png" alt class="w-px-40 h-auto rounded-circle" />
                         </div>
                         <div class="flex-grow-1">
                           <small class="text-muted">대전 동구</small>
@@ -251,7 +246,7 @@
                     <div class="dropdown-divider"></div>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="../logout">
+                    <a class="dropdown-item" href="#">
                       <i class="bx bx-power-off me-2"></i>
                       <span class="align-middle">로그아웃</span>
                     </a>
@@ -266,89 +261,25 @@
         <!-- / Navbar -->
 
         <!-- Content wrapper -->
-        <div class="content-wrapper" id="index">
+        <div class="content-wrapper">
 
-          <!-- Content -->
+          <!-- Contents -->
           <div class="container-xxl flex-grow-1 container-p-y">
-            <div class="row">
-              
-              <!-- Content 1-->
-              <div class="col-12 col-lg-9 order-md-1">
-                <div class="card">
-                  <div class="card-body">
-                    <div id='calendar'></div>
-                  </div>
-                </div>
-              </div>
-              <!--/ Content 1 -->
+            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">매출조회 / </span>연간매출</h4>
 
-<!-- Content 2 -->
-              <div class="col-lg-3 order-2">
-                <div class="row">
-                  
-                  <div class="mb-4">
-                    <div class="card">
-                      <div class="row row-bordered g-0">
-                        <div class="col-md-4">
-                          <h4 class="card-header">12:12</h4>
-                        </div>
-                        <div class="col-md-8">
-                          <div class="d-flex justify-content-between">
-                            <div class="schedule">
-                              <div class="small">에어컨청소</div>
-                              <div>이은영님</div>
-                            </div>
-                            <button class="btn p-0"><i class="bx bx-dots-vertical-rounded"></i></button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="mb-4">
-                    <div class="card">
-                      <div class="row row-bordered g-0">
-                        <div class="col-md-4">
-                          <h4 class="card-header">12:12</h4>
-                        </div>
-                        <div class="col-md-8">
-                          <div class="d-flex justify-content-between">
-                            <div class="schedule">
-                              <div class="small">에어컨청소</div>
-                              <div>이은영님</div>
-                            </div>
-                            <button class="btn p-0"><i class="bx bx-dots-vertical-rounded"></i></button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <!-- Content 1 -->
+            <div class="card mb-4">
+              <div class="card-body">
+                <canvas id="myChart"></canvas>
               </div>
-              <!-- /Content 2 -->            
-              
             </div>
+            <!--/ Content 1 -->
+
           </div>
-          <!-- Content -->
-          
+          <!-- / Contents -->
+
         </div>
         <!-- Content wrapper -->
-        
-      <!-- 문의내역  -->
-	  	<jsp:include page="co_inqurylist.jsp"></jsp:include>
-	  <!-- /문의내역 -->
-	  <!-- 예약내역  -->
-	  	<jsp:include page="co_reservationlist.jsp"></jsp:include>
-	  <!-- /예약내역 -->
-	  <!-- 완료내역 -->
-	  	<jsp:include page="co_completelist.jsp"></jsp:include>
-	  <!-- /완료내역 -->
-	  <!-- 리뷰내역 -->
-	  	<jsp:include page="co_reviewlist.jsp"></jsp:include>
-	  <!-- /리뷰내역 -->
-	  <!-- 회사소개 -->
-	  	<jsp:include page="co_aboutco.jsp"></jsp:include>
-	  <!-- /회사소개 -->
 
       </div>
       <!-- / Layout page -->
@@ -356,16 +287,11 @@
     </div>
   </div>
   <!-- / Layout wrapper -->
-  
-  
-    
-  
-  
 
   <!-- Footer -->
   <div class="footer"> 
     <div>
-      <img src="../img/logo.png">
+      <img src="img/logo.png">
       <div>
         대전광역시 동구 가양동 우암로 352-21 <br>
         BRN. 000-00-00000 <br><br>
@@ -393,20 +319,19 @@
   </div>
   <!-- /Footer -->
 
+  <!-- Chart JS -->
+  <script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+  </script>
+
   <!-- Core JS -->
-  <script src="../js/bootstrap.js"></script>
-  <script src="../js/menu.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/menu.js"></script>
 
   <!-- Main JS -->
-  <script src="../js/main.js"></script>
-  <!-- function JS -->
-  <script src="../js/company_func.js"></script>
-  <script src="../js/modal/contract.js"></script>
-  
-  <!-- datepicker -->
-   <script src="../lib/datepicker/datepicker.js"></script>
-  	<script src="../lib/datepicker/datepicker.ko.js"></script>
-  
+  <script src="js/main.js"></script>
 </body>
 </html>
-    
