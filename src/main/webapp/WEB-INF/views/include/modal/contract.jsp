@@ -43,7 +43,7 @@
                 </div>
                 <div class="mb-4">
                     <label class="col-form-label">특약사항</label>
-                    <textarea class="form-control" rows="3"></textarea>
+                    <textarea class="form-control" rows="3" name="contractContents"></textarea>
                 </div>
             </div>
             <div id="content3">
@@ -52,7 +52,7 @@
                 <div><c:out value="${today}"></c:out></div>
             </div>
             <div id="button">
-                <button class="btn btn-primary btn-lg">계약서 전송</button>
+                <button class="btn btn-primary btn-lg" id="addContract">계약서 전송</button>
             </div>
         </div>
     </div>

@@ -1,24 +1,66 @@
 let date = new Date();
+let keyCode;
+let contractAddress;
+let userCode;
 
 $(function(){
     $(document).on('click','button[name="contract"]',function(){
         $('#modal_contract').show();
-       const userId = $(this).closest('tr.item').data("code")
+        const userId = $(this).closest('tr.item').data("code")
         loadContents(userId)
         console.dir($('#sdate'));
         console.dir($('#edate'));
     })
+    $(document).on('click','input[name="keyCode"]',function(){
+		keyCode = $(this).val();
+	})
+    
+    $(document).on('click','#addContract',function(){
+		contractAddress = $('input[name="contractAddress"]').val();
+		userCode = $('#userCode').attr('value');
+		
+		addContract();
+		closeLoginModal();
+	})
+    
     $('#closeBtn_contract').click(function(){
         closeLoginModal();
     })
-    
+	
     datepicker();
 })
 
+function addContract(){
+	const sDate = $('input[name="contractSdate"]').val();
+	const eDate = $('input[name="contractEdate"]').val();
+	const price = $('input[name="contractPay"]').val();
+	const contents = $('textarea[name="contractContents"]').val();
+	
+	const item = {
+		keyCode : keyCode,
+		userCode : userCode,
+		contractSdate : sDate,
+		contractEdate : eDate,
+		contractPay : price,
+		contractContents : contents,
+		contractAddress : contractAddress
+	}
+	
+	$.ajax('/contract/add',{
+		method: "POST",
+		contentType: "application/json",
+		dataType: "json",
+		data: JSON.stringify(item),
+		success: (result) => {
+			
+		}
+	})
+}
 
 function closeLoginModal() {
 	$('#modal_contract').fadeOut(200);
 	$('input').val("");
+	$('textarea').val("");
 	$('.append').remove();
 }
 
@@ -50,7 +92,7 @@ function loadContents(userId){
 			for(let i=0; i<cokey.length;i++){
 				
 				let content2 = '<div class="form-check append">'
-					content2 += `<input class="form-check-input" type="radio" id="${i+1}" name="keyCode">`
+					content2 += `<input class="form-check-input" type="radio" id="${i+1}" name="keyCode" value="${cokey[i].keyCode}">`
 					content2 += `<label class="form-check-label stop-dragging" for="${i+1}">${cokey[i].keyName}</label>`
 					content2 += '</div>'
 					
@@ -58,12 +100,12 @@ function loadContents(userId){
 			}
 				let content3 = `<div class="append">
 			                    <div>동</div>
-			                    <div>고객명 : ${user.userName}</div>
+			                    <div id="userCode" value="${user.userCode}">고객명 : ${user.userName}</div>
 			                    <div>연락처 : ${user.userPhone}</div>
 			                    <div class="row">
 			                        <label class="col-md-2">주소 :</label>
 			                        <div class="col-md-5">
-			                          <input class="form-control" type="text"/>
+			                          <input class="form-control" type="text" name="contractAddress"/>
 			                        </div>
 			                    </div>
 				                </div>
