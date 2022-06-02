@@ -4,7 +4,7 @@
 <mapper namespace="contract">
 	<insert id="add">
 		INSERT INTO contract
-		VALUES(null, #{userCode}, #{coCode}, #{keyCode}, #{contractContents}, #{contractAddress}, now(), now(), now(), now(), #{contractPay}, default)
+		VALUES(null, #{userCode}, #{coCode}, #{keyCode}, #{contractContents}, #{contractAddress}, now(), #{contractSdate}, #{contractEdate}, now(), default, #{contractPay})
 	</insert>
 	
 	<select id="list" resultType="Contract">
