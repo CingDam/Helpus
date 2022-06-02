@@ -7,8 +7,8 @@
 	
 	socket.onopen = () => {
 		const room = parent.getElementById("roomCode");
-		const roomCode = room.value;
-		const cur_user = $('#nickname').val();
+		const roomCode = room.text();
+		const cur_user = login_user;
 		const sendVal = $('#sendVal').val();
 		
 		console.log(roomCode, cur_user, sendVal);

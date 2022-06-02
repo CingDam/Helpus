@@ -51,12 +51,13 @@ $(function(){
 		dataType : "json",
 		success : result => {
 			
+			let roomNum;
 			
 			console.log(result);
 			
 			
 			for(let i = 0; i<result.length; i++){
-				const {messageContent,coName} = result[i];
+				const {messageContent,coName,roomCode} = result[i];
 				
 				let html = `<div class="chat">
 					        	<img src="img/avatar.png" />
@@ -66,17 +67,19 @@ $(function(){
 						          <span>${messageContent}</sapn>
 						        </p>
 					        	<div class="status available"></div>
+					        	<div id="roomCode" style="display:none">${roomCode}</div>
 					      	</div>`
 				$('#chatlist').append(html)
+				roomNum = roomCode
 			}
 			
 			
-			createRoom()		 
+			createRoom(roomNum)		 
 		}
 	})
 }
 
-function createRoom(){
+function createRoom(roomCode){
 	 $(".chat").each(function(){      
           $(this).click(function(){
               var childOffset = $(this).offset();
@@ -101,10 +104,8 @@ function createRoom(){
                   'top':'20px'
               }, 200);
               
-              var name = $(this).find("p strong").html();
-              var email = $(this).find("p span").html();                                          
-              $("#profile p").html(name);
-              $("#profile span").html(email);         
+              var name = $(this).find("p strong").html();                                   
+              $("#profile p").html(name);  
               
               $(".message").not(".right").find("img").attr("src", $(clone).attr("src"));                           
               $('#friendslist').fadeOut();
@@ -124,8 +125,58 @@ function createRoom(){
                       $('#chatview').fadeOut();
                       $('#friendslist').fadeIn();            
                   }, 50);
+                  
+                  $('#chat-messages').empty();
               });
-              
+              getMessage(roomCode)        
           });
-      });         
+      });
+      
+      
+}
+
+function getMessage(roomCode){
+	
+	$.ajax(`/chat/get_msg/${roomCode}`,{
+		method : "GET",
+		dataType : "json",
+		success : result => {
+			let putDate = null;
+			console.log(result);
+			
+			for(let i = 0;i < result.length; i++){
+				const {sendVal,messageContents,messageDate,roomCode} = result[i];
+				const week =['일', '월', '화', '수', '목', '금', '토'];
+				let day = week[new Date(messageDate).getDay()];
+				let getDate = messageDate.split('-')
+				if(putDate != messageDate){
+					let date = `<label>${getDate[1]}월 ${getDate[2]}일 ${day}요일</label>`
+					$('#chat-messages').append(date)
+					putDate = messageDate;
+				}
+				if(sendVal == 0){
+						let userMsg = `<div class="message right">
+								          <div class="bubble">
+									           ${messageContents}
+									           <div class="corner"></div>
+								          </div>
+								        </div>`
+								        
+						$('#chat-messages').append(userMsg)
+					}
+				if(sendVal == 1){
+						let coMsg = `<div class="message">
+								          <img src="img" />
+								          <div class="bubble">
+									       	${messageContents}
+											<div class="corner"></div>
+								          </div>
+							        </div>`
+								        
+						$('#chat-messages').append(coMsg)
+					}
+			}
+			
+		}
+	})
 }
