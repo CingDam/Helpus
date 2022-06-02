@@ -283,7 +283,7 @@
               <!--/ Content 1 -->
 
 <!-- Content 2 -->
-              <div class="col-lg-3">
+              <div class="col-lg-3 order-2">
                 <div class="row">
                   
                   <div class="mb-4">
