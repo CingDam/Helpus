@@ -1,3 +1,11 @@
+* {
+  -ms-user-select: none; 
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 @charset "UTF-8";
 :root {
   --bs-blue: #007bff;
@@ -224,7 +232,7 @@ sup {
 }
 
 a {
-  color: #696cff;
+  color: #000;
   text-decoration: none;
 }
 a:hover {
@@ -15009,18 +15017,6 @@ html:not(.layout-menu-fixed) .menu-inner-shadow {
   flex: 0 1 auto;
   margin: 0;
 }
-.menu-link > .index:hover {
-	cursor: pointer;
-}
-.menu-link > .inquery:hover {
-	cursor: pointer;
-}
-.menu-link > .reservation:hover {
-	cursor: pointer;
-}
-.menu-link > .complete:hover {
-	cursor: pointer;
-}
 .menu-item.disabled .menu-link {
   cursor: not-allowed !important;
 }
@@ -16774,6 +16770,9 @@ caption {
 #change > .bx-camera {
   line-height: 40px;
 }
+.tag .badge {
+  margin-right: 5px;
+}
 
 /* 매출조회 */
 caption > .form-control {
@@ -16789,7 +16788,6 @@ caption > label {
 caption > span {
   margin-right: 95px;
 }
-
 #total{
 	margin : 0;
 }
