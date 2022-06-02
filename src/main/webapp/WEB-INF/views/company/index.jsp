@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-  <title></title>
+  <title>Helpus</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,9 +20,15 @@
   <link rel="stylesheet" href="../css/core.css" class="template-customizer-core-css" />
   <link rel="stylesheet" href="../css/theme-default.css" class="template-customizer-theme-css" />
   <link rel="stylesheet" href="../css/demo.css" />
+  <link rel="stylesheet" href="../css/modal/contract.css" />
+  <link href="../lib/datepicker/datepicker.min.css" rel="stylesheet" type="text/css" media="all">
 
   <!-- JS -->
   <script src="../js/helpers.js"></script>
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../lib/datepicker/datepicker.js"></script>
+  <script src="../lib/datepicker/datepicker.ko.js"></script>
+  
 
   <!-- Fullcalendar -->
   <link href='../lib/calMain.css' rel='stylesheet' />
@@ -34,8 +40,7 @@
       var calendarEl = document.getElementById('calendar');
   
       var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialDate: '2020-06-12',
-        locale: "en",
+        locale: "ko",
         editable: false,
         selectable: true,
         businessHours: true,
@@ -54,6 +59,9 @@
 </head>
 
 <body>
+	<!-- Contract -->
+       <jsp:include page="../include/modal/contract.jsp"></jsp:include>
+  	<!-- Contract -->
   <!-- Layout wrapper -->
   <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
@@ -61,7 +69,7 @@
       <!-- Menu -->
       <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
         <div class="app-brand demo">
-          <a href="/company/" class="app-brand-link">
+          <a href="/" class="app-brand-link">
             <span class="app-brand-text demo menu-text fw-bolder ms-2"><img src="../img/logo.png"></span>
           </a>
         </div>        
@@ -72,10 +80,10 @@
           </li>
 
           <li class="menu-item active">
-            <a href="#" class="menu-link">
+            <div class="menu-link">
               <i class="menu-icon fa-solid fa-calendar-check"></i>
-              <div>일정관리</div>
-            </a>
+              <div class="index">일정관리</div>
+            </div>
           </li>
 
           <li class="menu-item">
@@ -85,19 +93,19 @@
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="#" class="menu-link">
-                  <div>문의내역</div>
-                </a>
+                <div class="menu-link">
+                  <div class="inquery">문의내역</div>
+                </div>
               </li>
               <li class="menu-item">
-                <a href="#" class="menu-link">
-                  <div>예약내역</div>
-                </a>
+                <div class="menu-link">
+                  <div class="reservation">예약내역</div>
+                </div>
               </li>
               <li class="menu-item">
-                <a href="#" class="menu-link">
-                  <div>완료내역</div>
-                </a>
+                <div class="menu-link">
+                  <div class="complete">완료내역</div>
+                </div>
               </li>
             </ul>
           </li>
@@ -152,7 +160,7 @@
         </ul>
       </aside>
       <!-- / Menu -->
-
+		
       <!-- Layout container -->
       <div class="layout-page">
 
@@ -258,7 +266,7 @@
         <!-- / Navbar -->
 
         <!-- Content wrapper -->
-        <div class="content-wrapper">
+        <div class="content-wrapper" id="index">
 
           <!-- Content -->
           <div class="container-xxl flex-grow-1 container-p-y">
@@ -274,23 +282,50 @@
               </div>
               <!--/ Content 1 -->
 
-              <!-- Content 2 -->
-              <div class="col-12 col-lg-3 order-md-2">
-                <div class="card">
-                  <div class="row row-bordered g-0">
-                    <div class="col-md-4">
-                      <h4 class="card-header text-center">09:00</h4>
+<!-- Content 2 -->
+              <div class="col-lg-3 order-2">
+                <div class="row">
+                  
+                  <div class="mb-4">
+                    <div class="card">
+                      <div class="row row-bordered g-0">
+                        <div class="col-md-4">
+                          <h4 class="card-header">12:12</h4>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="d-flex justify-content-between">
+                            <div class="schedule">
+                              <div class="small">에어컨청소</div>
+                              <div>이은영님</div>
+                            </div>
+                            <button class="btn p-0"><i class="bx bx-dots-vertical-rounded"></i></button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="col-md-8">
-                      <div>
-                        <div>에어컨청소</div>
-                        <h5>이은영님</h5>
+                  </div>
+
+                  <div class="mb-4">
+                    <div class="card">
+                      <div class="row row-bordered g-0">
+                        <div class="col-md-4">
+                          <h4 class="card-header">12:12</h4>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="d-flex justify-content-between">
+                            <div class="schedule">
+                              <div class="small">에어컨청소</div>
+                              <div>이은영님</div>
+                            </div>
+                            <button class="btn p-0"><i class="bx bx-dots-vertical-rounded"></i></button>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <!--/ Content 2 -->              
+              <!-- /Content 2 -->            
               
             </div>
           </div>
@@ -298,6 +333,22 @@
           
         </div>
         <!-- Content wrapper -->
+        
+      <!-- 문의내역  -->
+	  	<jsp:include page="co_inqurylist.jsp"></jsp:include>
+	  <!-- /문의내역 -->
+	  <!-- 예약내역  -->
+	  	<jsp:include page="co_reservationlist.jsp"></jsp:include>
+	  <!-- /예약내역 -->
+	  <!-- 완료내역 -->
+	  	<jsp:include page="co_completelist.jsp"></jsp:include>
+	  <!-- /완료내역 -->
+	  <!-- 리뷰내역 -->
+	  	<jsp:include page="co_reviewlist.jsp"></jsp:include>
+	  <!-- /리뷰내역 -->
+	  <!-- 회사소개 -->
+	  	<jsp:include page="co_aboutco.jsp"></jsp:include>
+	  <!-- /회사소개 -->
 
       </div>
       <!-- / Layout page -->
@@ -305,6 +356,11 @@
     </div>
   </div>
   <!-- / Layout wrapper -->
+  
+  
+    
+  
+  
 
   <!-- Footer -->
   <div class="footer"> 
@@ -343,6 +399,14 @@
 
   <!-- Main JS -->
   <script src="../js/main.js"></script>
+  <!-- function JS -->
+  <script src="../js/company_func.js"></script>
+  <script src="../js/modal/contract.js"></script>
+  
+  <!-- datepicker -->
+   <script src="../lib/datepicker/datepicker.js"></script>
+  	<script src="../lib/datepicker/datepicker.ko.js"></script>
+  
 </body>
 </html>
     

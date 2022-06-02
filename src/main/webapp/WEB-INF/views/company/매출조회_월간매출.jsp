@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-  <title>고객관리_완료내역</title>
+  <title>매출조회_월간매출</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +22,37 @@
 
   <!-- JS -->
   <script src="js/helpers.js"></script>
+
+  <!-- Chart -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    const labels = ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
+  
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: '월간 매출',
+        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgb(255, 99, 132)',
+        data: [0, 10, 5, 2, 10, 20, 30, 25, 32, 35, 42, 38],
+      }]
+    };
+  
+    const config = {
+      type: 'line',
+      data: data,
+      options: {
+        plugins: {
+          legend: {
+            display: false
+          },
+        }
+      }
+    };
+  </script>
+
+  
 </head>
 <body>
   <!-- Layout wrapper -->
@@ -48,7 +79,7 @@
             </a>
           </li>
 
-          <li class="menu-item active open">
+          <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
               <i class="menu-icon fa-solid fa-user-group"></i>
               <div>고객관리</div>
@@ -91,7 +122,7 @@
             </ul>
           </li>
 
-          <li class="menu-item">
+          <li class="menu-item active open">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
               <i class="menu-icon fa-solid fa-chart-simple"></i>
               <div>매출조회</div>
@@ -102,7 +133,7 @@
                   <div>매출내역</div>
                 </a>
               </li>
-              <li class="menu-item">
+              <li class="menu-item active">
                 <a href="#" class="menu-link">
                   <div>월간매출</div>
                 </a>
@@ -234,112 +265,18 @@
 
           <!-- Contents -->
           <div class="container-xxl flex-grow-1 container-p-y">
-            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">고객관리 / </span>완료내역</h4>
+            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">매출조회 / </span>월간매출</h4>
 
-            <!-- Table -->
-            <div class="card">
-              <div class="table-responsive text-nowrap">
-                <table class="table table-hover">
-                  <caption>25건</caption>
-                  <thead>
-                    <tr>
-                      <th>고객명</th>
-                      <th>키워드</th>
-                      <th>계약 기간</th>
-                      <th>주소</th>
-                      <th>채팅</th>
-                      <th>관리</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="long">
-                      <td>이사랑</td>
-                      <td>에어컨 청소</td>
-                      <td>2022.05.01 ~ 2025.05.01</td>
-                      <td>대전광역시 동구 자양동</td>
-                      <td>
-                        <button type="button" class="btn btn-secondary">
-                          <i class="bx bx-comment-dots"></i>
-                        </button>
-                      </td>
-                      <td><button type="button" class="btn btn-primary"><i class="bx bx-task"></i></button></td>
-                    </tr>
-
-                    <tr class="long">
-                      <td>이사랑</td>
-                      <td>에어컨 청소</td>
-                      <td>2022.05.01 ~ 2025.05.01</td>
-                      <td>대전광역시 동구 자양동</td>
-                      <td>
-                        <button type="button" class="btn btn-secondary">
-                          <i class="bx bx-comment-dots"></i>
-                        </button>
-                      </td>
-                      <td><button type="button" class="btn btn-primary"><i class="bx bx-task"></i></button></td>
-                    </tr>
-
-                    <tr class="long">
-                      <td>이사랑</td>
-                      <td>에어컨 청소</td>
-                      <td>2022.05.01 ~ 2025.05.01</td>
-                      <td>대전광역시 동구 자양동</td>
-                      <td>
-                        <button type="button" class="btn btn-secondary">
-                          <i class="bx bx-comment-dots"></i>
-                        </button>
-                      </td>
-                      <td><button type="button" class="btn btn-primary"><i class="bx bx-task"></i></button></td>
-                    </tr>
-                  </tbody>
-                </table>
+            <!-- Content 1 -->
+            <div class="card mb-4">
+              <div class="card-body">
+                <canvas id="myChart"></canvas>
               </div>
-            <!--/ Hoverable Table rows -->
-
             </div>
+            <!--/ Content 1 -->
+
           </div>
           <!-- / Contents -->
-
-          <!-- Pagination -->
-          <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-              <li class="page-item first">
-                <a class="page-link" href="javascript:void(0);">
-                  <i class="tf-icon bx bx-chevrons-left"></i>
-                </a>
-              </li>
-              <li class="page-item prev">
-                <a class="page-link" href="javascript:void(0);">
-                  <i class="tf-icon bx bx-chevron-left"></i>
-                </a>
-              </li>
-              <li class="page-item active">
-                <a class="page-link" href="javascript:void(0);">1</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="javascript:void(0);">2</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="javascript:void(0);">3</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="javascript:void(0);">4</a>
-              </li>
-              <li class="page-item">
-                <a class="page-link" href="javascript:void(0);">5</a>
-              </li>
-              <li class="page-item next">
-                <a class="page-link" href="javascript:void(0);">
-                  <i class="tf-icon bx bx-chevron-right"></i>
-                </a>
-              </li>
-              <li class="page-item last">
-                <a class="page-link" href="javascript:void(0);">
-                  <i class="tf-icon bx bx-chevrons-right"></i>
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <!-- /Pagination -->
 
         </div>
         <!-- Content wrapper -->
@@ -381,6 +318,14 @@
     </div>   
   </div>
   <!-- /Footer -->
+
+  <!-- Chart JS -->
+  <script>
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+  </script>
 
   <!-- Core JS -->
   <script src="js/bootstrap.js"></script>

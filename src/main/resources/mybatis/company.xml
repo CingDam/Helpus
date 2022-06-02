@@ -32,9 +32,11 @@
 	</select>
 	
 	<select id="getCoInqury" resultType="Coinqury">
-		SELECT *
-		FROM co_inqury
+		SELECT user.user_id,keyword.key_name,co_inqury.inqury_reg_date,co_inqury.inqury_contents
+		FROM co_inqury JOIN keyword ON co_inqury.key_code = keyword.key_code
+		JOIN user ON co_inqury.user_code = user.user_code
 		WHERE co_code=#{coCode}
+		LIMIT #{offset},#{perpage}
 	</select>
 	
 	<select id="item" resultType="Company">
@@ -72,4 +74,15 @@
 		SET co_pw=PASSWORD(#{coPw})
 		WHERE co_id=#{coId}
 	</update>
+	
+
+	<select id="inquery_total" resultType="Integer">
+		SELECT COUNT(*)
+		FROM co_inqury
+	</select>
+	
+
+	<select id="list" resultType="Company">
+		SELECT * FROM company
+	</select>
 </mapper>

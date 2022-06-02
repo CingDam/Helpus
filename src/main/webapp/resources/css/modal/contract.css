@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+body {
+    color: #000;
+    background-color: #fff;
+}
+.modal_background_contract {
+		
+		display : none;
+	
+		position : fixed;
+	
+		z-index : 1200;
+		
+		left : 0; top : 0;
+		
+		overflow : auto;
+		
+		width: 1920px; height: 100%;
+		
+		background-color: rgba(0,0,0,0.5);
+}
+#wrap {
+	
+	position: absolute;
+    left: 34.375vw;
+    top: 22.5px;
+	
+    width: 600px;
+    height: 900px;
+    border: 1px solid #777777;
+    
+    
+    background-color: #fff;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.25);
+    
+    animation-name : modalopen;
+	animation-duration : 1s;
+}
+.closeBtn {
+	position: absolute;
+	top:0px;
+	right : 10px;
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 900;
+	font-size: 24px;
+	line-height: 35px;
+	text-align: center;
+	
+	background-color: #fff;
+	
+	cursor : pointer;
+}
+.closeBtn:hover {
+	cursor: pointer;
+}
+
+@keyframes modalopen{
+	from {
+			opacity: 0
+		}
+	to { 
+		opacity : 1;
+	}
+}
+
+#section {
+    width: 510px;
+    margin: auto;
+}
+#content1 > div:first-child {
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    margin: 20px 0;
+}
+#content1 > div:nth-child(2) {
+    margin-bottom: 10px;
+}
+#checkbox {
+    display: flex;
+}
+.col-form-label {
+    color: #000 !important;
+}
+.form-check {
+    margin: 0 15px 10px 0;
+}
+#content3 {
+    display: grid;
+}
+#content3 > div:nth-child(1) {
+    grid-column: 1 / 3;
+   grid-row: 1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#content3 div:not(:nth-child(1)) {
+    padding: 5px 0;
+}
+#content3 .col-md-2 {
+    width: 55px;
+    padding-right: 5px;
+}
+#content3 .form-control {
+    width: 200px;
+}
+#button {
+    text-align: center;
+    margin-top: 30px;
+}
+.basics > ul{
+	height : 90px;
+	overflow-y: scroll;
+}
+textarea {
+	resize : none;
+}

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-  <title>서비스관리_회사소개</title>
+  <title>매출조회_매출내역</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,6 @@
   <!-- JS -->
   <script src="js/helpers.js"></script>
 </head>
-
 <body>
   <!-- Layout wrapper -->
   <div class="layout-wrapper layout-content-navbar">
@@ -65,7 +64,7 @@
                   <div>예약내역</div>
                 </a>
               </li>
-              <li class="menu-item">
+              <li class="menu-item active">
                 <a href="#" class="menu-link">
                   <div>완료내역</div>
                 </a>
@@ -73,13 +72,13 @@
             </ul>
           </li>
 
-          <li class="menu-item active open">
+          <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
               <i class="menu-icon fa-solid fa-file-lines"></i>
               <div>서비스관리</div>
             </a>
             <ul class="menu-sub">
-              <li class="menu-item active">
+              <li class="menu-item">
                 <a href="#" class="menu-link">
                   <div>회사소개</div>
                 </a>
@@ -92,13 +91,13 @@
             </ul>
           </li>
 
-          <li class="menu-item">
+          <li class="menu-item active open">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
               <i class="menu-icon fa-solid fa-chart-simple"></i>
               <div>매출조회</div>
             </a>
             <ul class="menu-sub">
-              <li class="menu-item">
+              <li class="menu-item active">
                 <a href="#" class="menu-link">
                   <div>매출내역</div>
                 </a>
@@ -188,7 +187,7 @@
                     <a class="dropdown-item" href="#">
                       <div class="d-flex">
                         <div class="flex-shrink-0 me-3">
-                          <img src="img/avatar.png" class="w-px-40 h-auto rounded-circle" />
+                          <img src="img/avatar.png" alt class="w-px-40 h-auto rounded-circle" />
                         </div>
                         <div class="flex-grow-1">
                           <small class="text-muted">대전 동구</small>
@@ -235,112 +234,106 @@
 
           <!-- Contents -->
           <div class="container-xxl flex-grow-1 container-p-y">
-            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">서비스관리 / </span>회사소개</h4>
-            <div class="row">
-              
-              <!-- Content 1-->
-              <div class="col-lg-9">
-                <div class="card">
-                  <h5 class="card-header">세부 내용</h5>
-                  <div class="card-body">
+            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">매출조회 / </span>매출내역</h4>
 
-                    <div class="mb-5 row">
-                      <label class="col-md-2 col-form-label">한줄 소개글</label>
-                      <div class="col-md-10">
-                        <input class="form-control" type="text"/>
-                      </div>
-                    </div>
+            <!-- Table -->
+            <div class="card">
+              <div class="table-responsive text-nowrap">
+                <table class="table table-hover">
+                  <caption>
+                    <input class="form-control" type="date">
+                    <label>~</label>
+                    <input class="form-control" type="date">
+                    <span>총 매출 : 000,000,000 원</span> 25건
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th>고객명</th>
+                      <th>키워드</th>
+                      <th>계약 기간</th>
+                      <th>금액</th>
+                      <th>입금일</th>
+                      <th>관리</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>이사랑</td>
+                      <td>에어컨 청소</td>
+                      <td>2022.05.01 ~ 2025.05.01</td>
+                      <td>10,000,000</td>
+                      <td>2022.05.01 14:23:52</td>                      
+                      <td><button type="button" class="btn btn-primary"><i class="bx bx-task"></i></button></td>
+                    </tr>
 
-                    <div class="mb-5 row">
-                      <label class="col-md-2 col-form-label">제공 서비스</label>
-                      <div class="col-md-10">
-                        <div class="input-group">
-                          <label class="input-group-text">대분류</label>
-                          <select class="form-select">
-                            <option selected>선택해 주세요</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                        </div>
-                        <br>
-                        <div class="input-group">
-                          <label class="input-group-text">소분류</label>
-                          <select class="form-select">
-                            <option selected>선택해 주세요</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                        </div>
-                        <br>
-                        <div class="badge rounded-pill bg-label-secondary">
-                          에어컨 청소
-                          <button type="button" class="btn-close"></button>
-                        </div>
-                      </div>
-                    </div>
+                    <tr>
+                      <td>이사랑</td>
+                      <td>에어컨 청소</td>
+                      <td>2022.05.01 ~ 2025.05.01</td>
+                      <td>10,000,000</td>
+                      <td>2022.05.01 14:23:52</td>                      
+                      <td><button type="button" class="btn btn-primary"><i class="bx bx-task"></i></button></td>
+                    </tr>
 
-                    <div class="mb-5 row">
-                      <label class="col-md-2 col-form-label">상세 소개글</label>
-                      <div class="col-md-10">
-                        <textarea class="form-control" rows="10"></textarea>
-                      </div>
-                    </div>
-
-                    <div class="mb-5 row">
-                      <label class="col-md-2 col-form-label">사진 및 동영상</label>
-                      <div class="col-md-10">
-                        <div class="row row-cols-4 g-4">
-                          <div>
-                            <img class="card-img" src="img/1.jpg"/>
-                          </div>
-                          <div>
-                            <img class="card-img" src="img/avatar.png"/>
-                          </div>
-                          <div>
-                            <img class="card-img" src="img/avatar.png"/>
-                          </div>
-                          <div>
-                            <img class="card-img" src="img/avatar.png"/>
-                          </div>
-                          <div>
-                            <img class="card-img" src="img/avatar.png"/>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                    <tr>
+                      <td>이사랑</td>
+                      <td>에어컨 청소</td>
+                      <td>2022.05.01 ~ 2025.05.01</td>
+                      <td>10,000,000</td>
+                      <td>2022.05.01 14:23:52</td>                      
+                      <td><button type="button" class="btn btn-primary"><i class="bx bx-task"></i></button></td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <!--/ Content 1 -->
+            <!--/ Hoverable Table rows -->
 
-              <!-- Content 2 -->
-              <div class="col-lg-3">
-                <div class="row">
-                  <div class="mb-4">
-                    <div class="card text-center">
-                      <div class="card-body">
-                        <img src="img/avatar.png" class="profile rounded mb-4">
-                        <span id="change"><i class='bx bx-camera'></i></span>
-                        <h4>클린앤클리어</h4>
-                        <div class="text-muted">대전 동구</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="d-grid">
-                    <button class="btn btn-primary btn-lg" type="button">저장</button>
-                  </div>
-                </div>
-              </div>
-              
-              <!--/ Content 2 -->
-              
             </div>
           </div>
-          <!-- Contents -->
-          
+          <!-- / Contents -->
+
+          <!-- Pagination -->
+          <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+              <li class="page-item first">
+                <a class="page-link" href="javascript:void(0);">
+                  <i class="tf-icon bx bx-chevrons-left"></i>
+                </a>
+              </li>
+              <li class="page-item prev">
+                <a class="page-link" href="javascript:void(0);">
+                  <i class="tf-icon bx bx-chevron-left"></i>
+                </a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="javascript:void(0);">1</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="javascript:void(0);">2</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="javascript:void(0);">3</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="javascript:void(0);">4</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="javascript:void(0);">5</a>
+              </li>
+              <li class="page-item next">
+                <a class="page-link" href="javascript:void(0);">
+                  <i class="tf-icon bx bx-chevron-right"></i>
+                </a>
+              </li>
+              <li class="page-item last">
+                <a class="page-link" href="javascript:void(0);">
+                  <i class="tf-icon bx bx-chevrons-right"></i>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <!-- /Pagination -->
+
         </div>
         <!-- Content wrapper -->
 

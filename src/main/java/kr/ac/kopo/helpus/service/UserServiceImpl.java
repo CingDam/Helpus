@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.ac.kopo.helpus.dao.UserDao;
-import kr.ac.kopo.helpus.model.Company;
 import kr.ac.kopo.helpus.model.User;
 
 @Service
@@ -91,5 +90,11 @@ public class UserServiceImpl implements UserService {
 	public void updatePwUser(User user) {
 		dao.updatePw(user);
 		
+	}
+
+	@Override
+	public User item(String userId) {
+		
+		return dao.item(userId);
 	}
 }

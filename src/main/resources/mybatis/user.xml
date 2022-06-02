@@ -60,4 +60,11 @@
 		SET user_pw=PASSWORD(#{userPw})
 		WHERE user_email=#{userEmail}
 	</update>
+	
+	
+	<select id="item" resultType="User">
+		SELECT *
+		FROM user
+		WHERE user_id=#{userId}
+	</select>
 </mapper>
