@@ -312,8 +312,13 @@
 			</div>
 		</div>
 	</div>
+	<!-- 로그인 -->
 	<jsp:include page="include/modal/login.jsp"/>
+	<!-- 회원가입 -->
 	<jsp:include page="include/modal/signup.jsp"/>
+	<!-- 채팅 -->
+	<jsp:include page="include/chat.jsp"/>
+	<!-- 푸터 -->
 	<jsp:include page="include/footer.jsp"/>
 	<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 	<script src="./js/mainPage.js"></script>

@@ -34,35 +34,32 @@ public class ChatController {
 	CompanyService companyService;
 	
 	//테스트용jsp
+	@ResponseBody
 	@GetMapping({"/",""})
-	public String test(HttpSession session, Model model) {
+	public List<Room> test(HttpSession session) {
 		User user = (User) session.getAttribute("user");
 		Company company = (Company) session.getAttribute("company");
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
 		if(user != null && company == null) {
 			List<Company> companyList = companyService.list();
-			model.addAttribute("company", companyList);
 			
 			map.put("member", "user");
 			map.put("userCode", user.getUserCode());
 			
 			List<Room> roomList = service.roomList(map);
-			model.addAttribute("roomList", roomList);
-			
-			return path + "chat";
+			return roomList;
 		}
 		if(user == null && company != null) {			
 			map.put("member", "company");
 			map.put("coCode", company.getCoCode());
 			
 			List<Room> roomList = service.roomList(map);
-			model.addAttribute("roomList", roomList);
 			
-			return path + "chat";
+			return  roomList;
 		}
 		
-		return "redirect:/";
+		return null;
 	}
 	
 	@ResponseBody

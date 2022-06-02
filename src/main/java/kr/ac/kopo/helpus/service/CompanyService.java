@@ -18,7 +18,7 @@ public interface CompanyService {
 
 	List<Schedule> getSch(int coCode);
 
-	List<Coinqury> getCoInqury(int coCode, Pager pager);
+	List<Coinqury> getCoInqury(int code, Pager pager);
 
 	Company item(int coCode);
 
@@ -35,5 +35,7 @@ public interface CompanyService {
 	void updatePwCo(Company company);
 
 	List<Company> list();
+
+	List<Coinqury> getCoInqury(int code);
 
 }

@@ -42,11 +42,11 @@ public class CompanyDaoImpl implements CompanyDao {
 	}
 
 	@Override
-	public List<Coinqury> getCoInqury(int coCode,Pager pager) {
+	public List<Coinqury> getCoInqury(int code,Pager pager) {
 		
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
-		map.put("coCode", coCode);
+		map.put("coCode", code);
 		map.put("perpage", pager.getPerpage());
 		map.put("offset", pager.getOffset());
 		
@@ -107,11 +107,7 @@ public class CompanyDaoImpl implements CompanyDao {
 		sql.update("company.updatepw_co",company);
 		
 	}
-	@Override
-	public List<Coinqury> getCoInqury(int coCode) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	public int total(Pager pager) {
@@ -124,5 +120,12 @@ public class CompanyDaoImpl implements CompanyDao {
 		return sql.selectList("company.list");
 
 	}
+
+	@Override
+	public List<Coinqury> getCoInqury(int code) {
+		
+		return sql.selectList("company.inquryList",code);
+	}
+
 
 }

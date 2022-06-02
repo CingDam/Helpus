@@ -107,11 +107,16 @@ function login_ajax(item) {
 			data: JSON.stringify(item),
 			success: result => {
 				if (result == 'OK') {
+					alert("환형합니다")
 					location.reload();
 				}
 				if (result == 'FAIL') {
 					$('.pw_input > input').val("");
 					alert("아이디와 비밀번호를 확인해주세요")
+				}
+				
+				if (result == 'EMAIL') {
+					location.href = "/email";
 				}
 			}
 

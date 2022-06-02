@@ -1,5 +1,7 @@
 package kr.ac.kopo.helpus.model;
 
+import java.util.List;
+
 public class Room {
 	private int roomCode;
 	private int userCode;
@@ -8,6 +10,11 @@ public class Room {
 
 	private String userName;
 	private String coName;
+	private String messageContents;
+	
+	private List<Message> messages;
+	
+	
 
 	public String getUserName() {
 		return userName;
@@ -56,5 +63,22 @@ public class Room {
 	public void setAdminCode(int adminCode) {
 		this.adminCode = adminCode;
 	}
+
+	public List<Message> getMessages() {
+		return messages;
+	}
+
+	public void setMessages(List<Message> messages) {
+		this.messages = messages;
+	}
+
+	public String getMessageContent() {
+		return messageContents;
+	}
+
+	public void setMessageContents(String messageContents) {
+		this.messageContents = messageContents;
+	}
+
 
 }
