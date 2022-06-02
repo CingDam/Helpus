@@ -1,5 +1,6 @@
 package kr.ac.kopo.helpus.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import kr.ac.kopo.helpus.model.Message;
@@ -19,6 +20,6 @@ public interface ChatService {
 
 	void msg_ck(Message item);
 
-	List<Room> roomList(int userCode);
+	List<Room> roomList(HashMap<String, Object> map);
 
 }

@@ -10,18 +10,20 @@
 <script src="/js/chat.js"></script>
 </head>
 <body>
-	<c:if test="${sessionScope.user == null} && ${sessionScope.company == null}">
+	<c:if test="${sessionScope.user == null && sessionScope.company == null}">
 		<div>
 			<a href="/">로그인</a>
 		</div>
 	</c:if>
-	<c:if test="${sessionScope.user != null}">
+	<c:if test="${sessionScope.user != null && sessionScope.company == null}">
 		<div>
 			<h3>사업자 목록</h3>
 			<table border="1">
 				<thead>
-					<th>업체명</th>
-					<th>관리</th>					
+					<tr>
+						<th>업체명</th>
+						<th>관리</th>
+					</tr>					
 				</thead>
 				<tbody>
 					<c:if test="${company.size() < 1}">
@@ -50,6 +52,32 @@
 						<tr>
 							<td>${item.coName}</td>
 							<td><a href="/chat/room/${item.roomCode}"><button type="button">방 들어가기</button></a></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div>
+	</c:if>
+	<c:if test="${sessionScope.company != null && sessionScope.user == null}">
+		<div>
+			<h3>고객 채팅방 목록</h3>
+			<table border="1">
+				<thead>
+					<tr>
+						<th>고객명</th>
+						<th>관리</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:if test="${roomList.size() < 1}">
+						<tr>
+							<td colspan="2">채팅방이 없습니다</td>
+						</tr>
+					</c:if>
+					<c:forEach var="item" items="${roomList}">
+						<tr>
+							<td>${item.userName}</td>
+							<td><a href="/chat/room/${item.roomCode}"><button type="button">대화하기</button></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

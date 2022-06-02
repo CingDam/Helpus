@@ -69,4 +69,10 @@ public class UserDaoImpl implements UserDao {
 		
 	}
 
+	@Override
+	public User item(String userId) {
+		
+		return sql.selectOne("user.item", userId);
+	}
+
 }

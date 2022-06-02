@@ -26,4 +26,6 @@ public interface UserDao {
 
 	void updatePw(User user);
 
+	User item(String userId);
+
 }

@@ -10,14 +10,16 @@
         <div id="section">
             <div id="content1">
                 <div>계약서</div>
-                <div>김사랑 (이하 “동”이라 한다)와 클린앤클리어 (이하 “행”이라 한다)는 다음과 같이계약을 체결한다.</div>
             </div>
 
             <div id="content2">
                 <div class="mb-2 row">
                     <label class="col-md-2 col-form-label">기간 </label>
-                    <div class="col-md-6">
-                      <input class="form-control" type="text"/>
+                    <div class="col-md-3">
+                      <input type="text" name="sdate" class="form-control" id="sdate" placeholder="날짜를 선택해주세요" autocomplete="off">
+                    </div>
+                    <div class="col-md-3">
+                      <input type="text" name="edate" class="form-control" id="edate" placeholder="날짜를 선택해주세요" autocomplete="off">
                     </div>
                 </div>
                 <div class="mb-5 row">
@@ -27,18 +29,7 @@
                     </div>
                 </div>
                 <div id="checkbox">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="1"/>
-                        <label class="form-check-label" for="1">세탁기 청소</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="2"/>
-                        <label class="form-check-label" for="2">에어컨 청소</label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="3"/>
-                        <label class="form-check-label" for="3">냉장고 청소</label>
-                    </div>
+
                 </div>
                 <div class="mb-2 basics">
                     <label class="col-form-label">기본사항</label>
@@ -59,23 +50,6 @@
             	<jsp:useBean id="now" class="java.util.Date" />
             	<fmt:formatDate value="${now}" pattern="yyyy년 MM월 dd일" var="today" />
                 <div><c:out value="${today }"></c:out></div>
-                <div>
-                    <div>동</div>
-                    <div>고객명 : 김사랑</div>
-                    <div>연락처 : 010-1234-1324</div>
-                    <div class="row">
-                        <label class="col-md-2">주소 :</label>
-                        <div class="col-md-6">
-                          <input class="form-control" type="text"/>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <div>행</div>
-                    <div>고객명 : 김사랑</div>
-                    <div>연락처 : 010-1234-1324</div>
-                    <div>주소 : 대전 동구 가양동 우암로 352-21</div>
-                </div>
             </div>
             <div id="button">
                 <button class="btn btn-primary btn-lg">계약서 전송</button>

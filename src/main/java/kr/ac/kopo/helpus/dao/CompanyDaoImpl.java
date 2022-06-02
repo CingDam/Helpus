@@ -107,7 +107,6 @@ public class CompanyDaoImpl implements CompanyDao {
 		sql.update("company.updatepw_co",company);
 		
 	}
-
 	@Override
 	public List<Coinqury> getCoInqury(int coCode) {
 		// TODO Auto-generated method stub

@@ -1,5 +1,6 @@
 package kr.ac.kopo.helpus.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -46,8 +47,8 @@ public class ChatDaoImpl implements ChatDao {
 	}
 
 	@Override
-	public List<Room> roomList(int userCode) {
-		return sql.selectList("room.roomList", userCode);
+	public List<Room> roomList(HashMap<String, Object> map) {
+		return sql.selectList("room.roomList", map);
 	}
 
 	

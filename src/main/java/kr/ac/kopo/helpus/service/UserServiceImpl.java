@@ -91,4 +91,10 @@ public class UserServiceImpl implements UserService {
 		dao.updatePw(user);
 		
 	}
+
+	@Override
+	public User item(String userId) {
+		
+		return dao.item(userId);
+	}
 }
