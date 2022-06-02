@@ -4,6 +4,9 @@
 <!DOCTYPE html>
 
 <body>
+	<script>
+		const login_user = "${sessionScope.user.userName}"
+	</script>
 	<c:if test="${sessionScope.user != null && sessionScope.company == null}">
 		<div id="chatbtn">
     <i class="fa-solid fa-message"></i>
@@ -15,16 +18,6 @@
     </div>
 
     <div id="chatlist" >
-      
-      <div class="chat">
-        <img src="img/avatar.png" />
-        <p>
-          <strong>클린앤클리어</strong>
-        </p>
-        <div class="status available"></div>
-      </div>
-
-
     </div>
     
     <div id="search">
@@ -38,50 +31,11 @@
           <div class="cx"></div>
         </div>
         <p>사업자</p>
-        <span>키워드</span>
       </div>
 
       <div id="chat-messages">
-        <label>6월 14일 금요일</label>
-
-        <div class="message right">
-          <div class="bubble">
-            안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요안녕하세요
-            <div class="corner"></div>
-          </div>
-        </div>
-
-        <div class="message">
-          <img src="img" />
-          <div class="bubble">
-            안녕하세요안녕하세요안녕하세요안녕하세요
-            <div class="corner"></div>
-          </div>
-        </div>
-
-        <div class="message">
-          <img src="img" />
-          <div class="bubble">
-            안녕하세요안녕하세요안녕하세요안녕하세요
-            <div class="corner"></div>
-          </div>
-        </div>
-
-        <div class="message">
-          <img src="img" />
-          <div class="bubble">
-            안녕하세요안녕하세요안녕하세요안녕하세요
-            <div class="corner"></div>
-          </div>
-        </div>
-
       </div>
-
-      <div id="sendmessage">
-        <input type="text" value="Send message" />
-        <button id="send"></button>
-      </div>
-
+		<iframe src="chat/chat_input" style="border: none; height: 60px;width: 290px;"></iframe>
     </div>
   </div>
 

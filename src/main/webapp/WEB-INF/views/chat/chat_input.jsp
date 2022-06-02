@@ -5,27 +5,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
+ <link rel="stylesheet" href="../css/chat.css" />
 <script src="/js/jquery-3.6.0.min.js"></script>
 <script src="/js/postmsg.js"></script>
-<title>Insert title here</title>
 <script>
+	const login_user = "${sessionScope.user.userName}"
 </script>
 </head>
 <body>
-	<div>
-		<div>
-			<c:if test="${sessionScope.user != null}">
-				<input type="hidden" id="nickname" value="${sessionScope.user.userName}">
-				<input type="hidden" id="sendVal" value="0">
-			</c:if>
-			<c:if test="${sessionScope.company != null}">
-				<input type="hidden" id="nickname" value="${sessionScope.company.coName}">
-				<input type="hidden" id="sendVal" value="1">
-			</c:if>
-			<label>메세지</label>
-			<input id="msg" type="text">
-			<button onclick="send()">보내기</button>
-		</div>
-	</div>
+	 <div id="sendmessage">
+        <input type="text" placeholder ="Send message" />
+        <button id="send"></button>
+      </div>
 </body>
 </html>

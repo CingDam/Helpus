@@ -2,6 +2,7 @@ package kr.ac.kopo.helpus.model;
 
 import java.util.List;
 
+
 public class Room {
 	private int roomCode;
 	private int userCode;

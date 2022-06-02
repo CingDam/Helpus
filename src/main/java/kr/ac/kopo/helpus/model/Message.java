@@ -2,6 +2,8 @@ package kr.ac.kopo.helpus.model;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Message {
 	private int messageCode;
 	private int roomCode;
@@ -9,6 +11,7 @@ public class Message {
 	private int userCode;
 	private int coCode;
 	private String messageContents;
+	@JsonFormat(pattern = "yyyy-MM-dd" ,timezone = "Asia/Seoul")
 	private Date messageDate;
 	private char messageRead;
 	private char sendVal;
