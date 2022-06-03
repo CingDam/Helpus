@@ -179,7 +179,7 @@
 	font-size: 14px;
 	color: #4a4a4a;
 	width: 250px;
-	position: absolute;
+	position: fixed;
 	left: -100000px;
 	opacity: 0;
 	transition: opacity .3s ease, left 0s .3s, -webkit-transform .3s ease;

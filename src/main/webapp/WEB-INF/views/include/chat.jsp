@@ -35,7 +35,9 @@
 
       <div id="chat-messages">
       </div>
-		<iframe src="chat/chat_input" style="border: none; height: 60px;width: 290px;"></iframe>
+		<div id="send-message">
+			
+		</div>
     </div>
   </div>
 

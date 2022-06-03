@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="../css/theme-default.css" class="template-customizer-theme-css" />
   <link rel="stylesheet" href="../css/demo.css" />
   <link rel="stylesheet" href="../css/modal/contract.css" />
+  <link rel="stylesheet" href="../css/co_chat.css" />
   <link href="../lib/datepicker/datepicker.min.css" rel="stylesheet" type="text/css" media="all">
 
   <!-- JS -->
@@ -349,14 +350,16 @@
 	  <!-- 회사소개 -->
 	  	<jsp:include page="co_aboutco.jsp"></jsp:include>
 	  <!-- /회사소개 -->
-
+		
       </div>
       <!-- / Layout page -->
 
     </div>
   </div>
   <!-- / Layout wrapper -->
-  
+  <!-- 회사소개 -->
+	  	<jsp:include page="co_chat.jsp"></jsp:include>
+	<!-- /회사소개 -->
   
     
   
@@ -402,6 +405,7 @@
   <!-- function JS -->
   <script src="../js/company_func.js"></script>
   <script src="../js/modal/contract.js"></script>
+  <script src="../js/co_chat_modal.js"></script>
   
   <!-- datepicker -->
    <script src="../lib/datepicker/datepicker.js"></script>

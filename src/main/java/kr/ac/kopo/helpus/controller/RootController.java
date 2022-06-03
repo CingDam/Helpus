@@ -116,7 +116,7 @@ public class RootController {
 	public String logout(HttpSession session) {
 		
 		session.invalidate();
-		return "index";
+		return "redirect:/";
 	}
 	
 	@GetMapping("/signup")
