@@ -32,7 +32,7 @@
 	</select>
 	
 	<select id="getCoInqury" resultType="Coinqury">
-		SELECT user.user_id,keyword.key_name,co_inqury.inqury_reg_date,co_inqury.inqury_contents
+		SELECT user.user_name, user.user_id,keyword.key_name,co_inqury.inqury_reg_date,co_inqury.inqury_contents
 		FROM co_inqury JOIN keyword ON co_inqury.key_code = keyword.key_code
 		JOIN user ON co_inqury.user_code = user.user_code
 		WHERE co_code=#{coCode}

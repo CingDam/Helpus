@@ -217,7 +217,7 @@
 }
 .user_input > .button_box {
 	position : absolute;
-	top:750px; left : 46px;
+	top:660px; left : 46px;
 }
 
 .user_input > .button_box > button {
@@ -269,9 +269,8 @@
 }
 .co_input > .button_box {
 	position : absolute;
-	top:750px; left : 46px;
+	top:730px; left : 46px;
 }
-
 .co_input > .button_box > button {
 	width: 355px; height: 50px;
 	
@@ -288,4 +287,28 @@
 	text-align: center;
 	
 	color: #FFFFFF;
+}
+.check_msg1 {
+    display : none;
+	font-size: 14px;
+	color : #d28893;
+	padding-left : 15px;
+
+}
+.check_msg2 {
+    display : none;
+    font-size: 14px;
+	color : red;
+	padding-left : 15px;
+}
+.warning {
+    color: red !important;
+    animation: warning .3s ease;
+    animation-iteration-count: 3;
+}
+@keyframes warning {
+    0% {transform: translateX(-3px);}
+    25% {transform: translateX(3px);}
+    50% {transform: translateX(-3px);}
+    75% {transform: translateX(3px);}
 }

@@ -65,16 +65,9 @@ public class RootController {
 		return "list";
 	}
 	
-	//테스트용 나중에 지울 것
-	@GetMapping("checkId")
-	public String checkId() {
-		return "checkId";
-	}
-	
-	//@ResponseBody
-	@PostMapping("/checkId")
-	public String checkId(String id) {
-		System.out.println(id);
+	@ResponseBody
+	@GetMapping("/checkId")
+	public String checkId(@RequestParam("id") String id) {
 		if(userService.checkId(id) && companyService.checkId(id)) {
 			return "OK";
 		} else
@@ -102,12 +95,13 @@ public class RootController {
 	public String loginUser(@RequestBody User user, HttpSession session) {
 		
 			if(userService.login(user)) {
-				if(user.getEmailCheck() == 0) {
+				if(user.getEmailCheck() == '0') {
 					return "EMAIL";
+				} else {
+					user.setUserPw(null);
+					session.setAttribute("user", user);
+					return "OK";
 				}
-				user.setUserPw(null);
-				session.setAttribute("user", user);
-				return "OK";
 			}
 			return "FAIL";
 	}
@@ -119,15 +113,10 @@ public class RootController {
 		return "index";
 	}
 	
-	@GetMapping("/signup")
-	public String signup() {
-		return "signup";
-	}
-	
-	@PostMapping("/signup/{code}")
-	//@ResponseBody
-	public String signup(@PathVariable int code, User user, Company company, HttpSession session) {
-		if(code == 0) {
+	@ResponseBody
+	@PostMapping("/signup/user")
+	public String signup(@RequestBody User user) {
+		
 				userService.signup(user);
 				
 				String authKey = mailService.sendAuthMail(user.getUserEmail());
@@ -139,17 +128,16 @@ public class RootController {
 				
 				userService.setAuthKey(map);
 				
-				session.setAttribute("msg", user.getUserId() + "님 회원가입을 축하드립니다");
-				return "redirect:../";
-			} 
-		if(code == 1) {
+				return "OK";
+	}
+	
+	@ResponseBody
+	@PostMapping("/signup/company")
+	public String signup(@RequestBody Company company) {
+		
 				companyService.signup(company);
 				
-				session.setAttribute("msg", company.getCoId() + "님 회원가입을 축하드립니다");
 				return "OK";
-		} else {
-			return "ERROR";
-		}
 	}
 	
 	@GetMapping("/signUpConfirm")

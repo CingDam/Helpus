@@ -10,15 +10,6 @@ $(function() {
 		closeLoginModal();
 	})
 
-	$(document).mouseup(function(e) {
-
-		const target = $('#modal_login')
-
-		if (target.has(e.target).length == 0) {
-			closeLoginModal();
-		}
-	});
-
 	$('#co_btn').on('click', function() {
 		
 		btnCoCssChange()
@@ -105,7 +96,10 @@ function login_ajax(item) {
 			method: "POST",
 			contentType: 'application/json',
 			data: JSON.stringify(item),
-			success: result => {
+			success: (result) => {
+				if (result == 'EMAIL') {
+					location.href = "/email";
+				}
 				if (result == 'OK') {
 					alert("환형합니다")
 					location.reload();
@@ -113,10 +107,6 @@ function login_ajax(item) {
 				if (result == 'FAIL') {
 					$('.pw_input > input').val("");
 					alert("아이디와 비밀번호를 확인해주세요")
-				}
-				
-				if (result == 'EMAIL') {
-					location.href = "/email";
 				}
 			}
 

@@ -50,9 +50,14 @@
             title: 'All Day Event',
             start: '2020-06-01'
           }
-        ]
+        ],
+      	select: function(arg){
+    		console.log(arg);
+    		
+    		//var title = prompt('입력할 일정:');
+    	  }
       });
-  
+  	  
       calendar.render();
     });
   </script>

@@ -20,9 +20,8 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public int checkId(String userId) {
-		System.out.println(userId);
-		return sql.selectOne("user.checkId", userId);
+	public int checkId(String id) {
+		return sql.selectOne("user.checkId", id);
 	}
 
 	@Override
@@ -73,6 +72,11 @@ public class UserDaoImpl implements UserDao {
 	public User item(String userId) {
 		
 		return sql.selectOne("user.item", userId);
+	}
+
+	@Override
+	public void login_log(int userCode) {
+		sql.update("user.login_log", userCode);
 	}
 
 }

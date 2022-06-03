@@ -24,8 +24,9 @@ public class UserServiceImpl implements UserService {
 			user.setUserEmail(item.getUserEmail());
 			user.setUserAddress(item.getUserAddress());
 			user.setUserPhone(item.getUserPhone());
-			user.setUserProfile(item.getUserProfile());
 			user.setEmailCheck(item.getEmailCheck());
+			
+			dao.login_log(item.getUserCode());
 			
 			return true;
 		} else
@@ -33,9 +34,15 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public boolean checkId(String userId) {
-		if(dao.checkId(userId) == 0)
+	public boolean checkId(String id) {
+		
+		int total = dao.checkId(id);
+		System.out.println(total);
+		
+		if(dao.checkId(id) == 0) {
 			return true;
+		}
+			
 		else
 			return false;
 	}

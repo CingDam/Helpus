@@ -8,15 +8,21 @@
 		WHERE user_id=#{userId} AND user_pw=PASSWORD(#{userPw})
 	</select>
 	
+	<update id="login_log">
+		UPDATE user
+		SET user_login=NOW()
+		WHERE user_code=#{userCode}
+	</update>
+	
 	<select id="checkId" resultType="Integer">
 		SELECT COUNT(*)
 		FROM user
-		WHERE user_id=#{userId}
+		WHERE user_id=#{id}
 	</select>
 	
 	<insert id="signup">
 		INSERT INTO user
-		VALUES (null,#{userId},PASSWORD(#{userPw}),#{userName},#{userEmail},#{authKey},default,#{userAddress},#{userPhone},1,NOW(),null,#{userProfile})
+		VALUES (null,#{userId},PASSWORD(#{userPw}),#{userName},#{userEmail},#{authKey},default,#{userAddress},#{userPhone},1,NOW(),null)
 	</insert>
 	
 	<update id="userUpdate">

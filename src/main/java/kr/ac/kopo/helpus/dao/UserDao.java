@@ -28,4 +28,6 @@ public interface UserDao {
 
 	User item(String userId);
 
+	void login_log(int userCode);
+
 }

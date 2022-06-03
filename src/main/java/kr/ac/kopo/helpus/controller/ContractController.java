@@ -34,7 +34,6 @@ public class ContractController {
 	public String contract(@RequestBody Contract contract, HttpSession session) {
 		Company company = (Company) session.getAttribute("company");
 		contract.setCoCode(company.getCoCode());
-		System.out.println(contract.getUserCode());
 		contractService.add(contract);
 		
 		return "OK";

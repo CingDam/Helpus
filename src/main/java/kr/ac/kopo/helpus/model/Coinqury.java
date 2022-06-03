@@ -7,10 +7,10 @@ public class Coinqury {
 	private String inquryName;
 	private String inquryContents;
 	private String inquryRegDate;
-	
+
 	private String userId;
 	private String keyName;
-	
+	private String userName;
 
 	public String getUserId() {
 		return userId;
@@ -74,5 +74,13 @@ public class Coinqury {
 
 	public void setInquryRegDate(String inquryRegDate) {
 		this.inquryRegDate = inquryRegDate;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 }
