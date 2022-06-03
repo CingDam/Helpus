@@ -41,15 +41,16 @@
 		let message = null;
 		let arr = data.split(":");
 		message = arr[1];
-		
+		console.log(data)
 		
 			for(var i=0; i<arr.length; i++){
 		            console.log('arr[' + i + ']: ' + arr[i]);
 		          }
 				session_user = arr[0];
          		message = arr[1];
-         		cur_user = login_user
-         		console.log(session_user,$.trim(cur_user))
+         		const cur_user = login_user
+         		console.log(arr[0])
+         		console.log(cur_user)
          		console.log(session_user.length)
          		console.log(cur_user.length)
          		console.log(cur_user == session_user)
@@ -75,12 +76,12 @@
 			let coMsg = `<div class="message">
 								          <img src="img" />
 								          <div class="bubble">
-									       	${messageContents}
+									       	${message}
 											<div class="corner"></div>
 								          </div>
 							        </div>`
 						  
-						$('#chat-messages').append(coMsg)
+			chat.append(coMsg)
 			chat.scrollTop(chat[0].scrollHeight);
 		}
 	
@@ -113,6 +114,7 @@
 		if(connect) {
 			
 			socket.send(login_user + ": " + $('#msg').val());
+			console.log(login_user + ": " + $('#msg').val())
 			post_msg(sendVal, messageContents.value)
 			messageContents.value = "";
 			

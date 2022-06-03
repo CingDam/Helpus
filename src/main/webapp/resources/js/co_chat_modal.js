@@ -12,7 +12,7 @@ $(function(){
 })
 
 function createRoom(){
-	const name = $('.userId').text()
+	const name = $('.userName').text()
 	const roomCode = $('#roomCode').val()
 	$("#profile p").html(name); 
 	const roomBox = `<input id = "roomCode" type="hidden" value="${roomCode}"></div>
@@ -63,7 +63,7 @@ function getMsg(roomCode){
 						$('#chat-messages').append(coMsg)
 				}
 			}
-			const iframe = `<iframe src="../chat/chat_input_co" style="border: none; height: 60px;width: 400px;"></iframe>`
+			const iframe = `<iframe src="../chat/chat_input_co" id="chat_frame" style="border: none; height: 60px;width: 400px;"></iframe>`
 			$('#chat-messages').scrollTop($('#chat-messages')[0].scrollHeight);
 			$('#send-message').append(iframe);
 		}

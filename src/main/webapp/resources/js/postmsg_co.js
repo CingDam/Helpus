@@ -14,7 +14,9 @@
 		const cur_user = login_user;
 		const sendVal = $('#sendVal').val();
 		
-		console.log(roomCode, cur_user, parent.$('#sendVal').val());
+		console.log(roomCode, cur_user, sendVal);
+		
+		console.dir(parent.$('#chat-messages'))
 		
 		connect = true;
 		$.ajax("/chat/msg_ck",{
@@ -54,33 +56,32 @@
          		console.log(cur_user.length)
          		console.log(cur_user == session_user)
          		console.log(message)
-				
+				console.log(login_user + ": " + $('#msg').val())
 				
 			
-		
-		const chat = $('#chat-messages')
+		const chat= parent.$('#chat-messages');
 		
 		if(cur_user == session_user){
-			let userMsg = `<div class="message right">
+			let coMsg = `<div class="message right">
 								          <div class="bubble">
 									           ${message}
 									           <div class="corner"></div>
 								          </div>
 								        </div>`
 								        
-			chat.append(userMsg)
+			chat.append(coMsg)
 			chat.scrollTop(chat[0].scrollHeight);
 		}
 		if(cur_user != session_user){
-			let coMsg = `<div class="message">
+			let userMsg = `<div class="message">
 								          <img src="img" />
 								          <div class="bubble">
-									       	${messageContents}
+									       	${message}
 											<div class="corner"></div>
 								          </div>
 							        </div>`
 						  
-						$('#chat-messages').append(coMsg)
+			chat.append(userMsg)
 			chat.scrollTop(chat[0].scrollHeight);
 		}
 	
