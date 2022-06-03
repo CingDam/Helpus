@@ -125,7 +125,7 @@ function login_ajax(item) {
 			data: JSON.stringify(item),
 			success: result => {
 				if (result == 'OK') {
-					location.href = `company/${item.coId}`;
+					location.href = `company/`;
 				}
 				if (result == 'FAIL') {
 					$('.pw_input > input').val("");
@@ -325,8 +325,6 @@ function findId(name, email) {
 					html += '</div>'
 				}
 				
-					
-				$('.login_modal').append(html);
 				
 				$('#close').click(function(){
 					closeLoginModal()
@@ -403,6 +401,8 @@ function closeLoginModal() {
 	$('.find_id').hide()
 	$('.change_pw').hide()
 	$('input').val("");
+	
+	console.dir($('#modal_login > input'))
 	user_val = 0;
 }
 function findidShow() {

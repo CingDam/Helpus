@@ -86,10 +86,11 @@ $(document).ready(function(){
 })
 
 
-function makeItem(item){
+function makeItem(item,room){
 	/*
 	const {code, name, spec, manufacture, category,price,barcode} = item;
 	*/	
+		console.log(room)
 		let html = `<tr class="item" data-code="${item['userId']}">`;
 		for(let i = 0; i < header.length;i++){
 		
@@ -103,7 +104,8 @@ function makeItem(item){
 		}
 		 //`<td class = "code">${code}</td><td class = "name">${name}</td><td class = "spec">${spec}</td><td class = "category">${category}</td><td class = "manufacture">${manufacture}</td><td class = "price">${price}</td><td class = "barcode">${barcode_}</td>`;
 		if(page_name == inquery){
-			html += `<td><button type="button" class="btn btn-secondary"><i class="bx bx-comment-dots"></i></button></td>`
+			html += `<td><button type="button" class="btn btn-secondary chat"><i class="bx bx-comment-dots"></i></button>
+					<input id="roomCode" type="hidden" value="${room.roomCode}"></td>`
 			html += `<td><button type="button" class="btn btn-primary" name="contract">계약</button>
 					<button type="button" class="btn btn-outline-secondary">거절</button></td>`;
 			html += `</tr>`
@@ -143,9 +145,9 @@ function pagination(url){
 		dataType : "json",
 		data:state,
 		success : result => {
-			const {list, pager} = result;
+			const {list, pager,room} = result;
 			
-			
+			console.log(room)
 			state.total = pager.total
 			
 			$("#total").text(state.total);
@@ -153,7 +155,7 @@ function pagination(url){
 					const tbody =  $(`${pager_root} tbody`);
 		            let html = "";
 		            for(let i = 0; i< list.length; i++){
-		               html += makeItem(list[i]);
+		               html += makeItem(list[i],room[i]);
 		            }
 		            
 		            

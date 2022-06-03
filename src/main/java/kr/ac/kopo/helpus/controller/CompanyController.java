@@ -30,9 +30,11 @@ import kr.ac.kopo.helpus.model.DetailImage;
 import kr.ac.kopo.helpus.model.Contract;
 import kr.ac.kopo.helpus.model.Detail;
 import kr.ac.kopo.helpus.model.Keyword;
+import kr.ac.kopo.helpus.model.Room;
 import kr.ac.kopo.helpus.model.Schedule;
 import kr.ac.kopo.helpus.model.User;
 import kr.ac.kopo.helpus.service.CategoryService;
+import kr.ac.kopo.helpus.service.ChatService;
 import kr.ac.kopo.helpus.service.CoKeyService;
 import kr.ac.kopo.helpus.service.CompanyService;
 import kr.ac.kopo.helpus.service.ContractService;
@@ -62,7 +64,10 @@ public class CompanyController {
 	@Autowired
 	CoKeyService cokeywordService;
 	
-	@GetMapping({"/{coName}","/{coName}/list"})
+	@Autowired
+	ChatService chatService;
+	
+	@GetMapping({"/","/list"})
 	public String index() {
 		return path+"index";
 	}
@@ -92,6 +97,14 @@ public class CompanyController {
 		
 		 map.put("list", service.getCoInqury(code,pager));
 		 map.put("pager",pager);
+		 if(company != null) {
+				map.put("member", "company");
+				map.put("coCode", company.getCoCode());
+				
+				List<Room> roomList = chatService.roomList(map);
+				
+				map.put("room",roomList);
+		}
 		
 		return map;
 	}

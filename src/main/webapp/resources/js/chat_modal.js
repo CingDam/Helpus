@@ -67,7 +67,6 @@ $(function(){
 						          <span>${messageContent}</sapn>
 						        </p>
 					        	<div class="status available"></div>
-					        	<div id="roomCode" style="display:none">${roomCode}</div>
 					      	</div>`
 				$('#chatlist').append(html)
 				roomNum = roomCode
@@ -104,13 +103,16 @@ function createRoom(roomCode){
                   'top':'20px'
               }, 200);
               
+              const roomBox = `<input id = "roomCode" type="hidden" value="${roomCode}"></div>
+              				<input id = "sendVal" type="hidden" value="0"></div>`
+              
               var name = $(this).find("p strong").html();                                   
-              $("#profile p").html(name);  
+              $("#profile p").html(name); 
+              $("#profile").append(roomBox) 
               
               $(".message").not(".right").find("img").attr("src", $(clone).attr("src"));                           
               $('#friendslist').fadeOut();
               $('#chatview').fadeIn();
-          
               
               $('#close').unbind("click").click(function(){            
                   $("#chat-messages, #profile, #profile p").removeClass("animate");
@@ -143,7 +145,7 @@ function getMessage(roomCode){
 		success : result => {
 			let putDate = null;
 			console.log(result);
-			
+			console.dir($('#roomCode'))
 			for(let i = 0;i < result.length; i++){
 				const {sendVal,messageContents,messageDate,roomCode} = result[i];
 				const week =['일', '월', '화', '수', '목', '금', '토'];
@@ -163,20 +165,23 @@ function getMessage(roomCode){
 								        </div>`
 								        
 						$('#chat-messages').append(userMsg)
+						
 					}
 				if(sendVal == 1){
 						let coMsg = `<div class="message">
-								          <img src="img" />
+								          <div id="img"/>
 								          <div class="bubble">
 									       	${messageContents}
 											<div class="corner"></div>
 								          </div>
 							        </div>`
-								        
+						  
 						$('#chat-messages').append(coMsg)
-					}
+				}
 			}
-			
+			const iframe = `<iframe src="chat/chat_input" style="border: none; height: 60px;width: 290px;"></iframe>`
+			$('#chat-messages').scrollTop($('#chat-messages')[0].scrollHeight);
+			$('#send-message').append(iframe);
 		}
 	})
 }

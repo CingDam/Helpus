@@ -252,11 +252,12 @@ $(function(){
 })
 
 function openSignupModal(){
+	console.log("작동")
 	$('#modal_signup').css("display","block")
 }
 
 function closeSingupModal(){
-	
+	console.log("작동")
 	$('#modal_signup').fadeOut(200)
 	$('.signup_modal > .division').fadeIn(200)
 	$('.user_input').hide();

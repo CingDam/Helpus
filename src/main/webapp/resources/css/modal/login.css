@@ -243,6 +243,10 @@
 }
 /*로그인 모달 끝*/
 /*아이디 찾기*/
+.login_modal > .findid_box{
+	display : none;
+}
+
 .login_modal > .findid_box > .input_box {
 	position: absolute;
 	

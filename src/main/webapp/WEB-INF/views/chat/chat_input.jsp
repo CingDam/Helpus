@@ -14,7 +14,7 @@
 </head>
 <body>
 	 <div id="sendmessage">
-        <input type="text" placeholder ="Send message" />
+        <input type="text" id="msg" placeholder ="Send message" autocomplete="off" />
         <button id="send"></button>
       </div>
 </body>

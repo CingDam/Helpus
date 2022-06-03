@@ -94,6 +94,11 @@ public class ChatController {
 		return path + "chat_input";
 	}
 	
+	@GetMapping("/chat_input_co")
+	public String chat_input_co() {
+		return path + "chat_input_co";
+	}
+	
 	@ResponseBody
 	@GetMapping("/get_msg/{roomCode}")
 	public List<Message> get_msg(@PathVariable int roomCode) {

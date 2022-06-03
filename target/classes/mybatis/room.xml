@@ -16,6 +16,7 @@
 		SELECT message.*, user.user_name userName, company.co_name coName
 		FROM message JOIN user ON message.user_code = user.user_code JOIN company ON message.co_code = company.co_code
 		WHERE room_code=#{roomCode}
+		ORDER BY message.message_date
 	</select>
 	
 	<select id="getRoomInfo" resultType="Room">

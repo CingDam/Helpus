@@ -141,6 +141,8 @@ function datepicker() {
 	var edate = $('#edate').datepicker({
 		startDate: new Date(date.getFullYear(), date.getMonth(), date.getDate()),
 		language: 'ko',
+	
+		
 		autoClose: true,
 		onSelect: function(date) {
 			var startNum = date;

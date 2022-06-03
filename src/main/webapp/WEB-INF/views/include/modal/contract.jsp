@@ -18,10 +18,10 @@
                 </div>
                 <div class="mb-2 row">
                     <label class="col-md-2 col-form-label">기간 </label>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                       <input type="text" name="contractSdate" class="form-control pointer" id="sdate" placeholder="날짜를 선택해주세요" autocomplete="off">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                       <input type="text" name="contractEdate" class="form-control pointer" id="edate" placeholder="날짜를 선택해주세요" autocomplete="off">
                     </div>
                 </div>
