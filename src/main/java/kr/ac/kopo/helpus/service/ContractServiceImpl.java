@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import kr.ac.kopo.helpus.dao.CalendarDao;
 import kr.ac.kopo.helpus.dao.ContractDao;
 import kr.ac.kopo.helpus.model.Contract;
 
@@ -13,10 +14,13 @@ public class ContractServiceImpl implements ContractService {
 
 	@Autowired
 	ContractDao dao;
+	@Autowired
+	CalendarDao calDao;
 	
 	@Override
 	public void add(Contract contract) {
 		dao.add(contract);
+//		calDao.add();
 	}
 
 	@Override
