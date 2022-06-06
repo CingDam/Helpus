@@ -14,6 +14,7 @@ $(function(){
 function createRoom(){
 	const name = $('.userName').text()
 	const roomCode = $('#roomCode').val()
+	console.log(roomCode)
 	$("#profile p").html(name); 
 	const roomBox = `<input id = "roomCode" type="hidden" value="${roomCode}"></div>
               				<input id = "sendVal" type="hidden" value="1"></div>`
