@@ -26,4 +26,10 @@ public class KeywordServiceImpl implements KeywordService {
 		return dao.keyList(coCode);
 	}
 
+	@Override
+	public List<Keyword> mostList() {
+		
+		return dao.mostList();
+	}
+
 }

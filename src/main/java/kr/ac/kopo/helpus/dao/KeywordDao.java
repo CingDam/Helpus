@@ -9,5 +9,7 @@ public interface KeywordDao {
 	List<Keyword> list(int cateCode);
 
 	List<Integer> keyList(int coCode);
+
+	List<Keyword> mostList();
 	
 }

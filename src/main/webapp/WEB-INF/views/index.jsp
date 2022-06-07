@@ -32,37 +32,20 @@
 			<input class="search_bar" type="text" name="keyword" placeholder="검색어를 입력하세요">
 			<i class="fa-solid fa-magnifying-glass"></i>
 		</form>
+		<div class="top_search">
+			<c:forEach var="item" items="${key}" end="8">
+				<div class="keyword">#${item.keyName}</div>
+			</c:forEach>
+		</div>
 	</div>
 	<div class="cate_list_box">
 		<ul>
-			<li>
-				<div class="circle"></div>
-				<div class="cate_name">카테고리</div>
-			</li>
-			<li>
-				<div class="circle"></div>
-				<div class="cate_name">카테고리</div>
-			</li>
-			<li>
-				<div class="circle"></div>
-				<div class="cate_name">카테고리</div>
-			</li>
-			<li>
-				<div class="circle"></div>
-				<div class="cate_name">카테고리</div>
-			</li>
-			<li>
-				<div class="circle"></div>
-				<div class="cate_name">카테고리</div>
-			</li>
-			<li>
-				<div class="circle"></div>
-				<div class="cate_name">카테고리</div>
-			</li>
-			<li>
-				<div class="circle"></div>
-				<div class="cate_name">카테고리</div>
-			</li>
+			<c:forEach var="item" items="${cate}" end="7">
+				<li>
+					<img class="circle" src="./img/category/${item.cateImg }"/>
+					<div class="cate_name">${item.cateName }</div>
+				</li>
+			</c:forEach>
 		</ul>
 	</div>
 	<div class="day_key swiper">

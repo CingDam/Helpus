@@ -10,4 +10,6 @@ public interface KeywordService {
 
 	List<Integer> keyList(int coCode);
 
+	List<Keyword> mostList();
+
 }
