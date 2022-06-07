@@ -3,6 +3,7 @@ let keyCode;
 let contractAddress;
 let userCode;
 
+
 $(function(){
     $(document).on('click','button[name="contract"]',function(){
         $('#modal_contract').show();
@@ -19,8 +20,31 @@ $(function(){
 		contractAddress = $('input[name="contractAddress"]').val();
 		userCode = $('#userCode').attr('value');
 		
-		addContract();
-		closeLoginModal();
+		const sDate = $('input[name="contractSdate"]').val();
+		const eDate = $('input[name="contractEdate"]').val();
+		const price = $('input[name="contractPay"]').val();
+		const contents = $('textarea[name="contractContents"]').val();
+		
+		const item = {
+			keyCode : keyCode,
+			userCode : userCode,
+			contractSdate : sDate,
+			contractEdate : eDate,
+			contractPay : price,
+			contractContents : contents,
+			contractAddress : contractAddress
+		}
+		
+		if(eDate == "" && price == "" && contents == ""){
+			alert("계약서를 완성해주세요")
+		} else if(sDate == "" && eDate == "" && price == "" && contents == ""){
+			alert("계약서를 완성해주세요")
+		} else {
+			addContract(item);
+			closeLoginModal();
+		}
+		
+		
 	})
     
     $('#closeBtn_contract').click(function(){
@@ -30,36 +54,69 @@ $(function(){
     datepicker();
 })
 
-function addContract(){
-	const sDate = $('input[name="contractSdate"]').val();
-	const eDate = $('input[name="contractEdate"]').val();
-	const price = $('input[name="contractPay"]').val();
-	const contents = $('textarea[name="contractContents"]').val();
+function addContract(item){
+		
+		$.ajax('/contract/add',{
+			method: "POST",
+			contentType: "application/json",
+			data: JSON.stringify(item),
+			success: (result) => {
+				console.log(result)
+				console.log(result == "OK")
+				if(result == "OK"){
+					send()
+				}
+					
+			}
+		})
 	
-	const item = {
-		keyCode : keyCode,
-		userCode : userCode,
-		contractSdate : sDate,
-		contractEdate : eDate,
-		contractPay : price,
-		contractContents : contents,
-		contractAddress : contractAddress
-	}
 	
-	$.ajax('/contract/add',{
-		method: "POST",
-		contentType: "application/json",
-		dataType: "json",
-		data: JSON.stringify(item),
-		success: (result) => {
-			
-		}
-	})
 }
+let connect = false;
+const url = "ws://" + window.location.hostname + ":" + window.location.port + "/chatserver"
+const socket = new WebSocket(url);
+socket.onopen = () => {
+	console.log("연결")
+	
+	connect = true;
+}				
+function send(){
+		
+	const messageContents = `${login_user}께서 계약서를 보내셨습니다`
+	console.log(messageContents,connect)
+	let sendVal = "1"
+	
+	if(connect) {
+		
+		socket.send(login_user + ": " + $('#msg').val());
+		console.log(login_user + ": " + $('#msg').val())
+		post_msg(sendVal, messageContents)
+		
+	}
+}			
+				
+function post_msg(sendVal, messageContents){
+		
+		const room = $('#roomCode');
+		const roomCode = room.val();
+		
+		const item = {
+			sendVal : sendVal,
+			roomCode : roomCode,
+			messageContents : messageContents
+		}
+		$.ajax("/chat/post_msg",{
+			method : "POST",
+			contentType : "application/json",
+			data : JSON.stringify(item),
+			success : () => {
+			}
+		})
+	}
 
 function closeLoginModal() {
 	$('#modal_contract').fadeOut(200);
-	$('input').val("");
+	$('#wrap').find('input').val("");
 	$('textarea').val("");
 	$('.append').remove();
 }

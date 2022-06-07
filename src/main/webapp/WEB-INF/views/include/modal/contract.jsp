@@ -28,7 +28,7 @@
                 <div class="mb-2 row">
                     <label class="col-md-2 col-form-label">금액</label>
                     <div class="col-md-6 won">
-                      <input class="form-control" type="text"/ name="contractPay">
+                      <input class="form-control" type="number" name="contractPay">
                     </div>
                 </div>
                 <div class="mb-2 basics">
