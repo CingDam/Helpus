@@ -39,7 +39,10 @@ $(function(){
               
           }
       });
-          
+      
+      $(document).on('click','#viewContract',function(){
+			$(location).attr('href','contract/view')
+		})
       
   });
   
@@ -168,15 +171,27 @@ function getMessage(roomCode){
 						
 					}
 				if(sendVal == 1){
-						let coMsg = `<div class="message">
+						if(messageContents.indexOf('계약서') != -1){
+							let coMsg = `<div class="message">
+								          <div id="img"/>
+								          <div class="bubble">
+									       	${messageContents}
+									       	<div><button id="viewContract">보기</button></div>
+											<div class="corner"></div>
+								          </div>
+							        </div>`
+							   $('#chat-messages').append(coMsg)
+						}else{
+							let coMsg = `<div class="message">
 								          <div id="img"/>
 								          <div class="bubble">
 									       	${messageContents}
 											<div class="corner"></div>
 								          </div>
 							        </div>`
-						  
-						$('#chat-messages').append(coMsg)
+							        
+							   $('#chat-messages').append(coMsg)
+						}
 				}
 			}
 			const iframe = `<iframe src="chat/chat_input" style="border: none; height: 60px;width: 290px;"></iframe>`
