@@ -69,15 +69,15 @@
 				}
 			},
 			events : {
-			           $.ajax(`calendar/calList`,{
-			        	   method: "POST",
-			        	   contentType : "application/json",
-			        	   dataType : "json",
-			        	   data : JSON.stringify({
+// 			           $.ajax(`calendar/calList`,{
+// 			        	   method: "POST",
+// 			        	   contentType : "application/json",
+// 			        	   dataType : "json",
+// 			        	   data : JSON.stringify({
 			        		   		
-			        	   		})
-			        	   }
-			           })
+// 			        	   		}),
+// 			        	   })
+			           }
 			
 		});
 
