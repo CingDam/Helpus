@@ -1,7 +1,11 @@
 
-body{
-	width : 100vw;
-	margin: 0; padding: 0;
+html,body{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	
+	overflow-x:hidden; 
 }
 
 /*배너 시작*/
@@ -16,10 +20,10 @@ body{
 	box-sizing: border-box;
 	
 	position: absolute;
-	width: 600px;
+	width: 31.2500vw;
 	height: 60px;
-	left: 630px;
-	top: 320px;
+	left: 34.375vw;
+	top: 230px;
 	
 	background: #FFFFFF;
 	border: 2px solid #FFFFFF;
@@ -41,7 +45,7 @@ body{
 	position: relative;
 	width: 450px;
 	height: 61px;
-	left: 700px;
+	left: 38.54vw;
 	top: 110px;
 	
 	font-family: 'Noto Sans KR';
@@ -61,8 +65,8 @@ body{
 	position: absolute;
 	width: 300px;
 	height: 26px;
-	left: 778px;
-	top: 171px;
+	left: 42.23vw;
+	top: 181px;
 	
 	font-family: 'Noto Sans KR';
 	font-style: normal;
@@ -79,10 +83,38 @@ body{
     font-weight: 900;
     font-size: 24px;
     position: absolute;
-    top: 337px;
-    left: 1180px;
+    top: 247px;
+    left: 63.4375vw;
     cursor: pointer;
 }
+.banner > .top_search{
+	
+	display : flex;
+	flex-wrap : wrap;
+	justify-content : center;
+	
+	width: 497px;
+	
+	margin: 257px 0 0 37.08vw;
+}
+.top_search>.keyword {
+	margin: 12px 0 0 8px;
+	padding : 4px 11px;
+	background-color:  rgba(0, 0, 0, 0.4);
+	border-radius: 30px;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 23px;
+	text-align: center;
+	
+	color: #FFFFFF;
+	
+	cursor: pointer;
+}
+
 /*배너 끝*/
 /*카테고리 시작*/
 .circle{
@@ -102,15 +134,16 @@ body{
 	width : 750px;
 	display : inline-flex;
 	list-style: none;
-	margin : 90px 0 0 535px;
+	margin : 90px 0 0 585px;
 	padding : 0;
 }
 .cate_list_box >ul> li{
 	margin: 0 0 0 20px;
 }
+.cate_list_box >ul> li:hover{
+	cursor : pointer;
+}
 .cate_name{
-	padding : 15px 0 0 11.5px;
-	width: 67px;
 	height: 26px;
 	
 	font-family: Noto Sans KR;
@@ -184,11 +217,11 @@ body{
 /*스와이퍼 끝*/
 /*일일키워드 시작*/
 .day_key{
-	position: relative;
+	position: absolute;
     width: 1200px;
     height: 412px;
-    top: 841px;
-    left: 100px;
+    top: 931px;
+    left: 433px;
 }
 .day_key>.swiper-wrapper >.swiper-slide{
 	display : inline-flex;
@@ -313,12 +346,12 @@ body{
 /*일일키워드 끝*/
 /*지역인기 시작*/
 .local_popul_service{
-	position: relative;
+	position: absolute;
 	
     width: 278px; height: 406px;
     
-    top: 940px;
-    left: 330px;
+    top: 1500px;
+    left: 18.75vw;
 	
 }
 .local_popul_service > p {
@@ -337,7 +370,7 @@ body{
 	
 	color: #000000;
 	
-	left :503px;
+	left :24.635416666666668vw;
 
 
 }
@@ -476,7 +509,7 @@ body{
 	width : 1200px;
 	height: 412px;
 	top: 2500px;
-	left : 360px;
+	left :  22.552083333333332vw;
 }
 .useful_func>.swiper-wrapper >.swiper-slide{
 	display : inline-flex;
@@ -659,6 +692,7 @@ body{
 	font-weight: 500;
 	font-size: 18px;
 	line-height: 26px;
+	margin : 20px 0;
 	
 }
 .review_box > .content_box > .swiper-wrapper > .swiper-slide > .content > .text_box > .star_box{

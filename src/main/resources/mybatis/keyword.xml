@@ -7,6 +7,11 @@
 		WHERE keyword.cate_code = #{cateCode}
 	</select>
 	
+	<select id="most_list" resultType="Keyword">
+		SELECT key_name FROM keyword
+		ORDER BY key_view DESC
+	</select>
+	
 	<select id="keyList" resultType="Integer">
 		SELECT key_code FROM co_key WHERE co_code = #{coCode}
 	</select>

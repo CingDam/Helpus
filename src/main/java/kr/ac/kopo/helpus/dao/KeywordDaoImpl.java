@@ -23,6 +23,12 @@ public class KeywordDaoImpl implements KeywordDao {
 		// TODO Auto-generated method stub
 		return sql.selectList("keyword.keyList",coCode);
 	}
+
+	@Override
+	public List<Keyword> mostList() {
+		
+		return sql.selectList("keyword.most_list");
+	}
 	
 	
 }

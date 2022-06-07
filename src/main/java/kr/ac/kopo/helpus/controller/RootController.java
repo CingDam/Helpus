@@ -12,11 +12,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.ac.kopo.helpus.model.Category;
 import kr.ac.kopo.helpus.model.Company;
 import kr.ac.kopo.helpus.model.Detail;
+import kr.ac.kopo.helpus.model.Keyword;
 import kr.ac.kopo.helpus.model.User;
+import kr.ac.kopo.helpus.service.CategoryService;
 import kr.ac.kopo.helpus.service.CompanyService;
 import kr.ac.kopo.helpus.service.DetailService;
+import kr.ac.kopo.helpus.service.KeywordService;
 import kr.ac.kopo.helpus.service.MailService;
 import kr.ac.kopo.helpus.service.UserService;
 
@@ -39,7 +43,12 @@ public class RootController {
 	
 	@Autowired
 	MailService mailService;
-
+	
+	@Autowired
+	CategoryService cateService;
+	@Autowired
+	KeywordService keyService;
+	
 	//메인페이지
 	@RequestMapping("/")
 	public String index(HttpSession session, Model model) {
@@ -50,7 +59,13 @@ public class RootController {
 			model.addAttribute("msg", msg);
 			
 			session.invalidate();
+			
 		}
+		List<Keyword> keyList = keyService.mostList(); 
+		List<Category> cateList = cateService.list();
+		
+		model.addAttribute("cate", cateList);
+		model.addAttribute("key",keyList);
 		return "index";
 	}
 	
