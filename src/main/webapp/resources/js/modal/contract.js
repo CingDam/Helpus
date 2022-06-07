@@ -5,12 +5,12 @@ let userCode;
 
 
 $(function(){
+	
     $(document).on('click','button[name="contract"]',function(){
         $('#modal_contract').show();
+     
         const userId = $(this).closest('tr.item').data("code")
         loadContents(userId)
-        console.dir($('#sdate'));
-        console.dir($('#edate'));
     })
     $(document).on('click','input[name="keyCode"]',function(){
 		keyCode = $(this).val();
@@ -35,20 +35,20 @@ $(function(){
 			contractAddress : contractAddress
 		}
 		
-		if(eDate == "" && price == "" && contents == ""){
+		if(keyCode=="" && eDate == "" && price == "" && contents == ""){
 			alert("계약서를 완성해주세요")
-		} else if(sDate == "" && eDate == "" && price == "" && contents == ""){
+		} else if(sDate == "" && eDate == "" && price == "" && contents == "" && keyCode==""){
 			alert("계약서를 완성해주세요")
 		} else {
 			addContract(item);
-			closeLoginModal();
+			closeContractModal();
 		}
 		
 		
 	})
     
     $('#closeBtn_contract').click(function(){
-        closeLoginModal();
+        closeContractModal();
     })
 	
     datepicker();
@@ -65,6 +65,9 @@ function addContract(item){
 				console.log(result == "OK")
 				if(result == "OK"){
 					send()
+					let html = `<td class="wait"><span class="badge rounded-pill bg-label-secondary">계약 대기</span></td>`
+					$('button[name="contract"]').parent('td').html(html);
+					 
 				}
 					
 			}
@@ -114,7 +117,7 @@ function post_msg(sendVal, messageContents){
 		})
 	}
 
-function closeLoginModal() {
+function closeContractModal() {
 	$('#modal_contract').fadeOut(200);
 	$('#wrap').find('input').val("");
 	$('textarea').val("");
