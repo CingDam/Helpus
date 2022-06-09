@@ -5,12 +5,22 @@ public class Calendar {
 	private int contractCode;
 	private int coCode;
 	private int userCode;
-	private String bgColor;
-	private String bdColor;
+	private String borderColor;
+	private String backgroundColor;
+	private String textColor;
 
 	private String start;
 	private String end;
-	
+	private String title;
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
 	public String getStart() {
 		return start;
 	}
@@ -59,20 +69,28 @@ public class Calendar {
 		this.userCode = userCode;
 	}
 
-	public String getBgColor() {
-		return bgColor;
+	public String getBorderColor() {
+		return borderColor;
 	}
 
-	public void setBgColor(String bgColor) {
-		this.bgColor = bgColor;
+	public void setBorderColor(String borderColor) {
+		this.borderColor = borderColor;
 	}
 
-	public String getBdColor() {
-		return bdColor;
+	public String getBackgroundColor() {
+		return backgroundColor;
 	}
 
-	public void setBdColor(String bdColor) {
-		this.bdColor = bdColor;
+	public void setBackgroundColor(String backgroundColor) {
+		this.backgroundColor = backgroundColor;
+	}
+
+	public String getTextColor() {
+		return textColor;
+	}
+
+	public void setTextColor(String textColor) {
+		this.textColor = textColor;
 	}
 
 }
