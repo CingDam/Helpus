@@ -5,11 +5,22 @@
 	<insert id="add">
 		INSERT INTO contract
 		VALUES(null, #{userCode}, #{coCode}, #{keyCode}, #{contractContents}, #{contractAddress}, now(), #{contractSdate}, #{contractEdate}, now(), default, #{contractPay})
+		<selectKey resultType="Integer" keyProperty="contractCode" order="AFTER">
+  			SELECT LAST_INSERT_ID()
+  		</selectKey>
 	</insert>
 	
 	<select id="list" resultType="Contract">
 		SELECT contract.*, user.user_name userName, keyword.key_name keyName
 		FROM contract JOIN user ON contract.user_code = user.user_code JOIN keyword ON contract.key_code = keyword.key_code
 		WHERE co_code=#{coCode}
+	</select>
+	
+	<select id="item" resultType="Contract">
+		SELECT contract.*,user.*,company.*,keyword.key_code FROM contract
+		JOIN keyword ON contract.key_code = keyword.key_code
+		JOIN user ON contract.user_code = user.user_code 
+		JOIN company ON contract.co_code = company.co_code
+		WHERE contract.contract_code = #{contractCode}
 	</select>
 </mapper>

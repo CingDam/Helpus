@@ -10,4 +10,6 @@ public interface ContractDao {
 
 	List<Contract> list(int coCode);
 
+	Contract item(int contractCode);
+
 }

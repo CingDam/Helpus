@@ -15,7 +15,14 @@ public class Contract {
 	private Date contractPayday;
 	private int contractPay;
 	private char contractState;
+	
 	private String userName;
+	private String userPhone;
+	
+	private String coName;
+	private String coPhone;
+	private String coAddress;
+	
 	private String keyName;
 
 	public int getContractCode() {
@@ -129,5 +136,41 @@ public class Contract {
 	public void setContractPayday(Date contractPayday) {
 		this.contractPayday = contractPayday;
 	}
+
+	public String getCoName() {
+		return coName;
+	}
+
+	public void setCoName(String coName) {
+		this.coName = coName;
+	}
+
+	public String getUserPhone() {
+		return userPhone;
+	}
+
+	public void setUserPhone(String userPhone) {
+		this.userPhone = userPhone;
+	}
+
+	public String getCoPhone() {
+		return coPhone;
+	}
+
+	public void setCoPhone(String coPhone) {
+		this.coPhone = coPhone;
+	}
+
+	public String getCoAddress() {
+		return coAddress;
+	}
+
+	public void setCoAddress(String coAddress) {
+		this.coAddress = coAddress;
+	}
+	
+	
+	
+	
 
 }

@@ -42,9 +42,10 @@ function getMsg(roomCode){
 					putDate = messageDate;
 				}
 				if(sendVal == 1){
+						const message = messageContents.split(':')
 						let userMsg = `<div class="message right">
 								          <div class="bubble">
-									           ${messageContents}
+									           ${message[0]}
 									           <div class="corner"></div>
 								          </div>
 								        </div>`
@@ -54,7 +55,7 @@ function getMsg(roomCode){
 					}
 				if(sendVal == 0){
 						let coMsg = `<div class="message">
-								          <img src="img" />
+								          <img src="./../img/basic_profile.jpg" />
 								          <div class="bubble">
 									       	${messageContents}
 											<div class="corner"></div>
