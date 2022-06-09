@@ -20,7 +20,7 @@
         <div id="section">
             <div id="content1">
                 <div>계약서</div>
-                <div>${item.userName} (이하 “동”이라 한다)와 ${item.contract.coName} (이하 “행”이라 한다)는 다음과 같이계약을 체결한다.</div>
+                <div>${item.contract.userName} (이하 “동”이라 한다)와 ${item.contract.coName} (이하 “행”이라 한다)는 다음과 같이 계약을 체결한다.</div>
             </div>
 
             <div id="content2">
@@ -37,19 +37,15 @@
                 	<fmt:formatDate value="${item.contract.contractSdate}" pattern="yyyy-MM-dd" var="sdate" />
                 	<fmt:formatDate value="${item.contract.contractEdate}" pattern="yyyy-MM-dd" var="edate" />
                     <label class="col-md-2 col-form-label">기간 </label>
-                    <div class="col-md-4">
-                      <input type="text" name="contractSdate" class="form-control pointer" id="sdate" 
-                      	value='<c:out value="${sdate }"/>' autocomplete="off" readonly="readonly">
-                    </div>
-                    <div class="col-md-4">
-                      <input type="text" name="contractEdate" class="form-control pointer" id="edate"
-                      	value="${edate }" autocomplete="off" readonly="readonly">
-                    </div>
+                    <div class="col-md-10 col-form-label">
+                      	<c:out value="${sdate }"/> ~ <c:out value="${edate }"></c:out>
+                     </div>
+                    
                 </div>
                 <div class="mb-2 row">
                     <label class="col-md-2 col-form-label">금액</label>
-                    <div class="col-md-6 won">
-                      <input class="form-control" type="number" name="contractPay" value="${item.contract.contractPay}" readonly>
+                    <div class="col-md-6 col-form-label">
+                      ${item.contract.contractPay}
                     </div>
                 </div>
                 <div class="mb-2 basics">
@@ -64,7 +60,7 @@
                 </div>
                 <div class="mb-4">
                     <label class="col-form-label">특약사항</label>
-                    <textarea class="form-control" rows="3" name="contractContents" readonly>${item.contract.contractContents}</textarea>
+                    <div>${item.contract.contractContents}</div>
                 </div>
             </div>
             <div id="content3">
@@ -73,12 +69,7 @@
 	                 <div>동</div>
 	                 <div id="userCode">고객명 : ${item.contract.userName}</div>
 	                 <div>연락처 : ${item.contract.userPhone}</div>
-	                 <div class="row">
-	                     <label class="col-md-2">주소 :</label>
-	                     <div class="col-md-5">
-	                       <input class="form-control" type="text" name="contractAddress" value="${item.contract.contractAddress }" readonly="readonly"/>
-	                     </div>
-	                 </div>
+	                 <div>주소 :${item.contract.contractAddress }</div>
               	</div>
              	<div class="append" style="margin : 0 0 0 20px;">
 	                  <div>행</div>

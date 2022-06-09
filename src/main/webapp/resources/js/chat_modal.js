@@ -179,7 +179,7 @@ function getMessage(roomCode){
 							let message = messageContents.split(':')
 							contractCode = parseInt(message[1])
 							let coMsg = `<div class="message">
-								          <div id="img"/>
+								          <img src="./../img/basic_profile.jpg" />
 								          <div class="bubble">
 									       	${message[0]}
 									       	<div><button id="viewContract">보기</button></div>
@@ -190,7 +190,7 @@ function getMessage(roomCode){
 							   console.log(contractCode)
 						}else{
 							let coMsg = `<div class="message">
-								          <div id="img"/>
+								           <img src="./../img/basic_profile.jpg" />
 								          <div class="bubble">
 									       	${messageContents}
 											<div class="corner"></div>
