@@ -28,4 +28,10 @@ public class ContractServiceImpl implements ContractService {
 		return dao.list(coCode);
 	}
 
+	@Override
+	public Contract item(int contractCode) {
+		
+		return dao.item(contractCode);
+	}
+
 }

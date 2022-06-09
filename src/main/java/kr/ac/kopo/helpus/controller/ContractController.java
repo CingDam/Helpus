@@ -1,5 +1,6 @@
 package kr.ac.kopo.helpus.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,12 +33,12 @@ public class ContractController {
 	
 	@ResponseBody
 	@PostMapping("/add")
-	public String contract(@RequestBody Contract contract, HttpSession session) {
+	public Contract contract(@RequestBody Contract contract, HttpSession session) {
 		Company company = (Company) session.getAttribute("company");
 		contract.setCoCode(company.getCoCode());
 		contractService.add(contract);
 		
-		return "OK";
+		return contract;
 	}
 	
 	@GetMapping("list")
@@ -48,5 +50,20 @@ public class ContractController {
 		model.addAttribute("list", list);
 		
 		return path + "list";
+	}
+	
+	@GetMapping("/view/{contractCode}")
+	public String view(@PathVariable int contractCode,Model model) {
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		Contract contract = contractService.item(contractCode);
+		List<CoKey> coKey = cokeywordService.list(contract.getCoCode());
+		
+		map.put("contract", contract);
+		map.put("coKey", coKey);
+		
+		model.addAttribute("item",map);
+		return path + "view";
 	}
 }

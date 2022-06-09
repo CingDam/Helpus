@@ -39,8 +39,10 @@
 		
 		let data = msg.data;
 		let message = null;
+		let contractCode = null;
 		let arr = data.split(":");
 		message = arr[1];
+		contractCode = arr[2];
 		console.log(data)
 		
 			for(var i=0; i<arr.length; i++){
@@ -50,6 +52,7 @@
          		message = arr[1];
          		const cur_user = login_user
          		console.log(arr[0])
+         		console.log(arr[2])
          		console.log(cur_user)
          		console.log(session_user.length)
          		console.log(cur_user.length)
@@ -73,7 +76,20 @@
 			chat.scrollTop(chat[0].scrollHeight);
 		}
 		if(cur_user != session_user){
-			let coMsg = `<div class="message">
+			
+			if(message.indexOf('계약서') != -1){
+							let coMsg = `<div class="message">
+								          <div id="img"/>
+								          <div class="bubble">
+									       	${message}
+									       	<div><button id="viewContract">보기</button></div>
+									       	<input id="contractCode" type="hidden" value="${contractCode}">
+											<div class="corner"></div>
+								          </div>
+							        </div>`
+					chat.append(coMsg)
+				} else {
+					let coMsg = `<div class="message">
 								          <img src="img" />
 								          <div class="bubble">
 									       	${message}
@@ -81,7 +97,10 @@
 								          </div>
 							        </div>`
 						  
-			chat.append(coMsg)
+					chat.append(coMsg)
+			
+				}
+			
 			chat.scrollTop(chat[0].scrollHeight);
 		}
 	

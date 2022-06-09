@@ -1,3 +1,5 @@
+let contractCode = null;
+
 $(function(){
     $("#chatbtn").click(function() {
         $("#chatbtn").toggle('scale');
@@ -41,7 +43,7 @@ $(function(){
       });
       
       $(document).on('click','#viewContract',function(){
-			$(location).attr('href','contract/view')
+			$(location).attr('href',`contract/view/${contractCode}`)
 		})
       
   });
@@ -60,14 +62,15 @@ $(function(){
 			
 			
 			for(let i = 0; i<result.length; i++){
-				const {messageContent,coName,roomCode} = result[i];
 				
+				const {messageContent,coName,roomCode} = result[i];
+				let message = messageContent.split(':')
 				let html = `<div class="chat">
 					        	<img src="img/avatar.png" />
 						        <p>
 						          <strong>${coName}</strong>
 						          <br>
-						          <span>${messageContent}</sapn>
+						          <span>${message[0]}</sapn>
 						        </p>
 					        	<div class="status available"></div>
 					      	</div>`
@@ -154,6 +157,7 @@ function getMessage(roomCode){
 				const week =['일', '월', '화', '수', '목', '금', '토'];
 				let day = week[new Date(messageDate).getDay()];
 				let getDate = messageDate.split('-')
+
 				if(putDate != messageDate){
 					let date = `<label>${getDate[1]}월 ${getDate[2]}일 ${day}요일</label>`
 					$('#chat-messages').append(date)
@@ -172,15 +176,18 @@ function getMessage(roomCode){
 					}
 				if(sendVal == 1){
 						if(messageContents.indexOf('계약서') != -1){
+							let message = messageContents.split(':')
+							contractCode = parseInt(message[1])
 							let coMsg = `<div class="message">
 								          <div id="img"/>
 								          <div class="bubble">
-									       	${messageContents}
+									       	${message[0]}
 									       	<div><button id="viewContract">보기</button></div>
 											<div class="corner"></div>
 								          </div>
 							        </div>`
 							   $('#chat-messages').append(coMsg)
+							   console.log(contractCode)
 						}else{
 							let coMsg = `<div class="message">
 								          <div id="img"/>

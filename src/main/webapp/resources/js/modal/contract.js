@@ -62,9 +62,10 @@ function addContract(item){
 			data: JSON.stringify(item),
 			success: (result) => {
 				console.log(result)
-				console.log(result == "OK")
-				if(result == "OK"){
-					send()
+				const {contractCode} = result
+				console.log(contractCode)
+				if(contractCode != 0 ){
+					send(contractCode)
 					let html = `<td class="wait"><span class="badge rounded-pill bg-label-secondary">계약 대기</span></td>`
 					$('button[name="contract"]').parent('td').html(html);
 					 
@@ -83,16 +84,13 @@ socket.onopen = () => {
 	
 	connect = true;
 }				
-function send(){
+function send(contractCode){
 		
-	const messageContents = `${login_user}께서 계약서를 보내셨습니다`
-	console.log(messageContents,connect)
+	const messageContents = `계약서를 보내셨습니다: ${contractCode}`
 	let sendVal = "1"
 	
 	if(connect) {
-		
-		socket.send(login_user + ": " + $('#msg').val());
-		console.log(login_user + ": " + $('#msg').val())
+		socket.send(login_user + ": " + messageContents+': ' + contractCode);
 		post_msg(sendVal, messageContents)
 		
 	}
@@ -111,8 +109,11 @@ function post_msg(sendVal, messageContents){
 		$.ajax("/chat/post_msg",{
 			method : "POST",
 			contentType : "application/json",
+			dataType : "json",
 			data : JSON.stringify(item),
-			success : () => {
+			success : (result) => {
+				console.log(result);
+				
 			}
 		})
 	}

@@ -24,4 +24,10 @@ public class ContractDaoImpl implements ContractDao {
 		return sql.selectList("contract.list", coCode);
 	}
 
+	@Override
+	public Contract item(int contractCode) {
+		
+		return sql.selectOne("contract.item", contractCode);
+	}
+
 }
