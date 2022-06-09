@@ -68,17 +68,14 @@
 					arg.event.remove()
 				}
 			},
-			events : {
-// 			           $.ajax(`calendar/calList`,{
-// 			        	   method: "POST",
-// 			        	   contentType : "application/json",
-// 			        	   dataType : "json",
-// 			        	   data : JSON.stringify({
-			        		   		
-// 			        	   		}),
-// 			        	   })
-			           }
-			
+			events : function(info, successCallback, failureCallback){
+				$.ajax("calendar/calList",{
+		        	   method: "POST",
+		        	   dataType : "json",
+		        	   contentType : "application/json"
+		        })
+			}
+			   
 		});
 
 		calendar.render();
