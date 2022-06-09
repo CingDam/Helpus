@@ -50,6 +50,8 @@ public class CompanyDaoImpl implements CompanyDao {
 		map.put("perpage", pager.getPerpage());
 		map.put("offset", pager.getOffset());
 		
+		
+		
 		return sql.selectList("company.getCoInqury", map);
 	}
 
