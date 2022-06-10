@@ -3,7 +3,14 @@
 
 <mapper namespace="calendar">
 	<select id="calList" resultType="Calendar">
-		SELECT calendar.*, contract.contract_sdate start, contract.contract_edate end, keyword.key_name title
-		FROM calendar JOIN contract ON calendar.contract_code=contract.contract_code JOIN keyword ON keyword.key_code=contract.key_code
+		SELECT calendar.*, date_format(contract.contract_sdate, '%Y-%m-%d %H:%i') start, date_add(date_format(contract.contract_edate, '%Y-%m-%d %H:%i'), INTERVAL 1 DAY) end, keyword.key_name title, user.user_name userName
+		FROM calendar JOIN contract ON calendar.contract_code=contract.contract_code JOIN keyword ON keyword.key_code=contract.key_code JOIN user ON contract.user_code=user.user_code
+		WHERE calendar.co_code=#{coCode}
+	</select>
+	
+	<select id="schList" resultType="Schedule">
+		SELECT contract_code, user.user_name, keyword.key_name, substring(contract_sdate, 12, 5) start
+		FROM contract JOIN user ON contract.user_code=user.user_code JOIN keyword ON contract.key_code=keyword.key_code
+		WHERE contract.co_code=#{coCode} AND (#{start} BETWEEN date_format(contract.contract_sdate, '%Y-%m-%d') AND date_format(contract.contract_edate, '%Y-%m-%d'))
 	</select>
 </mapper>
