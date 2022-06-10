@@ -51,5 +51,11 @@ public class ChatDaoImpl implements ChatDao {
 		return sql.selectList("room.roomList", map);
 	}
 
+	@Override
+	public Message getOneMsg(int contractCode) {
+		
+		return sql.selectOne("room.getOneMsg", contractCode);
+	}
+
 	
 }

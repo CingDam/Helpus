@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import kr.ac.kopo.helpus.model.CoKey;
 import kr.ac.kopo.helpus.model.Company;
 import kr.ac.kopo.helpus.model.Contract;
+import kr.ac.kopo.helpus.model.Message;
+import kr.ac.kopo.helpus.service.ChatService;
 import kr.ac.kopo.helpus.service.CoKeyService;
 import kr.ac.kopo.helpus.service.ContractService;
 
@@ -30,6 +32,8 @@ public class ContractController {
 	ContractService contractService;
 	@Autowired
 	CoKeyService cokeywordService;
+	@Autowired
+	ChatService chatService;
 	
 	@ResponseBody
 	@PostMapping("/add")
@@ -59,9 +63,11 @@ public class ContractController {
 		
 		Contract contract = contractService.item(contractCode);
 		List<CoKey> coKey = cokeywordService.list(contract.getCoCode());
+		Message msg = chatService.getOneMsg(contractCode);
 		
 		map.put("contract", contract);
 		map.put("coKey", coKey);
+		map.put("msg", msg);
 		
 		model.addAttribute("item",map);
 		return path + "view";

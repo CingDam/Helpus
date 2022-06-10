@@ -103,14 +103,19 @@ body {
 .form-check label {
 	cursor:pointer;
 }
+#contents {
+	width: 510px;
+	height : 90px;
+	overflow-y: auto; 
+}
 #content3 {
     display: grid;
 }
-#content3 > div:nth-child(1) {
-    grid-column: 1 / 3;
-   grid-row: 1;
+#content3 #day{
+	 grid-column: 1 / 3;
+   grid-row: 3;
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 20px
 }
 #content3 div:not(:nth-child(1)) {
     padding: 5px 0;
@@ -120,7 +125,7 @@ body {
     padding-right: 5px;
 }
 #content3 .form-control {
-    width: 200px;
+    width: 185px;
 }
 #button {
     text-align: center;
@@ -132,4 +137,7 @@ body {
 }
 textarea {
 	resize : none;
+}
+.col-md-5.user {
+	width : 41.66666667% !important;
 }

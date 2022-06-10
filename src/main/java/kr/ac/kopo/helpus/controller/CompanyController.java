@@ -63,6 +63,8 @@ public class CompanyController {
 	UserService userService;
 	@Autowired
 	CoKeyService cokeywordService;
+	@Autowired
+	ContractService contractService;
 	
 	@Autowired
 	ChatService chatService;
@@ -96,6 +98,7 @@ public class CompanyController {
 		HashMap<String, Object> map = new HashMap<String, Object>();
 		
 		 map.put("list", service.getCoInqury(code,pager));
+		 map.put("contractList", contractService.list(code));
 		 map.put("pager",pager);
 		 if(company != null) {
 				map.put("member", "company");

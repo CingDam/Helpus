@@ -169,12 +169,24 @@ function loadContents(userId){
 			                          <input class="form-control" type="text" name="contractAddress"/>
 			                        </div>
 			                    </div>
+			                    <div class="row">
+			                      <label class="col-md-2">서명 :</label>
+			                      <div class="col-md-5">
+			                        <input class="form-control" type="text"/>
+			                      </div>
+			                  	</div>
 				                </div>
 				               	<div class="append" style="margin : 0 0 0 20px;">
 				                    <div>행</div>
 				                    <div>회사명 : ${company.coName}</div>
 				                    <div>연락처 : ${company.coPhone}</div>
 				                    <div>주소 : ${company.coAddress}</div>
+				                    <div class="row">
+				                    <label class="col-md-2">서명 :</label>
+				                     <div class="col-md-5">
+				                        <input class="form-control" type="text" placehoder="${company.coName}"/>
+				                      </div>
+				                     </div>
 				                </div>`
 				
 				$('#content3').append(content3)

@@ -69,7 +69,7 @@
 				}
 			},
 			events : function(info, successCallback, failureCallback){
-				$.ajax("calendar/calList",{
+				$.ajax("../calendar/calList",{
 		        	   method: "POST",
 		        	   dataType : "json",
 		        	   contentType : "application/json"

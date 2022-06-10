@@ -61,4 +61,12 @@
 		LIMIT 1;
 	</select>
 	
+	<select id="getOneMsg" resultType="Message">
+		SELECT * FROM message
+		WHERE message_contents 
+		REGEXP '계약서' 
+		AND message_contents 
+		REGEXP #{contractCode}
+	</select>
+	
 </mapper>

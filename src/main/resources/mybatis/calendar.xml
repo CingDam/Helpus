@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-<mapper namespace="calendar">
-	<select id="calList" resultType="Calendar">
-		SELECT calendar.*, contract.contract_sdate start, contract.contract_edate end, keyword.key_name title
-		FROM calendar JOIN contract ON calendar.contract_code=contract.contract_code JOIN keyword ON keyword.key_code=contract.key_code
-	</select>
-</mapper>
