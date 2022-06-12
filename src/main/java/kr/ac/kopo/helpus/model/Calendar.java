@@ -12,6 +12,7 @@ public class Calendar {
 	private String start;
 	private String end;
 	private String title;
+	private String userName;
 
 	public String getTitle() {
 		return title;
@@ -91,6 +92,14 @@ public class Calendar {
 
 	public void setTextColor(String textColor) {
 		this.textColor = textColor;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 }

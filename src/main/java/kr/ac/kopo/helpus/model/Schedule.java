@@ -7,6 +7,10 @@ public class Schedule {
 	private String userName;
 	private Date contractSdate;
 
+	private int coCode;
+	private String start;
+	private String keyName;
+
 	public int getContractCode() {
 		return contractCode;
 	}
@@ -37,6 +41,30 @@ public class Schedule {
 
 	public void setContractEdate(Date contractEdate) {
 		this.contractEdate = contractEdate;
+	}
+
+	public String getKeyName() {
+		return keyName;
+	}
+
+	public void setKeyName(String keyName) {
+		this.keyName = keyName;
+	}
+
+	public String getStart() {
+		return start;
+	}
+
+	public void setStart(String start) {
+		this.start = start;
+	}
+
+	public int getCoCode() {
+		return coCode;
+	}
+
+	public void setCoCode(int coCode) {
+		this.coCode = coCode;
 	}
 
 	private Date contractEdate;

@@ -45,6 +45,7 @@
 <script src='../lib/calKO.js'></script>
 
 <script>
+	var co_code = ${sessionScope.company.coCode};
 	document.addEventListener('DOMContentLoaded', function() {
 		var calendarEl = document.getElementById('calendar');
 
@@ -55,24 +56,84 @@
 			businessHours : true,
 			dayMaxEvents : true, // allow "more" link when too many events
 			select : function(arg) {
-				console.log(arg);
-
-				var title = prompt('입력할 일정:');
+				var start = arg.startStr;
+				console.log(start);
+					
+				$("#schedule").empty();
+				$.ajax("/calendar/sch",{
+					method: "POST",
+					dataType: "json",
+					contentType: "application/json",
+					data: JSON.stringify({
+						coCode : co_code,
+						start : start
+					}),
+					success: (result) => {
+						if(result != null){
+							$.each(result, function(index, item){
+								let contents = '<div class="mb-4">'
+								contents += '<div class="card">'
+								contents += '<div class="row row-bordered g-0">'
+								contents += '<div class="col-md-4">'
+								contents += '<h4 class="card-header">'
+								contents += item.start
+								contents += '</h4>'
+								contents += '</div>'
+								contents += '<div class="col-md-8">'
+								contents += '<div class="d-flex justify-content-between">'
+								contents += '<div class="schedule">'
+								contents += '<div class="small">'
+								contents += item.keyName
+								contents += '</div>'
+								contents += '<div>'
+								contents += item.userName
+								contents += '</div>'
+								contents += '</div>'
+								contents += '<button class="btn p-0">'
+								contents += '<i class="bx bx-dots-vertical-rounded"></i>'
+								contents += '</button>'
+								contents += '</div>'
+								contents += '</div>'
+								contents += '</div>'
+								contents += '</div>'
+								contents += '</div>'
+								
+								$("#schedule").append(contents);
+							})//each end
+						}//if end
+					}
+				})//select ajax end
 			},
 			eventClick : function(arg) {
 				// 있는 일정 클릭시,
 				console.log("#등록된 일정 클릭#");
 				console.log(arg.event);
 
-				if (confirm('Are you sure you want to delete this event?')) {
-					arg.event.remove()
-				}
+				
 			},
 			events : function(info, successCallback, failureCallback){
-				$.ajax("calendar/calList",{
+				
+				$.ajax("/calendar/calList/" + co_code,{
 		        	   method: "POST",
-		        	   dataType : "json",
-		        	   contentType : "application/json"
+		        	   dataType: "json",		        	  
+		        	   success: (result) => {
+		        		  var events = [];
+		        		  
+		        		  if(result != null){
+		        			  $.each(result, function(index, item){
+		        				  events.push({
+		        					  title : item.start.split(" ")[1] + " " + item.userName+"님",
+		        					  start : item.start,
+		        					  end : item.end,
+		        					  textColor : "white",
+		        					  allDay : true
+		        				  })
+		        			  })
+		        		  }
+		        		  console.dir(events)
+		        		  
+		        		  successCallback(events);
+		        	   }
 		        })
 			}
 			   
@@ -84,6 +145,7 @@
 </head>
 
 <body>
+	<input type="hidden" value="${sessionScope.company.coCode}" id="coCode">
 	<!-- Contract -->
 	<jsp:include page="../include/modal/contract.jsp"></jsp:include>
 	<!-- Contract -->
@@ -95,7 +157,7 @@
 			<aside id="layout-menu"
 				class="layout-menu menu-vertical menu bg-menu-theme">
 				<div class="app-brand demo">
-					<a href="/company/${sessionScope.company.coId }"
+					<a href="/company/${sessionScope.company.coId}"
 						class="app-brand-link"> <span
 						class="app-brand-text demo menu-text fw-bolder ms-2"><img
 							src="../img/logo.png"></span>
@@ -287,49 +349,8 @@
 
 							<!-- Content 2 -->
 							<div class="col-lg-3 order-2">
-								<div class="row">
+								<div class="row" id="schedule">
 
-									<div class="mb-4">
-										<div class="card">
-											<div class="row row-bordered g-0">
-												<div class="col-md-4">
-													<h4 class="card-header">12:12</h4>
-												</div>
-												<div class="col-md-8">
-													<div class="d-flex justify-content-between">
-														<div class="schedule">
-															<div class="small">에어컨청소</div>
-															<div>이은영님</div>
-														</div>
-														<button class="btn p-0">
-															<i class="bx bx-dots-vertical-rounded"></i>
-														</button>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-
-									<div class="mb-4">
-										<div class="card">
-											<div class="row row-bordered g-0">
-												<div class="col-md-4">
-													<h4 class="card-header">12:12</h4>
-												</div>
-												<div class="col-md-8">
-													<div class="d-flex justify-content-between">
-														<div class="schedule">
-															<div class="small">에어컨청소</div>
-															<div>이은영님</div>
-														</div>
-														<button class="btn p-0">
-															<i class="bx bx-dots-vertical-rounded"></i>
-														</button>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
 								</div>
 							</div>
 							<!-- /Content 2 -->
