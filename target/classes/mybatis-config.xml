@@ -22,6 +22,6 @@
 		<mapper resource="mybatis/contract.xml"/>
 		<mapper resource="mybatis/admin.xml"/>
 		<mapper resource="mybatis/room.xml"/>
-		<mapper resource="mybatis/calendar.xml"/>
+		<mapper resource="mybatis/calender.xml"/>
 	</mappers>
 </configuration>

@@ -126,7 +126,7 @@ html,body{
 }
 .cate_list_box{
 	position: absolute;
-    width: 750px;
+    width: auto;
     height: 131px;
     top: 560px;
 }

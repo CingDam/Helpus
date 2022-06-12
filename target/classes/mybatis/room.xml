@@ -45,10 +45,16 @@
 	</update>
 	
 	<select id="roomList" resultType="Room">
-		SELECT room.*, company.co_name coName, user.user_name userName,message.message_contents
-		FROM room JOIN company ON room.co_code = company.co_code
-		JOIN user ON room.user_code = user.user_code
-		JOIN message ON room.room_code = message.room_code
+		SELECT * FROM 
+			(SELECT room.*, company.co_name coName, user.user_name userName,message.message_contents
+			FROM room JOIN company ON room.co_code = company.co_code
+			JOIN user ON room.user_code = user.user_code
+			LEFT JOIN message ON room.room_code = message.room_code
+			WHERE room.user_code=1
+			ORDER BY message.message_code DESC
+			LIMIT 18446744073709551615
+			) room
+		GROUP BY room.room_code;
 		<choose>
 			<when test="member.equalsIgnoreCase('user')">
 				WHERE room.user_code=#{userCode}

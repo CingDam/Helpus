@@ -86,45 +86,6 @@ $(document).ready(function(){
 })
 
 
-function makeItem(item,room,state){
-	/*
-	const {code, name, spec, manufacture, category,price,barcode} = item;
-	*/	
-		console.log(room)
-		let html = `<tr class="item" data-code="${item['userId']}">`;
-		for(let i = 0; i < header.length;i++){
-		
-		let value_ = "";
-		console.log(value_)
-    	if(item[header[i]]){
-			 value_ = item[header[i]];
-		}
-		html += `<td class="${header[i]}">${value_}</td>`
-		
-		}
-		 //`<td class = "code">${code}</td><td class = "name">${name}</td><td class = "spec">${spec}</td><td class = "category">${category}</td><td class = "manufacture">${manufacture}</td><td class = "price">${price}</td><td class = "barcode">${barcode_}</td>`;
-		if(page_name == inquery){
-			html += `<td><button type="button" class="btn btn-secondary chat"><i class="bx bx-comment-dots"></i></button>
-					<input id="roomCode" type="hidden" value="${room.roomCode}"></td>`
-			if(state == 0){
-				html+=`<td class="wait"><span class="badge rounded-pill bg-label-secondary">계약 대기</span></td>`
-			} else{
-				html += `<td><button type="button" class="btn btn-primary" name="contract">계약</button>
-					<button type="button" class="btn btn-outline-secondary">거절</button></td>`;
-			}
-			html += `</tr>`
-		}
-		if(page_name == reservation){
-			html += `<td>
-                        <button type="button" class="btn btn-secondary">
-                          <i class="bx bx-comment-dots"></i>
-                        </button>
-                      </td>`
-			html += ` <td><button type="button" class="btn btn-primary"><i class="bx bx-task"></i></button><button type="button" class="btn btn-outline-secondary">취소</button></td>`
-		}
-		return html;
-}
-
 function movePage(page,page_name){
 	
 	console.log(page)
@@ -149,7 +110,7 @@ function pagination(url){
 		success : result => {
 			const {list, pager,room,contractList} = result;
 			
-			console.log(room)
+			console.log(result)
 			
 			state.total = pager.total
 			
@@ -158,12 +119,14 @@ function pagination(url){
 					const tbody =  $(`${pager_root} tbody`);
 		            let html = "";
 		            let state = null;
-		            for(let i = 0; i< list.length; i++){
-						if(contractList.length > 0){
+		            for(let i = 0; i < list.length; i++){
+						if(contractList.length > 0 & contractList[i] != null){
 							state = contractList[i].contractState
 						}
 						console.log(state)
 						if(state == null || state == 0){
+							console.log(i)
+							console.log(room[i])
 							html += makeItem(list[i],room[i],state);
 						}
 		            }
@@ -225,4 +188,43 @@ function pagination(url){
             alert(`오류 발생 : ${xhr.statusText}`);
         }
 	})
+}
+
+function makeItem(item,room,state){
+	/*
+	const {code, name, spec, manufacture, category,price,barcode} = item;
+	*/	
+		console.log(room)
+		let html = `<tr class="item" data-code="${item['userId']}">`;
+		for(let i = 0; i < header.length;i++){
+		
+		let value_ = "";
+		console.log(value_)
+    	if(item[header[i]]){
+			 value_ = item[header[i]];
+		}
+		html += `<td class="${header[i]}">${value_}</td>`
+		
+		}
+		 //`<td class = "code">${code}</td><td class = "name">${name}</td><td class = "spec">${spec}</td><td class = "category">${category}</td><td class = "manufacture">${manufacture}</td><td class = "price">${price}</td><td class = "barcode">${barcode_}</td>`;
+		if(page_name == inquery){
+			html += `<td><button type="button" class="btn btn-secondary chat"><i class="bx bx-comment-dots"></i></button>
+					<input id="roomCode" type="hidden" value="${room.roomCode}"></td>`
+			if(state == 0){
+				html+=`<td class="wait"><span class="badge rounded-pill bg-label-secondary">계약 대기</span></td>`
+			} else{
+				html += `<td><button type="button" class="btn btn-primary" name="contract">계약</button>
+					<button type="button" class="btn btn-outline-secondary">거절</button></td>`;
+			}
+			html += `</tr>`
+		}
+		if(page_name == reservation){
+			html += `<td>
+                        <button type="button" class="btn btn-secondary">
+                          <i class="bx bx-comment-dots"></i>
+                        </button>
+                      </td>`
+			html += ` <td><button type="button" class="btn btn-primary"><i class="bx bx-task"></i></button><button type="button" class="btn btn-outline-secondary">취소</button></td>`
+		}
+		return html;
 }

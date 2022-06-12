@@ -46,7 +46,7 @@
                     <textarea class="form-control" rows="3" name="contractContents"></textarea>
                 </div>
             </div>
-            <div id="content3">
+            <div id="content3_co">
             	
 	        </div>
             <div id="button">

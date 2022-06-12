@@ -111,6 +111,9 @@ body {
 #content3 {
     display: grid;
 }
+#content3_co {
+	display: flex;
+}
 #content3 #day{
 	 grid-column: 1 / 3;
    grid-row: 3;
