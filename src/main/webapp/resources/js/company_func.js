@@ -125,9 +125,8 @@ function pagination(url){
 						}
 						console.log(state)
 						if(state == null || state == 0){
-							console.log(i)
-							console.log(room[i])
 							html += makeItem(list[i],room[i],state);
+							state = null
 						}
 		            }
 		            
