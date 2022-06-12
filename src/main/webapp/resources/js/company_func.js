@@ -86,7 +86,7 @@ $(document).ready(function(){
 })
 
 
-function makeItem(item,room){
+function makeItem(item,room,state){
 	/*
 	const {code, name, spec, manufacture, category,price,barcode} = item;
 	*/	
@@ -106,8 +106,12 @@ function makeItem(item,room){
 		if(page_name == inquery){
 			html += `<td><button type="button" class="btn btn-secondary chat"><i class="bx bx-comment-dots"></i></button>
 					<input id="roomCode" type="hidden" value="${room.roomCode}"></td>`
-			html += `<td><button type="button" class="btn btn-primary" name="contract">계약</button>
+			if(state == 0){
+				html+=`<td class="wait"><span class="badge rounded-pill bg-label-secondary">계약 대기</span></td>`
+			} else{
+				html += `<td><button type="button" class="btn btn-primary" name="contract">계약</button>
 					<button type="button" class="btn btn-outline-secondary">거절</button></td>`;
+			}
 			html += `</tr>`
 		}
 		if(page_name == reservation){
@@ -126,8 +130,6 @@ function movePage(page,page_name){
 	console.log(page)
 	
 	state.page = page;
-	
-	 const url = location.pathname;
     
 	if(page_name == inquery){
 		const url = 'get_coinqury'
@@ -145,17 +147,25 @@ function pagination(url){
 		dataType : "json",
 		data:state,
 		success : result => {
-			const {list, pager,room} = result;
+			const {list, pager,room,contractList} = result;
 			
 			console.log(room)
+			
 			state.total = pager.total
 			
 			$("#total").text(state.total);
 			if(list && list.length > 0){
 					const tbody =  $(`${pager_root} tbody`);
 		            let html = "";
+		            let state = null;
 		            for(let i = 0; i< list.length; i++){
-		               html += makeItem(list[i],room[i]);
+						if(contractList.length > 0){
+							state = contractList[i].contractState
+						}
+						console.log(state)
+						if(state == null || state == 0){
+							html += makeItem(list[i],room[i],state);
+						}
 		            }
 		            
 		            

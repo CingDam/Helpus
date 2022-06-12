@@ -22,4 +22,6 @@ public interface ChatService {
 
 	List<Room> roomList(HashMap<String, Object> map);
 
+	Message getOneMsg(int contractCode);
+
 }

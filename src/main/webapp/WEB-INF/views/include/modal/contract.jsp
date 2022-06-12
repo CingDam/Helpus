@@ -47,10 +47,8 @@
                 </div>
             </div>
             <div id="content3">
-            	<jsp:useBean id="now" class="java.util.Date" />
-            	<fmt:formatDate value="${now}" pattern="yyyy년 MM월 dd일" var="today" />
-                <div><c:out value="${today}"></c:out></div>
-            </div>
+            	
+	        </div>
             <div id="button">
                 <button class="btn btn-primary btn-lg" id="addContract">계약서 전송</button>
             </div>

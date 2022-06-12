@@ -7,15 +7,21 @@
 <head>
 <meta charset="UTF-8">
 <jsp:include page="../include/header.jsp"></jsp:include>
+<!-- CSS  -->
 <link rel="stylesheet" href="../../css/modal/contract.css">
 <link rel="stylesheet" href="../../css/core.css"
 	class="template-customizer-core-css" />
 <link rel="stylesheet" href="../../css/theme-default.css"
 	class="template-customizer-theme-css" />
 <link rel="stylesheet" href="../../css/demo.css" />
+<!-- Script -->
+<script src="../../js/jquery-3.6.0.min.js"></script>
+<script src="../../js/contract_view.js"></script>
+
 
 </head>
 <body>
+	<input type="hidden" id="roomCode" value="${item.msg.roomCode}">
 	<div id="wrap">
         <div id="section">
             <div id="content1">
@@ -60,26 +66,38 @@
                 </div>
                 <div class="mb-4">
                     <label class="col-form-label">특약사항</label>
-                    <div>${item.contract.contractContents}</div>
+                    <div id="contents">${item.contract.contractContents}</div>
                 </div>
             </div>
             <div id="content3">
-                <div><fmt:formatDate value="${item.contract.contractDay }" pattern="yyyy년 MM일 dd일"/></div>
-                <div class="append">
+                <div>
 	                 <div>동</div>
 	                 <div id="userCode">고객명 : ${item.contract.userName}</div>
 	                 <div>연락처 : ${item.contract.userPhone}</div>
-	                 <div>주소 :${item.contract.contractAddress }</div>
+	                 <div>주소 : ${item.contract.contractAddress }</div>
+	                  <div class="row">
+	                      <label class="col-md-2">서명 :</label>
+	                      <div class="col-md-5">
+	                        <input class="form-control" type="text" placeholder="${item.contract.userName }"/>
+	                      </div>
+	                  </div>
               	</div>
-             	<div class="append" style="margin : 0 0 0 20px;">
+             	<div style="margin : 0 0 0 20px;">
 	                  <div>행</div>
 	                  <div>회사명 : ${item.contract.coName}</div>
 	                  <div>연락처 : ${item.contract.coPhone}</div>
 	                  <div>주소 : ${item.contract.coAddress}</div>
+	                  <div>서명 : ${item.contract.coName}</div>
               	</div>
+              	 <jsp:useBean id="now" class="java.util.Date" />
+            	<fmt:formatDate value="${now}" pattern="yyyy년 MM월 dd일" var="today" />
+            	<div id="day"><c:out value="${today}"></c:out></div>
             </div>
+            
+           
             <div id="button">
-                <button class="btn btn-primary btn-lg" id="addContract">계약서 전송</button>
+                <button class="btn btn-primary btn-lg" id="updateContract">계약체결</button>
+                <button style="margin : 0 0 0 20px;" class="btn btn-primary btn-lg" id="addContract" onclick="location.href='../../'">돌아가기</button>
             </div>
         </div>
     </div>

@@ -60,6 +60,12 @@ public class ChatServiceImpl implements ChatService {
 		return dao.roomList(map);
 	}
 
+	@Override
+	public Message getOneMsg(int contractCode) {
+		
+		return dao.getOneMsg(contractCode);
+	}
+
 	
 	
 }
