@@ -44,6 +44,13 @@ $(function(){
             },1500);
             userPw.focus();
             return false;
+		} else if(userPw_ck.val() == ""){
+			userPw_ck.addClass('warning');
+			setTimeout(function() {
+                userPw_ck.removeClass('warning');
+            },1500);
+            userPw_ck.focus();
+            return false;
 		} else if(userName.val() == ""){
 			userName.addClass('warning');
 			setTimeout(function(){
@@ -73,18 +80,31 @@ $(function(){
 			userEmail.focus();
 			return false;
 		} else if(user_checkId.val() == "fail"){
-			alert("사용할 수 없는 아이디입니다");
-			$('#userId').val("");
+			userId.addClass('warning');
+			$(userId).attr("placeholder", "사용할 수 없는 아이디입니다");
+			setTimeout(function(){
+				userId.removeClass('warning');
+				$(userId).attr("placeholder", "아이디");
+				$('.check_msg2').css("display", "none");
+			},1500);
 			userId.focus();
+			$('#userId').val("");
 			return false;
 		} else if(userPw.val() != userPw_ck.val()){
-			alert("비밀번호 확인이 일치하지 않습니다");
-			userPw.val("");
-			userPw_ck.val("");
+			userPw.addClass('warning');
+			userPw_ck.addClass('warning');
+			$(userPw).attr("placeholder", "비밀번호가 일치하지 않습니다");
+			setTimeout(function(){
+				userPw.removeClass('warning');
+				userPw_ck.removeClass('warning');
+				$(userPw).attr("placeholder", "비밀번호");
+				$('.check_msg2').css("display", "none");
+			},1500);
 			userPw.focus();
+			$('#userPw').val("");
+			$('#userPw_ck').val("");
 			return false;
 		}
-		
 		$.ajax(`/signup/user`,{
 			method : "POST",
 			contentType : "application/json",
@@ -156,6 +176,13 @@ $(function(){
             },1500);
             coPw.focus();
             return false;
+        } else if(coPw_ck.val() == ""){
+			coPw_ck.addClass('warning');
+			setTimeout(function() {
+                coPw_ck.removeClass('warning');
+            },1500);
+            coPw_ck.focus();
+            return false;
 		} else if(coName.val() == ""){
 			coName.addClass('warning');
 			setTimeout(function(){
@@ -192,15 +219,29 @@ $(function(){
 			coRegNum.focus();
 			return false;
 		} else if(co_checkId.val() == "fail"){
-			alert("사용할 수 없는 아이디입니다");
-			$('#coId').val("");
+			coId.addClass('warning');
+			$(coId).attr("placeholder", "사용할 수 없는 아이디입니다");
+			setTimeout(function(){
+				coId.removeClass('warning');
+				$(coId).attr("placeholder", "아이디");
+				$('.check_msg2').css("display", "none");
+			},1500);
 			coId.focus();
+			$('#coId').val("");
 			return false;
 		} else if(coPw.val() != coPw_ck.val()){
-			alert("비밀번호 확인이 일치하지 않습니다");
-			coPw.val("");
-			coPw_ck.val("");
+			coPw.addClass('warning');
+			coPw_ck.addClass('warning');
+			$(coPw).attr("placeholder", "비밀번호가 일치하지 않습니다");
+			setTimeout(function(){
+				coPw.removeClass('warning');
+				coPw_ck.removeClass('warning');
+				$(coPw).attr("placeholder", "비밀번호");
+				$('.check_msg2').css("display", "none");
+			},1500);
 			coPw.focus();
+			$('#coPw').val("");
+			$('#coPw_ck').val("");
 			return false;
 		}
 		

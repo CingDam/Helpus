@@ -22,8 +22,8 @@
 					<img src="/img/logo.svg">
 				</div>
 				<div class = "header_navi">
-					<a href="logout">로그아웃</a>
 					<a href="/user/mypage">마이페이지</a>
+					<a href="logout">로그아웃</a>
 				</div>	
 			</div>
 		</div>

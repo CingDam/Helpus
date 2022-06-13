@@ -32,6 +32,22 @@
 	top: 40px;
 	
 }
+.header_navi > a{
+	margin : 0; padding : 0;
+	
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 23px;
+	text-decoration: none;
+	color: #000;
+}
+.header_navi > a:last-child {
+	position :absolute;
+	left : 91px;
+}
+
 .login {
 	
 	margin : 0; padding : 0;

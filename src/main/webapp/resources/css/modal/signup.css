@@ -289,22 +289,29 @@
 	color: #FFFFFF;
 }
 .check_msg1 {
-    display : none;
-	font-size: 14px;
-	color : #d28893;
-	padding-left : 15px;
-
+	display : none;
+    position : absolute;
+    top: 14px;
+    right: 20px;
+	font-size: 20px;
+	color : #4263eb;
 }
 .check_msg2 {
     display : none;
-    font-size: 14px;
-	color : red;
-	padding-left : 15px;
+    position : absolute;
+    top: 14px;
+    right: 20px;
+	font-size: 20px;
+	color : #f03d3e;
 }
 .warning {
-    color: red !important;
+    color: #f03d3e !important;
+    box-shadow: 1px 1px 1px #f03d3e !important;
     animation: warning .3s ease;
     animation-iteration-count: 3;
+}
+.warning::placeholder {
+	color: #f03d3e;
 }
 @keyframes warning {
     0% {transform: translateX(-3px);}

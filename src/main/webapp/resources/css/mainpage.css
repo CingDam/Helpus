@@ -1,4 +1,10 @@
-
+* {
+  -ms-user-select: none; 
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
 html,body{
 	width: 100%;
 	height: 100%;
@@ -239,6 +245,8 @@ html,body{
 	
 	text-decoration: underline;
 	text-underline-position : under;
+	text-underline-offset : 10px;
+	text-decoration-thickness: 3px;
 	font-family: Noto Sans KR;
 	font-size: 40px;
 	font-weight: 500;
@@ -255,15 +263,15 @@ html,body{
 	
 	position : absolute;
 	
-	width: 320px;
+	width: 440px;
 	height: 78px;
 	
-	margin : 45px 0 0 0;
+	margin : 10px 0 0 0;
 	
 	font-family: Noto Sans KR;
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: 500;
-	line-height: 26px;
+	line-height: 40px;
 	letter-spacing: 0em;
 	text-align: left;
 	color: #555555;
@@ -288,7 +296,7 @@ html,body{
 	font-size: 18px;
 	line-height: 24px;
 	left: 0px;
-	top : 320px;
+	top : 360px;
 	/* identical to box height, or 133% */
 
 	color: #FFFFFF;
@@ -318,31 +326,13 @@ html,body{
 	text-align: center;
 	
 }
-.day_key>.swiper-wrapper >.swiper-slide > .img_box > .img_1 {
+.day_key>.swiper-wrapper >.swiper-slide > .img_box > img {
 	width: 513px;
 	height: 350px;
 	margin : 16px 0 0 0;
-	background: #C4C4C4;
-	border-radius: 30px;
-	
-	
-}
-.day_key>.swiper-wrapper >.swiper-slide > .img_box > .img_2 {
-	width: 513px;
-	height: 350px;
-	margin : 16px 0 0 0;
-	background: #FF9A9A ;
-	border-radius: 30px;
-	
-	
-}
-.day_key>.swiper-wrapper >.swiper-slide > .img_box > .img_3 {
-	width: 513px;
-	height: 350px;
-	margin : 16px 0 0 0;
-	background: #5553C9;
 	border-radius: 30px;
 }
+
 /*일일키워드 끝*/
 /*지역인기 시작*/
 .local_popul_service{
@@ -394,7 +384,7 @@ html,body{
 	top: 150px;
 	
 	width: 278px;
-	height: 350px;
+	height: 320px;
 	
 	border-radius: 40px;
 	
@@ -405,7 +395,7 @@ html,body{
 .local_popul_service > ul > li > .contents > .content{
 	position : absolute;
 	width: 278px;
-	height: 230px;
+	height: 200px;
 	border-radius: 40px 40px 0 0;
 	background: #C4C4C4;
 	
@@ -419,7 +409,7 @@ html,body{
 	border-radius: 0 0 40px 40px;
 	background: #ffffff;
 	
-	top : 230px;
+	top : 200px;
 }
 
 .local_popul_service > ul > li > .contents > .text_box > p {

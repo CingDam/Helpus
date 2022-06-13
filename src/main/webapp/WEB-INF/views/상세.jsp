@@ -47,7 +47,7 @@
                     <div class="card-body">
                         <div class="mb-5 row">
                             <label class="col-md-2 col-form-label">한줄 소개글</label>
-                            <div class="col-md-10">한줄 소개글 입니다</div>
+                            <div class="col-md-10">언제나 당신 곁에! 더 깨끗한 클린앤클리어</div>
                         </div>
 
                         <div class="mb-5 row">
@@ -62,7 +62,13 @@
                         <div class="mb-5 row">
                             <label class="col-md-2 col-form-label">상세 소개글</label>
                             <div class="col-md-10">
-                                상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다상세 소개글 입니다
+                                ✨ 에어컨, 세탁기 종합 분해 세척<br>
+                                ✨ 테스트 → 분해 → 세척제 도포 → 고압세척 → 조립 → 테스트<br>
+                                <br>
+                                📌 친환경 무공해 세제 사용<br>
+                                📌 깔끔한 마무리<br>
+                                📌 A/S 보장<br>
+                                📌 손해보험 (대인 대물: 1억 원) 가입<br>
                             </div>
                         </div>
 
@@ -71,19 +77,19 @@
                             <div class="col-md-10" id="img">
                                 <div class="row row-cols-4 g-2">
                                     <div>
-                                        <img class="card-img" src="img/1.jpg"/>
+                                        <img class="card-img shadow-sm" src="img/detail2.jpg"/>
                                     </div>
                                     <div>
-                                        <img class="card-img" src="img/1.jpg"/>
+                                        <img class="card-img shadow-sm" src="img/detail1.jpg"/>
                                     </div>
                                     <div>
-                                        <img class="card-img" src="img/1.jpg"/>
+                                        <img class="card-img shadow-sm" src="img/detail3.jpg"/>
                                     </div>
                                     <div>
-                                        <img class="card-img" src="img/1.jpg"/>
+                                        <img class="card-img shadow-sm" src="img/detail4.png"/>
                                     </div>
                                     <div>
-                                        <img class="card-img" src="img/1.jpg"/>
+                                        <img class="card-img shadow-sm" src="img/detail5.jpg"/>
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +100,7 @@
                             <div class="col-md-10 rank">
                                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                 <div><strong>5.0</strong></div>
-                                <div> | 54 개의 리뷰</div>
+                                <div> | 84 개의 리뷰</div>
                                 <hr>
                                 
                                 <div class="rlist">
@@ -103,12 +109,8 @@
                                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                                         <span> | 22.02.15</span>
                                         <div>
-                                            <img src="img/1.jpg">
-                                            <img src="img/1.jpg">
-                                            <img src="img/1.jpg">
-                                            <img src="img/1.jpg">
-                                            <img src="img/1.jpg">
-                                            <img src="img/1.jpg">
+                                            <img src="img/review1.jpg">
+                                            <img src="img/review2.jpg">
                                         </div>
                                         <div class="rtext">깨끗하게 에어컨 청소해 주시고, 청소 후 바닥에 떨어진 물도 깨끗이 닦아주셨습니다. 경력이 오래되셔서 그런지 확실히 분해, 조립 깔끔하게 하시네요. 감사합니다.</div>
                                         <hr>
@@ -117,10 +119,20 @@
 
                                 <div class="rlist">
                                     <div class="review">
-                                        <span>lilpa***</span>
+                                        <span>rodi***</span>
                                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                                        <span> | 22.02.15</span>
-                                        <div class="rtext">깨끗하게 에어컨 청소해 주시고, 청소 후 바닥에 떨어진 물도 깨끗이 닦아주셨습니다. 경력이 오래되셔서 그런지 확실히 분해, 조립 깔끔하게 하시네요. 감사합니다.</div>
+                                        <span> | 22.05.15</span>
+                                        <div class="rtext">세탁기가 깨끗해져서 만족스럽습니다.</div>
+                                        <hr>
+                                    </div> 
+                                </div>
+
+                                <div class="rlist">
+                                    <div class="review">
+                                        <span>areas***</span>
+                                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                        <span> | 22.05.15</span>
+                                        <div class="rtext">정말 정말 친절하시고 설명도 잘해주시고 엄청 좋아요! 다음에 필요할 때도 이용할게요~</div>
                                         <hr>
                                     </div> 
                                 </div>
@@ -143,7 +155,7 @@
                     <div class="mb-4">
                         <div class="card text-center">
                             <div class="card-body">
-                                <img src="img/avatar.png" class="profile rounded mb-4">
+                                <img src="img/clean.jpg" class="profile rounded mb-4 shadow">
                                 <h4>클린앤클리어</h4>
                                 <div class="text-muted">대전 동구</div>
                             </div>

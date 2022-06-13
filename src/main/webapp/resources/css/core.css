@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 * {
   -ms-user-select: none; 
   -moz-user-select: -moz-none;
@@ -6,7 +8,6 @@
   user-select: none;
 }
 
-@charset "UTF-8";
 :root {
   --bs-blue: #007bff;
   --bs-indigo: #6610f2;
@@ -16724,6 +16725,9 @@ html:not(.layout-footer-fixed) .content-wrapper {
 }
 .bx-dots-vertical-rounded {
   margin-right: 10px;
+}
+.h-px-40 {
+  height: 40px;
 }
 
 /* 고객관리 */

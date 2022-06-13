@@ -82,7 +82,7 @@
                 <hr>
 
                 <div class="list">
-                    <img src="img/1.jpg">
+                    <img src="img/1.jpg" class="shadow-sm">
                     <div class="text">
                         <div>
                             <span>#대전</span>
@@ -100,7 +100,7 @@
                 <hr>
 
                 <div class="list">
-                    <img src="img/1.jpg">
+                    <img src="img/1.jpg" class="shadow-sm">
                     <div class="text">
                         <div>
                             <span>#대전</span>
@@ -118,7 +118,7 @@
                 <hr>
 
                 <div class="list">
-                    <img src="img/1.jpg">
+                    <img src="img/1.jpg" class="shadow-sm">
                     <div class="text">
                         <div>
                             <span>#대전</span>
@@ -136,7 +136,7 @@
                 <hr>
 
                 <div class="list">
-                    <img src="img/1.jpg">
+                    <img src="img/1.jpg" class="shadow-sm">
                     <div class="text">
                         <div>
                             <span>#대전</span>
@@ -154,7 +154,7 @@
                 <hr>
 
                 <div class="list">
-                    <img src="img/1.jpg">
+                    <img src="img/1.jpg" class="shadow-sm">
                     <div class="text">
                         <div>
                             <span>#대전</span>
@@ -172,7 +172,7 @@
                 <hr>
 
                 <div class="list">
-                    <img src="img/1.jpg">
+                    <img src="img/1.jpg" class="shadow-sm">
                     <div class="text">
                         <div>
                             <span>#대전</span>
@@ -190,7 +190,7 @@
                 <hr>
 
                 <div class="list">
-                    <img src="img/1.jpg">
+                    <img src="img/1.jpg" class="shadow-sm">
                     <div class="text">
                         <div>
                             <span>#대전</span>
@@ -208,7 +208,7 @@
                 <hr>
 
                 <div class="list">
-                    <img src="img/1.jpg">
+                    <img src="img/1.jpg" class="shadow-sm">
                     <div class="text">
                         <div>
                             <span>#대전</span>
@@ -226,7 +226,7 @@
                 <hr>
 
                 <div class="list">
-                    <img src="img/1.jpg">
+                    <img src="img/1.jpg" class="shadow-sm">
                     <div class="text">
                         <div>
                             <span>#대전</span>
@@ -244,7 +244,7 @@
                 <hr>
 
                 <div class="list">
-                    <img src="img/1.jpg">
+                    <img src="img/1.jpg" class="shadow-sm">
                     <div class="text">
                         <div>
                             <span>#대전</span>

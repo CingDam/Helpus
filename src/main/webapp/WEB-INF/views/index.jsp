@@ -30,7 +30,7 @@
 		</div>
 		<form method="post" action="/list">
 			<input class="search_bar" type="text" name="keyword" placeholder="검색어를 입력하세요">
-			<i class="fa-solid fa-magnifying-glass"></i>
+			<i class="fa-solid fa-magnifying-glass" style="color: #555"></i>
 		</form>
 		<div class="top_search">
 			<c:forEach var="item" items="${key}" end="8">
@@ -54,53 +54,56 @@
 				<div class="text_box">
 					<p class="subhead">오늘은 대청소 하는 날</p>
 					<p class="text">
-						침대는 주기적으로 청소청소 대청소 대청소<br> 매트리스에는 수많은 세균세균<br> 청소청소 미세먼지
-						진드기 청소청소
+						침대는 주기적으로 청소해야 합니다.<br>
+						특히 매트리스에는 몸에서 떨어져 나온 각질과<br>
+						미세먼지, 수많은 진드기들이 있습니다.<br>
 					</p>
 					<button class="day_key_submit">신청하기</button>
 				</div>
 				<div class="img_box">
 					<p class="subhead">침대/매트리스 청소</p>
-					<div class="img_1"></div>
+					<img src="../img/swiper1.png">
 				</div>
 			</div>
 			<div class="swiper-slide">
 				<div class="text_box">
 					<p class="subhead">오늘은 대청소 하는 날</p>
 					<p class="text">
-						침대는 주기적으로 청소청소 대청소 대청소<br> 매트리스에는 수많은 세균세균<br> 청소청소 미세먼지
-						진드기 청소청소
+						관리하지 않은 에어컨은 곰팡이와 세균의 세상입니다.
+						이는 곧 알레르기나 호흡기 증상을 악화시킵니다.<br>
+						최소 2주에 한 번씩 청소하는 것이 좋습니다.
 					</p>
 					<button class="day_key_submit">신청하기</button>
 				</div>
 				<div class="img_box">
-					<p class="subhead">에어콘 청소</p>
-					<div class="img_2"></div>
+					<p class="subhead">에어컨 청소</p>
+					<img src="../img/swiper2.jpg">
 				</div>
 			</div>
 			<div class="swiper-slide">
 				<div class="text_box">
 					<p class="subhead">오늘은 대청소 하는 날</p>
 					<p class="text">
-						침대는 주기적으로 청소청소 대청소 대청소<br> 매트리스에는 수많은 세균세균<br> 청소청소 미세먼지
-						진드기 청소청소
+						세탁기는 습기로 인해 곰팡이가 서식하기 쉽습니다.<br>
+						곰팡이가 생기면 빨래에 냄새가 나게 됩니다.<br>
+						또한, 아토피와 피부염을 유발할 수 있습니다.
 					</p>
 					<button class="day_key_submit">신청하기</button>
 				</div>
 				<div class="img_box">
 					<p class="subhead">세탁기 청소</p>
-					<div class="img_3"></div>
+					<img src="../img/swiper3.jpg">
 				</div>
 			</div>
 		</div>
-		<div class="swiper-pagination"></div>
+		<!-- <div class="swiper-pagination"></div> -->
 	</div>
 	<div class="local_popul_service">
 		<p>우리 지역 인기 서비스</p>
 		<ul>
 			<li>
 				<div class="contents">
-					<div class="content"></div>
+					<img class="content" src="../img/service1.png"></img>
 					<div class="text_box">
 						<p class="subhead">클린앤클리어</p>
 						<p class="keyword">침대/메트릭스 청소</p>
