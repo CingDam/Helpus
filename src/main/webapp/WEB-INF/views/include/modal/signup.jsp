@@ -24,8 +24,8 @@
 	                <input class="id" id="userId" type="text" placeholder="아이디">
 	                <input id="user_checkId" type="hidden">
 	            </div>
-	            <span class="check_msg1">사용 가능한 아이디입니다</span>
-	            <span class="check_msg2">이미 사용 중인 아이디입니다</span>
+	            <span class="check_msg1"><i class="fa-solid fa-circle-check"></i></span>
+	            <span class="check_msg2"><i class="fa-solid fa-triangle-exclamation"></i></span>
 	            <div>
 	                <input class="pw" id="userPw" type="password" placeholder="비밀번호">
 	            </div>
@@ -55,8 +55,8 @@
 	                <input class="id" id="coId" type="text" placeholder="아이디">
 	                <input id="co_checkId" type="hidden">
 	            </div>
-	            <span class="check_msg1">사용 가능한 아이디입니다</span>
-	            <span class="check_msg2">이미 사용 중인 아이디입니다</span>
+	            <span class="check_msg1"><i class="fa-solid fa-circle-check"></i></span>
+	            <span class="check_msg2"><i class="fa-solid fa-triangle-exclamation"></i></span>
 	            <div>
 	                <input class="pw" id="coPw" type="password" placeholder="비밀번호">
 	            </div>

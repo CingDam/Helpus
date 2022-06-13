@@ -288,21 +288,18 @@
 
 							<!-- User -->
 							<li class="nav-item navbar-dropdown dropdown-user dropdown">
-								<a class="nav-link dropdown-toggle hide-arrow"
-								href="javascript:void(0);" data-bs-toggle="dropdown"> <img
-									src="../img/avatar.png" alt
-									class="w-px-40 h-auto rounded-circle" />
-							</a>
+								<a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+									<img src="../img/clean.jpg" class="w-px-40 h-px-40 rounded-circle btn-secondary" />
+								</a>
 								<ul class="dropdown-menu dropdown-menu-end">
 									<li><a class="dropdown-item" href="#">
 											<div class="d-flex">
 												<div class="flex-shrink-0 me-3">
-													<img src="../img/avatar.png" alt
-														class="w-px-40 h-auto rounded-circle" />
+													<img src="../img/clean.jpg" class="w-px-40 h-px-40 rounded-circle shadow-sm" />
 												</div>
 												<div class="flex-grow-1">
-													<small class="text-muted">대전 동구</small> <span
-														class="fw-semibold d-block">클린앤클리어</span>
+													<small class="text-muted">대전 동구</small>
+													<span class="fw-semibold d-block">클린앤클리어</span>
 												</div>
 											</div>
 									</a></li>
