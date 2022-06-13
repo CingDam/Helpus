@@ -18,12 +18,12 @@ public class CalendarDaoImpl implements CalendarDao {
 	SqlSession sql;
 	
 	@Override
-	public List<Calendar> calList(int coCode) {
+	public List<Schedule> calList(int coCode) {
 		return sql.selectList("calendar.calList", coCode);
 	}
 
 	@Override
-	public List<Contract> schList(Schedule item) {
+	public List<Schedule> schList(Schedule item) {
 		return sql.selectList("calendar.schList", item);
 	}
 

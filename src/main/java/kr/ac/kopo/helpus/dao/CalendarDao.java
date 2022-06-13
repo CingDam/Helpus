@@ -9,8 +9,8 @@ import kr.ac.kopo.helpus.model.Schedule;
 
 public interface CalendarDao {
 
-	List<Calendar> calList(int coCode);
+	List<Schedule> calList(int coCode);
 
-	List<Contract> schList(Schedule item);
+	List<Schedule> schList(Schedule item);
 
 }

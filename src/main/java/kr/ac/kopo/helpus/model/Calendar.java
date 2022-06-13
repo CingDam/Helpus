@@ -5,9 +5,6 @@ public class Calendar {
 	private int contractCode;
 	private int coCode;
 	private int userCode;
-	private String borderColor;
-	private String backgroundColor;
-	private String textColor;
 
 	private String start;
 	private String end;
@@ -70,29 +67,7 @@ public class Calendar {
 		this.userCode = userCode;
 	}
 
-	public String getBorderColor() {
-		return borderColor;
-	}
-
-	public void setBorderColor(String borderColor) {
-		this.borderColor = borderColor;
-	}
-
-	public String getBackgroundColor() {
-		return backgroundColor;
-	}
-
-	public void setBackgroundColor(String backgroundColor) {
-		this.backgroundColor = backgroundColor;
-	}
-
-	public String getTextColor() {
-		return textColor;
-	}
-
-	public void setTextColor(String textColor) {
-		this.textColor = textColor;
-	}
+	
 
 	public String getUserName() {
 		return userName;

@@ -39,13 +39,80 @@
 <script src="../lib/datepicker/datepicker.ko.js"></script>
 
 
+
 <!-- Fullcalendar -->
 <link href='../lib/calMain.css' rel='stylesheet' />
 <script src='../lib/calMain.js'></script>
 <script src='../lib/calKO.js'></script>
 
 <script>
+function sch(){
+	$("#schedule").empty();
+	$.ajax("/calendar/sch",{
+  	   method: "POST",
+  	   dataType: "json",
+  	   contentType: "application/json",
+	   data: JSON.stringify({
+			coCode : co_code,
+			start : today
+		}),
+  	   success: (result) => {
+  		  if(result != null){
+  			  $.each(result, function(index, item){
+  				  var sDay = item.start.split(" ")[0];
+  				  var eDay = item.end.split(" ")[0];
+						  if(today >= sDay && today <= eDay){
+							  let contents = '<div class="mb-4">'
+									contents += '<div class="card">'
+									contents += '<div class="row row-bordered g-0">'
+									contents += '<div class="col-md-4">'
+									contents += '<h4 class="card-header">'
+									contents += item.start.split(" ")[1]
+									contents += '</h4>'
+									contents += '</div>'
+									contents += '<div class="col-md-8">'
+									contents += '<div class="d-flex justify-content-between">'
+									contents += '<div class="schedule">'
+									contents += '<div class="small">'
+									contents += item.keyName
+									contents += '</div>'
+									contents += '<div>'
+									contents += item.userName
+									contents += '</div>'
+									contents += '</div>'
+									contents += '<button class="btn p-0">'
+									contents += '<i class="bx bx-dots-vertical-rounded"></i>'
+									contents += '</button>'
+									contents += '</div>'
+									contents += '</div>'
+									contents += '</div>'
+									contents += '</div>'
+									contents += '</div>'
+									
+									$("#schedule").append(contents);
+						  }//if end
+  			  })
+  		  }//if end
+  	   }//success end
+  })//ajax end
+}
+	
+
+	let allDay = new Date();
+	let yy = allDay.getFullYear().toString();
+	let mm = allDay.getMonth() + 1;
+	if(mm <= 9){
+		mm = "0" + mm;
+	}
+	let dd = allDay.getDate();
+	if(dd <= 9){
+		dd = "0" + dd;
+	}
+	let today = yy +"-"+ mm +"-"+ dd;
+	
 	var co_code = ${sessionScope.company.coCode};
+	
+	
 	document.addEventListener('DOMContentLoaded', function() {
 		var calendarEl = document.getElementById('calendar');
 
@@ -57,7 +124,7 @@
 			dayMaxEvents : true, // allow "more" link when too many events
 			select : function(arg) {
 				var start = arg.startStr;
-				console.log(start);
+				console.log(start)
 					
 				$("#schedule").empty();
 				$.ajax("/calendar/sch",{
@@ -76,7 +143,7 @@
 								contents += '<div class="row row-bordered g-0">'
 								contents += '<div class="col-md-4">'
 								contents += '<h4 class="card-header">'
-								contents += item.start
+								contents += item.start.split(" ")[1]
 								contents += '</h4>'
 								contents += '</div>'
 								contents += '<div class="col-md-8">'
@@ -99,6 +166,7 @@
 								contents += '</div>'
 								
 								$("#schedule").append(contents);
+								
 							})//each end
 						}//if end
 					}
@@ -108,11 +176,9 @@
 				// 있는 일정 클릭시,
 				console.log("#등록된 일정 클릭#");
 				console.log(arg.event);
-
-				
 			},
 			events : function(info, successCallback, failureCallback){
-				
+				$("#schedule").empty();
 				$.ajax("/calendar/calList/" + co_code,{
 		        	   method: "POST",
 		        	   dataType: "json",		        	  
@@ -127,20 +193,30 @@
 		        					  end : item.end,
 		        					  textColor : "white",
 		        					  allDay : true
-		        				  })
+		        				  })//push end
 		        			  })
-		        		  }
-		        		  console.dir(events)
+		        		  }//if end
 		        		  
 		        		  successCallback(events);
-		        	   }
-		        })
-			}
+		        	   }//success end
+		        })//ajax end
+		        
+			}//events end
 			   
 		});
-
+		
+		
+		
 		calendar.render();
+		$(".fc-today-button").click(function(){
+			sch();
+		});
 	});
+	
+	$(function(){
+		sch();
+	});
+	
 </script>
 </head>
 
@@ -349,9 +425,7 @@
 
 							<!-- Content 2 -->
 							<div class="col-lg-3 order-2">
-								<div class="row" id="schedule">
-
-								</div>
+								<div class="row" id="schedule"></div>
 							</div>
 							<!-- /Content 2 -->
 

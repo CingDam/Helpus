@@ -6,10 +6,27 @@ public class Schedule {
 	private int contractCode;
 	private String userName;
 	private Date contractSdate;
-
+	private int userCode;
 	private int coCode;
 	private String start;
+	private String end;
 	private String keyName;
+
+	public int getUserCode() {
+		return userCode;
+	}
+
+	public void setUserCode(int userCode) {
+		this.userCode = userCode;
+	}
+
+	public String getEnd() {
+		return end;
+	}
+
+	public void setEnd(String end) {
+		this.end = end;
+	}
 
 	public int getContractCode() {
 		return contractCode;

@@ -18,12 +18,12 @@ public class CalendarServiceImpl implements CalendarService {
 	CalendarDao dao;
 	
 	@Override
-	public List<Calendar> calList(int coCode) {
+	public List<Schedule> calList(int coCode) {
 		return dao.calList(coCode);
 	}
 
 	@Override
-	public List<Contract> schList(Schedule item) {
+	public List<Schedule> schList(Schedule item) {
 		return dao.schList(item);
 	}
 }

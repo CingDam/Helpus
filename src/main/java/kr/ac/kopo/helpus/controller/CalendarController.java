@@ -26,8 +26,8 @@ public class CalendarController {
 	
 	@ResponseBody
 	@PostMapping("/calList/{coCode}")
-	public List<Calendar> calList(Model model, @PathVariable int coCode){
-		List<Calendar> calendar = service.calList(coCode);
+	public List<Schedule> calList(Model model, @PathVariable int coCode){
+		List<Schedule> calendar = service.calList(coCode);
 		model.addAttribute("calList", calendar);
 
 		return calendar;
@@ -35,8 +35,8 @@ public class CalendarController {
 	
 	@ResponseBody
 	@PostMapping("/sch")
-	public List<Contract> schedule(@RequestBody Schedule item){
-		List<Contract> schList = service.schList(item);
+	public List<Schedule> schedule(@RequestBody Schedule item){
+		List<Schedule> schList = service.schList(item);
 		
 		return schList;
 	}
