@@ -12,4 +12,8 @@ public interface ContractDao {
 
 	Contract item(int contractCode);
 
+	void update(Contract item);
+
+	Object listReserv(int coCode);
+
 }

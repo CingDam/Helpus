@@ -1,17 +1,21 @@
 let contractCode = null;
 
 $(function() {
+
+	
 	$("#chatbtn").click(function() {
 		$("#chatbtn").toggle('scale');
 		$("#chatbox").toggle('scale');
 
 		getColist()
+		
 	});
 
 	$("#chatclose").click(function() {
 		$("#chatbtn").toggle('scale');
 		$("#chatbox").toggle('scale');
-		getColist()
+		$('#chatlist').empty()
+		$('#profile').empty()
 	})
 
 
@@ -55,9 +59,6 @@ function getColist() {
 		contentType: "application/json",
 		dataType: "json",
 		success: result => {
-
-			let roomNum;
-
 			console.log(result);
 
 
@@ -76,10 +77,21 @@ function getColist() {
 							          <span>${message[0]}</sapn>
 							        </p>
 						        	<div class="status available"></div>
+						        	<input type="hidden" id="roomCode" value=${roomCode}>
 						      	</div>`
 						$('#chatlist').append(html)
-						roomNum = roomCode
-						createRoom(roomNum)
+					} else {
+						let html = `<div class="chat">
+						        	<img src="img/avatar.png" />
+							        <p>
+							          <strong>${coName}</strong>
+							          <br>
+							          <span>${messageContent}</sapn>
+							        </p>
+						        	<div class="status available"></div>
+						        	<input type="hidden" id="roomCode" value=${roomCode}>
+						      	</div>`
+						$('#chatlist').append(html)
 					}
 
 				} else {
@@ -91,24 +103,27 @@ function getColist() {
 						          <span>${messageContent}</sapn>
 						        </p>
 					        	<div class="status available"></div>
+					        	<input type="hidden" id="roomCode" value=${roomCode}>
 					      	</div>`
 					$('#chatlist').append(html)
-					roomNum = roomCode
-					createRoom(roomNum)
+					
 				}
+				
+				
 			}
-
+			$('.chat').click(function(){
+				const roomCode = $(this).children('#roomCode').val()
+				createRoom(roomCode)
+			})
 		}
 	})
 }
 
 function createRoom(roomCode) {
-	$(".chat").each(function() {
-		$(this).click(function() {
-			var childOffset = $(this).offset();
-			var parentOffset = $(this).parent().parent().offset();
+			var childOffset = $('.chat').offset();
+			var parentOffset = $('.chat').parent().parent().offset();
 			var childTop = childOffset.top - parentOffset.top;
-			var clone = $(this).find('img').eq(0).clone();
+			var clone = $('.chat').find('img').eq(0).clone();
 			var top = childTop + 12 + "px";
 
 			$(clone).css({ 'top': top }).addClass("floatingImg").appendTo("#chatbox");
@@ -127,10 +142,14 @@ function createRoom(roomCode) {
 				'top': '20px'
 			}, 200);
 
-			const roomBox = `<input id = "roomCode" type="hidden" value="${roomCode}"></div>
-              				<input id = "sendVal" type="hidden" value="0"></div>`
+			const roomBox = `
+							<div id = "roomBox">
+								<p class="animate"></p>
+								<input id = "roomCode" type="hidden" value="${roomCode}">
+	              				<input id = "sendVal" type="hidden" value="0">
+              				</div>`
 
-			var name = $(this).find("p strong").html();
+			var name = $('.chat').find("p strong").html();
 			$("#profile p").html(name);
 			$("#profile").append(roomBox)
 
@@ -138,7 +157,7 @@ function createRoom(roomCode) {
 			$('#friendslist').fadeOut();
 			$('#chatview').fadeIn();
 
-			$('#close').unbind("click").click(function() {
+			$('#close').unbind('click').click(function() {
 				$("#chat-messages, #profile, #profile p").removeClass("animate");
 				$('.cx, .cy').removeClass("s1 s2 s3");
 				$('.floatingImg').animate({
@@ -153,12 +172,9 @@ function createRoom(roomCode) {
 				}, 50);
 
 				$('#chat-messages').empty();
+				$('#roomBox').remove()
 			});
 			getMessage(roomCode)
-		});
-	});
-
-
 }
 
 function getMessage(roomCode) {

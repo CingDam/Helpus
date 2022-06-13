@@ -2,9 +2,7 @@
 const state = {
     page : 1
 };
-
 let page=$('#index')
-
 let page_name = index
 	
 let header = [];
@@ -22,6 +20,7 @@ $(document).ready(function(){
         $(this).closest('.menu-item.open').addClass('active');
         
         $('.inquery').parent().parent().parent().parent().removeClass('open');
+       
         
         page=$('#index')
         page_name = index
@@ -38,6 +37,8 @@ $(document).ready(function(){
         
         page=$('#inquery')
         page_name = inquery
+        pager_root= '#inquery_table'
+        console.log(pager_root)
 		
 		$(`${pager_root} th.order`).each((index,item) => {
 			header.push($(item).data("name"));
@@ -62,6 +63,19 @@ $(document).ready(function(){
         $(this).closest('.menu-item.open').addClass('active');
         page= $('#reservation')
         page_name =  reservation
+        pager_root= '#pager_rez'
+ 
+        $(`${pager_root} th.order_rez`).each((index,item) => {
+			header.push($(item).data("name"));
+		})
+		
+        movePage(1,page_name);
+        
+      $(document).on("click", ".page-link", function() {
+			const page = $(this).data("page");
+			
+			movePage(page,page_name);
+		});
         
 
     })
@@ -96,6 +110,10 @@ function movePage(page,page_name){
 		const url = 'get_coinqury'
 		pagination(url)
 	}
+	if(page_name == reservation){
+		const url = 'get_co_reservation'
+		pagination(url)
+	}
 	
 }
 
@@ -117,24 +135,33 @@ function pagination(url){
 			$("#total").text(state.total);
 			if(list && list.length > 0){
 					const tbody =  $(`${pager_root} tbody`);
+					console.dir($(`${pager_root} tbody`))
 		            let html = "";
 		            let state = null;
+		            $(`.empty_msg`).hide();
 		            for(let i = 0; i < list.length; i++){
 						if(contractList.length > 0 & contractList[i] != null){
 							state = contractList[i].contractState
 						}
 						console.log(state)
 						if(state == null || state == 0){
+							console.log('테스트')
 							html += makeItem(list[i],room[i],state);
+							state = null
+						} else if(state == 1){
+							console.log('테스트')
+							console.log(header)
+							html += makeItem(contractList[i],room[i],state);
+							state = null
+						} else {
+							console.log('테스트')
+							$(`.empty_msg`).show();
 							state = null
 						}
 		            }
-		            
-		            
-					$(`.empty_msg`).hide();
 					
                     $(`${pager_root} tr.item`).remove();
-                    
+                    console.log(html)
                    
                     
                     //$(`${pager_root}`).append(tbody);
@@ -194,13 +221,15 @@ function makeItem(item,room,state){
 	const {code, name, spec, manufacture, category,price,barcode} = item;
 	*/	
 		console.log(room)
+		console.log(item)
 		let html = `<tr class="item" data-code="${item['userId']}">`;
 		for(let i = 0; i < header.length;i++){
 		
 		let value_ = "";
-		console.log(value_)
+		
     	if(item[header[i]]){
 			 value_ = item[header[i]];
+			 console.log(value_)
 		}
 		html += `<td class="${header[i]}">${value_}</td>`
 		
@@ -213,17 +242,23 @@ function makeItem(item,room,state){
 				html+=`<td class="wait"><span class="badge rounded-pill bg-label-secondary">계약 대기</span></td>`
 			} else{
 				html += `<td><button type="button" class="btn btn-primary" name="contract">계약</button>
-					<button type="button" class="btn btn-outline-secondary">거절</button></td>`;
+					<button type="button" class="btn btn-outline-secondary">거절</button></td>
+					<input id="InquryCode" type="hidden" value="${item.coInquryCode}"></td>`;
 			}
 			html += `</tr>`
 		}
 		if(page_name == reservation){
-			html += `<td>
-                        <button type="button" class="btn btn-secondary">
+			html += `
+					<td>${item.contractSdate} ~ ${item.contractEdate} </td>
+					<td>
+                        <button type="button" class="btn btn-secondary chat">
                           <i class="bx bx-comment-dots"></i>
                         </button>
+                        <input id="roomCode" type="hidden" value="${room.roomCode}"></td>
                       </td>`
 			html += ` <td><button type="button" class="btn btn-primary"><i class="bx bx-task"></i></button><button type="button" class="btn btn-outline-secondary">취소</button></td>`
+			html += `</tr>`
 		}
+		console.log(html)
 		return html;
 }

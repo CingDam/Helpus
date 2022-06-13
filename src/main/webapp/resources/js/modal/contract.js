@@ -24,8 +24,12 @@ $(function(){
 		const eDate = $('input[name="contractEdate"]').val();
 		const price = $('input[name="contractPay"]').val();
 		const contents = $('textarea[name="contractContents"]').val();
+		const coInquryCode = $('#InquryCode').val();
+		
+
 		
 		const item = {
+			coInquryCode : coInquryCode,
 			keyCode : keyCode,
 			userCode : userCode,
 			contractSdate : sDate,
@@ -59,6 +63,7 @@ function addContract(item){
 		$.ajax('/contract/add',{
 			method: "POST",
 			contentType: "application/json",
+			dataType : "json",
 			data: JSON.stringify(item),
 			success: (result) => {
 				console.log(result)
@@ -67,7 +72,8 @@ function addContract(item){
 				if(contractCode != 0 ){
 					send(contractCode)
 					let html = `<td class="wait"><span class="badge rounded-pill bg-label-secondary">계약 대기</span></td>`
-					$('button[name="contract"]').parent('td').html(html);
+					console.dir($('button[name="contract"]').parent())
+					$('button[name="contract"]').parent().html(html);
 					 
 				}
 					
@@ -164,13 +170,13 @@ function loadContents(userId){
 			                    <div id="userCode" value="${user.userCode}">고객명 : ${user.userName}</div>
 			                    <div>연락처 : ${user.userPhone}</div>
 			                    <div class="row">
-			                        <label class="col-md-2">주소 :</label>
-			                        <div class="col-md-5">
+			                        <label class="col-md-3">주소 :</label>
+			                        <div class="col-md-8">
 			                          <input class="form-control" type="text" name="contractAddress"/>
 			                        </div>
 			                    </div>
 			                    <div class="row">
-			                      <label class="col-md-2">서명 :</label>
+			                      <label class="col-md-3">서명 :</label>
 			                      <div class="col-md-5">
 			                        <input class="form-control" type="text" readonly/>
 			                      </div>
@@ -182,7 +188,7 @@ function loadContents(userId){
 				                    <div>연락처 : ${company.coPhone}</div>
 				                    <div>주소 : ${company.coAddress}</div>
 				                    <div class="row">
-				                    <label class="col-md-2">서명 :</label>
+				                    <label class="col-md-3">서명 :</label>
 				                     <div class="col-md-5">
 				                        <input class="form-control" type="text" placehoder="${company.coName}"/>
 				                      </div>

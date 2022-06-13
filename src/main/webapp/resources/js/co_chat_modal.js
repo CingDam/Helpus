@@ -2,25 +2,27 @@ $(function(){
 	
 	$(document).on('click','.chat',function(){
 		$('#chat_modal').fadeIn();
-		createRoom()
+		const roomCode = $(this).parent().find('#roomCode').val();
+		const name = $(this).parent().parent().find('.userName').text();
+		createRoom(roomCode,name)
 	})
 	
 	$('#chatclose').click(function(){
 		$('#chat_modal').fadeOut();
-		$('#chat-messages').empty()
+		$('#chat-messages').empty();
+		$('#profile').empty();
 	})
 })
 
-function createRoom(){
-	const name = $('.userName').text()
-	const roomCode = $('#roomCode').val()
-	console.log(roomCode)
-	$("#profile p").html(name); 
-	const roomBox = `<input id = "roomCode" type="hidden" value="${roomCode}"></div>
-              				<input id = "sendVal" type="hidden" value="1"></div>`
-              				
-   $('#profile').append(roomBox)
-   getMsg(roomCode)
+function createRoom(roomCode,name){
+		console.log(name)
+		const roomBox = `<p class="animate"></p>
+						<input id = "roomCode" type="hidden" value="${roomCode}"></div>
+	              				<input id = "sendVal" type="hidden" value="1"></div>`
+	              				
+	   $('#profile').append(roomBox)
+	   	$("#profile p").html(name); 
+	   getMsg(roomCode)
 }
 
 function getMsg(roomCode){

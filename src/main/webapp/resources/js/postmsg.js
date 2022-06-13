@@ -1,3 +1,4 @@
+
 	const url = "ws://" + window.location.hostname + ":" + window.location.port + "/chatserver"
 	const parent = window.parent
 	
@@ -7,10 +8,9 @@
 	
 	socket.onopen = () => {
 		
-		console.dir(parent.$("#roomCode"))
+		console.dir(parent.$("#profile").children('#roomCode').val())
 		console.log(parent.$("#roomCode").val())
-		const room = parent.$("#roomCode");
-		const roomCode = room.val();
+		const roomCode = parent.$("#profile").childeren('#roomCode').val();;
 		const cur_user = login_user;
 		const sendVal = parent.$('#sendVal').val();
 		
@@ -34,6 +34,7 @@
 	socket.onmessage = onMessage = msg => {
 		
 		const room = parent.$('#roomCode');
+
 		const roomCode = room.value;
 		const sendVal = parent.$('#sendVal').val();
 		
@@ -160,6 +161,7 @@
 	}
 	
 	$(function(){
+
 		$("#msg").on("keypress", function(event) {
 			if(event.keyCode == 13) {
 				send();

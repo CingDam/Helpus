@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <body>
 		<script type="text/javascript">
-			const pager_root= '#inquery_table';
 			const inquery_key = "userId"
 		</script>
         <!-- Content wrapper -->

@@ -30,4 +30,16 @@ public class ContractDaoImpl implements ContractDao {
 		return sql.selectOne("contract.item", contractCode);
 	}
 
+	@Override
+	public void update(Contract item) {
+		sql.update("contract.update", item);
+		
+	}
+
+	@Override
+	public Object listReserv(int coCode) {
+		
+		return sql.selectList("contract.list_reserv", coCode);
+	}
+
 }

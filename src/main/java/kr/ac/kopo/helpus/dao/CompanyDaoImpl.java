@@ -129,5 +129,11 @@ public class CompanyDaoImpl implements CompanyDao {
 		return sql.selectList("company.inquryList",code);
 	}
 
+	@Override
+	public void delete_coInqury(int coInquryCode) {
+		sql.delete("company.delete_inqury", coInquryCode);
+		
+	}
+
 
 }

@@ -72,4 +72,12 @@ public class ContractController {
 		model.addAttribute("item",map);
 		return path + "view";
 	}
+	
+	@ResponseBody
+	@PostMapping("/update")
+	public String update(@RequestBody Contract item) {
+		contractService.update(item);
+		
+		return "OK";
+	}
 }

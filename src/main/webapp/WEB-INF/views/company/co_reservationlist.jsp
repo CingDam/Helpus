@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <body>
 		<script type="text/javascript">
-			const rez_root= '#pager_rez';
 			const reservation_key = "userName"
 		</script>
 
@@ -19,10 +18,10 @@
                   <caption><span id="total">0</span></caption>
                   <thead>
                     <tr>
-                      <th class="order_rez" data-order="userId" data-name="userId">고객명</th>
+                      <th class="order_rez" data-order="userName" data-name="userName">고객명</th>
                       <th class="order_rez" data-order="keyName" data-name="keyName">키워드</th>
-                      <th class="order_rez" data-order="userId" data-name="userId">계약 기간</th>
-                      <th class="order_rez" data-order="address" data-name="address">주소</th>
+                      <th class="order_rez" data-order="contractAddress" data-name="contractAddress">주소</th>
+                      <th>계약 기간</th>
                       <th>채팅</th>
                       <th>관리</th>
                     </tr>

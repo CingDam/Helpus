@@ -4,7 +4,7 @@
 <mapper namespace="contract">
 	<insert id="add">
 		INSERT INTO contract
-		VALUES(null, #{userCode}, #{coCode}, #{keyCode}, #{contractContents}, #{contractAddress}, now(), #{contractSdate}, #{contractEdate}, now(), default, #{contractPay})
+		VALUES(null, #{userCode}, #{coCode}, #{keyCode},#{coInquryCode} ,#{contractContents}, #{contractAddress}, now(), #{contractSdate}, #{contractEdate}, now(), default, #{contractPay})
 		<selectKey resultType="Integer" keyProperty="contractCode" order="AFTER">
   			SELECT LAST_INSERT_ID()
   		</selectKey>
@@ -13,7 +13,12 @@
 	<select id="list" resultType="Contract">
 		SELECT contract.*, user.user_name userName, keyword.key_name keyName
 		FROM contract JOIN user ON contract.user_code = user.user_code JOIN keyword ON contract.key_code = keyword.key_code
-		WHERE co_code=#{coCode}
+		WHERE co_code=#{coCode} AND contract.co_inqury_code IS NOT NULL
+	</select>
+	<select id="list_reserv" resultType="Contract">
+		SELECT contract.*, user.user_name userName, keyword.key_name keyName
+		FROM contract JOIN user ON contract.user_code = user.user_code JOIN keyword ON contract.key_code = keyword.key_code
+		WHERE co_code=#{coCode} AND contract.contract_state = 1
 	</select>
 	
 	<select id="item" resultType="Contract">
@@ -23,4 +28,12 @@
 		JOIN company ON contract.co_code = company.co_code
 		WHERE contract.contract_code = #{contractCode}
 	</select>
+	
+	<update id="update">
+		UPDATE contract SET
+		contract_state = #{contractState},
+		contract_day = NOW(),
+		contract_payday = NOW()
+		WHERE contract_code = #{contractCode}
+	</update>
 </mapper>

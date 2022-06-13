@@ -45,5 +45,7 @@ public interface CompanyDao {
 
 	List<Coinqury> getCoInqury(int code);
 
+	void delete_coInqury(int coInquryCode);
+
 
 }

@@ -2,19 +2,24 @@ package kr.ac.kopo.helpus.model;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Contract {
 	private int contractCode;
 	private int userCode;
 	private int coCode;
 	private int keyCode;
+	private int coInquryCode;
 	private String contractContents;
 	private String contractAddress;
 	private Date contractDay;
+	@JsonFormat(pattern = "yyyy-MM-dd", timezone = "Aisa/Seoul" )
 	private Date contractSdate;
+	@JsonFormat(pattern = "yyyy-MM-dd", timezone = "Aisa/Seoul" )
 	private Date contractEdate;
 	private Date contractPayday;
 	private int contractPay;
-	private char contractState;
+	private int contractState;
 	
 	private String userName;
 	private String userPhone;
@@ -89,11 +94,11 @@ public class Contract {
 		this.contractEdate = contractEdate;
 	}
 
-	public char getContractState() {
+	public int getContractState() {
 		return contractState;
 	}
 
-	public void setContractState(char contractState) {
+	public void setContractState(int contractState) {
 		this.contractState = contractState;
 	}
 
@@ -167,6 +172,14 @@ public class Contract {
 
 	public void setCoAddress(String coAddress) {
 		this.coAddress = coAddress;
+	}
+
+	public int getCoInquryCode() {
+		return coInquryCode;
+	}
+
+	public void setCoInquryCode(int coInquryCode) {
+		this.coInquryCode = coInquryCode;
 	}
 	
 	

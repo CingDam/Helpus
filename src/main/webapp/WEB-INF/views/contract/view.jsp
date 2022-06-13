@@ -18,6 +18,12 @@
 <script src="../../js/jquery-3.6.0.min.js"></script>
 <script src="../../js/contract_view.js"></script>
 
+<script type="text/javascript">
+	const login_user = '${sessionScope.user.userId}'
+	const user_name = '${item.contract.userName}'
+	const contractCode = '${item.contract.contractCode}'
+	const coInquryCode = '${item.contract.coInquryCode}'
+</script>
 
 </head>
 <body>
@@ -78,7 +84,7 @@
 	                  <div class="row">
 	                      <label class="col-md-2">서명 :</label>
 	                      <div class="col-md-5">
-	                        <input class="form-control" type="text" placeholder="${item.contract.userName }"/>
+	                        <input id="sign" class="form-control" type="text" placeholder="${item.contract.userName }"/>
 	                      </div>
 	                  </div>
               	</div>

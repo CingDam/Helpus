@@ -112,6 +112,32 @@ public class CompanyController {
 		return map;
 	}
 	
+	@ResponseBody
+	@GetMapping("/get_co_reservation")
+	public Map<String, Object> coReservation(Pager pager,HttpSession session){
+		Company company = (Company) session.getAttribute("company");
+		
+		int code = company.getCoCode();
+		
+		System.out.println(pager.getPage());
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		 map.put("list", service.getCoInqury(code,pager));
+		 map.put("contractList", contractService.list_reserv(code));
+		 map.put("pager",pager);
+		 if(company != null) {
+				map.put("member", "company");
+				map.put("coCode", company.getCoCode());
+				
+				List<Room> roomList = chatService.roomList(map);
+				
+				map.put("room",roomList);
+		}
+		
+		return map;
+	}
+	
 	@GetMapping("/mypage")
 	public String mypage() {
 		return path + "mypage";

@@ -12,4 +12,8 @@ public interface ContractService {
 
 	Contract item(int contractCode);
 
+	void update(Contract item);
+
+	Object list_reserv(int coCode);
+
 }
