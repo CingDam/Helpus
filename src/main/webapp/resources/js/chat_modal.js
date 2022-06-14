@@ -2,7 +2,7 @@ let contractCode = null;
 
 $(function() {
 
-	
+	console.dir($('#chatbtn'))
 	$("#chatbtn").click(function() {
 		$("#chatbtn").toggle('scale');
 		$("#chatbox").toggle('scale');
@@ -150,15 +150,10 @@ function createRoom(roomCode) {
               				</div>`
 
 			var name = $('.chat').find("p strong").html();
-			$("#profile p").html(name);
-			$("#profile").append(roomBox)
-
-			$(".message").not(".right").find("img").attr("src", $(clone).attr("src"));
-			$('#friendslist').fadeOut();
-			$('#chatview').fadeIn();
-
-			$('#close').unbind('click').click(function() {
-				$("#chat-messages, #profile, #profile p").removeClass("animate");
+			
+			$('#close').unbind('click').click(function(){
+			
+			$("#chat-messages, #profile, #profile p").removeClass("animate");
 				$('.cx, .cy').removeClass("s1 s2 s3");
 				$('.floatingImg').animate({
 					'width': "40px",
@@ -168,12 +163,21 @@ function createRoom(roomCode) {
 
 				setTimeout(function() {
 					$('#chatview').fadeOut();
-					$('#friendslist').fadeIn();
+					p$('#friendslist').fadeIn();
 				}, 50);
 
 				$('#chat-messages').empty();
 				$('#roomBox').remove()
-			});
+				
+				$('#send-message').empty();
+		})
+			
+			$("#profile p").html(name);
+			$("#profile").append(roomBox)
+
+			$(".message").not(".right").find("img").attr("src", $(clone).attr("src"));
+			$('#friendslist').fadeOut();
+			$('#chatview').fadeIn();
 			getMessage(roomCode)
 }
 

@@ -4,19 +4,18 @@
 	
 	const socket = new WebSocket(url);
 	
-	let connect = false;
+	let connect
 	
 	socket.onopen = () => {
 		
-		console.dir(parent.$("#profile").children('#roomCode').val())
-		console.log(parent.$("#roomCode").val())
-		const roomCode = parent.$("#profile").childeren('#roomCode').val();;
+		console.dir()
+		const roomCode = parent.$("#roomBox").children('#roomCode').val();
+		console.log(roomCode)
+		console.log(parent.$('#chatlist').find(`input[value=${roomCode}]`).parent().find("p") )
 		const cur_user = login_user;
-		const sendVal = parent.$('#sendVal').val();
-		
-		console.log(roomCode, cur_user, parent.$('#sendVal').val());
-		
+		const sendVal = parent.$("#roomBox").children('#sendVal').val();
 		connect = true;
+		console.log(connect)
 		$.ajax("/chat/msg_ck",{
 						method : "POST",
 						contentType : "application/json",
@@ -33,10 +32,8 @@
 	
 	socket.onmessage = onMessage = msg => {
 		
-		const room = parent.$('#roomCode');
-
-		const roomCode = room.value;
-		const sendVal = parent.$('#sendVal').val();
+		const roomCode = parent.$("#roomBox").children('#roomCode').val();
+		const sendVal = parent.$("#roomBox").children('#sendVal').val();
 		
 		let data = msg.data;
 		let message = null;
@@ -64,6 +61,11 @@
 			
 		
 		const chat = parent.$('#chat-messages')
+		
+		if(parent.$('#chatlist').find('#roomCode').val() == roomCode){
+			let html = `<span>${message}</span>`
+			parent.$('#chatlist').find('')
+		}
 		
 		if(cur_user == session_user){
 			let userMsg = `<div class="message right">
@@ -125,25 +127,11 @@
 		connect = false;
 		alert("서버에 연결이 끊어졌습니다.")
 	}
-	function send(){
+	
+	function post_msg(messageContents){
 		
-		const messageContents = document.getElementById("msg")
-		
-		let sendVal = parent.$('#sendVal').val()
-		
-		if(connect) {
-			
-			socket.send(login_user + ": " + $('#msg').val());
-			console.log(login_user + ": " + $('#msg').val())
-			post_msg(sendVal, messageContents.value)
-			messageContents.value = "";
-			
-		}
-	}
-	function post_msg(sendVal, messageContents){
-		
-		const room = parent.$('#roomCode');
-		const roomCode = room.val();
+		const roomCode = parent.$("#roomBox").children('#roomCode').val();
+		const sendVal = parent.$("#roomBox").children('#sendVal').val();
 		
 		const item = {
 			sendVal : sendVal,
@@ -159,15 +147,48 @@
 			
 		})
 	}
-	
 	$(function(){
 
 		$("#msg").on("keypress", function(event) {
+			console.log(connect)
 			if(event.keyCode == 13) {
 				send();
 			}
 		});
 		$('#send').click(function(){
 			send()
+		});
+		parent.$('#close').unbind('click').click(function(){
+			
+			parent.$("#chat-messages, #profile, #profile p").removeClass("animate");
+				parent.$('.cx, .cy').removeClass("s1 s2 s3");
+				parent.$('.floatingImg').animate({
+					'width': "40px",
+					'top': top,
+					'left': '12px'
+				}, 200, function() { parent.$('.floatingImg').remove() });
+
+				setTimeout(function() {
+					parent.$('#chatview').fadeOut();
+					parent.$('#friendslist').fadeIn();
+				}, 50);
+
+				parent.$('#chat-messages').empty();
+
+				parent.$('#roomBox').remove()
+				socket.close();
+				
 		})
 	})
+	
+function send(){
+		console.log(connect)
+		const messageContents =  $('#msg').val()
+		if(connect) {
+			socket.send(login_user + ": " + $('#msg').val());
+			console.log(login_user + ": " + $('#msg').val())
+			post_msg(messageContents)
+			$('#msg').val("");
+			
+		}
+	}
