@@ -61,6 +61,14 @@
 			
 		
 		const chat = parent.$('#chat-messages')
+		const today = new Date()
+		const week = ['일', '월', '화', '수', '목', '금', '토'];
+		let day = week[new Date().getDay()];
+		
+		if(today.getDate() != parent.$('#date').text()){
+			let html = `<label>${today.getMonth()}월 ${today.getDay()}일 ${day}요일</label>`
+			chat.append(html);
+		}
 		
 		if(parent.$('#chatlist').find('#roomCode').val() == roomCode){
 			let html = `<span>${message}</span>`
@@ -171,6 +179,7 @@
 				setTimeout(function() {
 					parent.$('#chatview').fadeOut();
 					parent.$('#friendslist').fadeIn();
+					parent.$("#send-message").empty();
 				}, 50);
 
 				parent.$('#chat-messages').empty();

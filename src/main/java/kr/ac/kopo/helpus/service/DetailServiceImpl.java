@@ -11,6 +11,7 @@ import kr.ac.kopo.helpus.dao.DetailDao;
 import kr.ac.kopo.helpus.dao.DetailImageDao;
 import kr.ac.kopo.helpus.model.CoKey;
 import kr.ac.kopo.helpus.model.DetailImage;
+import kr.ac.kopo.helpus.util.Pager;
 import kr.ac.kopo.helpus.model.Detail;
 
 @Service
@@ -24,9 +25,9 @@ public class DetailServiceImpl implements DetailService {
 	DetailImageDao detailImageDao;
 
 	@Override
-	public List<Detail> search(String keyword) {
+	public List<Detail> search(Pager pager) {
 		
-		return dao.search(keyword);
+		return dao.search(pager);
 	}
 
 	@Override

@@ -3,10 +3,11 @@ package kr.ac.kopo.helpus.dao;
 import java.util.List;
 
 import kr.ac.kopo.helpus.model.Detail;
+import kr.ac.kopo.helpus.util.Pager;
 
 public interface DetailDao {
 
-	List<Detail> search(String keyword);
+	List<Detail> search(Pager pager);
 
 	void add(Detail item);
 

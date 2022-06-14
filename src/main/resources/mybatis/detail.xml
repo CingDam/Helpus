@@ -9,10 +9,12 @@
 			LEFT JOIN review ON co_key.co_code = review.co_code
 			JOIN company ON co_key.co_code = company.co_code
 			WHERE keyword.key_name LIKE CONCAT(CONCAT('%',#{keyword}),'%')
+			LIMIT #{offset},#{perPage}
 	</select>
 	<select id="item" resultMap="DetailMap">
-		SELECT detail.*,co_key.cate_code,co_key.key_code FROM detail
+		SELECT detail.*,co_key.cate_code,co_key.key_code,keyword.key_name FROM detail
 		JOIN co_key ON co_key.co_code = detail.co_code
+		JOIN keyword ON co_key.key_code = keyword.key_code
 		WHERE co_key.co_code = #{coCode}
 	</select>
 	
@@ -24,6 +26,7 @@
 		<result column="key_name" property="keyName"/>
 		<result column="cate_code" property="cateCode"/>
 		<result column="key_code" property="keyCode"/>
+		<result column="detail_shorts" property="detailShorts"/>
 		
 		<collection column="co_code" property="coKey" ofType="CoKey" javaType="ArrayList">
 			<id column="co_key_code" property="coKeyCode"></id>

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -18,19 +19,14 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/search.css">
+  <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/core.css" class="template-customizer-core-css" />
   <link rel="stylesheet" href="css/theme-default.css" class="template-customizer-theme-css" />
 </head>
 
 <body>
     <!-- Header -->
-    <div id="header">
-        <img src="img/logo.png">
-        <ul>
-            <li><a href="#">마이페이지</a></li>
-            <li><a href="logout">로그아웃</a></li>
-        </ul>
-    </div>
+    <jsp:include page="include/header_body.jsp"></jsp:include>
     <div id="line"></div>
     <!-- /Header -->
 
@@ -65,7 +61,7 @@
                 </div>
                 <div class="mb-4">
                     <select class="form-select form-select-lg">
-                        <option></option>
+                        <option>키워드</option>
                         <option value="4">One</option>
                     </select>
                 </div>
@@ -76,190 +72,33 @@
             <!-- Content 2-->
             <div class="col-lg-9">
                 <div id="cap">
-                    <span>총 218 건</span>
+                    <span>총 ${pager.total } 건</span>
                     <div><i class="fa-solid fa-arrow-right-arrow-left fa-rotate-90"></i>평점순</div>
                 </div>
-                <hr>
-
-                <div class="list">
-                    <img src="img/1.jpg">
-                    <div class="text">
-                        <div id="keyword">
-                            <span>#대전</span>
-                            <span>#에어컨 청소</span>
-                            <span>#세탁기 청소</span>
-                        </div>
-                        <div>클린앤클리어</div>
-                        <div>한줄소개글</div>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-star"></i>
-                        <span>5.0 ( 54 )</span>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="list">
-                    <img src="img/1.jpg">
-                    <div class="text">
-                        <div>
-                            <span>#대전</span>
-                            <span>#에어컨 청소</span>
-                            <span>#세탁기 청소</span>
-                        </div>
-                        <div>클린앤클리어</div>
-                        <div>한줄소개글</div>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-star"></i>
-                        <span>5.0 ( 54 )</span>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="list">
-                    <img src="img/1.jpg">
-                    <div class="text">
-                        <div>
-                            <span>#대전</span>
-                            <span>#에어컨 청소</span>
-                            <span>#세탁기 청소</span>
-                        </div>
-                        <div>클린앤클리어</div>
-                        <div>한줄소개글</div>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-star"></i>
-                        <span>5.0 ( 54 )</span>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="list">
-                    <img src="img/1.jpg">
-                    <div class="text">
-                        <div>
-                            <span>#대전</span>
-                            <span>#에어컨 청소</span>
-                            <span>#세탁기 청소</span>
-                        </div>
-                        <div>클린앤클리어</div>
-                        <div>한줄소개글</div>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-star"></i>
-                        <span>5.0 ( 54 )</span>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="list">
-                    <img src="img/1.jpg">
-                    <div class="text">
-                        <div>
-                            <span>#대전</span>
-                            <span>#에어컨 청소</span>
-                            <span>#세탁기 청소</span>
-                        </div>
-                        <div>클린앤클리어</div>
-                        <div>한줄소개글</div>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-star"></i>
-                        <span>5.0 ( 54 )</span>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="list">
-                    <img src="img/1.jpg">
-                    <div class="text">
-                        <div>
-                            <span>#대전</span>
-                            <span>#에어컨 청소</span>
-                            <span>#세탁기 청소</span>
-                        </div>
-                        <div>클린앤클리어</div>
-                        <div>한줄소개글</div>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-star"></i>
-                        <span>5.0 ( 54 )</span>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="list">
-                    <img src="img/1.jpg">
-                    <div class="text">
-                        <div>
-                            <span>#대전</span>
-                            <span>#에어컨 청소</span>
-                            <span>#세탁기 청소</span>
-                        </div>
-                        <div>클린앤클리어</div>
-                        <div>한줄소개글</div>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-star"></i>
-                        <span>5.0 ( 54 )</span>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="list">
-                    <img src="img/1.jpg">
-                    <div class="text">
-                        <div>
-                            <span>#대전</span>
-                            <span>#에어컨 청소</span>
-                            <span>#세탁기 청소</span>
-                        </div>
-                        <div>클린앤클리어</div>
-                        <div>한줄소개글</div>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-star"></i>
-                        <span>5.0 ( 54 )</span>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="list">
-                    <img src="img/1.jpg">
-                    <div class="text">
-                        <div>
-                            <span>#대전</span>
-                            <span>#에어컨 청소</span>
-                            <span>#세탁기 청소</span>
-                        </div>
-                        <div>클린앤클리어</div>
-                        <div>한줄소개글</div>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-star"></i>
-                        <span>5.0 ( 54 )</span>
-                    </div>
-                </div>
-                <hr>
-
-                <div class="list">
-                    <img src="img/1.jpg">
-                    <div class="text">
-                        <div>
-                            <span>#대전</span>
-                            <span>#에어컨 청소</span>
-                            <span>#세탁기 청소</span>
-                        </div>
-                        <div>클린앤클리어</div>
-                        <div>한줄소개글</div>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-star"></i>
-                        <span>5.0 ( 54 )</span>
-                    </div>
-                </div>
-                <hr>
+               <c:if test="${list.size() < 1}">
+               		<hr>
+		                <div class="list">
+		                	<div>검색된 결과가 없습니다!</div>
+		                </div>
+		            <hr>
+               </c:if>
+               <c:forEach var="item" items="${list}">
+	               	<hr>
+		                <div class="list">
+		                    <img src="img/">
+		                    <div class="text">
+		                        <div class="keyword">
+		                        </div>
+		                        <div>${item.coName}</div>
+		                        <div>${item.detailShorts }</div>
+		                    </div>
+		                    <div>
+		                        <i class="fa-solid fa-star"></i>
+		                        <span>${item.reviewScore }</span>
+		                    </div>
+		                </div>
+	                <hr>
+               </c:forEach> 
 
             </div>
             <!--/ Content 2 -->
@@ -271,37 +110,27 @@
         <nav aria-label="Page navigation">
             <ul class="pagination justify-content-center">
                 <li class="page-item first">
-                    <a class="page-link" href="javascript:void(0);">
+                    <a class="page-link" href="?page=1">
                     <i class="tf-icon bx bx-chevrons-left"></i>
                     </a>
                 </li>
                 <li class="page-item prev">
-                    <a class="page-link" href="javascript:void(0);">
+                    <a class="page-link" href="?page=${pager.prev}">
                     <i class="tf-icon bx bx-chevron-left"></i>
                     </a>
                 </li>
-                <li class="page-item active">
-                    <a class="page-link" href="javascript:void(0);">1</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="javascript:void(0);">2</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="javascript:void(0);">3</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="javascript:void(0);">4</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="javascript:void(0);">5</a>
-                </li>
+                <c:forEach  var="page" items="${pager.list}">
+                	<li class="page-item ${page == pager.page ? 'active' : ''}">
+                    	<a class="page-link" href="?page=${page}">${page}</a>
+                	</li>
+                </c:forEach>
                 <li class="page-item next">
-                    <a class="page-link" href="javascript:void(0);">
+                    <a class="page-link" href="?page=${pager.next};">
                     <i class="tf-icon bx bx-chevron-right"></i>
                     </a>
                 </li>
                 <li class="page-item last">
-                    <a class="page-link" href="javascript:void(0);">
+                    <a class="page-link" href="?page=${pager.last}">
                     <i class="tf-icon bx bx-chevrons-right"></i>
                     </a>
                 </li>

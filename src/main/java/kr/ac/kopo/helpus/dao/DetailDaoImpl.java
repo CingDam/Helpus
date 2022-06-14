@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import kr.ac.kopo.helpus.model.Detail;
+import kr.ac.kopo.helpus.util.Pager;
 
 @Repository
 public class DetailDaoImpl implements DetailDao {
@@ -15,9 +16,10 @@ public class DetailDaoImpl implements DetailDao {
 	SqlSession sql;
 
 	@Override
-	public List<Detail> search(String keyword) {
+	public List<Detail> search(Pager pager) {
+		
 
-		return sql.selectList("detail.search", keyword);
+		return sql.selectList("detail.search", pager);
 	}
 
 	@Override

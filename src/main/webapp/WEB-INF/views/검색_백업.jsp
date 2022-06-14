@@ -79,25 +79,6 @@
                     <span>총 218 건</span>
                     <div><i class="fa-solid fa-arrow-right-arrow-left fa-rotate-90"></i>평점순</div>
                 </div>
-                <hr>
-
-                <div class="list">
-                    <img src="img/1.jpg">
-                    <div class="text">
-                        <div>
-                            <span>#대전</span>
-                            <span>#에어컨 청소</span>
-                            <span>#세탁기 청소</span>
-                        </div>
-                        <div>클린앤클리어</div>
-                        <div>한줄소개글</div>
-                    </div>
-                    <div>
-                        <i class="fa-solid fa-star"></i>
-                        <span>5.0 ( 54 )</span>
-                    </div>
-                </div>
-                <hr>
 
                 <div class="list">
                     <img src="img/1.jpg">

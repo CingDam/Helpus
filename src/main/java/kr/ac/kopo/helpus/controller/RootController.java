@@ -23,6 +23,7 @@ import kr.ac.kopo.helpus.service.DetailService;
 import kr.ac.kopo.helpus.service.KeywordService;
 import kr.ac.kopo.helpus.service.MailService;
 import kr.ac.kopo.helpus.service.UserService;
+import kr.ac.kopo.helpus.util.Pager;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -71,9 +72,9 @@ public class RootController {
 	
 	//회사리스트검색
 	@PostMapping("/list")
-	public String index(String keyword,Model model) {
+	public String index(Model model,Pager pager) {
 		
-		List<Detail> list = detailService.search(keyword);
+		List<Detail> list = detailService.search(pager);
 		
 		model.addAttribute("list", list);
 		

@@ -197,7 +197,8 @@ function getMessage(roomCode) {
 				let getDate = messageDate.split('-')
 
 				if (putDate != messageDate) {
-					let date = `<label>${getDate[1]}월 ${getDate[2]}일 ${day}요일</label>`
+					let date = `<label>${getDate[1]}월 ${getDate[2]}일 ${day}요일</label>
+								<div id="date" style="display:none">${messageDate}</div>`
 					$('#chat-messages').append(date)
 					putDate = messageDate;
 				}
