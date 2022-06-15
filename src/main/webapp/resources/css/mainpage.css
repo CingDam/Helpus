@@ -360,7 +360,8 @@ html,body{
 	
 	color: #000000;
 	
-	left :24.635416666666668vw;
+	left :26.635416666666668vw;
+	top: 50px;
 
 
 }
@@ -384,7 +385,7 @@ html,body{
 	top: 150px;
 	
 	width: 278px;
-	height: 320px;
+	height: 300px;
 	
 	border-radius: 40px;
 	
@@ -405,7 +406,7 @@ html,body{
 	position : absolute;
 	
 	width: 278px;
-	height: 120px;
+	height: 100px;
 	border-radius: 0 0 40px 40px;
 	background: #ffffff;
 	
@@ -425,7 +426,7 @@ html,body{
 	font-size: 22px;
 	line-height: 29px;
 	
-	top : 55px;
+	top : 45px;
 	left : 25px;
 }
 .local_popul_service > ul > li > .contents >.text_box > .keyword{
@@ -454,32 +455,36 @@ html,body{
 	font-family: "Font Awesome 6 Free";
     font-weight: 900;
     font-size: 14px;
-	color : #C4C4C4;
-	left:-10px;
+	color : #FFD233;
+}
+.local_popul_service > ul > li > .contents >.text_box > .star_box >.fa-star:nth-child(1) {
+	position : absolute;
+	top : 4px;
+	left: 25px;
 }
 
 .local_popul_service > ul > li > .contents >.text_box > .star_box >.fa-star:nth-child(2) {
 	position : absolute;
-	top : 5px;
-	left: 19px;
+	top : 4px;
+	left: 40px;
 }
 
 .local_popul_service > ul > li > .contents >.text_box > .star_box >.fa-star:nth-child(3) {
 	position : absolute;
-	top : 5px;
-	left: 38px;
+	top : 4px;
+	left: 55px;
 }
 
 .local_popul_service > ul > li > .contents >.text_box > .star_box >.fa-star:nth-child(4) {
 	position : absolute;
-	top : 5px;
-	left: 57px;
+	top : 4px;
+	left: 70px;
 }
 
 .local_popul_service > ul > li > .contents >.text_box > .star_box >.fa-star:nth-child(5) {
 	position : absolute;
-	top : 5px;
-	left: 75px;
+	top : 4px;
+	left: 85px;
 }
 /*지역인기 끝*/
 /*배너2*/
@@ -539,14 +544,14 @@ html,body{
 	
 	
 	font-family: Noto Sans KR;
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: 500;
-	line-height: 26px;
+	line-height: 40px;
 	letter-spacing: 0em;
 	text-align: right;
 	color: #555555;
 	
-	top : 148px;
+	top : 130px;
 	left : 40px;
 }
 
@@ -561,7 +566,7 @@ html,body{
 	height: 50px;
 	
 	font-family: 'Noto Sans KR';
-	font-style: normal;
+	font-style: normal; 
 	font-weight: 500;
 	font-size: 18px;
 	line-height: 24px;
@@ -588,7 +593,7 @@ html,body{
 	margin : 16px 0 0 0;
 	background: #C4C4C4;
 	border-radius: 30px;
-	
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 	
 }
 .useful_func>.swiper-wrapper >.swiper-slide > .img_box > .img_2 {
@@ -664,16 +669,16 @@ html,body{
 	
 	position : absolute;
 	
-	width: 264px;
+	width: 285px;
 	
-	top : 298px; left : 28px;
+	top : 298px; left : 22px;
 
 }
 .review_box > .content_box > .swiper-wrapper > .swiper-slide > .content > .text_box > .name {
 	font-family: 'Noto Sans KR';
 	font-style: normal;
 	font-weight: 500;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 20px;
 }
 .review_box > .content_box > .swiper-wrapper > .swiper-slide > .content > .text_box > .text {
@@ -692,9 +697,30 @@ html,body{
 	
 }
 .review_box > .content_box > .swiper-wrapper > .swiper-slide > .content > .text_box > .star_box >  .fa-solid, .fas {
-	font-family: "Font Awesome 6 Free";
-    font-weight: 900;
     font-size: 14px;
-	color : #C4C4C4;
+	color : #FFD233;
 }
+.content .fa-star:nth-child(1) {
+	position : absolute;
+	left: 50px;
+}
+
+.content .fa-star:nth-child(2) {
+	position : absolute;
+	left: 65px;
+}
+
+.content .fa-star:nth-child(3) {
+	position : absolute;
+	left: 80px;
+}
+.content .fa-star:nth-child(4) {
+	position : absolute;
+	left: 95px;
+}
+.content .fa-star:nth-child(5) {
+	position : absolute;
+	left: 110px;
+}
+
 /*인기 리뷰 끝*/

@@ -33,7 +33,7 @@
                   </tbody>
                 </table>
               </div>
-            <!--/ Hoverable Table rows -->
+            <!--/ Table -->
 
             </div>
           </div>

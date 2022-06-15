@@ -16746,14 +16746,14 @@ caption {
   width: 140px;
 }
 .long > td:last-child {
-  width: 190px;
+  width: 190px !important;
 }
 .long > td:last-child > button:first-child {
   margin-right: 10px;
 }
 .wait {
   font-size: 20px !important;
-  text-align: center;  
+  text-align: center;
 }
 
 /* 서비스관리 */

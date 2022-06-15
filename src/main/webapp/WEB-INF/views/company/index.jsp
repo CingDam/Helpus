@@ -329,22 +329,23 @@ function sch(){
 						id="navbar-collapse">
 
 						<!-- Search
-            <div class="navbar-nav align-items-center">
-              <div class="nav-item d-flex align-items-center">
-                <i class="bx bx-search fs-4 lh-0"></i>
-                <input type="text" class="form-control border-0 shadow-none" placeholder="Search"/>
-              </div>
-            </div>
-            /Search -->
+			            <div class="navbar-nav align-items-center">
+			              <div class="nav-item d-flex align-items-center">
+			                <i class="bx bx-search fs-4 lh-0"></i>
+			                <input type="text" class="form-control border-0 shadow-none" placeholder="Search"/>
+			              </div>
+			            </div>
+			            /Search -->
 
 						<ul class="navbar-nav flex-row align-items-center ms-auto">
 
 							<!-- Notice -->
 							<li class="nav-item navbar-dropdown dropdown-user dropdown">
-								<a class="nav-link dropdown-toggle hide-arrow"
-								href="javascript:void(0);" data-bs-toggle="dropdown"> <i
-									class="fa-solid fa-bell"></i>
-							</a>
+				                <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+				                  <button class="btn rounded-pill btn-icon btn-secondary">
+				                    <span class="bx bx-bell"></span>
+				                  </button>
+				                </a>
 								<ul class="dropdown-menu dropdown-menu-end">
 									<li><a class="dropdown-item" href="#"> <span
 											class="align-middle">알림 N 개</span>
@@ -376,7 +377,6 @@ function sch(){
 												<div class="flex-grow-1">
 													<small class="text-muted">대전 동구</small>
 													<span class="fw-semibold d-block">클린앤클리어</span>
-												</div>
 											</div>
 									</a></li>
 									<li>
