@@ -105,8 +105,8 @@
 				<div class="contents">
 					<img class="content" src="../img/service1.png"></img>
 					<div class="text_box">
-						<p class="subhead">클린앤클리어</p>
-						<p class="keyword">침대/메트릭스 청소</p>
+						<p class="subhead">아이러브독</p>
+						<p class="keyword">강아지 산책</p>
 						<div class="star_box">
 							<i class="fa-solid fa-star"></i>
 							<i class="fa-solid fa-star"></i>
@@ -120,10 +120,10 @@
 			</li>
 			<li>
 				<div class="contents">
-					<div class="content"></div>
+					<img class="content" src="../img/service2.png"></img>
 					<div class="text_box">
-						<p class="subhead">클린앤클리어</p>
-						<p class="keyword">침대/메트릭스 청소</p>
+						<p class="subhead">해피하우스</p>
+						<p class="keyword">도배 장판 시공</p>
 						<div class="star_box">
 							<i class="fa-solid fa-star"></i>
 							<i class="fa-solid fa-star"></i>
@@ -136,10 +136,10 @@
 			</li>
 			<li>
 				<div class="contents">
-					<div class="content"></div>
+					<img class="content" src="../img/service3.png"></img>
 					<div class="text_box">
-						<p class="subhead">클린앤클리어</p>
-						<p class="keyword">침대/메트릭스 청소</p>
+						<p class="subhead">클래식바이올린</p>
+						<p class="keyword">바이올린 레슨</p>
 						<div class="star_box">
 							<i class="fa-solid fa-star"></i>
 							<i class="fa-solid fa-star"></i>
@@ -152,10 +152,10 @@
 			</li>
 			<li>
 				<div class="contents">
-					<div class="content"></div>
+					<img class="content" src="../img/service4.png"></img>
 					<div class="text_box">
-						<p class="subhead">클린앤클리어</p>
-						<p class="keyword">침대/메트릭스 청소</p>
+						<p class="subhead">이사천국</p>
+						<p class="keyword">원룸 이사</p>
 						<div class="star_box">
 							<i class="fa-solid fa-star"></i>
 							<i class="fa-solid fa-star"></i>
@@ -177,24 +177,42 @@
 		<div class="swiper-wrapper">
 			<div class="swiper-slide">
 				<div class="img_box">
-					<div class="img_1"></div>
+					<img class="img_1" src="../img/company1.png"></img>
 				</div>
 				<div class="text_box">
-					<p class="subhead">사업자 예약 관리</p>
+					<p class="subhead">자동화된 일정 관리</p>
 					<p class="text">
-						내가 언제 예약했는지 모르겠다면?<br> 여기로 가시면 다 있습니다
+						이리저리 복잡한 근무 일정 😥 <br>
+						중요한 고객과의 스케줄이 잡히면 <br>
+						자동으로 일정을 기록해 드립니다.
 					</p>
 					<button class="useful_func_submit">시작하기</button>
 				</div>
 			</div>
 			<div class="swiper-slide">
 				<div class="img_box">
-					<div class="img_2"></div>
+					<img class="img_1" src="../img/company1.png"></img>
 				</div>
 				<div class="text_box">
-					<p class="subhead">리뷰 작성하러 가기</p>
+					<p class="subhead">자동화된 일정 관리</p>
 					<p class="text">
-						아직 리뷰를 작성 안하셨나요?<br> 여기로 가시면 다 있습니다
+						이리저리 복잡한 근무 일정 😥 <br>
+						중요한 고객과의 스케줄이 잡히면 <br>
+						자동으로 일정을 기록해 드립니다.
+					</p>
+					<button class="useful_func_submit">시작하기</button>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="img_box">
+					<img class="img_1" src="../img/company1.png"></img>
+				</div>
+				<div class="text_box">
+					<p class="subhead">자동화된 일정 관리</p>
+					<p class="text">
+						이리저리 복잡한 근무 일정 😥 <br>
+						중요한 고객과의 스케줄이 잡히면 <br>
+						자동으로 일정을 기록해 드립니다.
 					</p>
 					<button class="useful_func_submit">시작하기</button>
 				</div>
@@ -206,49 +224,13 @@
 		<div class="content_box swiper">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide">
-					<div class="content swiper-zoom-container">
+					<div class="content swiper-zoom-container"  data-swiper-zoom="5">
 						<div class="img_box">
-							<img>
-						</div>
-						<div class="text_box ">
-							<p class="name">wpdnjs***</p>
-							<p class="text">청소 정말 잘해줘요</p>
-							<div class="star_box">
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="swiper-slide">
-					<div class="content swiper-zoom-container">
-						<div class="img_box">
-							<img>
+							<img src="../img/review5.png">
 						</div>
 						<div class="text_box">
 							<p class="name">rodi***</p>
-							<p class="text">처음 사용해보는데 청소 정말 깔끔하게 해주고 친절하세요</p>
-							<div class="star_box">
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-								<i class="fa-solid fa-star"></i>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="swiper-slide">
-					<div class="content swiper-zoom-container"  data-swiper-zoom="5">
-						<div class="img_box">
-							<img>
-						</div>
-						<div class="text_box">
-							<p class="name">dlshr***</p>
-							<p class="text">청소 깔끔하게 해주셔서 추천합니다</p>
+							<p class="text">청소 정말 깨끗하게 잘 해주셨어요 :) 믿고 맡길 수 있는 클린앤클리어 추천합니다!</p>
 							<div class="star_box">
 								<i class="fa-solid fa-star"></i>
 								<i class="fa-solid fa-star"></i>
@@ -262,10 +244,10 @@
 				<div class="swiper-slide">
 					<div class="content swiper-zoom-container">
 						<div class="img_box">
-							<img>
+							<img src="../img/review6.png">
 						</div>
 						<div class="text_box">
-							<p class="name">qorthd***</p>
+							<p class="name">vnda***</p>
 							<div class="star_box">
 								<i class="fa-solid fa-star"></i>
 								<i class="fa-solid fa-star"></i>
@@ -273,18 +255,55 @@
 								<i class="fa-solid fa-star"></i>
 								<i class="fa-solid fa-star"></i>
 							</div>
-							<p class="text">청소하시는 분들이 열심히 청소하시고 깔끔하게 해주세요</p>
+							<p class="text">하루 종일 아이와 노느라 지치실 텐데 항상 밝게 놀아주시는 모습에 앞으로 만나고 싶다는 생각이 들었어요</p>
 						</div>
 					</div>
 				</div>
 				<div class="swiper-slide">
 					<div class="content swiper-zoom-container">
 						<div class="img_box">
-							<img>
+							<img src="../img/review7.png">
 						</div>
 						<div class="text_box">
-							<p class="name">dbstkd***</p>
-							<p class="text">내집 처럼 열심히 해줘요</p>
+							<p class="name">mini***</p>
+							<p class="text">갑작스러운 예약에도 불구하고 멋진 파티 만들어주셔서 정말 감사합니다.<br>생일인 친구도 만족했어요.</p>
+							<div class="star_box">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="content swiper-zoom-container">
+						<div class="img_box">
+							<img src="../img/review3.png">
+						</div>
+						<div class="text_box ">
+							<p class="name">aka***</p>
+							<p class="text">원하는 디자인으로 만족스럽게 시공해주셨어요 😍😍😍<br>하자도 없는지 꼼꼼하게 봐주셨고요
+							</p>
+							<div class="star_box">
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+								<i class="fa-solid fa-star"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="content swiper-zoom-container">
+						<div class="img_box">
+							<img src="../img/review4.png">
+						</div>
+						<div class="text_box">
+							<p class="name">happ***</p>
+							<p class="text">에어컨 설치가 필요했는데 매뉴얼대로 설치해 주시고 일일이 설명해 주셔서 정말 좋았습니다.</p>
 							<div class="star_box">
 								<i class="fa-solid fa-star"></i>
 								<i class="fa-solid fa-star"></i>
