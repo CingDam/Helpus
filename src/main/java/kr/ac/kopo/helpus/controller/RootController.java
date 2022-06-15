@@ -71,7 +71,7 @@ public class RootController {
 	}
 	
 	//회사리스트검색
-	@PostMapping("/list")
+	@RequestMapping("/list")
 	public String index(Model model,Pager pager) {
 		
 		List<Detail> list = detailService.search(pager);

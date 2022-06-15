@@ -13,9 +13,9 @@ public class Contract {
 	private String contractContents;
 	private String contractAddress;
 	private Date contractDay;
-	@JsonFormat(pattern = "yyyy-MM-dd", timezone = "Aisa/Seoul" )
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "Aisa/Seoul" )
 	private Date contractSdate;
-	@JsonFormat(pattern = "yyyy-MM-dd", timezone = "Aisa/Seoul" )
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "Aisa/Seoul" )
 	private Date contractEdate;
 	private Date contractPayday;
 	private int contractPay;

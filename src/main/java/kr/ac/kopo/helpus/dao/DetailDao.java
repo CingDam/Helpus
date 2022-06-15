@@ -15,5 +15,7 @@ public interface DetailDao {
 
 	void update(Detail item);
 
+	int total(Pager pager);
+
 
 }

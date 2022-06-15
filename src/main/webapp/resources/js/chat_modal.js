@@ -70,7 +70,7 @@ function getColist() {
 					if (messageContent.indexOf('계약서') != -1) {
 						let message = messageContent.split(':');
 						let html = `<div class="chat">
-						        	<img src="img/avatar.png" />
+						        	<img src="../../img/basic_profile.jpg" />
 							        <p>
 							          <strong>${coName}</strong>
 							          <br>
@@ -82,7 +82,7 @@ function getColist() {
 						$('#chatlist').append(html)
 					} else {
 						let html = `<div class="chat">
-						        	<img src="img/avatar.png" />
+						        	<img src="../../img/basic_profile.jpg" />
 							        <p>
 							          <strong>${coName}</strong>
 							          <br>
@@ -96,7 +96,7 @@ function getColist() {
 
 				} else {
 					let html = `<div class="chat">
-					        	<img src="img/avatar.png" />
+					        	<img src="../../img/basic_profile.jpg" />
 						        <p>
 						          <strong>${coName}</strong>
 						          <br>
@@ -240,7 +240,7 @@ function getMessage(roomCode) {
 					}
 				}
 			}
-			const iframe = `<iframe src="chat/chat_input" style="border: none; height: 60px;width: 290px;"></iframe>`
+			const iframe = `<iframe src="../../chat/chat_input" style="border: none; height: 60px;width: 290px;"></iframe>`
 			$('#chat-messages').scrollTop($('#chat-messages')[0].scrollHeight);
 			$('#send-message').append(iframe);
 		}

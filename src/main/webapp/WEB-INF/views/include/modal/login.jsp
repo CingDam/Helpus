@@ -12,7 +12,7 @@
 					</div>
 				</div>
 				<div class="logo_box">
-					<img class="logo" src="./img/logo.svg">
+					<img class="logo" src="../../img/logo.svg">
 				</div>
 				<div class="login_box">
 				<div class="input_box">

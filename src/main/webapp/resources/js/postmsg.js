@@ -66,7 +66,7 @@
 		let day = week[new Date().getDay()];
 		
 		if(today.getDate() != parent.$('#date').text()){
-			let html = `<label>${today.getMonth()}월 ${today.getDay()}일 ${day}요일</label>`
+			let html = `<label>${today.getMonth()+1}월 ${today.getDate()}일 ${day}요일</label>`
 			chat.append(html);
 		}
 		
@@ -133,7 +133,6 @@
 	
 	socket.onclose = () =>{
 		connect = false;
-		alert("서버에 연결이 끊어졌습니다.")
 	}
 	
 	function post_msg(messageContents){
