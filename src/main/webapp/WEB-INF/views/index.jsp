@@ -27,6 +27,7 @@
 		<div class="banner_write">
 			<p class="frist_line">무엇을 도와드릴까요?</p>
 			<p class="second_line">믿을 수 있는 당신 근처의 전문가</p>
+			<!-- 테스트 -->
 		</div>
 		<form method="post" action="/list">
 			<input class="search_bar" type="text" name="keyword" placeholder="검색어를 입력하세요">
