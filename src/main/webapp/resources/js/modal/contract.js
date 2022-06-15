@@ -39,9 +39,7 @@ $(function(){
 			contractAddress : contractAddress
 		}
 		
-		if(keyCode=="" && eDate == "" && price == "" && contents == ""){
-			alert("계약서를 완성해주세요")
-		} else if(sDate == "" && eDate == "" && price == "" && contents == "" && keyCode==""){
+		if(keyCode == "" || eDate == "" || price == "" || contents == "" || $('#co_sign').val() == "" ){
 			alert("계약서를 완성해주세요")
 		} else {
 			addContract(item);
@@ -190,7 +188,7 @@ function loadContents(userId){
 				                    <div class="row">
 				                    <label class="col-md-3">서명 :</label>
 				                     <div class="col-md-5">
-				                        <input class="form-control" type="text" placehoder="${company.coName}"/>
+				                        <input id="co_sign" class="form-control" type="text" placehoder="${company.coName}"/>
 				                      </div>
 				                     </div>
 				                </div>`

@@ -3,22 +3,23 @@
 	
 	const socket = new WebSocket(url);
 	
-	let connect = false;
+	let connect
 	
 	socket.onopen = () => {
 		
-		console.dir(parent.$("#roomCode"))
-		console.log(parent.$("#roomCode").val())
-		const room = parent.$("#roomCode");
+		console.dir(parent.$('#chatview').find('#roomCode'))
+		console.log(parent.$('#chatview').find('#roomCode').val())
+		const room = parent.$('#chatview').find('#roomCode');
 		const roomCode = room.val();
 		const cur_user = login_user;
-		const sendVal = $('#sendVal').val();
+		const sendVal = parent.$('#chatview').find('#sendVal').val();
 		
 		console.log(roomCode, cur_user, sendVal);
 		
 		console.dir(parent.$('#chat-messages'))
 		
 		connect = true;
+		console.log(connect)
 		$.ajax("/chat/msg_ck",{
 						method : "POST",
 						contentType : "application/json",
@@ -58,8 +59,27 @@
          		console.log(message)
 				console.log(login_user + ": " + $('#msg').val())
 				
-			
+		
 		const chat= parent.$('#chat-messages');
+		
+		const today = new Date()
+		const week = ['일', '월', '화', '수', '목', '금', '토'];
+		let day = week[new Date().getDay()];
+		
+		console.log(today.getDate())
+		console.dir(parent.$('#date'))
+		
+		let year = today.getFullYear();
+		let month = today.getMonth() + 1;
+		let date = today.getDate();
+		
+		let fullDate = `${year}-0${month}-${date}`
+
+		console.log(fullDate ==  parent.$('#date').text() )
+		if(fullDate != parent.$('#date').text()){
+			let html = `<label>0${today.getMonth()+1}월 ${today.getDate()}일 ${day}요일</label>`
+			chat.append(html);
+		}
 		
 		if(cur_user == session_user){
 			let coMsg = `<div class="message right">
@@ -103,26 +123,12 @@
 	
 	socket.onclose = () =>{
 		connect = false;
-		alert("서버에 연결이 끊어졌습니다.")
 	}
-	function send(){
+	function post_msg(messageContents){
 		
-		const messageContents = document.getElementById("msg")
-		
-		let sendVal = parent.$('#sendVal').val()
-		
-		if(connect) {
-			
-			socket.send(login_user + ": " + $('#msg').val());
-			post_msg(sendVal, messageContents.value)
-			messageContents.value = "";
-			
-		}
-	}
-	function post_msg(sendVal, messageContents){
-		
-		const room = parent.$('#roomCode');
+		const room = parent.$('#chatview').find('#roomCode');
 		const roomCode = room.val();
+		const sendVal = parent.$('#chatview').find('#sendVal').val()
 		
 		const item = {
 			sendVal : sendVal,
@@ -148,4 +154,27 @@
 		$('#send').click(function(){
 			send()
 		})
+		parent.$('#chatclose').click(function(){
+				parent.$('#chat-messages').empty();
+
+				parent.$('#profile').empty()
+				setTimeout(function() {
+					parent.$("#send-message").empty();
+				})
+				socket.close();
+				
+		})
 	})
+	
+	function send(){
+		
+		console.log(connect)
+		const messageContents =  $('#msg').val()
+		if(connect) {
+			socket.send(login_user + ": " + $('#msg').val());
+			console.log(login_user + ": " + $('#msg').val())
+			post_msg(messageContents)
+			$('#msg').val("");
+			
+		}
+	}

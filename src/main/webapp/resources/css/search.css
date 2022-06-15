@@ -1,6 +1,12 @@
 * {
     font-family: 'Noto Sans KR', sans-serif;
 }
+.search_list > a{
+	color : #000 !important
+}
+.search_list > a:hover{
+	color : #000 !important
+}
 body {
     background-color: #fff !important;
 }

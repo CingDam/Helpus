@@ -6,7 +6,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-  <title>검색</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +21,7 @@
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/core.css" class="template-customizer-core-css" />
   <link rel="stylesheet" href="css/theme-default.css" class="template-customizer-theme-css" />
+  <jsp:include page="include/header.jsp"></jsp:include>
 </head>
 
 <body>
@@ -37,7 +37,7 @@
         <div class="row">
 
             <!-- Content 1 -->
-            <div class="col-lg-3">
+            <form class="col-lg-3">
                 <hr>
                 <div class="row">
                     <div class="mb-4 col-md-6">
@@ -66,11 +66,11 @@
                     </select>
                 </div>
                 <button class="btn btn-secondary btn-lg">검색</button>
-            </div>
+            </form>
             <!--/ Content 1 -->
         
             <!-- Content 2-->
-            <div class="col-lg-9">
+            <div class="col-lg-9 search_list">
                 <div id="cap">
                     <span>총 ${pager.total } 건</span>
                     <div><i class="fa-solid fa-arrow-right-arrow-left fa-rotate-90"></i>평점순</div>
@@ -84,19 +84,21 @@
                </c:if>
                <c:forEach var="item" items="${list}">
 	               	<hr>
-		                <div class="list">
-		                    <img src="img/">
-		                    <div class="text">
-		                        <div class="keyword">
-		                        </div>
-		                        <div>${item.coName}</div>
-		                        <div>${item.detailShorts }</div>
-		                    </div>
-		                    <div>
-		                        <i class="fa-solid fa-star"></i>
-		                        <span>${item.reviewScore }</span>
-		                    </div>
-		                </div>
+	               		<a href = "detail/view/${item.coCode }">
+			                <div class="list">
+			                    <img src="img/" onerror="this.src='img/basic_img.png'"/>
+			                    <div class="text">
+			                        <div class="keyword">
+			                        </div>
+			                        <div>${item.coName}</div>
+			                        <div>${item.detailShorts }</div>
+			                    </div>
+			                    <div>
+			                        <i class="fa-solid fa-star"></i>
+			                        <span>${item.reviewScore }</span>
+			                    </div>
+			                </div>
+		                </a>
 	                <hr>
                </c:forEach> 
 
@@ -115,7 +117,7 @@
                     </a>
                 </li>
                 <li class="page-item prev">
-                    <a class="page-link" href="?page=${pager.prev}">
+                    <a class="page-link" href="?page=${pager.prev}&${pager.query}">
                     <i class="tf-icon bx bx-chevron-left"></i>
                     </a>
                 </li>
@@ -125,12 +127,12 @@
                 	</li>
                 </c:forEach>
                 <li class="page-item next">
-                    <a class="page-link" href="?page=${pager.next};">
+                    <a class="page-link" href="?page=${pager.next}&${pager.query}">
                     <i class="tf-icon bx bx-chevron-right"></i>
                     </a>
                 </li>
                 <li class="page-item last">
-                    <a class="page-link" href="?page=${pager.last}">
+                    <a class="page-link" href="?page=${pager.last}&${pager.query}">
                     <i class="tf-icon bx bx-chevrons-right"></i>
                     </a>
                 </li>
@@ -172,6 +174,11 @@
             </div>   
         </div>
     </div>
+   	<!-- 로그인 -->
+	<jsp:include page="include/modal/login.jsp"/>
+	<!-- 회원가입 -->
+	<jsp:include page="include/modal/signup.jsp"/>
     <!-- /Footer -->
+    <jsp:include page="include/chat.jsp"/>
 </body>
 </html>

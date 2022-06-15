@@ -27,6 +27,10 @@ public class DetailServiceImpl implements DetailService {
 	@Override
 	public List<Detail> search(Pager pager) {
 		
+		int total = dao.total(pager);
+		
+		pager.setTotal(total);
+		
 		return dao.search(pager);
 	}
 

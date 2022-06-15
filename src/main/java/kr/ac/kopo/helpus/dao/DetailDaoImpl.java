@@ -38,4 +38,10 @@ public class DetailDaoImpl implements DetailDao {
 		
 	}
 
+	@Override
+	public int total(Pager pager) {
+		
+		return sql.selectOne("detail.total",pager);
+	}
+
 }

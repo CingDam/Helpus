@@ -222,7 +222,7 @@ function makeItem(item,room,state){
 	*/	
 		console.log(room)
 		console.log(item)
-		let html = `<tr class="item" data-code="${item['userId']}">`;
+		let html = `<tr class="item long" data-code="${item['userId']}">`;
 		for(let i = 0; i < header.length;i++){
 		
 		let value_ = "";

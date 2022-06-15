@@ -14,12 +14,14 @@
   <script src="https://kit.fontawesome.com/0c375d6c23.js" crossorigin="anonymous"></script>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="./css/chat.css" />
-  <link  rel="stylesheet" href="./css/header.css">
-  <link  rel="stylesheet" href="./css/modal/login.css">
-  <link  rel="stylesheet" href="./css/modal/signup.css">
-  <link  rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="../../css/chat.css" />
+  <link  rel="stylesheet" href="../../css/header.css">
+  <link  rel="stylesheet" href="../../css/modal/login.css">
+  <link  rel="stylesheet" href="../../css/modal/signup.css">
+  <link  rel="stylesheet" href="../../css/footer.css">
 
   <!-- JS -->
-  <script src="./js/jquery-3.6.0.min.js"></script>
-  <script src="./js/chat_modal.js"></script>
+  <script src="../../js/jquery-3.6.0.min.js"></script>
+  <script src="../../js/chat_modal.js"></script>
+  <script src="../../js/modal/login.js"></script>
+  <script src="../../js/modal/signup.js"></script>

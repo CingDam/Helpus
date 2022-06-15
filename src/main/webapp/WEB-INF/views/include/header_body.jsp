@@ -5,9 +5,9 @@
 
 <c:if test="${sessionScope.user == null && sessionScope.company == null}">
 		<div class = "header">
-			<div class="header_logo">
-				<img src="./img/logo.svg">
-			</div>
+			<a class="header_logo" href="../../">
+				<img src="../../img/logo.svg">
+			</a>
 			<div class = "header_navi">
 				<p class="login" id="login_put">로그인</p>
 				<p class="signup" id="signup_put">회원가입</p>
@@ -19,7 +19,7 @@
 		<div class = "header">
 			<div>
 				<div class="header_logo">
-					<img src="/img/logo.svg">
+					<img src="../../img/logo.svg">
 				</div>
 				<div class = "header_navi">
 					<a href="/user/mypage">마이페이지</a>

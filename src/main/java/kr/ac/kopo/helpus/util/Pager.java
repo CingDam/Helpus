@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Pager {
 	private int page = 1;
-	private int perPage = 5;
+	private int perPage = 10;
 	private int perGroup = 5;
 	private float total;
 	
@@ -33,11 +33,7 @@ public class Pager {
 	}
 
 	public String getQuery() {
-		
-		if(search<1)
-			return null;
-		
-		return "search=" + search + "&keyword=" + keyword;
+		return "keyword=" + keyword;
 	}
 	
 	public int getSearch() {
