@@ -161,7 +161,8 @@ div.message.right .corner{
 	font-size:14px;
 	font-family:"Open Sans", sans-serif; 
 	font-weight:400px;
-	color:#aab8c2;
+	color:#8095a4;
+	width: 325px;
 }
 #sendmessage input:focus{
 	 outline: 0;

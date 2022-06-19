@@ -11,6 +11,7 @@ public class Detail {
 	private int keyCode;
 	private int datailView;
 	private String detailShorts;
+	private String coProfile;
 	
 	private String coName;
 	private float reviewScore;
@@ -91,4 +92,11 @@ public class Detail {
 	public void setDetailShorts(String detailShorts) {
 		this.detailShorts = detailShorts;
 	}
+	public String getCoProfile() {
+		return coProfile;
+	}
+	public void setCoProfile(String coProfile) {
+		this.coProfile = coProfile;
+	}
+	
 }

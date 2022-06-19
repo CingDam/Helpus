@@ -11,7 +11,7 @@
   	</sql>
 	
 	<select id="search" resultMap="DetailMap" >
-			SELECT co_key.co_code,review.review_score,keyword.key_name,company.co_name, detail.*
+			SELECT co_key.co_code,review.review_score,keyword.key_name,company.co_name,company.co_profile, detail.*
 			FROM co_key 
 			JOIN detail ON detail.co_code = co_key.co_code
 			JOIN keyword ON co_key.key_code = keyword.key_code
@@ -28,8 +28,10 @@
 	</select>
 	
 	<select id="item" resultMap="DetailMap">
-		SELECT detail.*,company.co_name FROM detail
+		SELECT detail.*,keyword.key_name,company.co_name,company.co_profile FROM detail
 		JOIN company ON detail.co_code = company.co_code
+		JOIN co_key ON detail.co_code = co_key.co_code
+		JOIN keyword ON co_key.key_code = keyword.key_code
 		WHERE detail.co_code = #{coCode}
 	</select>
 	
@@ -42,12 +44,14 @@
 		<result column="cate_code" property="cateCode"/>
 		<result column="key_code" property="keyCode"/>
 		<result column="detail_shorts" property="detailShorts"/>
+		<result column="co_profile" property="coProfile"/>
 		
 		<collection column="co_code" property="coKey" ofType="CoKey" javaType="Arraylist">
 			<id column="co_key_code" property="coKeyCode"></id>
 			<result column="co_code" property="coCode"/>
 			<result column="cate_code" property="cateCode"/>
 			<result column="key_code" property="keyCode"/>
+			<result column="key_name" property="keyName"/>
 		</collection>
 		
 		<collection column="co_code" property="images" ofType="DetailImage" javaType="ArrayList">

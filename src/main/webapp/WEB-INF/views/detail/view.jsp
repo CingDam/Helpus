@@ -6,7 +6,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-  <title>상세</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +21,10 @@
   <link rel="stylesheet" href="../../css/core.css" class="template-customizer-core-css" />
   <link rel="stylesheet" href="../../css/theme-default.css" class="template-customizer-theme-css" />
   <jsp:include page="../include/header.jsp"></jsp:include>
+  <script>
+  	const co_code = '${item.coCode}';
+  	const user_code = '${sessionScope.user.userCode}';
+  </script>
 </head>
 
 <body>
@@ -51,7 +54,9 @@
                         <div class="mb-5 row">
                             <label class="col-md-2 col-form-label">제공 서비스</label>
                             <div class="col-md-10 tag" id="keyword">
-                            
+	                            <c:forEach var="cokey" items="${item.coKey }">
+					            	<div class="badge rounded-pill bg-label-secondary">${cokey.keyName }</div>
+				                </c:forEach>
                             </div>
                         </div>
 
@@ -148,7 +153,7 @@
                     <div class="mb-4">
                         <div class="card text-center">
                             <div class="card-body">
-                                <img src="../../img/clean.jpg" class="profile rounded mb-4 shadow">
+                                <img src="../../img/${item.coProfile }" class="profile rounded mb-4 shadow">
                                 <h4>${item.coName }</h4>
                                 <div class="text-muted">대전 동구</div>
                             </div>
@@ -156,7 +161,7 @@
                     </div>
 
                     <div class="d-grid">
-                        <button class="btn btn-primary btn-lg" type="button">문의하기</button>
+                        <button class="btn btn-primary btn-lg" id="inqury_btn" type="button">문의하기</button>
                     </div>
                 </div>
             </div>

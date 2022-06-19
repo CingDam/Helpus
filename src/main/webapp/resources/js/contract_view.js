@@ -1,7 +1,7 @@
 $(function() {
-
+	console.log(username)
 	$('#updateContract').click(function() {
-		if ($('#sign').val() == user_name) {
+		if ($('#sign').val() == username) {
 			updateContract()
 		} else {
 			alert('이름을 정확히 적어주세요')
@@ -27,7 +27,7 @@ function send() {
 	let sendVal = "0"
 
 	if (connect) {
-		socket.send(login_user + ": " + messageContents + ":" + contractCode);
+		socket.send(login_user + ": " + messageContents + ":" + contract_code);
 		post_msg(sendVal, messageContents)
 
 	}
@@ -59,7 +59,7 @@ function updateContract() {
 	console.log($('#day').text())
 	const item = {
 		coInquryCode : coInquryCode,
-		contractCode : contractCode,
+		contractCode : contract_code,
 		contractState: parseInt(1),
 	}
 

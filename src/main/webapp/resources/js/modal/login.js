@@ -1,7 +1,13 @@
 let user_val = 0;
 
 $(function() {
-
+	
+	$("#inqury_btn").click(function(){
+     	if(user_code == ''){
+			openLoginModal();
+		}
+   })
+	
 	$('#login_put').on('click', function() {
 		openLoginModal();
 	})
@@ -101,7 +107,6 @@ function login_ajax(item) {
 					location.href = "/email";
 				}
 				if (result == 'OK') {
-					alert("환형합니다")
 					location.reload();
 				}
 				if (result == 'FAIL') {

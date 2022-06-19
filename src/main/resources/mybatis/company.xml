@@ -32,8 +32,8 @@
 	</select>
 	
 	<select id="getCoInqury" resultType="Coinqury">
-		SELECT co_inqury.*,user.user_name, user.user_id,keyword.key_name
-		FROM co_inqury JOIN keyword ON co_inqury.key_code = keyword.key_code
+		SELECT co_inqury.*,user.user_name, user.user_id
+		FROM co_inqury
 		JOIN user ON co_inqury.user_code = user.user_code
 		WHERE co_code=#{coCode}
 		LIMIT #{offset},#{perpage}

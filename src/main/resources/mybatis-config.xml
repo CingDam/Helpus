@@ -23,5 +23,6 @@
 		<mapper resource="mybatis/admin.xml"/>
 		<mapper resource="mybatis/room.xml"/>
 		<mapper resource="mybatis/calender.xml"/>
+		<mapper resource="mybatis/coinqury.xml"/>
 	</mappers>
 </configuration>

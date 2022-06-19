@@ -19,7 +19,6 @@
                   <thead>
                     <tr>
                       <th class="order" data-order="userName" data-name="userName">고객명</th>
-                      <th class="order" data-order="keyName" data-name="keyName">키워드</th>
                       <th class="order" data-order="inquryRegDate" data-name="inquryRegDate">날짜</th>
                       <th class="order" data-order="inquryContents" data-name="inquryContents">문의 내용</th>
                       <th>채팅</th>

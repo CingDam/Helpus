@@ -94,7 +94,7 @@
 		}
 		if(cur_user != session_user){
 			let userMsg = `<div class="message">
-								          <img src="img" />
+								          <img src="../../img/basic_profile.jpg" />
 								          <div class="bubble">
 									       	${message}
 											<div class="corner"></div>

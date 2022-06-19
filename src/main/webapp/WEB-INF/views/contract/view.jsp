@@ -18,10 +18,10 @@
 <script src="../../js/jquery-3.6.0.min.js"></script>
 <script src="../../js/contract_view.js"></script>
 
-<script type="text/javascript">
+<script>
 	const login_user = '${sessionScope.user.userId}'
-	const user_name = '${item.contract.userName}'
-	const contractCode = '${item.contract.contractCode}'
+	const username = '${item.contract.userName}'
+	const contract_code = '${item.contract.contractCode}'
 	const coInquryCode = '${item.contract.coInquryCode}'
 </script>
 

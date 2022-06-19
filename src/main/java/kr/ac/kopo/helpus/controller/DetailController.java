@@ -54,7 +54,7 @@ public class DetailController {
 	@GetMapping("/view/{coCode}")
 	public String view(@PathVariable int coCode,Model model) {
 		Detail item = service.item(coCode);
-		
+		System.out.println(item.getCoProfile());
 		model.addAttribute("item", item);
 		
 		return path + "view";

@@ -10,6 +10,33 @@ $(function() {
 		getColist()
 		
 	});
+	
+	$("#inqury_btn").click(function(){
+      $("#chatbtn").toggle('scale');
+      
+      
+		const item = {
+			coCode : co_code,
+			userCode : user_code
+		}
+		
+		$.ajax('../../co_inqury/add',{
+			method : "POST",
+			contentType : "application/json",
+			data : JSON.stringify(item)
+		})
+      
+      $.ajax(`../../chat/${co_code}`,{
+		method : "POST",
+		dataType : "json",
+		success : result => {
+			$("#chatbtn").toggle('scale');
+			$("#chatbox").toggle('scale');
+			getColist(result)
+		}
+	})
+
+   })
 
 	$("#chatclose").click(function() {
 		$("#chatbtn").toggle('scale');
@@ -47,7 +74,14 @@ $(function() {
 	});
 
 	$(document).on('click', '#viewContract', function() {
-		$(location).attr('href', `contract/view/${contractCode}`)
+		if($('#contractCode').length > 0){
+			const contractCode_socket = $.trim($('#contractCode').val())
+			console.log(contractCode_socket)
+			$(location).attr('href', `../../contract/view/${contractCode_socket}`)
+		} else {
+			$(location).attr('href', `../../contract/view/${contractCode}`)
+		}
+		
 	})
 
 });
@@ -99,9 +133,11 @@ function getColist() {
 					        	<img src="../../img/basic_profile.jpg" />
 						        <p>
 						          <strong>${coName}</strong>
-						          <br>
-						          <span>${messageContent}</sapn>
-						        </p>
+						          <br>`
+						          if(messageContent != null){
+									html += `<span>${messageContent}</sapn>`
+								}
+						html += `</p>
 					        	<div class="status available"></div>
 					        	<input type="hidden" id="roomCode" value=${roomCode}>
 					      	</div>`
@@ -113,13 +149,14 @@ function getColist() {
 			}
 			$('.chat').click(function(){
 				const roomCode = $(this).children('#roomCode').val()
-				createRoom(roomCode)
+				const name = $(this).find("p").children("strong").html()
+				createRoom(roomCode,name)
 			})
 		}
 	})
 }
 
-function createRoom(roomCode) {
+function createRoom(roomCode,name) {
 			var childOffset = $('.chat').offset();
 			var parentOffset = $('.chat').parent().parent().offset();
 			var childTop = childOffset.top - parentOffset.top;
@@ -149,7 +186,6 @@ function createRoom(roomCode) {
 	              				<input id = "sendVal" type="hidden" value="0">
               				</div>`
 
-			var name = $('.chat').find("p strong").html();
 			
 			$('#close').unbind('click').click(function(){
 			
@@ -171,6 +207,27 @@ function createRoom(roomCode) {
 				
 				$('#send-message').empty();
 		})
+			console.log($('#chat-messages').find('label').length<0)
+			if($('#chat-messages').find('label').length < 1){
+				
+				console.log('라벨생성')
+				
+				const today = new Date()
+				
+				const week = ['일', '월', '화', '수', '목', '금', '토'];
+				let day = week[new Date().getDay()];
+				
+				let year = today.getFullYear();
+				let month = today.getMonth() + 1;
+				let date = today.getDate();
+				
+				let fullDate = `${year}-0${month}-${date}`
+
+				
+				let html = `<label>0${month}월 ${date}일 ${day}요일</label>
+							<div id="date" style="display:none">${fullDate}</div>`
+				$('#chat-messages').append(html);
+			}
 			
 			$("#profile p").html(name);
 			$("#profile").append(roomBox)
@@ -187,7 +244,7 @@ function getMessage(roomCode) {
 		method: "GET",
 		dataType: "json",
 		success: result => {
-			let putDate = null;
+			let putDate = $('#date').last().text();
 			console.log(result);
 			console.dir($('#roomCode'))
 			for (let i = 0; i < result.length; i++) {
@@ -214,11 +271,11 @@ function getMessage(roomCode) {
 
 				}
 				if (sendVal == 1) {
-					if (messageContents.indexOf('계약서') != -1) {
+					if (messageContents.indexOf('계약서를 보내셨습니다') != -1) {
 						let message = messageContents.split(':')
 						contractCode = parseInt(message[1])
 						let coMsg = `<div class="message">
-								          <img src="./../img/basic_profile.jpg" />
+								          <img src="../../img/basic_profile.jpg" />
 								          <div class="bubble">
 									       	${message[0]}
 									       	<div><button id="viewContract">보기</button></div>
@@ -229,7 +286,7 @@ function getMessage(roomCode) {
 						console.log(contractCode)
 					} else {
 						let coMsg = `<div class="message">
-								           <img src="./../img/basic_profile.jpg" />
+								           <img src="../../img/basic_profile.jpg" />
 								          <div class="bubble">
 									       	${messageContents}
 											<div class="corner"></div>

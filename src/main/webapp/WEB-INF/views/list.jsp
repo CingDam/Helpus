@@ -86,10 +86,13 @@
 	               	<hr>
 	               		<a href = "detail/view/${item.coCode }">
 			                <div class="list">
-			                    <img src="img/" onerror="this.src='img/basic_img.png'"/>
+			                    <img src="img/${item.coProfile }" onerror="this.src='img/basic_img.png'" class="shadow-sm"/>
 			                    <div class="text">
-			                        <div class="keyword">
-			                        </div>
+			                     <div>
+			                    	<c:forEach var="cokey" items="${item.coKey }">
+			                        	<span>#${cokey.keyName }</span>
+			                        </c:forEach>
+			                      </div>
 			                        <div>${item.coName}</div>
 			                        <div>${item.detailShorts }</div>
 			                    </div>

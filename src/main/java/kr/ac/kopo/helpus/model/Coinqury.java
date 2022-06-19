@@ -4,12 +4,10 @@ public class Coinqury {
 	private int coInquryCode;
 	private int coCode;
 	private int userCode;
-	private String inquryName;
-	private String inquryContents;
 	private String inquryRegDate;
 
+	
 	private String userId;
-	private String keyName;
 	private String userName;
 
 	public String getUserId() {
@@ -18,14 +16,6 @@ public class Coinqury {
 
 	public void setUserId(String userId) {
 		this.userId = userId;
-	}
-
-	public String getKeyName() {
-		return keyName;
-	}
-
-	public void setKeyName(String keyName) {
-		this.keyName = keyName;
 	}
 
 	public int getCoInquryCode() {
@@ -50,22 +40,6 @@ public class Coinqury {
 
 	public void setUserCode(int userCode) {
 		this.userCode = userCode;
-	}
-
-	public String getInquryName() {
-		return inquryName;
-	}
-
-	public void setInquryName(String inquryName) {
-		this.inquryName = inquryName;
-	}
-
-	public String getInquryContents() {
-		return inquryContents;
-	}
-
-	public void setInquryContents(String inquryContents) {
-		this.inquryContents = inquryContents;
 	}
 
 	public String getInquryRegDate() {

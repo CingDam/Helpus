@@ -143,7 +143,7 @@ function pagination(url){
 						if(contractList.length > 0 & contractList[i] != null){
 							state = contractList[i].contractState
 						}
-						console.log(state)
+						console.log(state == 1)
 						if(state == null || state == 0){
 							console.log('테스트')
 							html += makeItem(list[i],room[i],state);
@@ -158,7 +158,7 @@ function pagination(url){
 							$(`.empty_msg`).show();
 							state = null
 						}
-		            }
+		            } 
 					
                     $(`${pager_root} tr.item`).remove();
                     console.log(html)
@@ -170,7 +170,44 @@ function pagination(url){
 					header = [];
 
                  
-		        } else{
+		        } else if(contractList && contractList.length > 0) {
+			
+										const tbody =  $(`${pager_root} tbody`);
+					console.dir($(`${pager_root} tbody`))
+		            let html = "";
+		            let state = null;
+		            $(`.empty_msg`).hide();
+		            for(let i = 0; i < contractList.length; i++){
+						if(contractList.length > 0 & contractList[i] != null){
+							state = contractList[i].contractState
+						}
+						console.log(state == 1)
+						if(state == null || state == 0){
+							console.log('테스트')
+							html += makeItem(list[i],room[i],state);
+							state = null
+						} else if(state == 1){
+							console.log('테스트')
+							console.log(header)
+							html += makeItem(contractList[i],room[i],state);
+							state = null
+						} else {
+							console.log('테스트')
+							$(`.empty_msg`).show();
+							state = null
+						}
+		            } 
+					
+                    $(`${pager_root} tr.item`).remove();
+                    console.log(html)
+                   
+                    
+                    //$(`${pager_root}`).append(tbody);
+					tbody.append(html);
+					
+					header = [];
+			
+					} else{
 			
 					console.dir( $(`${pager_root} tr.item`));
 					$(`${pager_root} tr.item`).remove();

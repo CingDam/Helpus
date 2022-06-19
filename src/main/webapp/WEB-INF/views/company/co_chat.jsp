@@ -18,7 +18,7 @@
       <div id="send-message">
       </div>
 </div>
-    <img src="../img/avatar.png" class="floatingImg" >
+    <img src="../../img/basic_profile.jpg" class="floatingImg" >
     <div id="chatclose"><i class="fa-solid fa-xmark"></i></div>
   </div>
  </div>

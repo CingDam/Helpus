@@ -41,6 +41,7 @@
 		let arr = data.split(":");
 		message = arr[1];
 		contractCode = arr[2];
+		console.log(contractCode)
 		console.log(data)
 		
 			for(var i=0; i<arr.length; i++){
@@ -65,8 +66,14 @@
 		const week = ['일', '월', '화', '수', '목', '금', '토'];
 		let day = week[new Date().getDay()];
 		
-		if(today.getDate() != parent.$('#date').text()){
-			let html = `<label>${today.getMonth()+1}월 ${today.getDate()}일 ${day}요일</label>`
+		let year = today.getFullYear();
+		let month = today.getMonth() + 1;
+		let date = today.getDate();
+		
+		let fullDate = `${year}-0${month}-${date}`
+		
+		if(fullDate !=  parent.$('#date').text()){
+			let html = `<label>0${today.getMonth()+1}월 ${today.getDate()}일 ${day}요일</label>`
 			chat.append(html);
 		}
 		
@@ -88,9 +95,9 @@
 		}
 		if(cur_user != session_user){
 			
-			if(message.indexOf('계약서') != -1){
+			if(message.indexOf('계약서를 보내셨습니다') != -1){
 							let coMsg = `<div class="message">
-								          <div id="img"/>
+								          <img src="../../img/basic_profile.jpg" />
 								          <div class="bubble">
 									       	${message}
 									       	<div><button id="viewContract">보기</button></div>
@@ -101,7 +108,7 @@
 					chat.append(coMsg)
 				} else {
 					let coMsg = `<div class="message">
-								          <img src="img" />
+								          <img src="../../img/basic_profile.jpg" />
 								          <div class="bubble">
 									       	${message}
 											<div class="corner"></div>
