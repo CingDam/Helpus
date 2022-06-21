@@ -27,15 +27,16 @@
 			<p class="second_line">믿을 수 있는 당신 근처의 전문가</p>
 			<!-- 테스트 -->
 		</div>
-		<form method="post" action="/list">
-			<input class="search_bar" type="text" name="keyword" placeholder="검색어를 입력하세요">
+		<form method="post" action="/list" id="search_form">
+			<input class="search_bar" type="text" name="keyword" placeholder="검색어를 입력하세요" autocomplete="off">
 			<i class="fa-solid fa-magnifying-glass" style="color: #555"></i>
+			<div class="top_search">
+				<c:forEach var="item" items="${key}" end="8">
+					<div class="keyword">#${item.keyName}</div>
+				</c:forEach>
+			</div>
 		</form>
-		<div class="top_search">
-			<c:forEach var="item" items="${key}" end="8">
-				<div class="keyword">#${item.keyName}</div>
-			</c:forEach>
-		</div>
+		
 	</div>
 	<div class="cate_list_box">
 		<ul>

@@ -31,6 +31,7 @@ public class CompanyServiceImpl implements CompanyService {
 			company.setCoAuth(item.getCoAuth());
 			company.setCoPhone(item.getCoPhone());
 			company.setCoRegNum(item.getCoRegNum());
+			company.setCoProfile(item.getCoProfile());
 			company.setCoPw(null);
 
 			return true;

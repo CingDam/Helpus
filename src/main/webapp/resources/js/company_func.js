@@ -138,15 +138,23 @@ function pagination(url){
 					console.dir($(`${pager_root} tbody`))
 		            let html = "";
 		            let state = null;
+		            let roomUserNum = [];
 		            $(`.empty_msg`).hide();
+		             for(let i = 0; i < room.length; i++){
+						console.log(room[i].userCode)
+						roomUserNum.push(room[i].userCode)
+						
+					}
 		            for(let i = 0; i < list.length; i++){
 						if(contractList.length > 0 & contractList[i] != null){
 							state = contractList[i].contractState
 						}
+						console.log(roomUserNum)
+						console.log(list[i].userCode)
 						console.log(state == 1)
 						if(state == null || state == 0){
 							console.log('테스트')
-							html += makeItem(list[i],room[i],state);
+							html += makeItem(list[i],room[roomUserNum.indexOf(list[i].userCode)],state);
 							state = null
 						} else if(state == 1){
 							console.log('테스트')

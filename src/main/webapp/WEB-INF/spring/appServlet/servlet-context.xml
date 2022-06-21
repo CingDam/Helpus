@@ -34,7 +34,7 @@
 	<tx:annotation-driven/>
 	
 	<beans:bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-		<beans:property name="host" value="smtp.gmail.com"/>
+		<beans:property name="host" value="smtp.naver.com"/>
 		<beans:property name="port" value="587"/>
 		<beans:property name="username" value="poly.helpus@gmail.com"/>
 		<beans:property name="password" value="helpus12"/>
@@ -45,8 +45,9 @@
 				<beans:prop key="mail.smtp.auth">true</beans:prop>
 				<beans:prop key="mail.smtp.starttls.enable">true</beans:prop>
 				<beans:prop key="mail.debug">true</beans:prop>
-				<beans:prop key="mail.smtp.ssl.trust">smtp.gmail.com</beans:prop>
+				<beans:prop key="mail.smtp.ssl.trust">*</beans:prop>
                 <beans:prop key="mail.smtp.ssl.protocols">TLSv1.2</beans:prop>
+                <beans:prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</beans:prop>
 			</beans:props>
 		</beans:property>		
 	</beans:bean>

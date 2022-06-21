@@ -93,7 +93,7 @@ html,body{
     left: 63.4375vw;
     cursor: pointer;
 }
-.banner > .top_search{
+.banner > form > .top_search{
 	
 	display : flex;
 	flex-wrap : wrap;
@@ -103,6 +103,7 @@ html,body{
 	
 	margin: 257px 0 0 37.08vw;
 }
+
 .top_search>.keyword {
 	margin: 12px 0 0 8px;
 	padding : 4px 11px;

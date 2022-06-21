@@ -47,3 +47,14 @@ let swiper_review = new Swiper('.content_box',{
         observeParents: true,
         spaceBetween : 76,
 })
+
+$(function(){
+	$('.keyword').click(function(){
+		const form = $('#search_form')
+		const keyword = $(this).text().split('#');
+		$('.search_bar').val(keyword[1])
+		
+		form.submit()
+		$('.search_bar').val("")
+	})
+})

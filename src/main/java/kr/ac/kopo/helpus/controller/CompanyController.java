@@ -70,7 +70,10 @@ public class CompanyController {
 	ChatService chatService;
 	
 	@GetMapping({"/","/list"})
-	public String index() {
+	public String index(HttpSession session,Model model) {
+		
+		Company company = (Company) session.getAttribute("company");
+		
 		return path+"index";
 	}
 	
